@@ -173,6 +173,7 @@
 }
 
 body {
+  position: relative;
   background: rgba(255, 228, 196, 0);
   padding: 0;
   margin: 0;
@@ -189,6 +190,22 @@ body {
   width: 100%;
   max-width: 1920px;
   margin: auto;
+  position: relative;
+}
+
+.connexion {
+  position: absolute;
+  border: 0px;
+  bottom: 0;
+  right: 250px;
+  height: 40px;
+  border-radius: 15px;
+  background-color: var(--maincolor);
+  font-size: 20px;
+  font-family: var(--primfontfamily);
+  font-size: var(--sizelink);
+  font-weight: var(--primeweight);
+  color: white;
 }
 
 #logo {
@@ -472,6 +489,69 @@ input:checked ~ nav > ul > li a {
 .back6:hover,
 .back6:focus {
   background-color: rgba(194, 194, 194, 0.568);
+}
+
+.inscription_container {
+  width: 900px;
+  height: 500px;
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: 0;
+  bottom: 0;
+  margin: auto;
+  background-color: white;
+  border-radius: 80px;
+  box-shadow: 5px 4px 13px 6px rgba(0, 0, 0, 0.1);
+  display: flex;
+  transform: scale(0);
+}
+.inscription_container button {
+  background-color: cadetblue;
+  width: 200px;
+  height: 60px;
+  border-radius: 30px;
+  border: none;
+  margin: 0 auto;
+}
+.inscription_container .separator {
+  width: 1px;
+  height: 80%;
+  background-color: black;
+  margin: auto 0;
+}
+.inscription_container input::-moz-placeholder {
+  color: white;
+}
+.inscription_container input:-ms-input-placeholder {
+  color: white;
+}
+.inscription_container input::placeholder {
+  color: white;
+}
+.inscription_container .column_left {
+  height: 70%;
+  width: 50%;
+  padding: 2%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  text-align: center;
+}
+.inscription_container .column_right {
+  position: relative;
+  height: 80%;
+  width: 50%;
+  padding: 2%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  text-align: center;
+}
+.inscription_container .column_right i {
+  position: absolute;
+  top: 30px;
+  right: 40px;
 }
 
 .accueilsetup {

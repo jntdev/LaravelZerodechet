@@ -6,6 +6,6 @@
     <img onclick="window.open('http://www.ville-paimpol.fr/le-chato/')" class="lechato clickable"src="images/logo_lechato.jpg" alt="">
 
 </div>
-<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"></script>
-<script src="../../js/script.js"></script>
+
+
 <script src="../../js/genially.js"></script>

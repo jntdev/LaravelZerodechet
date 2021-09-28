@@ -2,6 +2,7 @@
 <?php
     include('componant/headeraccueil.php');
 ?>
+
 <div id ="accueilsetup"class="accueilsetup">
     <div id="drawmenu"class="drawmenu">
         <div id="actudraw"class="actudraw clickable drawcolumn" onclick="location.href='actualites';">
