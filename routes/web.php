@@ -24,6 +24,14 @@ Route::get('/actualites', function () {
     return view('actu');
 });
 
+Route::get('/lacuisine', function () {
+    return view('cuisine');
+});
+
+Route::get('/lasalledebain', function () {
+    return view('salledebain');
+});
+
 Route::get('/ledefi', function () {
     return view('ledefi');
 });

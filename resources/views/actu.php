@@ -3,7 +3,79 @@
     include('componant/header.php');
 ?>
 <div class="actucontent">
-    <div class="actusection primebackground ">
+<div class="actusection primebackground ">
+        <div class="article">
+           <div class="date flexend"> 
+                <p>28 Septembre 2021</p>    
+           </div>
+           <div class="pageactucontent ">
+               <div id="pict" class="pict">
+               <img class="articleimg"src="../images/unpaspourmaplanete.jpeg" alt="affiche de l'évenement un pas pour ma planete">
+                   
+               </div>
+               <div class="articlecontent">
+                   <h2>Osez zéro déchet ! présent à Un pas pour ma planète !</h2>
+                   <p id="p_responsiv" class="subtitleactucontent">Nous participerons en octobre à la seconde édition d'Un pas pour ma planète !
+                    Guingamp-Paimpol agglomération et l'association Cohérence organisent 21 jours d'animation, du 18
+                    septembre au 8 octobre 2021, pour mettre en valeur les initiatives locales en faveur de la transition
+                    écologique.</p> 
+                    <p id="p_responsiv" class="contenuactu">
+                    A Paimpol, cet événement se concrétisera notamment par une journée de rencontres et d'ateliers
+                    organisée par le ChatÔ le 2 octobre. Seront également présents : J'accueille la nature, Bretagne
+                    Vivante, la médiathèque de Paimpol et de nombreux autres acteurs de la transition écologique.
+                    Parmi les ateliers, celui de Laëtitia Crnkovic, fondatrice de Zéro déchet Trégor, vous proposera de
+                    fabriquer des produits de soin naturels.
+                </p>
+                    <p>Venez nous rencontrer, échanger et découvrir le défi le 2 octobre au ChatÔ, à Paimpol !</br></br>
+                    Plus d'infos, la programmation <a href="https://www.guingamp-paimpol-agglo.bzh/actualite/un-pas-pour-ma-planete-2020-2/"> ICI.</a>
+                    </p>
+                     </div>
+           </div>
+           <div class="seemore flexend clickable">
+               <p>voir plus...</p>
+               <div class="arrow">
+               </div>
+            </div> 
+        </div>
+    </div>
+    <div class="actusection secondbackground ">
+        <div class="article">
+           <div class="date flexend"> 
+                <p>14 Septembre 2021</p>    
+           </div>
+           <div class="pageactucontent ">
+               <div id="pict" class="pict">
+               <img class="articleimg"src="../images/question_mark.png" alt="point d interrogation">
+                   
+               </div>
+               <div class="articlecontent">
+                   <h2>Mais concrètement, le défi c'est quoi ?</h2>
+                   <p id="p_responsiv" class="subtitleactucontent">Vous êtes intéressés par la démarche du défi mais vous ne savez pas trop en quoi ça consiste ? Vous
+                    avez déjà mille choses à faire et vous avez peur que le défi ne vous prenne trop de temps ? On vous
+                    explique tout !</p> 
+                    <p id="p_responsiv" class="contenuactu">
+                    Participer au défi, c'est :</p>
+                    <ul>
+                        <li>4 réunions d'équipe sur toute la période (que vous fixez librement)</li>
+                        <li>des visites et des ateliers (faire ses sacs à vrac, ses produits ménagers, son composteur, des
+                                objets en bois, emballer ses cadeaux... et d'autres encore) auxquels vous vous inscrivez si
+                                vous le souhaitez</li>
+                        <li>un événement convivial de lancement du défi le 17 octobre 2021</li>
+                        <li>un événement (encore) plus convivial de clôture le 30 avril 2022</li>
+                    </ul>
+                    <p>L'appellation « ZERO » déchet, tout comme l'objectif de -50 %, sont là pour le challenge, mais pas
+                        de panique si vous n'y arrivez pas, l'important c'est la démarche !</br></br>
+                        Une fois l'adhésion à l'asso réglée (10 € par foyer), l'ensemble est gratuit !</p>
+                     </div>
+           </div>
+           <div class="seemore flexend clickable">
+               <p>voir plus...</p>
+               <div class="arrow">
+               </div>
+            </div> 
+        </div>
+    </div>
+    <div class="actusection thirdbackground ">
         <div class="article">
            <div class="date flexend"> 
                 <p>6 Septembre 2021</p>    
@@ -36,7 +108,7 @@
             </div> 
         </div>
     </div>
-    <div class="actusection secondbackground">
+    <div class="actusection fourthbackground">
         <div class="article">
            <div class="date flexend"> 
                 <p>2 septembre 2021</p>    
@@ -68,7 +140,7 @@
             </div>
         </div>
     </div>
-    <div class="actusection thirdbackground">
+    <div class="actusection fifthbackground">
         <div class="article">
            <div class="date flexend"> 
                 <p>31 Août 2021</p>    

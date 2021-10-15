@@ -1,4 +1,4 @@
-//./dart-sass/sass sass/style.scss style.css --watch
+//dart-sass/sass resources/sass/app.scss resources/css/style.css --watch
 @import url("https://fonts.googleapis.com/css2?family=Raleway:wght@300;500;600;700&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=Shadows+Into+Light+Two&display=swap");
 :root {
@@ -208,7 +208,7 @@ body {
     font-weight: var(--primeweight);
     background-color: rgba(210, 105, 30, 0);
     display: flex;
-    background-image: url("../views/img/header.png");
+    background-image: url("../images/header.png");
     background-repeat: no-repeat;
     height: 290px;
     width: 100%;
@@ -236,13 +236,11 @@ body {
     cursor: pointer;
     height: 100%;
     width: auto;
+    border-radius: 50%;
 }
 
 .logo {
-    display: flex;
-    justify-content: center;
-    width: auto;
-    padding: 2% 0 0 2%;
+    //padding: 2% 0 0 2%;
     margin-right: 30px;
 }
 //burger
@@ -887,7 +885,7 @@ input:checked ~ nav {
 }
 
 .cinqr {
-    background-image: url(../views/img/cinqrzerodechet.png);
+    background-image: url(../images/cinqrzerodechet.png);
     background-size: contain;
     background-position: center;
     background-repeat: no-repeat;
@@ -897,7 +895,7 @@ input:checked ~ nav {
     width: 50%;
     height: 100%;
     background-color: rgba(128, 128, 128, 0);
-    background-image: url(../views/img/cartebrehat.png);
+    background-image: url(../images/cartebrehat.png);
     background-repeat: no-repeat;
     background-size: contain;
     background-position: center;
@@ -920,7 +918,7 @@ input:checked ~ nav {
 }
 
 .maison {
-    background-image: url(../views/img/maison.jpeg);
+    background-image: url(../images/maison.jpeg);
 }
 
 .bande {
@@ -943,11 +941,11 @@ input:checked ~ nav {
 }
 
 .menage {
-    background-image: url(../views/img/produitmenagers.jpeg);
+    background-image: url(../images/produitmenagers.jpeg);
 }
 
 .plusloin {
-    background-image: url(../views/img/bibliotheque.png);
+    background-image: url(../images/bibliotheque.png);
 }
 
 //le defi
@@ -1428,20 +1426,20 @@ input:checked ~ nav {
 }
 
 .cuisine {
-    background-image: url(../views/img/cuisine.jpg);
+    background-image: url(../images/cuisine.jpg);
 }
 
 .salledebain {
-    background-image: url(../views/img/salledebain.jpg);
+    background-image: url(../images/salledebain.jpg);
 }
 
 .bureau {
-    background-image: url(../views/img/bureau.jpg);
+    background-image: url(../images/bureau.jpg);
     background-position: center bottom;
 }
 
 .chambreenfant {
-    background-image: url(../views/img/chambreenfant.jpg);
+    background-image: url(../images/chambreenfant.jpg);
 }
 
 .clickable {
@@ -1470,6 +1468,154 @@ input:checked ~ nav {
             color: var(--maincolor);
         }
     }
+}
+
+// cuisine
+
+.cuisinecontent {
+    padding: 3% 5%;
+}
+
+.cuisine_atelier {
+    background-color: var(--primebackground);
+}
+.lesateliers {
+    padding: 3%;
+    width: 60%;
+    margin: 0 auto;
+    border-radius: 15px;
+    padding-bottom: 5%;
+    h3 {
+        text-align: center;
+    }
+}
+
+.faireSescourses {
+    border-radius: 15px;
+    background-color: var(--primebackground);
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    flex-wrap: wrap;
+    height: auto;
+    padding: 3%;
+}
+
+.boxcuisine {
+    border-radius: 15px;
+    width: 35%;
+    background-color: white;
+    margin-top: 50px;
+    padding: 3%;
+    min-width: 250px;
+}
+
+.SOS_vracdebase {
+    width: 60%;
+    min-width: 300px;
+    ul {
+        padding-left: 10px;
+    }
+    li {
+        margin-bottom: 20px;
+    }
+}
+
+.remplacer {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    div {
+        display: flex;
+        flex-direction: column;
+        width: 25%;
+        img {
+            width: 70%;
+        }
+    }
+}
+
+.les_restes {
+    padding: 3%;
+    background-color: var(--primebackground);
+    border-radius: 15px;
+}
+
+.lesrestes_link {
+    text-align: center;
+}
+
+.content_produit_remplacer {
+    align-items: center;
+}
+
+.dosette {
+    align-items: center;
+}
+
+.etleau_content {
+    align-items: center;
+}
+
+.compostage {
+    border-radius: 15px;
+    background-color: var(--primebackground);
+    padding: 3%;
+    div {
+        p {
+            padding: 0 2%;
+        }
+    }
+}
+
+//salle de bain
+
+.salledebaincontent {
+    padding: 3% 5%;
+}
+
+.sdb_atelier {
+    background-color: var(--secondbackground);
+}
+
+.section_title_sdb {
+    margin: 60px auto;
+    height: 160px;
+    position: relative;
+    align-items: center;
+    justify-content: center;
+    h3 {
+        z-index: 3;
+    }
+    img {
+        z-index: 2;
+
+        position: absolute;
+        width: 25%;
+    }
+}
+
+.card {
+    padding: 2%;
+    margin-bottom: 50px;
+    align-items: center;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    border: 1px solid var(--secondbackground);
+    border-radius: 30px;
+    p {
+        width: 30%;
+    }
+    img {
+        width: 15%;
+    }
+}
+
+.cosmetique {
+    background-color: var(--secondbackground);
+    border-radius: 30px;
+    padding: 3%;
 }
 
 @media (max-width: 1700px) {

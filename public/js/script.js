@@ -17,8 +17,12 @@ $( document ).ready(function() {
 
 //titre de page 
   var nom = window.location.pathname;
+  console.log(nom);
   if(nom == "/actualites"){
     $('.title').html("<h2>Actualités</h2>");
+  };
+  if(nom == "/lamaison"){
+    $('.title').html("<h2>Des astuces pour toute la maison</h2>");
   };
   if(nom == "/ledefi"){
     $('.title').html("<h2>Le défi</h2>");

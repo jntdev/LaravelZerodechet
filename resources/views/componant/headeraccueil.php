@@ -13,7 +13,7 @@
 </head>
 <body>
 <div class="header headeraccueil">
-<button class="connexion clickable">Connexion / Inscription</button>
+<!-- <button class="connexion clickable">Connexion / Inscription</button> -->
     <div class="logo ;">
         <img id="logo" class="clickable" src="images/logo.png" alt="logo" onclick="location.href='accueil'">
     </div>
@@ -23,6 +23,3 @@
         </div>
     </div>
 </div>
-<?php
-    include('connexionpopup.blade.php');
-?>
