@@ -14,7 +14,7 @@ RewriteRule ^(.*)$ https://www.jonathanmarois.com/ [R=301,L]
     RewriteCond %{HTTP:Authorization} .
     RewriteRule .* - [E=HTTP_AUTHORIZATION:%{HTTP:Authorization}]
 
-    RewriteCond %{HTTP_HOST} ^(www.)?jonathamaros.com$
+    RewriteCond %{HTTP_HOST} ^(www.)?jonathamarois.com$
     RewriteCond %{REQUEST_URI} !^/laravel_zerodechet/
     RewriteCond %{REQUEST_FILENAME} !-f
     RewriteCond %{REQUEST_FILENAME} !-d
