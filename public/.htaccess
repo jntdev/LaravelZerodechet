@@ -30,5 +30,5 @@ RewriteRule ^(.*)$ https://www.jonathanmarois.com/ [R=301,L]
     RewriteCond %{REQUEST_FILENAME} !-f
     RewriteCond %{REQUEST_FILENAME} !-d
     RewriteRule ^(.*)$ /laravel_zerodechet/$1
-    RewriteCond %{HTTP_HOST} ^(www.)?jonathanmarois.com$ RewriteRule ^(/)?$ laravel_zerodechet/resources/index.php [L]
+    RewriteCond %{HTTP_HOST} ^(www.)?jonathanmarois.com$ RewriteRule ^(/)?$ laravel_zerodechet/resources/views/index.php [L]
 </IfModule>
