@@ -1,7 +1,4 @@
-
-<?php
-    include('componant/header.php');
-?>
+@include('/componant/header');
 <div class="astucontent">
 <div class="astusection mt100">
             <div class="astuces maison">
@@ -47,8 +44,6 @@
 </div>
 
 
-<?php
-    include("componant/footer.php");
-?>
+@include('/componant/footer');
 </body>
 </html>

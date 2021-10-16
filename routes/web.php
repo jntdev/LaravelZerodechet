@@ -1,6 +1,7 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\PostController;
 
 /*
 |--------------------------------------------------------------------------
@@ -12,58 +13,24 @@ use Illuminate\Support\Facades\Route;
 | contains the "web" middleware group. Now create something great!
 |
 */
-Route::get('/accueil', function () {
-    return view('index');
-});
 
-Route::get('/', function () {
-    return view('index');
-});
+// Route::get('/accueil', function () {
+//     return view('index');
+// });
 
-Route::get('/actualites', function () {
-    return view('actu');
-});
-
-Route::get('/lacuisine', function () {
-    return view('cuisine');
-});
-
-Route::get('/lasalledebain', function () {
-    return view('salledebain');
-});
-
-Route::get('/ledefi', function () {
-    return view('ledefi');
-});
-
-Route::get('/astuces&ressources', function () {
-    return view('astuces');
-});
-
-Route::get('/quisommesnous', function () {
-    return view('quisommesnous');
-});
-
-Route::get('/contact', function () {
-    return view('contact');
-});
-
-Route::get('/demarchezerodechet', function () {
-    return view('rappelzerodechet');
-});
-
-Route::get('/cartecommercants', function () {
-    return view('cartecommercants');
-});
-
-Route::get('/lamaison', function () {
-    return view('ressources');
-});
-
-Route::get('/produitsmenagers', function () {
-    return view('produitsmenagers');
-});
-
-Route::get('/biblio', function () {
-    return view('biblio');
-});
+Route::get('/', [PostController::class, 'index']);
+Route::get('/accueil', [PostController::class, 'index']);
+Route::get('/actualites', [PostController::class, 'actu']);
+Route::get('/ledefi', [PostController::class, 'ledefi']);
+Route::get('/astuces&ressources', [PostController::class, 'astuces']);
+Route::get('/demarchezerodechet', [PostController::class, 'rappelzerodechet']);
+Route::get('/cartecommercants', [PostController::class, 'cartecommercants']);
+Route::get('/lamaison', [PostController::class, 'ressources']);
+Route::get('/produitsmenagers', [PostController::class, 'produitsmenagers']);
+Route::get('/pourallerplusloins', [PostController::class, 'biblio']);
+Route::get('/lacuisine', [PostController::class, 'cuisine']);
+Route::get('/lasalledebain', [PostController::class, 'salledebain']);
+Route::get('/lebureau', [PostController::class, 'bureau']);
+Route::get('/lesenfants', [PostController::class, 'enfants']);
+Route::get('/quisommesnous', [PostController::class, 'quisommesnous']);
+Route::get('/contact', [PostController::class, 'contact']);

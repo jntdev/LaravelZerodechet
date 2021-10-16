@@ -1,7 +1,4 @@
-
-<?php
-    include('componant/header.php');
-?>
+@include('/componant/header');
 <div class="cuisinecontent pagesetup">
     <p class="intro_cuisine">Après la salle de bain, c’est généralement 
         dans la cuisine qu’on produit le plus de déchets à la maison.
@@ -244,8 +241,6 @@
     </div>  
 </div>
 <img class="poubelle center"src="../images/poubellelavie.png" alt="">
-<?php
-    include("componant/footer.php");
-?>
+@include('/componant/footer');
 </body>
 </html>

@@ -1,7 +1,4 @@
-
-<?php
-    include('componant/header.php');
-?>
+@include('/componant/header');
 <div class="astusection">
             <div class="astuces plusloin">
                 <div class="bande">
@@ -87,8 +84,6 @@
 
 <img class="poubelle center"src="../images/poubellelavie.png" alt="">
 
-<?php
-    include("componant/footer.php");
-?>
+@include('/componant/footer');
 </body>
 </html>

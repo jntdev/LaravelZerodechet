@@ -1,7 +1,4 @@
-
-    <?php
-    include('componant/header.php');
-    ?>
+@include('/componant/header');
    
         <div class="astusection mt100">
             <div class="astuces border cinqr"></div>
@@ -102,9 +99,7 @@
     <iframe class="youtube center" src="https://www.youtube.com/embed/SJq7i_3UODM" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen>
     </iframe>
     <img class="poubelle center"src="../images/poubellelavie.png" alt="">
-<?php
-        include("componant/footer.php");
-    ?>
+    @include('/componant/footer');
 
 </body>
 </html>

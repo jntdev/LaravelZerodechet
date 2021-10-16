@@ -30,14 +30,14 @@ $( document ).ready(function() {
   if(nom == "/astuces&ressources"){
     $('.title').html("<h2>Astuces & ressources</h2>");
   };
-  if(nom == "/biblio"){
+  if(nom == "/pourallerplusloins"){
     $('.title').html("<h2>Pour aller plus loin ...</h2>");
   };
   if(nom == "/bureau.php"){
     $('.title').html("<h2>Bureau</h2>");
   };
   if(nom == "/cartecommercants"){
-    $('.title').html("<h2>La carte</h2>");
+    $('.title').html("<h2>La carte des commerçants</h2>");
   };
   if(nom == "/contact"){
     $('.title').html("<h2>Contact</h2>");

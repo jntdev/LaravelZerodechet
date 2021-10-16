@@ -1,7 +1,4 @@
-
-<?php
-    include('componant/header.php');
-?>
+@include('/componant/header');
     <div class="astucontent">
         <div class="introastuce">
             <p>Ici, c'est la zone <strong>bons plans</strong> !</p>
@@ -33,7 +30,7 @@
                 </div>
             </div>
         </div>
-        <div class="astusection fifthbackground " onclick="location.href='biblio';">
+        <div class="astusection fifthbackground " onclick="location.href='pourallerplusloins';">
             <div class="astuces plusloin clickable">
                 <div class="bande ">
                     <h2>Pour aller plus loin</h2>
@@ -41,8 +38,6 @@
             </div>
         </div>
     </div>
-    <?php
-        include("componant/footer.php");
-    ?>
+    @include('/componant/footer');
 </body>
 </html>

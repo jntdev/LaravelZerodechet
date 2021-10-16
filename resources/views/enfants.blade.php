@@ -1,7 +1,5 @@
 
-<?php
-    include('componant/header.php');
-?>
+@include('/componant/header');
 <div class="enfantcontent pagesetup">
 
 </div>
@@ -77,8 +75,6 @@
 </a>
 </p>
 
-<?php
-    include("componant/footer.php");
-?>
+@include('/componant/footer');
 </body>
 </html>

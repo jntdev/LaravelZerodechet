@@ -1,7 +1,5 @@
 
-<?php
-    include('componant/header.php');
-?>
+@include('/componant/header');
 <div class="astusection">
             <div class="astuces menage">
                 <div class="bande">
@@ -133,8 +131,6 @@ C'est vraiment pas compliqué, sans produits nocifs, ça réduit les emballages 
 
 <img class="poubelle center"src="../images/poubellelavie.png" alt="">
 
-<?php
-    include("componant/footer.php");
-?>
+@include('/componant/footer');
 </body>
 </html>

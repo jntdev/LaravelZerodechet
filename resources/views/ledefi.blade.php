@@ -1,7 +1,5 @@
 
-<?php
-    include('componant/header.php');
-?>
+@include('/componant/header');
 <div class="deficontent relative">
     <a target="_blank" href="../docs/inscription.pdf"><button class="inscription clickable">Relevez le défi !</button></a>
     <div class="leftside">
@@ -46,8 +44,6 @@
     </div>
 </div>
 <img class="poubelle center"src="images/poubellelavie.png" alt="">
-<?php
-    include("componant/footer.php");
-?>
+@include('/componant/footer');
 </body>
 </html>

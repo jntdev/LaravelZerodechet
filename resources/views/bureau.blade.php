@@ -1,7 +1,4 @@
-
-<?php
-    include('componant/header.php');
-?>
+@include('/componant/header');
 <div class="bureaucontent pagesetup">
 <div class="encart">
     <h3>LES ATELIERS DU DEFI EN LIEN AVEC LE BUREAU</h3>
@@ -91,8 +88,6 @@ problèmes environnementaux bien réels. Ainsi, en 2019, Internet polluait plus 
 
 
 </div>
-<?php
-    include("componant/footer.php");
-?>
+@include('/componant/footer');
 </body>
 </html>

@@ -1,8 +1,4 @@
-
-<?php
-    include('componant/header.php');
-?>
-
+@include('/componant/header');
 <div class="contentquisommes">
 
             <p>Anne-Laure et Cédric voulaient se lancer dans un défi zéro déchet. 
@@ -58,9 +54,7 @@
 </div>
 <img class="poubelle center"src="../images/poubellelavie.png" alt="">
 
-<?php
-        include("componant/footer.php");
-    ?>
+@include('/componant/footer');
 
 </body>
 </html>

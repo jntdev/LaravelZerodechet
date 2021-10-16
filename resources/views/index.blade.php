@@ -1,7 +1,5 @@
 
-<?php
-    include('componant/headeraccueil.php');
-?>
+@include('/componant/headeraccueil');
 
 <div id ="accueilsetup"class="accueilsetup">
     <div id="drawmenu"class="drawmenu">
@@ -41,8 +39,6 @@
       <div id="60e599e5b069510dcc796207" class="genially-embed"></div>
     </div>
 </div>  
-<?php
-    include("componant/footeracceuil.php");
-?>
+@include('/componant/footer');
 </body>
 </html>

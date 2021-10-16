@@ -1,7 +1,4 @@
-
-<?php
-    include('componant/header.php');
-?>
+@include('/componant/header');
 <div class="titlecontact">
     <h3>Une Question ? Un bon plan à partager ?</h3>
 </div>
@@ -20,8 +17,6 @@
 </div>
 <img class="poubelle center"src="../images/poubellelavie.png" alt="">
 
-<?php
-    include("componant/footer.php");
-?>
+@include('/componant/footer');
 </body>
 </html>

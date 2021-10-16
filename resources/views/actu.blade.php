@@ -1,7 +1,7 @@
 
-<?php
-    include('componant/header.php');
-?>
+
+    @include('/componant/header');
+
 <div class="actucontent">
 <div class="actusection primebackground ">
         <div class="article">
@@ -168,8 +168,8 @@
         </div>
     </div>
 </div>
-<?php
-    include("componant/footer.php");
-?>
+
+    @include('/componant/footer');
+
 </body>
 </html>

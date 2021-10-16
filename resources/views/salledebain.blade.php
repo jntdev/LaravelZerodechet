@@ -1,7 +1,4 @@
-
-<?php
-    include('componant/header.php');
-?>
+@include('/componant/header');
 <div class="salledebaincontent pagesetup">
     <p>
         La salle de bain est LA pièce génératrice de nombreux déchets.
@@ -98,8 +95,6 @@
     </div>
 </div>
 <img class="poubelle center"src="../images/poubellelavie.png" alt="">
-<?php
-    include("componant/footer.php");
-?>
+@include('/componant/footer');
 </body>
 </html>
