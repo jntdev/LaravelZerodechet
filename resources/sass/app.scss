@@ -1589,7 +1589,8 @@ input:checked ~ nav {
     }
     img {
         z-index: 2;
-
+        left: 500px;
+        top: 50%;
         position: absolute;
         width: 25%;
     }
