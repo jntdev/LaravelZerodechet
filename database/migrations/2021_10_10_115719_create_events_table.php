@@ -22,6 +22,8 @@ class CreateEventsTable extends Migration
             $table->boolean('material');
             $table->decimal('nb_max_user');
             $table->time('duration');
+            $table->string('title');
+            $table->string('description');
             $table->decimal('user_id');
         });
     }

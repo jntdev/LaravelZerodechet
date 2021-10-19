@@ -66,5 +66,9 @@ class PostController extends Controller
     {
         return view('contact');
     }
+    public function event_create()
+    {
+        return view('event_create');
+    }
     
 }

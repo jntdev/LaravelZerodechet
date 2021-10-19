@@ -6,6 +6,38 @@
 <div class="actusection primebackground ">
         <div class="article">
            <div class="date flexend"> 
+                <p>16 octobre 2021</p>    
+           </div>
+           <div class="pageactucontent ">
+               <div id="pict" class="pict">
+               <img class="articleimg"src="../images/logo.png" alt="illustration article">
+                   
+               </div>
+               <div class="articlecontent">
+                   <h2>Les BTS 2 ESF de Kerraoul dessinent le logo d'Osez zéro déchet !</h2>
+                   <p id="p_responsiv" class="subtitleactucontent">Les élèves de BTS 2 ESF au lycée de Kerraoul se sont aussi lancé un défi... Réaliser le logo de
+l'association. </br> Depuis la rentrée, elles travaillent sur ce projet en cours de Design de communication. Nous avons
+proposé aux visiteurs de voter pour leur logo préféré, lors d'Un pas pour ma planète à Paimpol.</p> 
+                    <p id="p_responsiv" class="contenuactu">
+                    Le logo qui a obtenu le plus de votes est celui de Lucille. Il sera retravaillé et vous pourrez bientôt
+le découvrir en entête du site web et sur Facebook. </br></br>Un grand merci à Anaïs, Anna, Belinda, Bleuenn, Camille, Chloé, Clémence, Coraline, Elise,
+Flavie, Klervi, Léa, Lucille, Juliette, Justine, Maïwenn, Manon, Marie-Sue, Marion, Solène et leur
+professeure, Céline Rougé !
+                    </p>
+                    <iframe src="https://padlet.com/embed/c4fpsr9uph3v3vxg"  style="width:100%;height:608px;display:block;padding:0;margin:0">
+                    </iframe>
+                </div>
+           </div>
+           <div class="seemore flexend clickable">
+               <p>voir plus...</p>
+               <div class="arrow">
+               </div>
+            </div> 
+        </div>
+    </div>
+    <div class="actusection secondbackground ">
+        <div class="article">
+           <div class="date flexend"> 
                 <p>28 Septembre 2021</p>    
            </div>
            <div class="pageactucontent ">
@@ -25,11 +57,11 @@
                     Vivante, la médiathèque de Paimpol et de nombreux autres acteurs de la transition écologique.
                     Parmi les ateliers, celui de Laëtitia Crnkovic, fondatrice de Zéro déchet Trégor, vous proposera de
                     fabriquer des produits de soin naturels.
-                </p>
+                    </p>
                     <p>Venez nous rencontrer, échanger et découvrir le défi le 2 octobre au ChatÔ, à Paimpol !</br></br>
                     Plus d'infos, la programmation <a href="https://www.guingamp-paimpol-agglo.bzh/actualite/un-pas-pour-ma-planete-2020-2/"> ICI.</a>
                     </p>
-                     </div>
+                </div>
            </div>
            <div class="seemore flexend clickable">
                <p>voir plus...</p>
@@ -38,7 +70,7 @@
             </div> 
         </div>
     </div>
-    <div class="actusection secondbackground ">
+    <div class="actusection thirdbackground ">
         <div class="article">
            <div class="date flexend"> 
                 <p>14 Septembre 2021</p>    
@@ -75,7 +107,7 @@
             </div> 
         </div>
     </div>
-    <div class="actusection thirdbackground ">
+    <div class="actusection fourthbackground ">
         <div class="article">
            <div class="date flexend"> 
                 <p>6 Septembre 2021</p>    
@@ -108,7 +140,7 @@
             </div> 
         </div>
     </div>
-    <div class="actusection fourthbackground">
+    <div class="actusection fifthbackground">
         <div class="article">
            <div class="date flexend"> 
                 <p>2 septembre 2021</p>    
@@ -140,7 +172,7 @@
             </div>
         </div>
     </div>
-    <div class="actusection fifthbackground">
+    <div class="actusection primebackground">
         <div class="article">
            <div class="date flexend"> 
                 <p>31 Août 2021</p>    
