@@ -1,7 +1,8 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
-use App\Http\Controllers\PostController;
+use App\Http\Controllers\vitrineController;
+use App\Http\Controllers\eventsController;
 
 /*
 |--------------------------------------------------------------------------
@@ -18,22 +19,23 @@ use App\Http\Controllers\PostController;
 //     return view('index');
 // });
 
-Route::get('/', [PostController::class, 'index']);
-Route::get('/accueil', [PostController::class, 'index']);
-Route::get('/actualites', [PostController::class, 'actu']);
-Route::get('/ledefi', [PostController::class, 'ledefi']);
-Route::get('/astuces&ressources', [PostController::class, 'astuces']);
-Route::get('/demarchezerodechet', [PostController::class, 'rappelzerodechet']);
-Route::get('/cartecommercants', [PostController::class, 'cartecommercants']);
-Route::get('/lamaison', [PostController::class, 'ressources']);
-Route::get('/produitsmenagers', [PostController::class, 'produitsmenagers']);
-Route::get('/pourallerplusloins', [PostController::class, 'biblio']);
-Route::get('/lacuisine', [PostController::class, 'cuisine']);
-Route::get('/lasalledebain', [PostController::class, 'salledebain']);
-Route::get('/lebureau', [PostController::class, 'bureau']);
-Route::get('/lesenfants', [PostController::class, 'enfants']);
-Route::get('/quisommesnous', [PostController::class, 'quisommesnous']);
-Route::get('/contact', [PostController::class, 'contact']);
+Route::get('/', [vitrineController::class, 'index']);
+Route::get('/accueil', [vitrineController::class, 'index']);
+Route::get('/actualites', [vitrineController::class, 'actu']);
+Route::get('/ledefi', [vitrineController::class, 'ledefi']);
+Route::get('/astuces&ressources', [vitrineController::class, 'astuces']);
+Route::get('/demarchezerodechet', [vitrineController::class, 'rappelzerodechet']);
+Route::get('/cartecommercants', [vitrineController::class, 'cartecommercants']);
+Route::get('/lamaison', [vitrineController::class, 'ressources']);
+Route::get('/produitsmenagers', [vitrineController::class, 'produitsmenagers']);
+Route::get('/pourallerplusloins', [vitrineController::class, 'biblio']);
+Route::get('/lacuisine', [vitrineController::class, 'cuisine']);
+Route::get('/lasalledebain', [vitrineController::class, 'salledebain']);
+Route::get('/lebureau', [vitrineController::class, 'bureau']);
+Route::get('/lesenfants', [vitrineController::class, 'enfants']);
+Route::get('/quisommesnous', [vitrineController::class, 'quisommesnous']);
+Route::get('/contact', [vitrineController::class, 'contact']);
 
-Route::get('/event_create', [PostController::class, 'event_create']);
+Route::get('/event_create', [eventsController::class, 'event_create']);
+Route::get('/event_create/{id}', [eventsController::class, 'event_vue'])->name('event_create.event_vue');
 
