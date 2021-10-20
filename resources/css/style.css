@@ -564,9 +564,6 @@ input:checked ~ nav > ul > li a {
 .accueilsetup .drawmenu .actudraw {
   margin-right: 20px;
 }
-.accueilsetup .defidraw {
-  border-bottom: 1px solid var(--maincolor);
-}
 .accueilsetup .ledefidraw_button {
   display: flex;
   flex-direction: column;

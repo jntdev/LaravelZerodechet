@@ -1,7 +1,7 @@
 
 @include('/componant/header');
 <div class="deficontent relative">
-    <a target="_blank" href="../docs/inscription.pdf"><button class="inscription clickable">Relevez le défi !</button></a>
+    <!-- <a target="_blank" href="../docs/inscription.pdf"><button class="inscription clickable">Relevez le défi !</button></a> -->
     <div class="leftside">
         <div class="textdefi">
             <p>Répondant à l'appel de l'association Osez Zéro Déchet !, ils seront 50 foyers au départ, le 17 octobre 2021...

@@ -1,4 +1,6 @@
 //dart-sass/sass resources/sass/app.scss resources/css/style.css --watch
+
+//dart-sass/sass resources/sass/app.scss public/css/app.css --watch
 @import url("https://fonts.googleapis.com/css2?family=Raleway:wght@300;500;600;700&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=Shadows+Into+Light+Two&display=swap");
 :root {
@@ -622,9 +624,9 @@ input:checked ~ nav {
             margin-right: 20px;
         }
     }
-    .defidraw {
-        border-bottom: 1px solid var(--maincolor);
-    }
+    //.defidraw {
+    //     border-bottom: 1px solid var(--maincolor);
+    // }
     .ledefidraw_button {
         display: flex;
         flex-direction: column;
