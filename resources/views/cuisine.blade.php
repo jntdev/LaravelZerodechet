@@ -239,7 +239,11 @@
                          
                     </p>
                     <p>
+<<<<<<< HEAD
                         Pourquoi ne pas utiliser un <a href="https://www.consoglobe.com/economies-reducteurs-eau-robinet-2087-cg/2">réducteur d'eau ?</a>	
+=======
+                        Pourquoi ne pas utiliser un <a href="https://www.consoglobe.com/economies-reducteurs-eau-robinet-2087-cg/2">réducteur d'eau ?</a>   
+>>>>>>> master
                     </p>  
                               
                 <p>Boire de l'eau du robinet plutôt que 

@@ -12,7 +12,7 @@
                 <h2>Le Défi</h2>
                 <img id="logodrawresponsiv"class="logonav logodefinav" src="images/ledefi.png" alt="">
             </div>
-            <a target="_blank" href="docs/inscription.pdf"><button class="indexinscription clickable">Relevez le défi !</button></a>
+            <!-- <a target="_blank" href="docs/inscription.pdf"><button class="indexinscription clickable">Relevez le défi !</button></a> -->
         </div>
         <div id="astucesdraw"class="astucesdraw clickable drawcolumn " onclick="location.href='/astuces&ressources';">
             <h2>Astuces & Ressources</h2>

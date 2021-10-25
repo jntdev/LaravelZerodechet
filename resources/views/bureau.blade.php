@@ -9,7 +9,11 @@
         </div>
 <main class="lebureau_content">
 <section class="atelier_en_lien">
+<<<<<<< HEAD
     <h3>LES ATELIERS DU DEFI EN LIEN AVEC LE BUREAU</h3>
+=======
+    <h3>ATELIER DU DEFI EN LIEN AVEC LE BUREAU</h3>
+>>>>>>> master
     <p>Un atelier sur les « gestes malins pour ses équipements électriques » permettant d'apprendre les astuces pour 
         réduire sa consommation d’énergie et augmenter la durée de vie de ses appareils est prévu au cours du défi.
     </p>
@@ -49,7 +53,11 @@ problèmes environnementaux bien réels. Ainsi, en 2019, Internet polluait plus 
         </p>
         <p>De la même manière, vous pouvez visionner un grand nombre de vidéos en lignes en choisissant une définition plus basse,
              cela réduira considérablement l'impact de votre streaming. Sur Youtube par exemple, cliquez sur la roue crantée en bas ; 
+<<<<<<< HEAD
              sur Dailymotion, cliquez sur l'icône des réglages en haut à droite. 	
+=======
+             sur Dailymotion, cliquez sur l'icône des réglages en haut à droite.    
+>>>>>>> master
         </p>
         <p>
         Pensez au matériel de seconde main ! Les sites de vente de matériel d'occasion ou reconditionné se sont multipliés.

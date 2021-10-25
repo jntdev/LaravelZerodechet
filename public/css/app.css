@@ -1,5 +1,5 @@
-@import url("https://fonts.googleapis.com/css2?family=Raleway:wght@300;500;600;700&display=swap");
-@import url("https://fonts.googleapis.com/css2?family=Shadows+Into+Light+Two&display=swap");
+@import url(https://fonts.googleapis.com/css2?family=Raleway:wght@300;500;600;700&display=swap);
+@import url(https://fonts.googleapis.com/css2?family=Shadows+Into+Light+Two&display=swap);
 :root {
   --maincolor: #002a39;
   --primfontfamily: "Raleway", sans-serif;
@@ -14,7 +14,11 @@
   --thirdbackground: #ffb338;
   --secondbackground: #fd8a47;
   --fifthbackground: #c99365;
+<<<<<<< HEAD
   --fifthbackground2: #ffd9bc;
+=======
+  --fifthbackground2: #ffc395;
+>>>>>>> master
   --fifthbackground3: #d3c2b4;
   --primebackground: #389dd8;
   --primebackground2: #55afe2;
@@ -188,7 +192,7 @@ body {
   font-weight: var(--primeweight);
   background-color: rgba(210, 105, 30, 0);
   display: flex;
-  background-image: url("../images/header.png");
+  background-image: url(/images/header.png?201fff74c46153bcd989c0064c8e0ebb);
   background-repeat: no-repeat;
   height: 290px;
   width: 100%;
@@ -521,6 +525,12 @@ input:checked ~ nav > ul > li a {
   background-color: black;
   margin: auto 0;
 }
+.inscription_container input::-moz-placeholder {
+  color: white;
+}
+.inscription_container input:-ms-input-placeholder {
+  color: white;
+}
 .inscription_container input::placeholder {
   color: white;
 }
@@ -567,9 +577,6 @@ input:checked ~ nav > ul > li a {
 }
 .accueilsetup .drawmenu .actudraw {
   margin-right: 20px;
-}
-.accueilsetup .defidraw {
-  border-bottom: 1px solid var(--maincolor);
 }
 .accueilsetup .ledefidraw_button {
   display: flex;
@@ -815,7 +822,7 @@ input:checked ~ nav > ul > li a {
 }
 
 .cinqr {
-  background-image: url(../images/cinqrzerodechet.png);
+  background-image: url(/images/cinqrzerodechet.png?7e609a102a064ff4497914ff7a6fd811);
   background-size: contain;
   background-position: center;
   background-repeat: no-repeat;
@@ -825,7 +832,7 @@ input:checked ~ nav > ul > li a {
   width: 50%;
   height: 100%;
   background-color: rgba(128, 128, 128, 0);
-  background-image: url(../images/cartebrehat.png);
+  background-image: url(/images/cartebrehat.png?681f36cc4bc67dc66c5e677dfa6597eb);
   background-repeat: no-repeat;
   background-size: contain;
   background-position: center;
@@ -848,7 +855,7 @@ input:checked ~ nav > ul > li a {
 }
 
 .maison {
-  background-image: url(../images/maison.jpeg);
+  background-image: url(/images/maison.jpeg?bc2fe0fda31b13c1f40e2dbf9b555fe5);
 }
 
 .bande {
@@ -869,11 +876,11 @@ input:checked ~ nav > ul > li a {
 }
 
 .menage {
-  background-image: url(../images/produitmenagers.jpeg);
+  background-image: url(/images/produitmenagers.jpeg?2d46ebb7231b6e1e0f3703a6437f3980);
 }
 
 .plusloin {
-  background-image: url(../images/bibliotheque.png);
+  background-image: url(/images/bibliotheque.png?6e0504f29af4a727a1f6b2c9145bbe40);
 }
 
 .textcapitain {
@@ -1129,8 +1136,7 @@ input:checked ~ nav > ul > li a {
   font-size: var(--sizelink);
 }
 
-.pagesetup,
-.produitcontent {
+.pagesetup {
   font-size: var(--primefontsize);
   font-family: var(--primfontfamily);
   font-weight: var(--primeweight);
@@ -1140,20 +1146,23 @@ input:checked ~ nav > ul > li a {
   text-align: justify;
   color: var(--maincolor);
 }
-.pagesetup a,
-.produitcontent a {
+.pagesetup a {
   font-weight: var(--weightlink);
   font-size: var(--sizelink);
   color: var(--colorlink);
 }
-.pagesetup h3,
-.produitcontent h3 {
+.pagesetup h3 {
   text-align: center;
-  font-family: var(--secondfontfamily);
+  font-family: var(--primfontfamily);
 }
 
 .inl_blk {
   display: inline-block;
+}
+
+.produitcontent {
+  font-family: var(--primfontfamily);
+  font-size: 20px;
 }
 
 .icon_produits {
@@ -1162,38 +1171,35 @@ input:checked ~ nav > ul > li a {
 }
 
 .topofpage_produits {
-  padding: 0 2%;
+  padding: 0 10%;
   display: flex;
+  flex-direction: column;
   align-items: center;
-  justify-content: space-evenly;
-  font-family: var(--secondfontfamily);
+  margin-bottom: 100px;
+}
+.topofpage_produits .atelier_en_lien {
+  background-color: var(--fourthbackground);
+  padding: 7% 10%;
+  border-radius: 80px;
+}
+.topofpage_produits .atelier_en_lien ul {
+  color: white;
+  list-style-image: url(/images/flecherouge.png?a7f366e13b7b95254fa8ff3ad03ed076);
+}
+.topofpage_produits .atelier_en_lien h3 {
+  color: white;
+  font-size: 35px;
+  padding: 0;
+  margin-top: 0;
+  text-align: center;
 }
 
 .intro_produits {
   width: 40%;
   padding: 2% 5%;
-  font-family: var(--secondfontfamily);
+  font-family: var(--primfontfamily);
   font-size: var(--sizelink);
-}
-
-.atelier_produits {
   text-align: center;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  width: 50%;
-  height: 550px;
-  background-image: url(../views/img/encartvert.png);
-  background-size: contain;
-  background-repeat: no-repeat;
-  background-position: center;
-  font-size: 15px;
-}
-.atelier_produits #redarrow {
-  list-style-image: url("../views/img/flecherouge.png");
-}
-.atelier_produits li {
-  font-size: 20px;
 }
 
 .centertext {
@@ -1202,14 +1208,21 @@ input:checked ~ nav > ul > li a {
 }
 
 .midpage_produits {
-  padding: 2% 0%;
+  padding: 2% 5%;
   background-color: var(--fourthbackground);
 }
 .midpage_produits h3 {
+  color: white;
   font-size: 40px;
 }
 .midpage_produits p {
+  color: white;
   text-align: justify;
+}
+.midpage_produits a {
+  color: var(--primebackground);
+  font-size: var(--sizelink);
+  text-decoration: none;
 }
 
 .containertawashi {
@@ -1241,6 +1254,11 @@ input:checked ~ nav > ul > li a {
 }
 .bottompage_produits p {
   padding: 1% 4%;
+}
+.bottompage_produits a {
+  color: var(--primebackground);
+  text-decoration: none;
+  font-size: var(--sizelink);
 }
 
 .greengrad1 {
@@ -1323,20 +1341,20 @@ input:checked ~ nav > ul > li a {
 }
 
 .cuisine {
-  background-image: url(../images/cuisine.jpg);
+  background-image: url(/images/cuisine.jpg?744c75d4e2a7ead635d03024753389c1);
 }
 
 .salledebain {
-  background-image: url(../images/salledebain.jpg);
+  background-image: url(/images/salledebain.jpg?f46faab9769ec543480c76d00e3fba6c);
 }
 
 .bureau {
-  background-image: url(../images/bureau.jpg);
+  background-image: url(/images/bureau.jpg?7d60499901a32101c4ff837dadffe79a);
   background-position: center bottom;
 }
 
 .chambreenfant {
-  background-image: url(../images/chambreenfant.jpg);
+  background-image: url(/images/chambreenfant.jpg?a502569ff26ffef248d4bf4e86a9c777);
 }
 
 .clickable {
@@ -1409,6 +1427,16 @@ input:checked ~ nav > ul > li a {
 
 .cuisine_atelier {
   background-color: var(--primebackground);
+}
+.cuisine_atelier ul {
+  list-style-image: url(/images/flecherouge.png?a7f366e13b7b95254fa8ff3ad03ed076);
+}
+.cuisine_atelier li {
+  color: white;
+  margin-bottom: 30px;
+}
+.cuisine_atelier h3 {
+  color: white;
 }
 
 .lesateliers {
@@ -1553,6 +1581,13 @@ input:checked ~ nav > ul > li a {
 .sdb_atelier {
   background-color: var(--secondbackground);
 }
+.sdb_atelier ul {
+  list-style-image: url(/images/flecherouge.png?a7f366e13b7b95254fa8ff3ad03ed076);
+}
+
+.container_sdb {
+  position: relative;
+}
 
 .container_sdb {
   position: relative;
@@ -1642,6 +1677,12 @@ input:checked ~ nav > ul > li a {
   padding: 7% 10%;
   border-radius: 80px;
 }
+<<<<<<< HEAD
+=======
+.atelier_en_lien ul {
+  list-style-image: url(/images/flecherouge.png?a7f366e13b7b95254fa8ff3ad03ed076);
+}
+>>>>>>> master
 .atelier_en_lien h3 {
   padding: 0;
   margin-top: 0;
@@ -1796,10 +1837,32 @@ label {
   font-family: var(--primfontfamily);
 }
 
+<<<<<<< HEAD
+=======
+input::-moz-placeholder {
+  font-family: var(--primfontfamily);
+}
+
+input:-ms-input-placeholder {
+  font-family: var(--primfontfamily);
+}
+
+>>>>>>> master
 input::placeholder {
   font-family: var(--primfontfamily);
 }
 
+<<<<<<< HEAD
+=======
+textarea::-moz-placeholder {
+  font-family: var(--primfontfamily);
+}
+
+textarea:-ms-input-placeholder {
+  font-family: var(--primfontfamily);
+}
+
+>>>>>>> master
 textarea::placeholder {
   font-family: var(--primfontfamily);
 }
@@ -2434,5 +2497,3 @@ textarea::placeholder {
   width: 100%;
   height: 100%;
 }
-
-/*# sourceMappingURL=app.css.map */

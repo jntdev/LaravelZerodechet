@@ -45,7 +45,7 @@
         <div class="card">
             <p>Coton tige</p>
             <img src="images/flecheorange.png" alt="">
-            <p>Oriculi (cure oreille en bois ou métal 	sculpté)</p>
+            <p>Oriculi (cure oreille en bois ou métal   sculpté)</p>
         </div>
         <div class="card">
             <p>Dentifrice en tube</p>
