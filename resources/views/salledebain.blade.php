@@ -1,6 +1,13 @@
 @include('/componant/header');
+<div class="astusection backgroundwhite">
+            <div class="astuces salledebain clickable">
+                <div class="bande ">
+                    <h2>Salle de bain</h2>
+                </div>
+            </div>
+        </div>
 <div class="salledebaincontent pagesetup">
-    <p>
+    <p class="intro">
         La salle de bain est LA pièce génératrice de nombreux déchets.
     </p>
     <div class="sdb_atelier lesateliers">
@@ -38,7 +45,7 @@
         <div class="card">
             <p>Coton tige</p>
             <img src="images/flecheorange.png" alt="">
-            <p>Oriculi (cure oreille en bois ou métal 	sculpté)</p>
+            <p>Oriculi (cure oreille en bois ou métal   sculpté)</p>
         </div>
         <div class="card">
             <p>Dentifrice en tube</p>

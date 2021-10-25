@@ -1,6 +1,15 @@
 @include('/componant/header');
-<div class="cuisinecontent pagesetup">
-    <p class="intro_cuisine">Après la salle de bain, c’est généralement 
+<div class="astusection backgroundwhite">
+            <div class="astuces cuisine clickable">
+                <div class="bande ">
+                    <h2>Cuisine</h2>
+                </div>
+            </div>
+        </div>
+<div class="cuisinecontent">
+    <main class="cuisine_content">
+        
+    <p class="intro">Après la salle de bain, c’est généralement 
         dans la cuisine qu’on produit le plus de déchets à la maison.
     </p>
     <div class="cuisine_atelier lesateliers">
@@ -19,6 +28,7 @@
             </li>
         </ul>
     </div>
+    <section class="superflus_cuisine">
     <h3>REFUSER LES EMBALLAGES SUPERFLUS</h3>
     <p>
         Le premier des 5 R de la démarche zéro déchet est 
@@ -34,17 +44,21 @@
         Vous avez peur de demander ? Essayez ! Vous verrez que 
         ce geste simple n'est pas mal vu et apporte beaucoup de satisfaction !
     </p>
-    <div class="faireSescourses">
+    </section>
+    
+    <section class="faireSescourses">
         <h3>FAIRE SES COURSES...</h3>
         <p>Oui, ça demande un peu d'organisation... mais une fois 
         les habitudes prises, c'est un plaisir de voir ces jolis 
         bocaux décorer la cuisine et la poubelle jaune diminuer !
         </p>
+        <section class="boxes_cuisine">
         <div class="boxcuisine">
+            <span>1</span>
             <p>
                 <strong>Faire une liste de courses et s'y tenir</strong> permet d'éviter 
                 les achats compulsifs et de prévoir les contenants nécessaires.
-                    <p>
+                    <p class="apart">
                     Selon l'ADEME (Agence de la transition écologique), 10 millions de tonnes de 
                     nourriture sont jetées chaque année en France, soit 400 € par an 
                     pour une famille de 4 personnes
@@ -52,13 +66,18 @@
             </p>
         </div>
         <div class="boxcuisine">
+        <span>2</span>
+        <p>
         <strong>Planifier vos repas</strong> permet de n'acheter que 
                 ce dont on a besoin (donc économiser) et de ne pas gâcher de nourriture.
-                    <p>Pensez à ranger votre frigo pour optimiser 
+        </p>
+        
+                    <p class="apart">Pensez à ranger votre frigo pour optimiser 
                         la conservation des aliments. Rendez-vous <a target="_blank" href="https://agirpourlatransition.ademe.fr/particuliers/conso/alimentation/chaine-froid-dates-peremption-quil-faut-savoir">ICI</a>
                     </p>      
         </div>
         <div class="boxcuisine">
+        <span>3</span>
             <p>
             <strong>Acheter en vrac et à la coupe</strong>. Pas d'emballages, pas de déchets ! 
                 Ça permet aussi de garder la main sur les quantités 
@@ -70,6 +89,7 @@
             </p>
         </div>
         <div class="boxcuisine">
+        <span>4</span>
         <p>
         Choisir des <strong>produits de saison</strong>, 
                 <strong>locaux</strong> et/ou <strong>labellisés</strong> qui sont souvent moins emballés 
@@ -77,8 +97,12 @@
                 le tissu économique et social local.
         </p>
         </div>
-        <div class="boxcuisine SOS_vracdebase">
-        <h4>S.O.S kit de vrac de base…</h4>
+        </section>
+        </section>
+        <section class="SOS_vracdebase">
+        <img class="absleft coin_defi" src="../images/coingauchebleu.png" alt="">
+                <img class="absright coin_defi" src="../images/coindroitbleu.png" alt="">
+        <h2>S.O.S kit de vrac de base…</h2>
         <ul>
             <li>des sacs à vrac de différentes tailles
             </li>
@@ -88,15 +112,18 @@
             </li>
             <li>bouteilles en verre pour les liquides (huile, vin)
             </li>
-            <li>bocaux (pour stocker les aliments) 	
+            <li>bocaux (pour stocker les aliments)</li>
+                <p class="apart">
                 ...et gardez toujours dans le fond de votre sac/dans le coffre de votre voiture 2-3 sacs 
                 à vrac et/ou cabas roulés, pour éviter d'être pris au dépourvu.
-            </li>
+                </p>
+            
         </ul>
         
-    </div>
-    </div>
+    </section>
+   
     <!-- --------------------------- -->
+    <section class="remplacer_cuisine_content">
     <h3>PAR EXEMPLE, REMPLACER...</h3>
     <div class="remplacer">
         <div class="remplacer_cuisine">
@@ -123,17 +150,20 @@
             </p>
         </div>
     </div>
-    <ul>    
-        <li><strong>… le film alimentaire plastique et l'aluminium</strong> 
+    <section class="bee">
+
+    
+       
+        <p><strong>… le film alimentaire plastique et l'aluminium</strong> 
             par un <a href="https://www.youtube.com/watch?v=397ui3QMu5M">« bee wrap »</a> ou une boîte hermétique. Vous pourrez ainsi 
             emballer vos sandwichs, protéger les fruits et légumes entamés, 
             le beurre, le fromage…        
-        </li>
-        <li>
+        </p>
+        <p>
             … le papier cuisson par une toile par un <strong>papier cuisson lavable</strong> en silicone
-        </li>
-    </ul>
-    <div class="dosette flexrow">
+        </p>
+        </section>
+    <section class="dosette flexrow">
         <div class="dosette_content">
             <p>
              … les dosettes de café par du <strong>café en vrac</strong> (idem pour le <strong>thé</strong>) en 
@@ -145,8 +175,8 @@
             </p>
         </div>
         <img src="images/remplacer_dosette.png" alt="">    
-    </div>
-    <div class="produit_remplacer">
+    </section>
+    <section class="produit_remplacer">
         <div class="content_produit_remplacer flexrow">
             <img src="images/remplacer_produitsprepare.png" alt="">
             <div class="produit_replacer_txt">
@@ -168,11 +198,10 @@
                 </p>
             </div>
         </div>    
-    </div>
-        
-    
-    <!-- -------------------- -->
-    <div class="les_restes">
+    </section>
+    </section>
+   
+    <section class="les_restes">
     <h3>CUISINEZ LES RESTES</h3>
     <p>Les épluchures sont trop souvent jetées à la poubelle. Au mieux, elles sont 
         jetées aux poules. Or, depuis quelques années, on redécouvre leurs vertus : 
@@ -189,46 +218,47 @@
        foodette.fr
         </a>
     </p>
-    </div>
-    <div class="etleau">
+    </section>
+    <section class="etleau">
         <h3>ET L'EAU ?</h3>
         <div class="etleau_content flexrow">
             <img src="images/remplacer_eau.png" alt="">
             <div>
-                <ul>
-                    <li>Remplacez les bouteilles d'eau en plastique par un broc ou une gourde...
-                        <ul>
-                            <li>
+                
+                    <p>Remplacez les bouteilles d'eau en plastique par un broc ou une gourde...
+                        
+                            <p>
+</br>
                                 l'eau du robinet est potable, la mettre un peu au frais permet 
                                 d'atténuer son éventuel goût 
-                            </li>
-                            <li>
+                            </p>
+                            <p>
                                 mais attention à l'impact écologique des gourdes en inox, 
                                 il ne faut pas pour autant les <a href="https://www.franceinter.fr/emissions/la-chronique-environnement/la-chronique-environnement-03-mai-2021">multiplier</a> !
-                            </li>    
-                        </ul> 
-                    </li>
-                    <li>
-                        Pourquoi ne pas utiliser un <a href="https://www.consoglobe.com/economies-reducteurs-eau-robinet-2087-cg/2">réducteur d'eau ?</a>	
-                    </li>  
-                </ul>              
+                            </p>    
+                         
+                    </p>
+                    <p>
+                        Pourquoi ne pas utiliser un <a href="https://www.consoglobe.com/economies-reducteurs-eau-robinet-2087-cg/2">réducteur d'eau ?</a>   
+                    </p>  
+                              
                 <p>Boire de l'eau du robinet plutôt que 
                     de l'eau en bouteille permet de réduire ses déchets de 12 kg par an. 
                     En plus, ça coûte moins cher !
                 </p>   
             </div>
         </div>  
-    </div>
-    <div class="compostage">
+    </section>
+    <section class="compostage">
         <h3>COMPOSTER</h3>
         <div class="flexrow">
             <p>
                 Le compostage permet de réduire son volume d’ordures ménagères de 30 à 50%. 
                 Pas de jardin ? Le lombricomposteur est peut-être <a href="https://planetezerodechet.fr/lombricomposteur-astuces-vermicompostage-lombricompostage/">la solution
                 !</a>
-                </br>
+                </br></br>
                 Vous pouvez aussi lancer l'idée d'un composteur de quartier !
-                </br>
+                </br></br>
                 <a href="https://www.idelux.be/servlet/Repository/idelux-kit-zd-recette-fiche-cuisine.pdf?IDR=53786">Fiche récapitulative</a> réalisée par IDELUX, l'agence de développement économique durable de la province de Luxembourg 
             </p>
             <img src="images/composter.png" alt="">
@@ -240,6 +270,7 @@
         </p>
     </div>  
 </div>
+</main>
 <img class="poubelle center"src="../images/poubellelavie.png" alt="">
 @include('/componant/footer');
 </body>
