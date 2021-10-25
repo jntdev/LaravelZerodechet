@@ -1,5 +1,5 @@
-@import url("https://fonts.googleapis.com/css2?family=Raleway:wght@300;500;600;700&display=swap");
-@import url("https://fonts.googleapis.com/css2?family=Shadows+Into+Light+Two&display=swap");
+@import url(https://fonts.googleapis.com/css2?family=Raleway:wght@300;500;600;700&display=swap);
+@import url(https://fonts.googleapis.com/css2?family=Shadows+Into+Light+Two&display=swap);
 :root {
   --maincolor: #002a39;
   --primfontfamily: "Raleway", sans-serif;
@@ -188,7 +188,7 @@ body {
   font-weight: var(--primeweight);
   background-color: rgba(210, 105, 30, 0);
   display: flex;
-  background-image: url("../images/header.png");
+  background-image: url(/images/header.png?201fff74c46153bcd989c0064c8e0ebb);
   background-repeat: no-repeat;
   height: 290px;
   width: 100%;
@@ -521,6 +521,12 @@ input:checked ~ nav > ul > li a {
   background-color: black;
   margin: auto 0;
 }
+.inscription_container input::-moz-placeholder {
+  color: white;
+}
+.inscription_container input:-ms-input-placeholder {
+  color: white;
+}
 .inscription_container input::placeholder {
   color: white;
 }
@@ -812,7 +818,7 @@ input:checked ~ nav > ul > li a {
 }
 
 .cinqr {
-  background-image: url(../images/cinqrzerodechet.png);
+  background-image: url(/images/cinqrzerodechet.png?7e609a102a064ff4497914ff7a6fd811);
   background-size: contain;
   background-position: center;
   background-repeat: no-repeat;
@@ -822,7 +828,7 @@ input:checked ~ nav > ul > li a {
   width: 50%;
   height: 100%;
   background-color: rgba(128, 128, 128, 0);
-  background-image: url(../images/cartebrehat.png);
+  background-image: url(/images/cartebrehat.png?681f36cc4bc67dc66c5e677dfa6597eb);
   background-repeat: no-repeat;
   background-size: contain;
   background-position: center;
@@ -845,7 +851,7 @@ input:checked ~ nav > ul > li a {
 }
 
 .maison {
-  background-image: url(../images/maison.jpeg);
+  background-image: url(/images/maison.jpeg?bc2fe0fda31b13c1f40e2dbf9b555fe5);
 }
 
 .bande {
@@ -866,11 +872,11 @@ input:checked ~ nav > ul > li a {
 }
 
 .menage {
-  background-image: url(../images/produitmenagers.jpeg);
+  background-image: url(/images/produitmenagers.jpeg?2d46ebb7231b6e1e0f3703a6437f3980);
 }
 
 .plusloin {
-  background-image: url(../images/bibliotheque.png);
+  background-image: url(/images/bibliotheque.png?6e0504f29af4a727a1f6b2c9145bbe40);
 }
 
 .textcapitain {
@@ -1174,7 +1180,7 @@ input:checked ~ nav > ul > li a {
 }
 .topofpage_produits .atelier_en_lien ul {
   color: white;
-  list-style-image: url("../images/flecherouge.png");
+  list-style-image: url(/images/flecherouge.png?a7f366e13b7b95254fa8ff3ad03ed076);
 }
 .topofpage_produits .atelier_en_lien h3 {
   color: white;
@@ -1331,20 +1337,20 @@ input:checked ~ nav > ul > li a {
 }
 
 .cuisine {
-  background-image: url(../images/cuisine.jpg);
+  background-image: url(/images/cuisine.jpg?744c75d4e2a7ead635d03024753389c1);
 }
 
 .salledebain {
-  background-image: url(../images/salledebain.jpg);
+  background-image: url(/images/salledebain.jpg?f46faab9769ec543480c76d00e3fba6c);
 }
 
 .bureau {
-  background-image: url(../images/bureau.jpg);
+  background-image: url(/images/bureau.jpg?7d60499901a32101c4ff837dadffe79a);
   background-position: center bottom;
 }
 
 .chambreenfant {
-  background-image: url(../images/chambreenfant.jpg);
+  background-image: url(/images/chambreenfant.jpg?a502569ff26ffef248d4bf4e86a9c777);
 }
 
 .clickable {
@@ -1419,7 +1425,7 @@ input:checked ~ nav > ul > li a {
   background-color: var(--primebackground);
 }
 .cuisine_atelier ul {
-  list-style-image: url("../images/flecherouge.png");
+  list-style-image: url(/images/flecherouge.png?a7f366e13b7b95254fa8ff3ad03ed076);
 }
 .cuisine_atelier li {
   color: white;
@@ -1572,7 +1578,7 @@ input:checked ~ nav > ul > li a {
   background-color: var(--secondbackground);
 }
 .sdb_atelier ul {
-  list-style-image: url("../images/flecherouge.png");
+  list-style-image: url(/images/flecherouge.png?a7f366e13b7b95254fa8ff3ad03ed076);
 }
 
 .container_sdb {
@@ -1664,7 +1670,7 @@ input:checked ~ nav > ul > li a {
   border-radius: 80px;
 }
 .atelier_en_lien ul {
-  list-style-image: url("../images/flecherouge.png");
+  list-style-image: url(/images/flecherouge.png?a7f366e13b7b95254fa8ff3ad03ed076);
 }
 .atelier_en_lien h3 {
   padding: 0;
@@ -1820,7 +1826,23 @@ label {
   font-family: var(--primfontfamily);
 }
 
+input::-moz-placeholder {
+  font-family: var(--primfontfamily);
+}
+
+input:-ms-input-placeholder {
+  font-family: var(--primfontfamily);
+}
+
 input::placeholder {
+  font-family: var(--primfontfamily);
+}
+
+textarea::-moz-placeholder {
+  font-family: var(--primfontfamily);
+}
+
+textarea:-ms-input-placeholder {
   font-family: var(--primfontfamily);
 }
 
@@ -2458,5 +2480,3 @@ textarea::placeholder {
   width: 100%;
   height: 100%;
 }
-
-/*# sourceMappingURL=app.css.map */

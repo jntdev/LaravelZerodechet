@@ -9,4 +9,4 @@
     <img onclick="window.open('https://www.bretagne-vivante.org/')" class="biocoop clickable"src="images/bretagne_vivante.png" alt="">
 </div>
 
-<script src="../scripts/script.js"></script>
+<script src="js/script.js"></script>

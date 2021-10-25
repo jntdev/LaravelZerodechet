@@ -1,4 +1,4 @@
-//dart-sass/sass resources/sass/app.scss resources/css/style.css --watch
+//dart-sass/sass resources/sass/app.scss public/css/app.css --watch
 @import url("https://fonts.googleapis.com/css2?family=Raleway:wght@300;500;600;700&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=Shadows+Into+Light+Two&display=swap");
 :root {
@@ -215,7 +215,7 @@ body {
     font-weight: var(--primeweight);
     background-color: rgba(210, 105, 30, 0);
     display: flex;
-    background-image: url("../images/header.png");
+    background-image: url("../../public/images/header.png");
     background-repeat: no-repeat;
     height: 290px;
     width: 100%;
@@ -890,7 +890,7 @@ input:checked ~ nav {
 }
 
 .cinqr {
-    background-image: url(../images/cinqrzerodechet.png);
+    background-image: url(../../public/images/cinqrzerodechet.png);
     background-size: contain;
     background-position: center;
     background-repeat: no-repeat;
@@ -900,7 +900,7 @@ input:checked ~ nav {
     width: 50%;
     height: 100%;
     background-color: rgba(128, 128, 128, 0);
-    background-image: url(../images/cartebrehat.png);
+    background-image: url(../../public/images/cartebrehat.png);
     background-repeat: no-repeat;
     background-size: contain;
     background-position: center;
@@ -923,7 +923,7 @@ input:checked ~ nav {
 }
 
 .maison {
-    background-image: url(../images/maison.jpeg);
+    background-image: url(../../public/images/maison.jpeg);
 }
 
 .bande {
@@ -946,11 +946,11 @@ input:checked ~ nav {
 }
 
 .menage {
-    background-image: url(../images/produitmenagers.jpeg);
+    background-image: url(../../public/images/produitmenagers.jpeg);
 }
 
 .plusloin {
-    background-image: url(../images/bibliotheque.png);
+    background-image: url(../../public/images/bibliotheque.png);
 }
 
 //le defi
@@ -1269,7 +1269,7 @@ input:checked ~ nav {
     .atelier_en_lien {
         ul {
             color: white;
-            list-style-image: url("../images/flecherouge.png");
+            list-style-image: url("../../public/images/flecherouge.png");
         }
         background-color: var(--fourthbackground);
         padding: 7% 10%;
@@ -1443,20 +1443,20 @@ input:checked ~ nav {
 }
 
 .cuisine {
-    background-image: url(../images/cuisine.jpg);
+    background-image: url(../../public/images/cuisine.jpg);
 }
 
 .salledebain {
-    background-image: url(../images/salledebain.jpg);
+    background-image: url(../../public/images/salledebain.jpg);
 }
 
 .bureau {
-    background-image: url(../images/bureau.jpg);
+    background-image: url(../../public/images/bureau.jpg);
     background-position: center bottom;
 }
 
 .chambreenfant {
-    background-image: url(../images/chambreenfant.jpg);
+    background-image: url(../../public/images/chambreenfant.jpg);
 }
 
 .clickable {
@@ -1534,7 +1534,7 @@ input:checked ~ nav {
 
 .cuisine_atelier {
     ul {
-        list-style-image: url("../images/flecherouge.png");
+        list-style-image: url("../../public/images/flecherouge.png");
     }
     li {
         color: white;
@@ -1698,7 +1698,7 @@ input:checked ~ nav {
 
 .sdb_atelier {
     ul {
-        list-style-image: url("../images/flecherouge.png");
+        list-style-image: url("../../public/images/flecherouge.png");
     }
     background-color: var(--secondbackground);
 }
@@ -1790,7 +1790,7 @@ input:checked ~ nav {
 
 .atelier_en_lien {
     ul {
-        list-style-image: url("../images/flecherouge.png");
+        list-style-image: url("../../public/images/flecherouge.png");
     }
     background-color: var(--fourthbackground);
     padding: 7% 10%;
