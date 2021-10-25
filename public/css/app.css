@@ -13,13 +13,13 @@
   --encartbackground: #1d485180;
   --thirdbackground: #ffb338;
   --secondbackground: #fd8a47;
-  --fifthbackground: #d5ad8f;
+  --fifthbackground: #c99365;
   --fifthbackground2: #ffd9bc;
   --fifthbackground3: #d3c2b4;
   --primebackground: #389dd8;
   --primebackground2: #55afe2;
   --primebackground3: #54bbf7;
-  --fourthbackground: #b1d8bb;
+  --fourthbackground: #88c4a1;
   --fourthbackground2: #e9f4ec;
   --fourthbackground3: #edfcda;
 }
@@ -146,7 +146,7 @@
 
 .coin_defi {
   width: 10%;
-  height: 50%;
+  height: 30%;
 }
 
 .absright {
@@ -159,6 +159,10 @@
   position: absolute;
   left: 0;
   top: 0;
+}
+
+.width_90 {
+  width: 90%;
 }
 
 .flexrow {
@@ -223,7 +227,7 @@ body {
   visibility: hidden;
 }
 
-label {
+#burgerlabel {
   visibility: hidden;
   position: absolute;
   top: 80px;
@@ -232,7 +236,7 @@ label {
   width: 30px;
   z-index: 5;
 }
-label span {
+#burgerlabel span {
   position: absolute;
   width: 100%;
   height: 2px;
@@ -243,27 +247,27 @@ label span {
   background: white;
   transition: 0.5s;
 }
-label span:first-child {
+#burgerlabel span:first-child {
   top: 4px;
 }
-label span:last-child {
+#burgerlabel span:last-child {
   top: 12px;
 }
 
-label:hover {
+#burgerlabel:hover {
   cursor: pointer;
 }
 
-input:checked + label span {
+input:checked + #burgerlabel span {
   background: white;
   opacity: 0;
   top: 50%;
 }
-input:checked + label span:first-child {
+input:checked + #burgerlabel span:first-child {
   opacity: 1;
   transform: rotate(405deg);
 }
-input:checked + label span:last-child {
+input:checked + #burgerlabel span:last-child {
   opacity: 1;
   transform: rotate(-405deg);
 }
@@ -1361,8 +1365,46 @@ input:checked ~ nav > ul > li a {
   color: var(--maincolor);
 }
 
+.cuisine_content {
+  color: var(--maincolor);
+  display: flex;
+  flex-direction: column;
+  font-family: var(--primfontfamily);
+  align-items: center;
+  justify-content: center;
+}
+.cuisine_content .apart {
+  text-align: end;
+  font-size: 18px;
+}
+.cuisine_content .intro {
+  padding: 0 5%;
+  align-self: center;
+  margin-bottom: 50px;
+}
+.cuisine_content ul {
+  list-style: none;
+}
+.cuisine_content h3 {
+  font-size: 35px;
+  align-self: flex-start;
+}
+.cuisine_content p {
+  font-size: 20px;
+  color: var(--maincolor);
+}
+.cuisine_content a {
+  font-size: var(--secondaryfontsize);
+  color: black;
+  text-decoration: none;
+}
+
+.superflus_cuisine {
+  padding: 5%;
+}
+
 .cuisinecontent {
-  padding: 3% 5%;
+  padding: 3% 0;
 }
 
 .cuisine_atelier {
@@ -1381,34 +1423,76 @@ input:checked ~ nav > ul > li a {
 }
 
 .faireSescourses {
-  border-radius: 15px;
+  color: white;
   background-color: var(--primebackground);
   display: flex;
-  flex-direction: row;
-  justify-content: space-around;
-  flex-wrap: wrap;
-  height: auto;
+  flex-direction: column;
   padding: 3%;
+  margin-bottom: 100px;
+}
+.faireSescourses p {
+  color: white;
 }
 
-.boxcuisine {
+.boxes_cuisine {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: space-around;
+}
+.boxes_cuisine .boxcuisine {
+  display: flex;
+  flex-direction: column;
+  position: relative;
   border-radius: 15px;
   width: 35%;
   background-color: white;
   margin-top: 50px;
   padding: 3%;
   min-width: 250px;
+  justify-content: center;
+}
+.boxes_cuisine .boxcuisine span {
+  position: absolute;
+  color: var(--maincolor);
+  font-size: 35px;
+  top: 10px;
+  left: 20px;
+}
+.boxes_cuisine .boxcuisine p {
+  color: var(--maincolor);
 }
 
 .SOS_vracdebase {
+  position: relative;
   width: 60%;
   min-width: 300px;
+  padding: 5%;
+}
+.SOS_vracdebase h2 {
+  text-align: center;
+  font-size: 30px;
 }
 .SOS_vracdebase ul {
-  padding-left: 10px;
+  padding: 2%;
 }
 .SOS_vracdebase li {
+  font-size: 20px;
   margin-bottom: 20px;
+}
+
+.remplacer_cuisine_content {
+  padding: 5%;
+}
+
+.remplacer,
+.bee,
+.dosette,
+.produit_remplacer {
+  padding: 5%;
+  border: solid 1px var(--maincolor);
+  border-radius: 80px;
+  margin: 30px 0;
 }
 
 .remplacer {
@@ -1425,10 +1509,22 @@ input:checked ~ nav > ul > li a {
   width: 70%;
 }
 
-.les_restes {
-  padding: 3%;
+.les_restes,
+.compostage {
+  padding: 5%;
   background-color: var(--primebackground);
-  border-radius: 15px;
+  color: white;
+}
+.les_restes p,
+.compostage p {
+  color: white;
+}
+
+.etleau {
+  padding: 5%;
+}
+.etleau a {
+  color: var(--primebackground);
 }
 
 .lesrestes_link {
@@ -1447,27 +1543,25 @@ input:checked ~ nav > ul > li a {
   align-items: center;
 }
 
-.compostage {
-  border-radius: 15px;
-  background-color: var(--primebackground);
-  padding: 3%;
-}
-.compostage div p {
-  padding: 0 2%;
-}
-
 .salledebaincontent {
   padding: 3% 5%;
+}
+.salledebaincontent p {
+  font-size: 25px;
 }
 
 .sdb_atelier {
   background-color: var(--secondbackground);
 }
 
+.container_sdb {
+  position: relative;
+}
+
 .section_title_sdb {
+  display: flex;
   margin: 60px auto;
   height: 160px;
-  position: relative;
   align-items: center;
   justify-content: center;
 }
@@ -1475,7 +1569,9 @@ input:checked ~ nav > ul > li a {
   z-index: 3;
 }
 .section_title_sdb img {
-  z-index: 2;
+  z-index: 0;
+  left: 500px;
+  top: -4%;
   position: absolute;
   width: 25%;
 }
@@ -1501,6 +1597,343 @@ input:checked ~ nav > ul > li a {
   background-color: var(--secondbackground);
   border-radius: 30px;
   padding: 3%;
+}
+
+.les_enfants {
+  color: var(--maincolor);
+  display: flex;
+  flex-direction: column;
+  font-family: var(--primfontfamily);
+  align-items: center;
+  justify-content: center;
+}
+.les_enfants .intro {
+  padding: 0 5%;
+  align-self: center;
+  margin-bottom: 5%;
+}
+.les_enfants ul {
+  list-style: none;
+}
+.les_enfants h3 {
+  font-size: 35px;
+  align-self: flex-start;
+}
+.les_enfants p {
+  font-size: 20px;
+}
+.les_enfants a {
+  font-size: var(--secondaryfontsize);
+  color: var(--primebackground);
+  text-decoration: none;
+}
+
+.ressources_info {
+  width: 80%;
+  color: white;
+  display: flex;
+  flex-direction: column;
+  padding: 0 10%;
+  align-items: center;
+}
+
+.atelier_en_lien {
+  background-color: var(--fourthbackground);
+  padding: 7% 10%;
+  border-radius: 80px;
+}
+.atelier_en_lien h3 {
+  padding: 0;
+  margin-top: 0;
+  text-align: center;
+}
+
+.enfants_lesfetes {
+  width: 80%;
+}
+
+.boxes_lesfetes {
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: space-around;
+}
+.boxes_lesfetes a {
+  text-decoration: none;
+}
+
+.box_lesfetes {
+  transition: 0.5s;
+  color: white;
+  background-color: var(--fourthbackground);
+  padding: 60px;
+  min-width: 100px;
+  border-radius: 30px;
+  text-align: center;
+}
+
+.box_lesfetes:hover {
+  transform: rotate(10deg);
+  transition: 0.5s;
+}
+
+.enfants_manuelles {
+  margin-top: 50px;
+  color: white;
+  padding: 3%;
+}
+.enfants_manuelles a {
+  text-decoration: none;
+  color: var(--maincolor);
+}
+.enfants_manuelles p {
+  padding: 0 5%;
+}
+
+.lebureau_content {
+  color: var(--maincolor);
+  display: flex;
+  flex-direction: column;
+  font-family: var(--primfontfamily);
+  align-items: center;
+  justify-content: center;
+}
+.lebureau_content .apart {
+  text-align: end;
+  font-size: 18px;
+}
+.lebureau_content .apart a {
+  color: black;
+}
+.lebureau_content .intro {
+  padding: 0 5%;
+  align-self: center;
+  margin-bottom: 50px;
+}
+.lebureau_content ul {
+  list-style: none;
+}
+.lebureau_content h3 {
+  font-size: 35px;
+  align-self: flex-start;
+}
+.lebureau_content p {
+  font-size: 20px;
+  color: var(--maincolor);
+}
+.lebureau_content a {
+  font-size: var(--secondaryfontsize);
+  color: black;
+  text-decoration: none;
+}
+.lebureau_content .atelier_en_lien {
+  width: 60%;
+  background-color: var(--fifthbackground);
+  padding: 7% 10%;
+  border-radius: 80px;
+}
+.lebureau_content .atelier_en_lien h3 {
+  color: white;
+  padding: 0;
+  margin-top: 0;
+  text-align: center;
+}
+.lebureau_content .atelier_en_lien p {
+  color: white;
+}
+.lebureau_content .attention_bureau {
+  padding: 5%;
+}
+.lebureau_content .attention_bureau p {
+  color: var(--maincolor);
+  margin: 5% 0;
+}
+.lebureau_content .attention_bureau p a {
+  color: var(--primebackground);
+}
+.lebureau_content .reflex_bureau {
+  color: white;
+  background-color: var(--fifthbackground);
+  padding: 5%;
+}
+.lebureau_content .reflex_bureau p {
+  color: white;
+  margin: 5% 0;
+}
+.lebureau_content .reflex_bureau a {
+  color: black;
+}
+.lebureau_content .reflex_list_bureau {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.lebureau_content .tuto_bureau {
+  display: flex;
+  flex-direction: row;
+}
+.lebureau_content .stop_pub {
+  padding: 5%;
+}
+.lebureau_content .stop_pub a {
+  color: var(--primebackground);
+}
+.lebureau_content .que_faire_bureau {
+  color: white;
+  padding: 5%;
+  width: 90%;
+  background-color: var(--fifthbackground);
+}
+.lebureau_content .que_faire_bureau p {
+  color: white;
+}
+.lebureau_content .que_faire_bureau a {
+  color: black;
+}
+
+label {
+  font-family: var(--primfontfamily);
+}
+
+input::placeholder {
+  font-family: var(--primfontfamily);
+}
+
+textarea::placeholder {
+  font-family: var(--primfontfamily);
+}
+
+.background_event_create {
+  background-color: white;
+  border-radius: 25px;
+  position: relative;
+  padding-bottom: 2%;
+}
+.background_event_create i {
+  position: absolute;
+  top: 30px;
+  right: 30px;
+}
+.background_event_create button {
+  display: block;
+  margin: 30px auto;
+  background-color: var(--primebackground);
+  color: white;
+  height: 40px;
+  border-radius: 15px;
+  padding: 0 30px;
+  border: none;
+}
+
+.event_create {
+  padding: 5%;
+  background-color: var(--primebackground);
+  width: 70%;
+  margin: 0 auto;
+  border-radius: 25px;
+  box-shadow: 3px -1px 15px -2px rgba(0, 0, 0, 0.1);
+}
+
+.event_create_container {
+  border-radius: 25px;
+  background-color: white;
+}
+.event_create_container button {
+  background-color: var(--primebackground);
+  border-radius: 25px;
+  color: black;
+}
+
+.topsection_animation_creation {
+  padding: 5%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  flex-grow: 3;
+}
+.topsection_animation_creation input {
+  height: 60px;
+  border-radius: 15px;
+  border: solid 1px grey;
+}
+
+.illustration_event {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.illustration_event img {
+  border-radius: 25px;
+  width: 80%;
+  border: solid 1px grey;
+}
+
+.info_topsection_animation_creation {
+  display: flex;
+  flex-direction: row;
+  margin-bottom: 20px;
+}
+.info_topsection_animation_creation .input_titre {
+  width: 60%;
+}
+
+.description_event {
+  width: 80%;
+  margin: 0 auto;
+  height: 300px;
+  display: flex;
+  flex-direction: column;
+}
+.description_event textarea {
+  height: 300px;
+  border-radius: 25px;
+  padding: 10px;
+}
+
+.radio_event_create {
+  margin: 30px;
+  padding: 0 5%;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-around;
+}
+
+.listmateriel {
+  display: flex;
+  justify-content: center;
+}
+
+#listmateriel {
+  padding: 2%;
+  width: 70%;
+  border-radius: 25px;
+  height: 150px;
+}
+
+.events {
+  width: 80%;
+  background-color: #d3c2b4;
+  border-radius: 25px;
+  margin: 0 auto;
+}
+
+.event_list {
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+}
+
+.box_event {
+  margin: 50px;
+  width: 25%;
+  height: 300px;
+  display: flex;
+  flex-direction: column;
+  background-color: #7586a0;
 }
 
 @media (max-width: 1700px) {
@@ -1628,7 +2061,7 @@ input:checked ~ nav > ul > li a {
     visibility: hidden;
   }
 
-  label {
+  #burgerlabel {
     visibility: visible;
   }
 
@@ -1767,7 +2200,7 @@ input:checked ~ nav > ul > li a {
     justify-content: flex-start;
   }
 
-  label {
+  #burgerlabel {
     right: 70px;
   }
 
@@ -1814,7 +2247,7 @@ input:checked ~ nav > ul > li a {
     margin: 0;
   }
 
-  label {
+  #burgerlabel {
     right: 100px;
   }
 
@@ -1860,7 +2293,7 @@ input:checked ~ nav > ul > li a {
     margin-top: -100px;
   }
 
-  label {
+  #burgerlabel {
     top: 140px;
     right: 120px;
   }
@@ -1918,7 +2351,7 @@ input:checked ~ nav > ul > li a {
     font-size: 15px;
   }
 
-  label {
+  #burgerlabel {
     right: 130px;
   }
 }

@@ -18,6 +18,13 @@ $( document ).ready(function() {
 //titre de page 
   var nom = window.location.pathname;
   console.log(nom);
+
+  if(nom == "/event_create"){
+    $('.title').html("<h2>Créez votre animation</h2>");
+  };
+  if(nom == "/tableaudebord"){
+    $('.title').html("<h2>Tableau de bord</h2>");
+  };
   if(nom == "/actualites"){
     $('.title').html("<h2>Actualités</h2>");
   };

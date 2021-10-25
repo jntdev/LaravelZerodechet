@@ -23,14 +23,17 @@
     --encartbackground: #1d485180;
     --thirdbackground: #ffb338;
     --secondbackground: #fd8a47;
-    --fifthbackground: #d5ad8f;
+
+    --fifthbackground: #c99365;
+    //--fifthbackground: #d5ad8f;
     --fifthbackground2: #ffd9bc;
     --fifthbackground3: #d3c2b4;
     --primebackground: #389dd8;
     --primebackground2: #55afe2;
     --primebackground3: #54bbf7;
     //0879ad
-    --fourthbackground: #b1d8bb;
+    //--fourthbackground: #b1d8bb;
+    --fourthbackground: #88c4a1;
     --fourthbackground2: #e9f4ec;
     --fourthbackground3: #edfcda;
     //second echantillons couleur
@@ -170,7 +173,7 @@
 
 .coin_defi {
     width: 10%;
-    height: 50%;
+    height: 30%;
 }
 
 .absright {
@@ -183,6 +186,10 @@
     position: absolute;
     left: 0;
     top: 0;
+}
+
+.width_90 {
+    width: 90%;
 }
 
 .flexrow {
@@ -247,7 +254,7 @@ body {
 #burger {
     visibility: hidden;
 }
-label {
+#burgerlabel {
     visibility: hidden;
     position: absolute;
     top: 80px;
@@ -273,10 +280,10 @@ label {
         top: 12px;
     }
 }
-label:hover {
+#burgerlabel:hover {
     cursor: pointer;
 }
-input:checked + label {
+input:checked + #burgerlabel {
     span {
         background: rgb(255, 255, 255);
         opacity: 0;
@@ -1472,8 +1479,47 @@ input:checked ~ nav {
 
 // cuisine
 
+.cuisine_content {
+    color: var(--maincolor);
+    display: flex;
+    flex-direction: column;
+    font-family: var(--primfontfamily);
+    align-items: center;
+    justify-content: center;
+    .apart {
+        text-align: end;
+        font-size: 18px;
+    }
+    .intro {
+        padding: 0 5%;
+        align-self: center;
+        margin-bottom: 50px;
+    }
+    ul {
+        list-style: none;
+    }
+
+    h3 {
+        font-size: 35px;
+        align-self: flex-start;
+    }
+    p {
+        font-size: 20px;
+        color: var(--maincolor);
+    }
+    a {
+        font-size: var(--secondaryfontsize);
+        color: black;
+        text-decoration: none;
+    }
+}
+
+.superflus_cuisine {
+    padding: 5%;
+}
+
 .cuisinecontent {
-    padding: 3% 5%;
+    padding: 3% 0;
 }
 
 .cuisine_atelier {
@@ -1491,34 +1537,76 @@ input:checked ~ nav {
 }
 
 .faireSescourses {
-    border-radius: 15px;
+    color: white;
     background-color: var(--primebackground);
     display: flex;
-    flex-direction: row;
-    justify-content: space-around;
-    flex-wrap: wrap;
-    height: auto;
+    flex-direction: column;
     padding: 3%;
+    margin-bottom: 100px;
+    p {
+        color: white;
+    }
 }
 
-.boxcuisine {
-    border-radius: 15px;
-    width: 35%;
-    background-color: white;
-    margin-top: 50px;
-    padding: 3%;
-    min-width: 250px;
+.boxes_cuisine {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-around;
+
+    .boxcuisine {
+        display: flex;
+        flex-direction: column;
+        position: relative;
+        border-radius: 15px;
+        width: 35%;
+        background-color: white;
+        margin-top: 50px;
+        padding: 3%;
+        min-width: 250px;
+        justify-content: center;
+        span {
+            position: absolute;
+            color: var(--maincolor);
+            font-size: 35px;
+            top: 10px;
+            left: 20px;
+        }
+        p {
+            color: var(--maincolor);
+        }
+    }
 }
 
 .SOS_vracdebase {
+    position: relative;
     width: 60%;
     min-width: 300px;
+    padding: 5%;
+
+    h2 {
+        text-align: center;
+        font-size: 30px;
+    }
     ul {
-        padding-left: 10px;
+        padding: 2%;
     }
     li {
+        font-size: 20px;
         margin-bottom: 20px;
     }
+}
+.remplacer_cuisine_content {
+    padding: 5%;
+}
+.remplacer,
+.bee,
+.dosette,
+.produit_remplacer {
+    padding: 5%;
+    border: solid 1px var(--maincolor);
+    border-radius: 80px;
+    margin: 30px 0;
 }
 
 .remplacer {
@@ -1535,10 +1623,21 @@ input:checked ~ nav {
     }
 }
 
-.les_restes {
-    padding: 3%;
+.les_restes,
+.compostage {
+    padding: 5%;
     background-color: var(--primebackground);
-    border-radius: 15px;
+    color: white;
+    p {
+        color: white;
+    }
+}
+
+.etleau {
+    padding: 5%;
+    a {
+        color: var(--primebackground);
+    }
 }
 
 .lesrestes_link {
@@ -1557,40 +1656,47 @@ input:checked ~ nav {
     align-items: center;
 }
 
-.compostage {
-    border-radius: 15px;
-    background-color: var(--primebackground);
-    padding: 3%;
-    div {
-        p {
-            padding: 0 2%;
-        }
-    }
-}
+// .compostage {
+//     border-radius: 15px;
+//     background-color: var(--primebackground);
+//     padding: 3%;
+//     div {
+//         p {
+//             padding: 0 2%;
+//         }
+//     }
+// }
 
 //salle de bain
 
 .salledebaincontent {
     padding: 3% 5%;
+    p {
+        font-size: 25px;
+    }
 }
 
 .sdb_atelier {
     background-color: var(--secondbackground);
 }
 
+.container_sdb {
+    position: relative;
+}
+
 .section_title_sdb {
+    display: flex;
     margin: 60px auto;
     height: 160px;
-    position: relative;
     align-items: center;
     justify-content: center;
     h3 {
         z-index: 3;
     }
     img {
-        z-index: 2;
+        z-index: 0;
         left: 500px;
-        top: 50%;
+        top: -4%;
         position: absolute;
         width: 25%;
     }
@@ -1617,6 +1723,344 @@ input:checked ~ nav {
     background-color: var(--secondbackground);
     border-radius: 30px;
     padding: 3%;
+}
+
+//les enfants
+
+.les_enfants {
+    color: var(--maincolor);
+    display: flex;
+    flex-direction: column;
+    font-family: var(--primfontfamily);
+    align-items: center;
+    justify-content: center;
+    .intro {
+        padding: 0 5%;
+        align-self: center;
+        margin-bottom: 5%;
+    }
+    ul {
+        list-style: none;
+    }
+
+    h3 {
+        font-size: 35px;
+        align-self: flex-start;
+    }
+    p {
+        font-size: 20px;
+    }
+    a {
+        font-size: var(--secondaryfontsize);
+        color: var(--primebackground);
+        text-decoration: none;
+    }
+}
+.ressources_info {
+    width: 80%;
+    color: white;
+    display: flex;
+    flex-direction: column;
+    padding: 0 10%;
+    align-items: center;
+}
+
+.atelier_en_lien {
+    background-color: var(--fourthbackground);
+    padding: 7% 10%;
+    border-radius: 80px;
+
+    h3 {
+        padding: 0;
+        margin-top: 0;
+        text-align: center;
+    }
+}
+.enfants_lesfetes {
+    width: 80%;
+}
+.boxes_lesfetes {
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    a {
+        text-decoration: none;
+    }
+}
+
+.box_lesfetes {
+    transition: 0.5s;
+    color: white;
+    background-color: var(--fourthbackground);
+    padding: 60px;
+    min-width: 100px;
+    border-radius: 30px;
+    text-align: center;
+}
+
+.box_lesfetes:hover {
+    transform: rotate(10deg);
+    transition: 0.5s;
+}
+
+.enfants_manuelles {
+    margin-top: 50px;
+    color: white;
+    padding: 3%;
+    a {
+        text-decoration: none;
+        color: var(--maincolor);
+    }
+    p {
+        padding: 0 5%;
+    }
+}
+
+//le bureau
+
+.lebureau_content {
+    color: var(--maincolor);
+    display: flex;
+    flex-direction: column;
+    font-family: var(--primfontfamily);
+    align-items: center;
+    justify-content: center;
+    .apart {
+        text-align: end;
+        font-size: 18px;
+        a {
+            color: black;
+        }
+    }
+    .intro {
+        padding: 0 5%;
+        align-self: center;
+        margin-bottom: 50px;
+    }
+    ul {
+        list-style: none;
+    }
+
+    h3 {
+        font-size: 35px;
+        align-self: flex-start;
+    }
+    p {
+        font-size: 20px;
+        color: var(--maincolor);
+    }
+    a {
+        font-size: var(--secondaryfontsize);
+        color: black;
+        text-decoration: none;
+    }
+    .atelier_en_lien {
+        width: 60%;
+        background-color: var(--fifthbackground);
+        padding: 7% 10%;
+        border-radius: 80px;
+
+        h3 {
+            color: white;
+            padding: 0;
+            margin-top: 0;
+            text-align: center;
+        }
+        p {
+            color: white;
+        }
+    }
+    .attention_bureau {
+        padding: 5%;
+        p {
+            color: var(--maincolor);
+            margin: 5% 0;
+            a {
+                color: var(--primebackground);
+            }
+        }
+    }
+    .reflex_bureau {
+        color: white;
+        background-color: var(--fifthbackground);
+        padding: 5%;
+        p {
+            color: white;
+            margin: 5% 0;
+        }
+        a {
+            color: black;
+        }
+    }
+
+    .reflex_list_bureau {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    }
+    .tuto_bureau {
+        display: flex;
+        flex-direction: row;
+    }
+    .stop_pub {
+        padding: 5%;
+        a {
+            color: var(--primebackground);
+        }
+    }
+    .que_faire_bureau {
+        color: white;
+        padding: 5%;
+        width: 90%;
+        background-color: var(--fifthbackground);
+        p {
+            color: white;
+        }
+        a {
+            color: black;
+        }
+    }
+}
+
+// ____________________________backoffice
+
+//__________ event create //
+label {
+    font-family: var(--primfontfamily);
+}
+input::placeholder {
+    font-family: var(--primfontfamily);
+}
+textarea::placeholder {
+    font-family: var(--primfontfamily);
+}
+
+.background_event_create {
+    background-color: white;
+    border-radius: 25px;
+    position: relative;
+    padding-bottom: 2%;
+
+    i {
+        position: absolute;
+        top: 30px;
+        right: 30px;
+    }
+    button {
+        display: block;
+        margin: 30px auto;
+        background-color: var(--primebackground);
+        color: white;
+        height: 40px;
+        border-radius: 15px;
+        padding: 0 30px;
+        border: none;
+    }
+}
+.event_create {
+    padding: 5%;
+    background-color: var(--primebackground);
+    width: 70%;
+    margin: 0 auto;
+    border-radius: 25px;
+    box-shadow: 3px -1px 15px -2px rgba(0, 0, 0, 0.1);
+}
+.event_create_container {
+    border-radius: 25px;
+    background-color: white;
+    button {
+        background-color: var(--primebackground);
+        border-radius: 25px;
+        color: rgb(0, 0, 0);
+    }
+}
+.topsection_animation_creation {
+    padding: 5%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    flex-grow: 3;
+    input {
+        height: 60px;
+        border-radius: 15px;
+        border: solid 1px grey;
+    }
+}
+.illustration_event {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    img {
+        border-radius: 25px;
+        width: 80%;
+        border: solid 1px grey;
+    }
+}
+.info_topsection_animation_creation {
+    display: flex;
+    flex-direction: row;
+    margin-bottom: 20px;
+    .input_titre {
+        width: 60%;
+    }
+}
+
+.description_event {
+    width: 80%;
+    margin: 0 auto;
+    height: 300px;
+    display: flex;
+    flex-direction: column;
+    textarea {
+        height: 300px;
+        border-radius: 25px;
+        padding: 10px;
+    }
+}
+
+.radio_event_create {
+    margin: 30px;
+    padding: 0 5%;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: space-around;
+}
+.listmateriel {
+    display: flex;
+    justify-content: center;
+}
+#listmateriel {
+    padding: 2%;
+    width: 70%;
+    border-radius: 25px;
+    height: 150px;
+}
+//__________ tableau de bord
+
+.events {
+    width: 80%;
+    background-color: #d3c2b4;
+    border-radius: 25px;
+    margin: 0 auto;
+}
+
+.event_list {
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+}
+.box_event {
+    margin: 50px;
+    width: 25%;
+    height: 300px;
+    display: flex;
+    flex-direction: column;
+    background-color: rgb(117, 134, 160);
 }
 
 @media (max-width: 1700px) {
@@ -1743,7 +2187,7 @@ input:checked ~ nav {
     #nav {
         visibility: hidden;
     }
-    label {
+    #burgerlabel {
         visibility: visible;
     }
     .maintitlealter {
@@ -1874,7 +2318,7 @@ input:checked ~ nav {
         align-items: center;
         justify-content: flex-start;
     }
-    label {
+    #burgerlabel {
         right: 70px;
     }
     #pict {
@@ -1914,7 +2358,7 @@ input:checked ~ nav {
     #accueilsetup {
         margin: 0;
     }
-    label {
+    #burgerlabel {
         right: 100px;
     }
     .maintitlealter {
@@ -1953,7 +2397,7 @@ input:checked ~ nav {
     .maintitlealter {
         margin-top: -100px;
     }
-    label {
+    #burgerlabel {
         top: 140px;
         right: 120px;
     }
@@ -2008,7 +2452,7 @@ input:checked ~ nav {
         .title {
             font-size: 15px;
         }
-        label {
+        #burgerlabel {
             right: 130px;
         }
     }

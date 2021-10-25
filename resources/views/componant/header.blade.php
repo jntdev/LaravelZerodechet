@@ -19,7 +19,7 @@
     </div>
     <div class="menu relative">
     <input id="burger" type="checkbox" />
-        <label for="burger">
+        <label id="burgerlabel"for="burger">
             <span></span>
             <span></span>
             <span></span>

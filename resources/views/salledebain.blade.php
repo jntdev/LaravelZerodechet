@@ -1,6 +1,13 @@
 @include('/componant/header');
+<div class="astusection backgroundwhite">
+            <div class="astuces salledebain clickable">
+                <div class="bande ">
+                    <h2>Salle de bain</h2>
+                </div>
+            </div>
+        </div>
 <div class="salledebaincontent pagesetup">
-    <p>
+    <p class="intro">
         La salle de bain est LA pièce génératrice de nombreux déchets.
     </p>
     <div class="sdb_atelier lesateliers">

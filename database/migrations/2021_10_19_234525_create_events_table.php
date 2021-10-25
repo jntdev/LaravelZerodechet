@@ -16,14 +16,15 @@ class CreateEventsTable extends Migration
         Schema::create('events', function (Blueprint $table) {
             $table->id();
             $table->dateTime('date')->default(now());
-            $table->string('location')->default('paimpol');
-            $table->boolean('allow_child')->default(true);
-            $table->boolean('wc')->default(true);
-            $table->boolean('material')->default(true);
+            $table->string('location')->default('');
+            $table->boolean('child')->default(0);
+            $table->boolean('WC')->default(0);
+            $table->boolean('materiel')->default(0);
             $table->decimal('nb_max_user')->default('1');
             $table->time('duration')->default('1');
             $table->string('title')->default('');
             $table->mediumText('description');
+            $table->mediumText('listmateriel');
             $table->decimal('user_id')->default('1');
             $table->timestamp('created_at')->default(now());
             $table->timestamp('updated_at')->default(now());
