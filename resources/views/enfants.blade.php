@@ -31,8 +31,10 @@
     <section class="width_90">
         <h3>LA DEMARCHE ZERO DECHET AVEC LES ENFANTS…</h3>
         <ul>
-            <li>
-                Un certain nombre de réflexes sont récapitulés <a target="_blank" href="https://www.ecoconso.be/sites/default/files/publications/fiche-zd-enfants_0.pdf">ici</a>
+            <li><p>
+            Un certain nombre de réflexes sont récapitulés <a target="_blank" href="https://www.ecoconso.be/sites/default/files/publications/fiche-zd-enfants_0.pdf">ici</a>
+            </p>
+                
                 <p>En fait, ce sont presque les mêmes que pour les adultes...</p>
             </li>
             <li>
@@ -52,7 +54,7 @@
         <div class="boxes_lesfetes">
             <a target="_blank" href="https://solutionzerodechet.fr/le-zero-dechet/les-fetes/paques-zero-dechet/'">
                 <div class="box_lesfetes">
-                    Pâcques
+                    Pâques
                 </div></a>
             <a href="https://www.famillezerodechet.com/archives/2016/10/24/34477953.html/">
                 <div class="box_lesfetes">

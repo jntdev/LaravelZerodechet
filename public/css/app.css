@@ -1465,6 +1465,7 @@ input:checked ~ nav > ul > li a {
   justify-content: space-around;
 }
 .boxes_cuisine .boxcuisine {
+  text-align: justify;
   display: flex;
   flex-direction: column;
   position: relative;
@@ -1474,7 +1475,7 @@ input:checked ~ nav > ul > li a {
   margin-top: 50px;
   padding: 3%;
   min-width: 250px;
-  justify-content: center;
+  justify-content: space-between;
 }
 .boxes_cuisine .boxcuisine span {
   position: absolute;
@@ -1485,6 +1486,18 @@ input:checked ~ nav > ul > li a {
 }
 .boxes_cuisine .boxcuisine p {
   color: var(--maincolor);
+}
+.boxes_cuisine .boxcuisine a {
+  color: var(--primebackground);
+  font-size: var(--sizelink);
+}
+.boxes_cuisine .boxcuisine .apart {
+  text-align: justify;
+  font-weight: 200;
+  margin-bottom: 0;
+}
+.boxes_cuisine .BC_center {
+  justify-content: center;
 }
 
 .SOS_vracdebase {
@@ -1499,10 +1512,14 @@ input:checked ~ nav > ul > li a {
 }
 .SOS_vracdebase ul {
   padding: 2%;
+  list-style-type: disc;
 }
 .SOS_vracdebase li {
   font-size: 20px;
   margin-bottom: 20px;
+}
+.SOS_vracdebase p {
+  font-weight: 200;
 }
 
 .remplacer_cuisine_content {
@@ -1517,6 +1534,13 @@ input:checked ~ nav > ul > li a {
   border: solid 1px var(--maincolor);
   border-radius: 80px;
   margin: 30px 0;
+}
+.remplacer li,
+.bee li,
+.dosette li,
+.produit_remplacer li {
+  font-weight: 300;
+  margin-top: 40px;
 }
 
 .remplacer {
@@ -1573,6 +1597,9 @@ input:checked ~ nav > ul > li a {
 .salledebaincontent p {
   font-size: 25px;
 }
+.salledebaincontent .intro {
+  text-align: center;
+}
 
 .sdb_atelier {
   background-color: var(--secondbackground);
@@ -1624,6 +1651,14 @@ input:checked ~ nav > ul > li a {
   background-color: var(--secondbackground);
   border-radius: 30px;
   padding: 3%;
+}
+.cosmetique h3 {
+  margin: 0;
+}
+.cosmetique .diy {
+  text-align: center;
+  margin-top: 0;
+  margin-bottom: 80px;
 }
 
 .les_enfants {
@@ -1729,6 +1764,19 @@ input:checked ~ nav > ul > li a {
   align-items: center;
   justify-content: center;
 }
+.lebureau_content sup {
+  color: black;
+}
+.lebureau_content .links {
+  padding: 5%;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+.lebureau_content .links p {
+  font-size: 15px;
+  color: var(--primebackground);
+}
 .lebureau_content .apart {
   text-align: end;
   font-size: 18px;
@@ -1776,16 +1824,21 @@ input:checked ~ nav > ul > li a {
   padding: 5%;
 }
 .lebureau_content .attention_bureau p {
+  text-align: justify;
   color: var(--maincolor);
   margin: 5% 0;
 }
 .lebureau_content .attention_bureau p a {
   color: var(--primebackground);
 }
+.lebureau_content .attention_bureau .apart {
+  text-align: end;
+}
 .lebureau_content .reflex_bureau {
   color: white;
   background-color: var(--fifthbackground);
   padding: 5%;
+  text-align: justify;
 }
 .lebureau_content .reflex_bureau p {
   color: white;
@@ -1796,7 +1849,7 @@ input:checked ~ nav > ul > li a {
 }
 .lebureau_content .reflex_list_bureau {
   display: flex;
-  justify-content: space-between;
+  justify-content: space-around;
   align-items: center;
 }
 .lebureau_content .tuto_bureau {

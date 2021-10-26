@@ -78,18 +78,18 @@
             <p>Serviettes lavables, cup menstruelle, culotte menstruelle</p>
         </div>
         <div class="card">
-            <p>Shampoing et gel gel douche flacon plastique</p>
+            <p>Shampoing et gel douche flacon plastique</p>
             <img src="images/flecheorange.png" alt="">
-            <p>Shampoing solide et savon artisanaux (en plus on utilise de plus petites quantités)
+            <p>Shampoing solide et savons artisanaux (en plus on utilise de plus petites quantités)
                 … et une <a href="https://www.idelux.be/servlet/Repository/idelux-kit-zd-recette-filet-savon.pdf?IDR=53798">petite astuce</a> pour les utiliser même quand il n'en reste que des petits bouts
             </p>
         </div>
 
     </section>
     <section class="cosmetique">
-        <h3>DIY* PRODUITS COSMÉTIQUES</h3>
-        <p>* do it yourself / faites-le vous-même</p>
-        <p>De nombreuses <a href="https://www.youtube.com/channel/UCsCWsFM87k4bL62LF80sDhg/videos">recettes</a> disponibles sur le site Côte Waste : 
+        <h3>DIY<sup>*</sup> PRODUITS COSMÉTIQUES</h3>
+        <p class="diy">* do it yourself / faites-le vous-même</p>
+        <p>De nombreuses <a href="https://www.youtube.com/channel/UCsCWsFM87k4bL62LF80sDhg/videos">recettes</a> disponibles sur le site Côte Waste. </br> </br>
 
 
         <a href="https://www.idelux.be/servlet/Repository/idelux-kit-zd-recette-fiche-salle-de-bain.pdf?IDR=53793">Fiche récapitulative</a> réalisée par IDELUX, l'agence de développement économique durable de la province de Luxembourg

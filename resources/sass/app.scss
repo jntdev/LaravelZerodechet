@@ -1,4 +1,4 @@
-//dart-sass/sass resources/sass/app.scss public/css/app.css --watch
+//dart-sass/sass resources/sass/app.scss resources/css/app.css --watch
 @import url("https://fonts.googleapis.com/css2?family=Raleway:wght@300;500;600;700&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=Shadows+Into+Light+Two&display=swap");
 :root {
@@ -1575,6 +1575,7 @@ input:checked ~ nav {
     justify-content: space-around;
 
     .boxcuisine {
+        text-align: justify;
         display: flex;
         flex-direction: column;
         position: relative;
@@ -1584,7 +1585,7 @@ input:checked ~ nav {
         margin-top: 50px;
         padding: 3%;
         min-width: 250px;
-        justify-content: center;
+        justify-content: space-between;
         span {
             position: absolute;
             color: var(--maincolor);
@@ -1595,6 +1596,18 @@ input:checked ~ nav {
         p {
             color: var(--maincolor);
         }
+        a {
+            color: var(--primebackground);
+            font-size: var(--sizelink);
+        }
+        .apart {
+            text-align: justify;
+            font-weight: 200;
+            margin-bottom: 0;
+        }
+    }
+    .BC_center {
+        justify-content: center;
     }
 }
 
@@ -1610,10 +1623,14 @@ input:checked ~ nav {
     }
     ul {
         padding: 2%;
+        list-style-type: disc;
     }
     li {
         font-size: 20px;
         margin-bottom: 20px;
+    }
+    p {
+        font-weight: 200;
     }
 }
 .remplacer_cuisine_content {
@@ -1627,6 +1644,10 @@ input:checked ~ nav {
     border: solid 1px var(--maincolor);
     border-radius: 80px;
     margin: 30px 0;
+    li {
+        font-weight: 300;
+        margin-top: 40px;
+    }
 }
 
 .remplacer {
@@ -1694,6 +1715,9 @@ input:checked ~ nav {
     p {
         font-size: 25px;
     }
+    .intro {
+        text-align: center;
+    }
 }
 
 .sdb_atelier {
@@ -1746,6 +1770,14 @@ input:checked ~ nav {
     background-color: var(--secondbackground);
     border-radius: 30px;
     padding: 3%;
+    h3 {
+        margin: 0;
+    }
+    .diy {
+        text-align: center;
+        margin-top: 0;
+        margin-bottom: 80px;
+    }
 }
 
 //les enfants
@@ -1853,6 +1885,19 @@ input:checked ~ nav {
     font-family: var(--primfontfamily);
     align-items: center;
     justify-content: center;
+    sup {
+        color: black;
+    }
+    .links {
+        padding: 5%;
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+        p {
+            font-size: 15px;
+            color: var(--primebackground);
+        }
+    }
     .apart {
         text-align: end;
         font-size: 18px;
@@ -1901,17 +1946,24 @@ input:checked ~ nav {
     .attention_bureau {
         padding: 5%;
         p {
+            text-align: justify;
             color: var(--maincolor);
             margin: 5% 0;
+
             a {
                 color: var(--primebackground);
             }
+        }
+        .apart {
+            text-align: end;
         }
     }
     .reflex_bureau {
         color: white;
         background-color: var(--fifthbackground);
         padding: 5%;
+        text-align: justify;
+
         p {
             color: white;
             margin: 5% 0;
@@ -1923,7 +1975,7 @@ input:checked ~ nav {
 
     .reflex_list_bureau {
         display: flex;
-        justify-content: space-between;
+        justify-content: space-around;
         align-items: center;
     }
     .tuto_bureau {

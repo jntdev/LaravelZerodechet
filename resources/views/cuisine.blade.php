@@ -58,12 +58,12 @@
             <p>
                 <strong>Faire une liste de courses et s'y tenir</strong> permet d'éviter 
                 les achats compulsifs et de prévoir les contenants nécessaires.
-                    <p class="apart">
+            </p>
+            <p class="apart">
                     Selon l'ADEME (Agence de la transition écologique), 10 millions de tonnes de 
                     nourriture sont jetées chaque année en France, soit 400 € par an 
                     pour une famille de 4 personnes
                     </p> 
-            </p>
         </div>
         <div class="boxcuisine">
         <span>2</span>
@@ -76,19 +76,19 @@
                         la conservation des aliments. Rendez-vous <a target="_blank" href="https://agirpourlatransition.ademe.fr/particuliers/conso/alimentation/chaine-froid-dates-peremption-quil-faut-savoir">ICI</a>
                     </p>      
         </div>
-        <div class="boxcuisine">
+        <div class="boxcuisine BC_center">
         <span>3</span>
             <p>
             <strong>Acheter en vrac et à la coupe</strong>. Pas d'emballages, pas de déchets ! 
                 Ça permet aussi de garder la main sur les quantités 
                 et donc d'éviter le gaspillage. Il suffit d'avoir une 
-                série contenants (voir encart kit de vrac) et une liste de 
+                série de contenants (voir encart kit de vrac) et une liste de 
                 commerçants qui proposent des produits en vrac. Pour avoir quelques 
-                adresses, rendez-vous sur notre carte (lien vers la page) 
+                adresses, rendez-vous sur notre <a target="_blank" href="/cartecommercants">carte</a> 
                 et n'hésitez pas à partager vos bons plans !
             </p>
         </div>
-        <div class="boxcuisine">
+        <div class="boxcuisine BC_center">
         <span>4</span>
         <p>
         Choisir des <strong>produits de saison</strong>, 
@@ -187,11 +187,11 @@
                     de grandes quantités et congeler pour consommer plus tard, quand vous aurez moins 
                     de temps à consacrer à la préparation.
                     <ul>
-                    <li>chocolat en poudre maison : 175 g de chocolat au lait et 75 g de 
+                    <li><u>chocolat en poudre maison</u> : 175 g de chocolat au lait et 75 g de 
                         chocolat noir à mixer avec 20 g de sucre en poudre et 10g de maïzena.
                     </li>
                     <li>
-                    sucre vanillé : mixer à grande vitesse 50 g de sucre en poudre et 2 gousses 
+                    <u>sucre vanillé</u> : mixer à grande vitesse 50 g de sucre en poudre et 2 gousses 
                     de vanille coupées en quatre puis ajouter 250 de sucre en poudre et mélanger.
                     </li>  
                     </ul>
@@ -229,11 +229,11 @@
                         
                             <p>
 </br>
-                                l'eau du robinet est potable, la mettre un peu au frais permet 
-                                d'atténuer son éventuel goût 
+                                L'eau du robinet est potable, la mettre un peu au frais permet 
+                                d'atténuer son éventuel goût.
                             </p>
                             <p>
-                                mais attention à l'impact écologique des gourdes en inox, 
+                                Mais attention à l'impact écologique des gourdes en inox, 
                                 il ne faut pas pour autant les <a href="https://www.franceinter.fr/emissions/la-chronique-environnement/la-chronique-environnement-03-mai-2021">multiplier</a> !
                             </p>    
                          
