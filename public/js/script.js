@@ -1,4 +1,11 @@
+//checkbox value//
+
+
+
+
 $( document ).ready(function() {
+  ($('.checkbox').val(false));
+  console.log($('.checkbox').val());
 
 // actu wrapper
 
@@ -71,18 +78,17 @@ $( document ).ready(function() {
     $('.title').html("<h2>Salle de bain</h2>");
   };
 
-//popup connexion/inscription//
-
-  $('.connexion').click(function(){
-    console.log("toto");
-    $('.inscription_container').css("transform","scale(1)");
-    $('body').css("background-color","rgba(168, 168, 168, 0.459)");
-   
-  });
-
-  $('.close').click(function(){
-    $('.inscription_container').css("transform","scale(0)");
-    $('body').css("background-color","white");
-  });
-
 });
+
+$('.checkbox').click(function(){
+  console.log('clicked');
+  if($(this).is(':checked') ){
+    $(this).val(true);
+    console.log(this);
+  } else {
+    $(this).val(false);
+    console.log(this);
+  }
+});
+
+

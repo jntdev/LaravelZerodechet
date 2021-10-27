@@ -13,21 +13,22 @@
                         <div>
                             <label for="title">Titre de l'animation</label>
                             <input id="title" class="input_titre"type="text" name="title" placeholder="titre">
-                        </div>   
-                    </div>
-                    <div class="info_topsection_animation_creation">
-                        <div>
-                            <label for="localisation">Lieu de l'animation</label>
-                            <input id="localisation"type="text" name="location" placeholder="ville">
                         </div>
                         <div>
                             <label for="duration">Durée</label>
                             <input id="duration"type="text" name="duration" placeholder="HH/MN">
-                        </div>
-                        <div>
+                        
                             <label for="date">Date</label>
                             <input id="date"type="text" name="date" placeholder="JJ/MM/AA">
+                        </div>   
+                    </div>
+                    <div class="info_topsection_animation_creation flexcol">
+                        <div>
+                            <label for="city">Adresse</label>
+                            <input id="city"type="text" name="city" placeholder="ville">
+                            <input id="location"type="text" name="location" placeholder="adresse">
                         </div>
+                        
                     </div>
                 </div>
             </div>
@@ -38,16 +39,17 @@
             <section class="radio_event_create">
                 <span class="checkbox_event_create">
                     <label for="materiel">Materiel nécessaire</label>
-                    <input id="materiel" type="checkbox" name="materiel" value="0">
+                    <input class="checkbox" id="materiel" type="checkbox" name="materiel" value="false">
                 </span>
                 <span class="checkbox_event_create">
                     <label for="child">Enfants acceptés</label>
-                    <input id="child" type="checkbox" name="child" value="0">
+                    <input class="checkbox" id="child" type="checkbox" name="child" value="false">
                 </span>
                 <span class="checkbox_event_create">
                     <label for="WC">Toilettes disponibles</label>
-                    <input id="WC" type="checkbox" name="WC" value="0">
+                    <input class="checkbox" id="WC" type="checkbox" name="WC" value="false">
                 </span>
+                
             </section>
             <section class="listmateriel">
                 <textarea name="listmateriel" id="listmateriel" placeholder="Renseignez la liste du materiel nécessaire"></textarea>

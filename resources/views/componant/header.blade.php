@@ -9,7 +9,7 @@
     <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"></script>
     <script src="js/script.js"></script>
     <script src="https://kit.fontawesome.com/8ff194f9b0.js"crossorigin="anonymous"></script>
-    <link rel="stylesheet" href="css/app.css">
+    <link rel="stylesheet" href="{{mix('/css/app.css')}}">
 </head>
 <body>
 <div class="header">

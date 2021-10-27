@@ -37,6 +37,7 @@ Route::get('/quisommesnous', [vitrineController::class, 'quisommesnous']);
 Route::get('/contact', [vitrineController::class, 'contact']);
 
 Route::get('/tableaudebord', [eventsController::class, 'tableaudebord']);
-Route::get('/tableaudebordh/{id}', [eventsController::class, 'event_vue'])->name('tableaudebord.event_vue');
+Route::get('/tableaudebord/{id}', [eventsController::class, 'event_vue'])->name('tableaudebord.event_vue');
 Route::get('/event_create/', [eventsController::class, 'event_create'])->name('event_create');
 Route::post('/event_create/', [eventsController::class, 'event_store'])->name('event_store');
+Route::get('/succes_create_event/', [eventsController::class, 'event_store'])->name('success_create_event');

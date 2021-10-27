@@ -28,9 +28,9 @@ cartons produits sont recyclés, une grande partie d'entre eux ne l'est pas.
 </p>
 <p>
 En dématérialisant nos documents, le numérique peut sembler une solution pour économiser des ressources 
-naturelles et limiter nos déchets. Mais il n'a rien de virtuel : de nombreux data-centers émergent pour 
+naturelles et limiter nos déchets. Mais il n'a rien de virtuel : de nombreux data centers<sup>1</sup> émergent pour 
 stocker les données informatiques, auxquels s'ajoutent des millions de kilomètres de câbles de fibres optiques 
-pour nous connecter, sans compter les terres rares2 dont l'exploitation pose des 
+pour nous connecter, sans compter les terres rares<sup>2</sup> dont l'exploitation pose des 
 problèmes environnementaux bien réels. Ainsi, en 2019, Internet polluait plus que tout le trafic aérien mondial.
 </p>
 
@@ -47,7 +47,7 @@ problèmes environnementaux bien réels. Ainsi, en 2019, Internet polluait plus 
     </section>
     <section class="reflex_bureau">
     <h3>DES REFLEXES SIMPLES</h3>
-    <ul>
+    
         <p>Limitez les impressions, gardez les impressions recto pour faire du brouillon (et faites-en un carnet - voir plus bas), 
             réglez les paramètres de l’imprimante (impression recto-verso, évitez les impressions en couleur haute qualité).
         </p>
@@ -60,7 +60,7 @@ problèmes environnementaux bien réels. Ainsi, en 2019, Internet polluait plus 
 >>>>>>> master
         </p>
         <p>
-        Pensez au matériel de seconde main ! Les sites de vente de matériel d'occasion ou reconditionné se sont multipliés.
+        Pensez au matériel de seconde main ! Les sites de vente de matériel d'occasion ou reconditionné se sont multipliés<sup>3</sup>.
         </p>
         <p>
         Pensez également aux stylos rechargeables !
@@ -82,7 +82,7 @@ problèmes environnementaux bien réels. Ainsi, en 2019, Internet polluait plus 
         </div>
         <div class="tuto_bureau">
             <img src="images/livre_bureau.png" alt="">
-        <p>Et pourquoi ne pas fabriquer un carnet avec ses feuilles de brouillon ? Voici un <a target="_blank" href="https://zerowastehome.com/2016/04/21/how-to-make-a-recycled-notebook-in-5-easy-steps/#fr">tuto</a> (les anneaux peuvent être remplacés par de la ficelle, du ruban, etc.) : 
+        <p>Et pourquoi ne pas fabriquer un carnet avec ses feuilles de brouillon ? Voici un <a target="_blank" href="https://zerowastehome.com/2016/04/21/how-to-make-a-recycled-notebook-in-5-easy-steps/#fr">tuto</a> (les anneaux peuvent être remplacés par de la ficelle, du ruban, etc.) 
                     
                     </p>
         </div>
@@ -104,13 +104,21 @@ problèmes environnementaux bien réels. Ainsi, en 2019, Internet polluait plus 
                 </p>
                 <p>
                 Vous pouvez vous procurer votre autocollant STOP PUB auprès de de la Mairie de Paimpol ou du SMITRED :
-                    <a target="_blank" href="http://www.smitred.com/fr/content/l%E2%80%99autocollant-stop-pub">http://www.smitred.com/fr/content/l%E2%80%99autocollant-stop-pub
+                    <a target="_blank" href="https://www.valorys.com/fr/les-gestes-de-reduction">https://www.valorys.com/fr/les-gestes-de-reduction
                     </a> 
                 </p>
                 </section>
                 <section class="que_faire_bureau">
                     <h3>Et que faire de...</h3>
                     <p>... mon vieux téléphone portable ? Je le <a target="_blank" href="https://www.jedonnemontelephone.fr/">donne</a> biensur !</p>
+                </section>
+                <section class="links">
+                <a href="https://www.futura-sciences.com/tech/definitions/informatique-data-center-15675/"><p><sup>1</sup>https://www.futura-sciences.com/tech/definitions/informatique-data-center-15675/</p>
+                </a>
+                <a href="https://www.geo.fr/environnement/definition-terres-rares-scandium-yttrium-et-lanthanides-124433"><p><sup>2</sup>https://www.geo.fr/environnement/definition-terres-rares-scandium-yttrium-et-lanthanides-124433</p>
+            </a>
+            <a href="https://colibris-universite.org/mooc-zerodechet/?Iii114DesencombrementMaterielEtNumerique&course=MoocZeroDechet&module=Iii11LaHighTechATElleUnFutur"><p><sup>3</sup>https://colibris-universite.org/mooc-zerodechet/?Iii114DesencombrementMaterielEtNumerique&course=MoocZeroDechet&module=Iii11LaHighTechATElleUnFutur</p>
+            </a>
                 </section>
                 <div class="encart connaissezvous">
         
@@ -120,15 +128,9 @@ problèmes environnementaux bien réels. Ainsi, en 2019, Internet polluait plus 
     </div>
 
     <img class="poubelle center"src="../images/poubellelavie.png" alt="">
-                <a href="https://www.futura-sciences.com/tech/definitions/informatique-data-center-15675/">https://www.futura-sciences.com/tech/definitions/informatique-data-center-15675/
-                </a>
-                <a href="https://www.geo.fr/environnement/definition-terres-rares-scandium-yttrium-et-lanthanides-124433">https://www.geo.fr/environnement/definition-terres-rares-scandium-yttrium-et-lanthanides-124433
-            </a>
-                <a href="https://colibris-universite.org/mooc-zerodechet/?Iii114DesencombrementMaterielEtNumerique&course=MoocZeroDechet&module=Iii11LaHighTechATElleUnFutur">https://colibris-universite.org/mooc-zerodechet/?Iii114DesencombrementMaterielEtNumerique&course=MoocZeroDechet&module=Iii11LaHighTechATElleUnFutur
-            </a>
+               
             
-        </li>
-    </ul>
+       
 
 
 </div>
