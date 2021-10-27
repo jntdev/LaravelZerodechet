@@ -1,4 +1,6 @@
-@include('/componant/header')
+@extends('layouts.app')
+
+@section('content')
 <h1>renseignez les champs</h1>
 <section class="event_create">
     <div class="background_event_create">
@@ -62,4 +64,4 @@
 
 
 
-@include('/componant/footer');
+@endsection

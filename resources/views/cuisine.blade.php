@@ -1,4 +1,6 @@
-@include('/componant/header');
+@extends('layouts.app')
+
+@section('content')
 <div class="astusection backgroundwhite">
             <div class="astuces cuisine clickable">
                 <div class="bande ">
@@ -272,6 +274,4 @@
 </div>
 </main>
 <img class="poubelle center"src="../images/poubellelavie.png" alt="">
-@include('/componant/footer');
-</body>
-</html>
+@endsection

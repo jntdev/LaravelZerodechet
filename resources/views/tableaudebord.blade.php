@@ -1,5 +1,9 @@
-@include('/componant/header')
+@extends('layouts.app')
+
+@section('content')
+@if (Auth::check() && Auth::user()->role == 1||Auth::check() && Auth::user()->role == 2)
 <button><a href="event_create">créez une animation</a></button>
+@endif
 <section class="events">
     <div class="titlesection">
         <h2>Liste des animations</h2>      
@@ -28,10 +32,14 @@
                     </div>
                 </div>
                 <div class="bot_event_section">
-                       <a href="{{ route('tableaudebord.event_vue', ['id' => $event -> id])}}"><button>
+                    <div class="adminoption">
+                    <a href="{{ route('tableaudebord.event_vue', ['id' => $event -> id])}}"><button>
                            Voir plus
                        </button></a>
-                       
+                       @if (Auth::check() && Auth::user()->role == 1||Auth::check() && Auth::user()->role == 2)
+                       <a href=""><button>modifier</button></a>
+                       @endif
+                    </div> 
                    </div>
                 </div>
          
@@ -40,4 +48,5 @@
     </div>
     
 </section>
+@endsection
 

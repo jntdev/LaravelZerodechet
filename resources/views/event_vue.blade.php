@@ -1,4 +1,4 @@
-@extends('event_vue_master')
+@extends('layouts.app')
 
 @section('content')
 <section class="container_event_vue">

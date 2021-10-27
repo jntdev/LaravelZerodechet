@@ -1,7 +1,8 @@
 
 
-    @include('/componant/header');
+@extends('layouts.app')
 
+@section('content')
 <div class="actucontent">
 <div class="actusection primebackground ">
         <div class="article">
@@ -201,7 +202,4 @@ professeure, Céline Rougé !
     </div>
 </div>
 
-    @include('/componant/footer');
-
-</body>
-</html>
+@endsection

@@ -1,5 +1,6 @@
+@extends('layouts.app')
 
-@include('/componant/header');
+@section('content')
 <div class="deficontent relative">
     <!-- <a target="_blank" href="../docs/inscription.pdf"><button class="inscription clickable">Relevez le défi !</button></a> -->
     <div class="leftside">
@@ -44,6 +45,4 @@
     </div>
 </div>
 <img class="poubelle center"src="images/poubellelavie.png" alt="">
-@include('/componant/footer');
-</body>
-</html>
+@endsection

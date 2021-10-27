@@ -1,4 +1,6 @@
-@include('/componant/header');
+@extends('layouts.app')
+
+@section('content')
 <div class="titlecontact">
     <h3>Une Question ? Un bon plan à partager ?</h3>
 </div>
@@ -16,7 +18,4 @@
 <p>Vous pouvez consulter les statuts de l'association <a target="_blank" href="../images/statuts_osez_zero_dechet.pdf">ICI</a>.</p>
 </div>
 <img class="poubelle center"src="../images/poubellelavie.png" alt="">
-
-@include('/componant/footer');
-</body>
-</html>
+@endsection

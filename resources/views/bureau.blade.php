@@ -1,5 +1,6 @@
-@include('/componant/header');
+@extends('layouts.app')
 
+@section('content')
 <div class="astusection backgroundwhite">
                 <div class="astuces bureau clickable">
             <div class=" bande ">
@@ -9,11 +10,7 @@
         </div>
 <main class="lebureau_content">
 <section class="atelier_en_lien">
-<<<<<<< HEAD
-    <h3>LES ATELIERS DU DEFI EN LIEN AVEC LE BUREAU</h3>
-=======
     <h3>ATELIER DU DEFI EN LIEN AVEC LE BUREAU</h3>
->>>>>>> master
     <p>Un atelier sur les « gestes malins pour ses équipements électriques » permettant d'apprendre les astuces pour 
         réduire sa consommation d’énergie et augmenter la durée de vie de ses appareils est prévu au cours du défi.
     </p>
@@ -135,6 +132,4 @@ problèmes environnementaux bien réels. Ainsi, en 2019, Internet polluait plus 
 
 </div>
 </main>
-@include('/componant/footer');
-</body>
-</html>
+@endsection

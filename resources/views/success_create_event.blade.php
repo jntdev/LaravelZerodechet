@@ -1,5 +1,7 @@
-@include('/componant/header')
-<main>
+@extends('layouts.app')
+
+@section('content')
+
     <section class="success_create_event">
         <div class="success_event_content">
         <p>Vous avez créé une nouvelle animation</br>
@@ -12,8 +14,8 @@
        
         
     </section>
-</main>
 
 
 
-@include('/componant/footer');
+
+@endsection
