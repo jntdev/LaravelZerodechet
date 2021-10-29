@@ -1,5 +1,5 @@
 
-@include('/componant/headeraccueil');
+@include('/componant/headeraccueil')
 
 <div id ="accueilsetup"class="accueilsetup">
     <div id="drawmenu"class="drawmenu">

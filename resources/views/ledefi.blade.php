@@ -1,5 +1,5 @@
 
-@include('/componant/header');
+@include('/componant/header')
 <div class="deficontent relative">
     <!-- <a target="_blank" href="../docs/inscription.pdf"><button class="inscription clickable">Relevez le défi !</button></a> -->
     <div class="leftside">

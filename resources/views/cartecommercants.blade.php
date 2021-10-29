@@ -1,5 +1,5 @@
 
-@include('/componant/header');
+@include('/componant/header')
 <div class="astusection secondbackground clickable backgroundwhite" onclick="location.href='cartecommercants.php';">
             <div class="astuces commercants border">
                 <div class="map "></div>

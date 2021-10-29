@@ -1,6 +1,6 @@
 
 
-    @include('/componant/header');
+    @include('/componant/header')
 
 <div class="actucontent">
 <div class="actusection secondbackground ">

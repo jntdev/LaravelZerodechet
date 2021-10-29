@@ -1,4 +1,4 @@
-@include('/componant/header');
+@include('/componant/header')
 <div class="contentquisommes">
 
             <p>Anne-Laure et Cédric voulaient se lancer dans un défi zéro déchet. 

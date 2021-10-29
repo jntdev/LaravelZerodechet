@@ -1,4 +1,4 @@
-@include('/componant/header');
+@include('/componant/header')
 <div class="astusection backgroundwhite">
     <div class="astuces chambreenfant clickable">
         <div class="bande ">

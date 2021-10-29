@@ -1,4 +1,4 @@
-@include('/componant/header');
+@include('/componant/header')
 <div class="astusection">
             <div class="astuces plusloin">
                 <div class="bande">

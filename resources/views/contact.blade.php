@@ -1,4 +1,4 @@
-@include('/componant/header');
+@include('/componant/header')
 <div class="titlecontact">
     <h3>Une Question ? Un bon plan à partager ?</h3>
 </div>

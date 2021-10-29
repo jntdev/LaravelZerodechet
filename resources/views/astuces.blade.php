@@ -1,4 +1,4 @@
-@include('/componant/header');
+@include('/componant/header')
     <div class="astucontent">
         <div class="introastuce">
             <p>Ici, c'est la zone <strong>bons plans</strong> !</p>
