@@ -796,7 +796,7 @@ input:checked ~ nav {
             max-height: 210px;
             max-width: 204px;
             border-radius: 40px;
-            background-position: center;
+            background-position: top;
         }
     }
     .articlecontent {
@@ -822,6 +822,10 @@ input:checked ~ nav {
         text-align: justify;
         visibility: hidden;
         transition-duration: 0.8s;
+        img {
+            margin-top: 50px;
+            height: 500px;
+        }
     }
     .visible {
         visibility: visible;

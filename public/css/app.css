@@ -733,7 +733,7 @@ input:checked ~ nav > ul > li a {
   max-height: 210px;
   max-width: 204px;
   border-radius: 40px;
-  background-position: center;
+  background-position: top;
 }
 .pageactucontent .articlecontent {
   margin-top: 2%;
@@ -756,6 +756,10 @@ input:checked ~ nav > ul > li a {
   text-align: justify;
   visibility: hidden;
   transition-duration: 0.8s;
+}
+.pageactucontent .contenuactu img {
+  margin-top: 50px;
+  height: 500px;
 }
 .pageactucontent .visible {
   visibility: visible;

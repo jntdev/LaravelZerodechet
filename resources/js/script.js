@@ -81,5 +81,3 @@
     $('.inscription_container').css("transform","scale(0)");
     $('body').css("background-color","white");
   });
-
-//});

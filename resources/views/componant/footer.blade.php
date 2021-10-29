@@ -8,5 +8,3 @@
     <img onclick="window.open('https://www.facebook.com/Les-graines-du-go%C3%ABlo-1626470134314629')" class="coherence clickable"src="images/graines_goelo.jpg" alt="">
     <img onclick="window.open('https://www.bretagne-vivante.org/')" class="biocoop clickable"src="images/bretagne_vivante.png" alt="">
 </div>
-
-<script src="js/script.js"></script>

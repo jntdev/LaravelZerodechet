@@ -3,6 +3,41 @@
     @include('/componant/header');
 
 <div class="actucontent">
+<div class="actusection secondbackground ">
+        <div class="article">
+           <div class="date flexend"> 
+                <p>29 octobre 2021</p>    
+           </div>
+           <div class="pageactucontent ">
+               <div id="pict" class="pict">
+               <img class="articleimg"src="../images/ledefi.png" alt="illustration article">
+                   
+               </div>
+               <div class="articlecontent">
+                   <h2>Lancement du défi sous le soleil !</h2>
+                   <p id="p_responsiv" class="subtitleactucontent">Ce sont finalement 59 foyers qui se lancent dans le défi zéro déchet du Goëlo !</p> 
+                    <p id="p_responsiv" class="contenuactu">
+                    Ils se sont réunis dimanche 17 octobre pour débuter cette aventure de 6 mois. Après la conférence
+de Laëtitia Crnkovic, autrice et fondatrice de Zéro déchet Trégor, ils ont partagé un apéritif et un
+pique-nique zéro déchet conviviaux. Puis, ils se sont regroupés par équipes en ateliers découvertes,
+pilotés par Julian Pondaven du réseau Cohérence, et ont pu échanger avec Emilie (Ecolégram') et
+Céline (Le Monde de Céline), commerçantes zéro déchet. </br></br>Leur prochain RDV se fera en équipes tout au long du mois de novembre.</br></br>
+Bravo à eux pour ce challenge et RDV dans 6 mois !
+
+Articles de presse <a target="_blank"href="https://actu.fr/bretagne/paimpol_22162/paimpol-59-foyers-participeront-au-defi-zero-dechet_45805649.html">ICI</a> et <a target="_blank" href="https://www.ouest-france.fr/bretagne/paimpol-22500/a-paimpol-55-personnes-veulent-reduire-leurs-dechets-de-moitie-en-six-mois-08b4307c-2f2e-11ec-a84f-a30e5f8a83f2">LA</a>
+<img src="../images/lancement.jpg" alt="">
+
+                    </p>
+                    
+                </div>
+           </div>
+           <div class="seemore flexend clickable">
+               <p>voir plus...</p>
+               <div class="arrow">
+               </div>
+            </div> 
+        </div>
+    </div>
 <div class="actusection primebackground ">
         <div class="article">
            <div class="date flexend"> 
@@ -59,7 +94,7 @@ professeure, Céline Rougé !
                     fabriquer des produits de soin naturels.
                     </p>
                     <p>Venez nous rencontrer, échanger et découvrir le défi le 2 octobre au ChatÔ, à Paimpol !</br></br>
-                    Plus d'infos, la programmation <a href="https://www.guingamp-paimpol-agglo.bzh/actualite/un-pas-pour-ma-planete-2020-2/"> ICI.</a>
+                    Plus d'infos, la programmation <a target="_blank" href="https://www.guingamp-paimpol-agglo.bzh/actualite/un-pas-pour-ma-planete-2020-2/"> ICI.</a>
                     </p>
                 </div>
            </div>

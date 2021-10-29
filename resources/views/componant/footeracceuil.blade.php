@@ -11,4 +11,3 @@
 
 
 
-<script src="../../js/genially.js"></script>
