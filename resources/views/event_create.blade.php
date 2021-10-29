@@ -41,15 +41,15 @@
             <section class="radio_event_create">
                 <span class="checkbox_event_create">
                     <label for="materiel">Materiel nécessaire</label>
-                    <input class="checkbox" id="materiel" type="checkbox" name="materiel" value="false">
+                    <input class="checkbox" id="materiel" type="checkbox" name="materiel" checked="">
                 </span>
                 <span class="checkbox_event_create">
                     <label for="child">Enfants acceptés</label>
-                    <input class="checkbox" id="child" type="checkbox" name="child" value="false">
+                    <input class="checkbox" id="child" type="checkbox" name="child" checked="">
                 </span>
                 <span class="checkbox_event_create">
                     <label for="WC">Toilettes disponibles</label>
-                    <input class="checkbox" id="WC" type="checkbox" name="WC" value="false">
+                    <input class="checkbox" id="WC" type="checkbox" name="WC" checked="">
                 </span>
                 
             </section>

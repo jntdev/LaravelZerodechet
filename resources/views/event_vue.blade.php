@@ -15,13 +15,13 @@
             <!-- <p>{{$event->time}}</p> -->
             <p>Durée : {{$event->duration}}</p>
             <p>{{$event->city}}</p>
-            @if($event->WC = "1")
+            @if($event->WC == "1")
                 <p>WC disponibles</p>
             @else
                 <p>WC non disponibles</p>
             
             @endif
-            @if($event->child = "1")
+            @if($event->child == "1")
                 <p>Enfants bienvenus :-)</p>
             @else
                 <p>Non accessible aux enfants :-(</p>

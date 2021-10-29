@@ -4,8 +4,7 @@
 
 
 $( document ).ready(function() {
-  ($('.checkbox').val(false));
-  console.log($('.checkbox').val());
+ 
 
 // actu wrapper
 
@@ -80,15 +79,7 @@ $( document ).ready(function() {
 
 });
 
-$('.checkbox').click(function(){
-  console.log('clicked');
-  if($(this).is(':checked') ){
-    $(this).val(true);
-    console.log(this);
-  } else {
-    $(this).val(false);
-    console.log(this);
-  }
-});
+
+
 
 

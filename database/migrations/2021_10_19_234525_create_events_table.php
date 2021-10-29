@@ -18,9 +18,9 @@ class CreateEventsTable extends Migration
             $table->dateTime('date')->default(now());
             $table->string('city')->default('');
             $table->string('location')->default('');
-            $table->boolean('WC')->default(false);
-            $table->boolean('child')->default(false);
-            $table->boolean('materiel')->default(false);
+            $table->boolean('WC')->default(0);
+            $table->boolean('child')->default(0);
+            $table->boolean('materiel')->default(0);
             $table->decimal('nb_max_user')->default('1');
             $table->time('duration')->default('100');
             $table->string('title')->default('');

@@ -30,6 +30,7 @@ class eventsController extends Controller
         //     'child' => 'boolean',
         //     'materiel' => 'boolean',
         // ]);
+        dd($request);
         events::create([
             'title' => $request->title,
             'city' => $request->city,
@@ -37,7 +38,7 @@ class eventsController extends Controller
             'date' => $request->date,
             'duration' => $request->duration,
             'description' => $request->description,
-            'WC' => $request->WC,
+            'WC' => $request->WC, 
             'child' => $request->child,
             'materiel' => $request->materiel,
             'listmateriel' => $request->listmateriel
