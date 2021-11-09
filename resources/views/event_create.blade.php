@@ -6,6 +6,7 @@
     <div class="background_event_create">
         <form method="POST" action="{{route('event_store')}}">
         @csrf
+        <input id="user_id" type="hidden" name="user_id" value="{{Auth::user()->id}}">
             <div class="event_create_container flexrow">
                 <div class="illustration_event">
                     <img src="/images/mpplogo.png" alt="">
@@ -28,7 +29,7 @@
                         <div>
                             <label for="city">Adresse</label>
                             <input id="city"type="text" name="city" placeholder="ville">
-                            <input id="location"type="text" name="location" placeholder="adresse">
+                            <input id="adress"type="text" name="adress" placeholder="adresse">
                         </div>
                         
                     </div>
@@ -40,21 +41,21 @@
             </section>
             <section class="radio_event_create">
                 <span class="checkbox_event_create">
-                    <label for="materiel">Materiel nécessaire</label>
-                    <input class="checkbox" id="materiel" type="checkbox" name="materiel" checked="">
+                    <label for="has_equipment">Materiel nécessaire</label>
+                    <input class="checkbox" id="has_equipment" type="checkbox" name="has_equipment" checked="">
                 </span>
                 <span class="checkbox_event_create">
-                    <label for="child">Enfants acceptés</label>
-                    <input class="checkbox" id="child" type="checkbox" name="child" checked="">
+                    <label for="child_authorized">Enfants acceptés</label>
+                    <input class="checkbox" id="child_authorized" type="checkbox" name="child_authorized" checked="">
                 </span>
                 <span class="checkbox_event_create">
-                    <label for="WC">Toilettes disponibles</label>
-                    <input class="checkbox" id="WC" type="checkbox" name="WC" checked="">
+                    <label for="has_toilets">Toilettes disponibles</label>
+                    <input class="checkbox" id="has_toilets" type="checkbox" name="has_toilets" checked="">
                 </span>
                 
             </section>
             <section class="listmateriel">
-                <textarea name="listmateriel" id="listmateriel" placeholder="Renseignez la liste du materiel nécessaire"></textarea>
+                <textarea name="list_equipment" id="list_materiel" placeholder="Renseignez la liste du materiel nécessaire"></textarea>
             </section>
             <button type="submit">Créer l'annimation</button>
             <i class="fas fa-times fa-lg close_button clickable" onclick="location.href='/tableaudebord';"></i>

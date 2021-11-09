@@ -1,15 +1,17 @@
 <?php
 
 namespace App\Http\Controllers;
+use App\Http\Controllers\Auth;
 
-use App\Models\events;
+use App\Models\user;
+use App\Models\event;
 use Illuminate\Http\Request;
 
-class eventsController extends Controller
+class EventController extends Controller
 {
     public function tableaudebord()
     {
-        $events = events::orderBy('date')->get();
+        $events = event::orderBy('date')->get();
 
 
         return view('tableaudebord',[
@@ -17,45 +19,32 @@ class eventsController extends Controller
         ]);
     }
 
-
     public function event_create() {
         return view('event_create');
     }
 
     public function event_store(request $request)
     {
-       // dd($request);
-        // request()->validate([  
-        //     'WC' => 'boolean',
-        //     'child' => 'boolean',
-        //     'materiel' => 'boolean',
-        // ]);
-        dd($request);
-        events::create([
+
+        event::create([
             'title' => $request->title,
             'city' => $request->city,
-            'location' => $request->location,
+            'adress' => $request->adress,
             'date' => $request->date,
             'duration' => $request->duration,
             'description' => $request->description,
-            'WC' => $request->WC, 
-            'child' => $request->child,
-            'materiel' => $request->materiel,
-            'listmateriel' => $request->listmateriel
-            
+            'has_toilets' => $request->has_toilets, 
+            'child_authorized' => $request->child_authorized,
+            'has_equipment' => $request->has_equipment,
+            'list_equipment' => $request->list_equipment,    
+            'user_id'=>$request->user_id,
         ]);
-        return view('success_create_event');
-  
-        
-        
-        
+        return view('success_create_event');     
     }
 
     public function event_vue($id)
     {
-        $event = events::findOrFail($id);
-
-
+        $event = event::findOrFail($id);
 
         return view('event_vue',[
             'event' => $event

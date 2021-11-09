@@ -457,12 +457,24 @@ input:checked ~ nav {
 }
 
 .title {
+    width: 95%;
     color: rgb(255, 255, 255);
     display: flex;
     //margin-top: 10px;
     height: 15%;
     background-color: rgba(255, 255, 255, 0);
     align-items: center;
+    justify-content: space-between;
+    .logs {
+        color: white;
+        font-family: var(--primfontfamily);
+        font-size: 18px;
+        font-weight: 600;
+        a {
+            text-decoration: none;
+            color: white;
+        }
+    }
 
     h2 {
         font-size: 30px;

@@ -68,7 +68,35 @@
                 </li>
             </ul>
         </div>
-        <div class="title"><h2>Astuces & ressources</h2></div>
+        <div class="title">
+            <h2>Astuces & ressources</h2>
+           
+            <div class="logins">
+                @guest
+                @if (Route::has('login'))
+                    <a class="" href="{{ route('login') }}">{{ __('Login') }}</a>
+                @endif
+                @if (Route::has('register'))
+                    <a class="" href="{{ route('register') }}">{{ __('Register') }}</a>
+                @endif
+                @else
+                <div class="flexrow logs">
+                <p>Bonjour {{ Auth::user()->name }} !  |</p>
+                    <div class="" >
+                        <a class="" href="{{ route('logout') }}"
+                           onclick="event.preventDefault();
+                                         document.getElementById('logout-form').submit();">
+                            {{ __('Logout') }}
+                        </a>
+                        <form id="logout-form" action="{{ route('logout') }}" method="POST" class="d-none">
+                            @csrf
+                        </form>
+                    </div>
+                </div>
+                    
+                @endguest                <!-- <a href="/tableaudebord">Tableau de bord</a> -->
+            </div>
+        </div>
         <div class="maintitlealter">
             <H1>Osez Zéro Déchet !</H1>
         </div>

@@ -17,6 +17,7 @@
                     <div class="rdvsection">
                         <p>{{$event->date}}</p>
                         <p>{{$event->city}}</p>
+                        <p>Createur id : {{$event->user_id}}</p>
                         
                     </div>
                 </div>
