@@ -2628,3 +2628,15 @@ textarea::placeholder {
         height: 100%;
     }
 }
+
+.newsletter {
+    display: block;
+    margin: 0 auto;
+    width: 60%;
+    height: 100vh;
+}
+// @media (max-width: 500px) {
+//     .newsletter {
+//         width: 70%;
+//     }
+// }

@@ -17,11 +17,15 @@
         };  
     }
   );
-});
+
 
 //titre de page 
   var nom = window.location.pathname;
-  console.log(nom);
+  
+  if(nom == "/newsletter"){
+    console.log("toto");
+    $('.title').html("<h2>Newsletter</h2>");
+  };
   if(nom == "/actualites"){
     $('.title').html("<h2>Actualités</h2>");
   };
@@ -37,7 +41,7 @@
   if(nom == "/pourallerplusloins"){
     $('.title').html("<h2>Pour aller plus loin ...</h2>");
   };
-  if(nom == "/bureau.php"){
+  if(nom == "/bureau"){
     $('.title').html("<h2>Bureau</h2>");
   };
   if(nom == "/cartecommercants"){
@@ -67,6 +71,7 @@
   if(nom == "/salledebain"){
     $('.title').html("<h2>Salle de bain</h2>");
   };
+});
 
 //popup connexion/inscription//
 

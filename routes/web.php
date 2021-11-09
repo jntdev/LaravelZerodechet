@@ -34,6 +34,7 @@ Route::get('/lebureau', [PostController::class, 'bureau']);
 Route::get('/lesenfants', [PostController::class, 'enfants']);
 Route::get('/quisommesnous', [PostController::class, 'quisommesnous']);
 Route::get('/contact', [PostController::class, 'contact']);
+Route::get('/newsletter', [PostController::class, 'newsletter']);
 
 Route::get('/event_create', [PostController::class, 'event_create']);
 

@@ -22,6 +22,9 @@
 //titre de page 
   var nom = window.location.pathname;
   console.log(nom);
+  if(nom == "/newsletter"){
+    $('.title').html("<h2>Newsletter</h2>");
+  };
   if(nom == "/actualites"){
     $('.title').html("<h2>Actualités</h2>");
   };

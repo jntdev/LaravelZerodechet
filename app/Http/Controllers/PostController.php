@@ -70,5 +70,9 @@ class PostController extends Controller
     {
         return view('event_create');
     }
+    public function newsletter()
+    {
+        return view('newsletter');
+    }
     
 }

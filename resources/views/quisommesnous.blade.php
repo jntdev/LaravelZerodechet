@@ -54,7 +54,7 @@
 </div>
 <img class="poubelle center"src="../images/poubellelavie.png" alt="">
 
-@include('/componant/footer');
+@include('/componant/footer')
 
 </body>
 </html>
