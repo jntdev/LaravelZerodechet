@@ -2164,7 +2164,7 @@ textarea::placeholder {
 .box_event {
     margin: 50px;
     width: 25%;
-    max-width: 300px;
+    max-width: 350px;
     min-height: 300px;
     display: flex;
     flex-direction: column;
@@ -2186,13 +2186,18 @@ textarea::placeholder {
         padding: 0;
         margin: 0;
     }
+    .rdvsection {
+        text-align: end;
+    }
 }
 .bot_event_section {
     display: flex;
     justify-content: flex-end;
     .adminoption {
         display: flex;
-        flex-direction: column;
+        flex-direction: row-reverse;
+        justify-content: space-between;
+        width: 100%;
         button {
             color: white;
             font-family: var(--primfontfamily);

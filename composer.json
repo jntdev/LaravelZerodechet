@@ -12,6 +12,7 @@
         "laravel/sanctum": "^2.11",
         "laravel/tinker": "^2.5",
         "laravel/ui": "^3.3",
+        "nesbot/carbon": "^2.54",
         "swiftmailer/swiftmailer": "^6.0"
     },
     "require-dev": {

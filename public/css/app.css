@@ -12051,7 +12051,7 @@ textarea::placeholder {
 .box_event {
   margin: 50px;
   width: 25%;
-  max-width: 300px;
+  max-width: 350px;
   min-height: 300px;
   display: flex;
   flex-direction: column;
@@ -12074,6 +12074,9 @@ textarea::placeholder {
   padding: 0;
   margin: 0;
 }
+.top_event_section .rdvsection {
+  text-align: end;
+}
 
 .bot_event_section {
   display: flex;
@@ -12081,7 +12084,9 @@ textarea::placeholder {
 }
 .bot_event_section .adminoption {
   display: flex;
-  flex-direction: column;
+  flex-direction: row-reverse;
+  justify-content: space-between;
+  width: 100%;
 }
 .bot_event_section .adminoption button {
   color: white;

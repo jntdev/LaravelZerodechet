@@ -29,12 +29,11 @@ class LoginController extends Controller
      */
     protected $redirectTo = RouteServiceProvider::HOME;
         protected function redirectTo(){
-            //if( Auth()->user()->role ==1){
-            //    return route('admin.dashboard');
-            //}elseif( Auth()->user()==2){
-            //    return route('anim.dashboard');
-            //}
-            return route('dashboard');
+            if( Auth()->user()->role ==1){
+                return route('admin.dashboard');
+            }elseif( Auth()->user()==2){
+                return route('anim.dashboard');
+            }
         }
 
     /**
@@ -54,20 +53,19 @@ class LoginController extends Controller
             'password'=> 'required'
         ]);
         if( auth()-> attempt(array('email'=>$input['email'],'password'=>$input['password']))){
-             // if(auth()->user()->role == 1){
-             //     //return redirect()->route('admin.dashboard');
-             //     return redirect()->route('admin.dashboard');
-             // }        
-             // elseif( auth()->user()->role == 2){
-             //         return redirect()->route('anim.dashboard');
-             //          }
-             // elseif( auth()->user()->role == 3){
-             //    return redirect()->route('captn.dashboard');
-             //     }
-             // elseif( auth()->user()->role == 4){
-             //     return redirect()->route('user.dashboard');
-             //}
-             return redirect()->route('dashboard');
+              //if(auth()->user()->role == 1){
+              //    return redirect()->route('admin.dashboard');
+              //}        
+              //elseif( auth()->user()->role == 2){
+              //        return redirect()->route('anim.dashboard');
+              //         }
+              //elseif( auth()->user()->role == 3){
+              //   return redirect()->route('captn.dashboard');
+              //    }
+              //elseif( auth()->user()->role == 4){
+              //    return redirect()->route('user.dashboard');
+              //  }
+              return redirect()->route('/home');
         }else{
             return redirect()->route('login')->with('error','email and password are wrong');
         }

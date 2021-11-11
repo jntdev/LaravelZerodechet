@@ -51,4 +51,34 @@ class EventController extends Controller
         ]);
 
     }
+    public function event_modify($id)
+    {
+        $event = event::findOrFail($id);
+
+        return view('event_modify',[
+            'event' => $event
+        ]);
+
+    }
+    public function event_update(request $request, $id)
+    
+    {
+        $event = event::findOrFail($id);
+
+        event::create([
+            "id"=>$request->post_id,
+            'title' => $request->title,
+            'city' => $request->city,
+            'adress' => $request->adress,
+            'date' => $request->date,
+            'duration' => $request->duration,
+            'description' => $request->description,
+            'has_toilets' => $request->has_toilets, 
+            'child_authorized' => $request->child_authorized,
+            'has_equipment' => $request->has_equipment,
+            'list_equipment' => $request->list_equipment,    
+            'user_id'=>$request->user_id,
+        ]);
+        return view('success_modify_event');
+    }
 }

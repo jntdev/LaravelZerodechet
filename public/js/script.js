@@ -1,14 +1,11 @@
-//checkbox value//
-
-
-
-
-$( document ).ready(function() {
+//$( document ).ready(function() {
+  $(function() {
+    console.log("readydoc");
  
-
 // actu wrapper
 
-  $(".seemore").click(function() {
+  $(".seemore").on("click",function() {
+    console.log("je on click");
       $(this).parent().find(".contenuactu").removeClass('visible');
       $(this).parent().parent().removeClass("biggeractusection");
       $(this).children('p').html("voir plus ...");
@@ -20,16 +17,19 @@ $( document ).ready(function() {
         };  
     }
   );
+console.log("date");
+
+  $("#date").datepicker();
+  $(".clockpicker").clockpicker();
+
+
 
 //titre de page 
   var nom = window.location.pathname;
-  console.log(nom);
-
-  if(nom == "/event_create"){
-    $('.title').html("<h2>Créez votre animation</h2>");
-  };
-  if(nom == "/tableaudebord"){
-    $('.title').html("<h2>Tableau de bord</h2>");
+  
+  if(nom == "/newsletter"){
+    console.log("toto");
+    $('.title').html("<h2>Newsletter</h2>");
   };
   if(nom == "/actualites"){
     $('.title').html("<h2>Actualités</h2>");
@@ -46,7 +46,7 @@ $( document ).ready(function() {
   if(nom == "/pourallerplusloins"){
     $('.title').html("<h2>Pour aller plus loin ...</h2>");
   };
-  if(nom == "/bureau.php"){
+  if(nom == "/bureau"){
     $('.title').html("<h2>Bureau</h2>");
   };
   if(nom == "/cartecommercants"){
@@ -76,10 +76,20 @@ $( document ).ready(function() {
   if(nom == "/salledebain"){
     $('.title').html("<h2>Salle de bain</h2>");
   };
-
 });
 
+//popup connexion/inscription//
 
+  $('.connexion').click(function(){
+    console.log("toto");
+    $('.inscription_container').css("transform","scale(1)");
+    $('body').css("background-color","rgba(168, 168, 168, 0.459)");
+   
+  });
 
+  $('.close').click(function(){
+    $('.inscription_container').css("transform","scale(0)");
+    $('body').css("background-color","white");
+  });
 
-
+//});
