@@ -2,7 +2,7 @@
 
 namespace Database\Factories;
 
-use App\Models\event;
+use App\Models\Event;
 use Illuminate\Database\Eloquent\Factories\Factory;
 
 class eventsFactory extends Factory
@@ -12,7 +12,7 @@ class eventsFactory extends Factory
      *
      * @var string
      */
-    protected $model = event::class;
+    protected $model = Event::class;
 
     /**
      * Define the model's default state.

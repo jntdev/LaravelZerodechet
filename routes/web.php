@@ -90,18 +90,26 @@ Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name
 //    Route::get('/succes_create_event/', [EventController::class, 'event_store'])->name('success_create_event');
 //});
 Route::group([
-    //'prefix'=>'anim',
+    //'prefix'=>'anim', admin/dashboard
     'middleware'=>[
         //'isAnim',
         'auth',
         'PreventBackHistory']],function(){
     Route::get('home',[LoggedController::class,'index'])->name('dashboard');
-
     Route::get('user_profile',[LoggedController::class,'user_profile'])->name('user_profile');
     Route::post('user_delete',[LoggedController::class,'delete'])->name('user_delete');
-
-
     Route::get('settings',[LoggedController::class,'settings'])->name('settings');
+
+
+
+    Route::get('/tableaudebord/events', [EventController::class, 'index']);
+    /*Route::get('/tableaudebord/events/create/', [EventController::class, 'event_create'])->name('event_create');
+    Route::post('/tableaudebord/event_create/', [EventController::class, 'event_store'])->name('event_store');
+    Route::get('/tableaudebord/events/{id}', [EventController::class, 'show'])->name('event_vue');
+    Route::get('/tableaudebord/events/{id}/update', [EventController::class, 'edit'])->name('event_update');
+    Route::post('/tableaudebord/events/{id}/update', [EventController::class, 'edit'])->name('event_update');
+    Route::get('/tableaudebord/events/{id}/delete', [EventController::class, 'event_delete'])->name('event_delete');
+    Route::post('/tableaudebord/events/{id}/delete', [EventController::class, 'delete'])->name('event_delete');*/
 
     /*Route::get('/tableaudebord', [EventController::class, 'event_list']);
     Route::get('/tableaudebord/{id}', [EventController::class, 'event_vue'])->name('tableaudebord.event_vue');
@@ -111,15 +119,6 @@ Route::group([
     Route::post('/event_create/', [EventController::class, 'event_store'])->name('event_store');
     Route::get('/succes_create_event/', [EventController::class, 'event_store'])->name('success_create_event');
     Route::get('/succes_modify_event/', [EventController::class, 'event_update'])->name('success_modify_event');*/
-
-    Route::get('/tableaudebord/events', [EventController::class, 'event_list']);
-    Route::get('/tableaudebord/events/create/', [EventController::class, 'event_create'])->name('event_create');
-    Route::post('/tableaudebord/event_create/', [EventController::class, 'event_store'])->name('event_store');
-    Route::get('/tableaudebord/events/{id}', [EventController::class, 'event_vue'])->name('event_vue');
-    Route::get('/tableaudebord/events/{id}/update', [EventController::class, 'event_update'])->name('event_update');
-    Route::post('/tableaudebord/events/{id}/update', [EventController::class, 'event_update'])->name('event_update');
-    Route::get('/tableaudebord/events/{id}/delete', [EventController::class, 'event_delete'])->name('event_delete');
-    Route::post('/tableaudebord/events/{id}/delete', [EventController::class, 'delete'])->name('event_delete');
 });
 
 //Route::group([

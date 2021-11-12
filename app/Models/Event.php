@@ -7,7 +7,7 @@ use App\Models\Events_image;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 
-class event extends Model
+class Event extends Model
 {
     use HasFactory;
     protected $fillable =[
@@ -22,12 +22,10 @@ class event extends Model
         'has_toilets',
         'list_equipment',
         'user_id',
-        
-        
-        
+
     ];
     protected $dates =['date'];
-    
+
     public function user(){
         return $this->belongsTo(User::class);
     }
