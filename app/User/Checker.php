@@ -41,6 +41,15 @@ class Checker
      * @param $event_user_id
      * @return bool
      */
+    public function eventBelongsToCurrentUser($event_user_id)
+    {
+        return Auth::user()->id == $event_user_id;
+    }
+
+    /**
+     * @param $event_user_id
+     * @return bool
+     */
     public function canDeleteEvent($event_user_id)
     {
         return Auth::user()->id == $event_user_id;

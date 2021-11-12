@@ -46,9 +46,16 @@ Route::get('/contact', [VitrineController::class, 'contact']);
 
  //Route::get('/tableaudebord', [EventController::class, 'tableaudebord']);
  //Route::get('/tableaudebord/{id}', [EventController::class, 'event_vue'])->name('tableaudebord.event_vue');
- //Route::get('/event_create/', [EventController::class, 'event_create'])->name('event_create');
- //Route::post('/event_create/', [EventController::class, 'event_store'])->name('event_store');
- //Route::get('/succes_create_event/', [EventController::class, 'event_store'])->name('success_create_event');
+
+
+/** Route Event */
+ Route::get('/event_index/', [EventController::class, 'index'])->name('event_list');
+ Route::get('/event_show/{event}', [EventController::class, 'show'])->name('event_show');
+ Route::get('/event_create/', [EventController::class, 'create'])->name('event_create');
+ Route::get('/event_edit/{id}', [EventController::class, 'edit'])->name('event_edit');
+ Route::get('/event_delete/{id}', [EventController::class, 'delete'])->name('event_delete');
+
+ Route::post('/event_store/', [EventController::class, 'store'])->name('event_store');
 
 
 

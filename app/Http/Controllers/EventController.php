@@ -3,85 +3,127 @@
 namespace App\Http\Controllers;
 
 use App\Models\Event;
+use App\User\Checker;
+use App\User\Facades\CheckerFacade;
+use Illuminate\Contracts\Foundation\Application;
+use Illuminate\Contracts\View\Factory;
+use Illuminate\Contracts\View\View;
+use Illuminate\Http\RedirectResponse;
 use Illuminate\Http\Request;
+use Illuminate\Http\Response;
 
 class EventController extends Controller
 {
     /**
-     * Display a listing of the resource.
-     *
-     * @return \Illuminate\Http\Response
+     * @return Application|Factory|View
      */
-    public function index()
+    public function index() : View
     {
-        $events= Event::all();
+        /** @var Event[] $events */
+        $events = Event::all();
 
-        return view('events.index',compact('events'));
+        return view('events.index', compact('events'));
     }
 
     /**
      * Show the form for creating a new resource.
-     *
-     * @return \Illuminate\Http\Response
+     * @return View
      */
-    public function create()
+    public function create() : View
     {
-        //
+        return view('events.form');
     }
 
     /**
-     * Store a newly created resource in storage.
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @return \Illuminate\Http\Response
+     * @param Request $request
+     * @return RedirectResponse
      */
-    public function store(Request $request)
+    public function store(Request $request) : RedirectResponse
     {
-        //
-    }
-
-    /**
-     * Display the specified resource.
-     *
-     * @param  \App\Models\Event  $event
-     * @return \Illuminate\Http\Response
-     */
-    public function show(Event $event)
-    {
-        //
-    }
-
-    /**
-     * Show the form for editing the specified resource.
-     *
-     * @param  \App\Models\Event  $event
-     * @return \Illuminate\Http\Response
-     */
-    public function edit(Event $event)
-    {
-        //
+        if ($request->event_id) {
+            return $this->update($request);
+        } else {
+            $event = Event::create($request->all());
+            return redirect()->route('event_show', compact('event'));
+        }
     }
 
     /**
      * Update the specified resource in storage.
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @param  \App\Models\Event  $event
-     * @return \Illuminate\Http\Response
+     * @param Request $request
+     * @return RedirectResponse
      */
-    public function update(Request $request, Event $event)
+    public function update(Request $request) : RedirectResponse
     {
-        //
+        try {
+            /** @var Event $event */
+            $event = Event::find($request->event_id);
+            /**
+             * @var string $key
+             * @var string $value
+             */
+            foreach ($request->all() as $key => $value) {
+                if ($key == '_token' || 'event_id') {
+                    continue;
+                }
+                $event->$key = $value;
+            }
+
+            $event->save();
+
+            return redirect()->route('event_show', ['event' => $request->event_id])->with('success', 'L\'animation a bien été mis à jour');;
+        } catch (Exception $e) {
+            return redirect()->route('event_show', ['event' => $request->event_id])->with('error', 'Une erreur est survenue');
+        }
     }
 
     /**
-     * Remove the specified resource from storage.
-     *
-     * @param  \App\Models\Event  $event
-     * @return \Illuminate\Http\Response
+     * Display the specified resource.
+     * @param Request $request
+     * @return View|RedirectResponse
      */
-    public function destroy(Event $event)
+    public function show(Request $request)
     {
-        //
+        /** @var int $eventId */
+        $eventId = $request->event;
+        /** @var Event|null $event */
+        $event = Event::find($eventId);
+        if ($event) {
+            return view('events.view', compact('event'));
+        }
+
+        return redirect()->route('event_index')->with('error', 'L\'animation n\'existe pas ou a été supprimée');
+    }
+
+    /**
+     * Show the form for editing the specified resource.
+     * @param int $eventId
+     * @return View
+     */
+    public function edit(int $eventId)
+    {
+        /** @var Event $event */
+        $event = Event::find($eventId);
+        /** @var bool $edit */
+        $edit = true;
+        return view('events.form', compact(['event', 'edit']));
+    }
+
+
+    /**
+     * Remove the specified resource from storage.
+     * @param int $eventId
+     * @return RedirectResponse
+     */
+    public function delete(int $eventId): RedirectResponse
+    {
+        /** @var Event|null $event */
+        $event = Event::find($eventId);
+        if (CheckerFacade::canDeleteEvent($event->user_id)) {
+            Event::destroy($eventId);
+            return redirect()->route('event_index')->with('success','L\'animation a été supprimée');
+        }
+
+        return redirect()->route('event_index')->with('error', 'Une erreur est survenue');
     }
 }

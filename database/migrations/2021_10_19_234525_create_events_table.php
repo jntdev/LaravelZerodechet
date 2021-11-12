@@ -18,7 +18,7 @@ class CreateEventsTable extends Migration
             $table->string('title')->nullable();
             $table->dateTime('date')->nullable();
             $table->time('duration')->default('0100')->nullable();
-            $table->string('adress')->default('')->nullable();
+            $table->string('address')->default('')->nullable();
             $table->string('city')->default('')->nullable();
             $table->mediumText('description')->nullable();
             $table->boolean('has_equipment')->default(0)->nullable();
