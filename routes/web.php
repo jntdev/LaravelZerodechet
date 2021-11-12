@@ -96,12 +96,16 @@ Route::group([
         'auth',
         'PreventBackHistory']],function(){
     Route::get('home',[LoggedController::class,'index'])->name('dashboard');
-    Route::get('profile',[LoggedController::class,'profile'])->name('anim.profile');
-    Route::get('settings',[LoggedController::class,'settings'])->name('anim.settings');
+    
+    Route::get('user_profile',[LoggedController::class,'user_profile'])->name('user_profile');
+    Route::post('user_delete',[LoggedController::class,'delete'])->name('user_delete');
+    
+    
+    Route::get('settings',[LoggedController::class,'settings'])->name('settings');
     Route::get('/tableaudebord', [EventController::class, 'tableaudebord']);
     Route::get('/tableaudebord/{id}', [EventController::class, 'event_vue'])->name('tableaudebord.event_vue');
     Route::get('/event_modify/{id}', [EventController::class, 'event_modify'])->name('tableaudebord.event_modify');
-    Route::put('/event_update/{id}', [EventController::class, 'event_update'])->name('tableaudebord.event_update');
+    Route::post('/event_update/{id}', [EventController::class, 'event_update'])->name('tableaudebord.event_update');
     Route::get('/event_create/', [EventController::class, 'event_create'])->name('event_create');
     Route::post('/event_create/', [EventController::class, 'event_store'])->name('event_store');
     Route::get('/succes_create_event/', [EventController::class, 'event_store'])->name('success_create_event');

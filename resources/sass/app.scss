@@ -2788,3 +2788,25 @@ textarea::placeholder {
         height: 100%;
     }
 }
+
+.user_profil_form {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    padding: 4%;
+    div {
+        font-family: var(--primfontfamily);
+        height: 60px;
+        width: 100%;
+        display: flex;
+        justify-content: space-between;
+        input {
+            font-family: var(--primfontfamily);
+            height: 30px;
+            width: 250px;
+            padding: 10px 20px;
+            border-radius: 10px;
+            border: solid var(--maincolor) 1px;
+        }
+    }
+}

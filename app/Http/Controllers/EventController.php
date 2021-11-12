@@ -23,7 +23,11 @@ class EventController extends Controller
         return view('event_create');
     }
 
-    public function event_store(request $request)
+    /**
+     * @param Request $request
+     * @return \Illuminate\Contracts\Foundation\Application|\Illuminate\Contracts\View\Factory|\Illuminate\Contracts\View\View
+     */
+    public function event_store(Request $request)
     {
 
         event::create([
@@ -33,16 +37,20 @@ class EventController extends Controller
             'date' => $request->date,
             'duration' => $request->duration,
             'description' => $request->description,
-            'has_toilets' => $request->has_toilets, 
+            'has_toilets' => $request->has_toilets,
             'child_authorized' => $request->child_authorized,
             'has_equipment' => $request->has_equipment,
-            'list_equipment' => $request->list_equipment,    
+            'list_equipment' => $request->list_equipment,
             'user_id'=>$request->user_id,
         ]);
-        return view('success_create_event');     
+        return view('success_create_event');
     }
 
-    public function event_vue($id)
+    /**
+     * @param int $id
+     * @return \Illuminate\Contracts\Foundation\Application|\Illuminate\Contracts\View\Factory|\Illuminate\Contracts\View\View
+     */
+    public function event_vue(int $id)
     {
         $event = event::findOrFail($id);
 
@@ -51,34 +59,26 @@ class EventController extends Controller
         ]);
 
     }
-    public function event_modify($id)
+
+    public function event_modify(Request $request, $event_id)
     {
-        $event = event::findOrFail($id);
+        //event::DB([
+        //    'title' => $request->title,
+        //    'city' => $request->city,
+        //    'adress' => $request->adress,
+        //    'date' => $request->date,
+        //    'duration' => $request->duration,
+        //    'description' => $request->description,
+        //    'has_toilets' => $request->has_toilets,
+        //    'child_authorized' => $request->child_authorized,
+        //    'has_equipment' => $request->has_equipment,
+        //    'list_equipment' => $request->list_equipment,
+        //    'user_id'=>$request->user_id,
+        //]);
 
-        return view('event_modify',[
-            'event' => $event
-        ]);
-
-    }
-    public function event_update(request $request, $id)
-    
-    {
-        $event = event::findOrFail($id);
-
-        event::create([
-            "id"=>$request->post_id,
-            'title' => $request->title,
-            'city' => $request->city,
-            'adress' => $request->adress,
-            'date' => $request->date,
-            'duration' => $request->duration,
-            'description' => $request->description,
-            'has_toilets' => $request->has_toilets, 
-            'child_authorized' => $request->child_authorized,
-            'has_equipment' => $request->has_equipment,
-            'list_equipment' => $request->list_equipment,    
-            'user_id'=>$request->user_id,
-        ]);
-        return view('success_modify_event');
+        $event =event::find($event_id);
+        $event->title = 'updatesony';
+        $event->save();
+        return redirect('success_modify_event');
     }
 }

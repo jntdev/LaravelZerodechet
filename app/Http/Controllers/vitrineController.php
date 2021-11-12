@@ -54,18 +54,31 @@ class VitrineController extends Controller
     {
         return view('bureau');
     }
+
+    /**
+     * @return \Illuminate\Contracts\Foundation\Application|\Illuminate\Contracts\View\Factory|\Illuminate\Contracts\View\View
+     */
     public function enfants()
     {
         return view('enfants');
+
     }
+
+    /**
+     * @return \Illuminate\Contracts\Foundation\Application|\Illuminate\Contracts\View\Factory|\Illuminate\Contracts\View\View
+     */
     public function quisommesnous()
     {
         return view('quisommesnous');
     }
+
+    /**
+     * @return \Illuminate\Contracts\Foundation\Application|\Illuminate\Contracts\View\Factory|\Illuminate\Contracts\View\View
+     */
     public function contact()
     {
         return view('contact');
     }
-    
-    
+
+
 }
