@@ -1,7 +1,6 @@
+@extends('layouts.app')
 
-
-    @include('/componant/header')
-
+@section('content')
 <div class="actucontent">
 <div class="actusection secondbackground ">
         <div class="article">
@@ -236,7 +235,4 @@ professeure, Céline Rougé !
     </div>
 </div>
 
-    @include('/componant/footer');
-
-</body>
-</html>
+@endsection

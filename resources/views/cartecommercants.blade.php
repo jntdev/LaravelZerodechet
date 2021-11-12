@@ -1,5 +1,6 @@
+@extends('layouts.app')
 
-@include('/componant/header')
+@section('content')
 <div class="astusection secondbackground clickable backgroundwhite" onclick="location.href='cartecommercants.php';">
             <div class="astuces commercants border">
                 <div class="map "></div>
@@ -31,6 +32,4 @@ src="https://framacarte.org/fr/map/zero-dechet-goelo_104682?scaleControl=false&m
 
 <img class="poubelle center"src="../images/poubellelavie.png" alt="">
 
-@include('/componant/footer');
-</body>
-</html>
+@endsection

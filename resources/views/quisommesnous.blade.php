@@ -1,4 +1,5 @@
-@include('/componant/header')
+@extends('layouts.app')
+@section('content')
 <div class="contentquisommes">
 
             <p>Anne-Laure et Cédric voulaient se lancer dans un défi zéro déchet. 
@@ -54,7 +55,4 @@
 </div>
 <img class="poubelle center"src="../images/poubellelavie.png" alt="">
 
-@include('/componant/footer')
-
-</body>
-</html>
+@endsection

@@ -17,6 +17,12 @@
         };  
     }
   );
+console.log("date");
+
+  $("#date").datepicker();
+  $(".clockpicker").clockpicker();
+
+
 
 
 //titre de page 

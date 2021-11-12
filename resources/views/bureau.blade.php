@@ -1,5 +1,5 @@
-@include('/componant/header')
-
+@extends('layouts.app')
+@section('content')
 <div class="astusection backgroundwhite">
                 <div class="astuces bureau clickable">
             <div class=" bande ">
@@ -48,7 +48,7 @@ problèmes environnementaux bien réels. Ainsi, en 2019, Internet polluait plus 
             réglez les paramètres de l’imprimante (impression recto-verso, évitez les impressions en couleur haute qualité).
         </p>
         <p>De la même manière, vous pouvez visionner un grand nombre de vidéos en lignes en choisissant une définition plus basse,
-             cela réduira considérablement l'impact de votre streaming. Sur Youtube par exemple, cliquez sur la roue crantée en bas ; 
+             cela réduira considérablement l'impact de votre streaming. Sur Youtube par exemple, cliquez sur la roue crantée en bas ;
              sur Dailymotion, cliquez sur l'icône des réglages en haut à droite.    
         </p>
         <p>
@@ -127,6 +127,4 @@ problèmes environnementaux bien réels. Ainsi, en 2019, Internet polluait plus 
 
 </div>
 </main>
-@include('/componant/footer');
-</body>
-</html>
+@endsection

@@ -4,7 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 
-class PostController extends Controller
+class VitrineController extends Controller
 {
     public function index()
     {
@@ -54,25 +54,30 @@ class PostController extends Controller
     {
         return view('bureau');
     }
+
+    /**
+     * @return \Illuminate\Contracts\Foundation\Application|\Illuminate\Contracts\View\Factory|\Illuminate\Contracts\View\View
+     */
     public function enfants()
     {
         return view('enfants');
+
     }
+
+    /**
+     * @return \Illuminate\Contracts\Foundation\Application|\Illuminate\Contracts\View\Factory|\Illuminate\Contracts\View\View
+     */
     public function quisommesnous()
     {
         return view('quisommesnous');
+        //return view('quisommesnous',['title'=>'Qui sommes nous ?']);{{'title'}}
     }
+
+    /**
+     * @return \Illuminate\Contracts\Foundation\Application|\Illuminate\Contracts\View\Factory|\Illuminate\Contracts\View\View
+     */
     public function contact()
     {
         return view('contact');
     }
-    public function event_create()
-    {
-        return view('event_create');
-    }
-    public function newsletter()
-    {
-        return view('newsletter');
-    }
-    
 }

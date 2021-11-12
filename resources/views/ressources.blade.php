@@ -1,4 +1,5 @@
-@include('/componant/header')
+@extends('layouts.app')
+@section('content')
 <div class="astucontent">
 <div class="astusection mt100">
             <div class="astuces maison">
@@ -43,7 +44,4 @@
         </div>
 </div>
 
-
-@include('/componant/footer');
-</body>
-</html>
+@endsection

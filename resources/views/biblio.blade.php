@@ -1,4 +1,6 @@
-@include('/componant/header')
+@extends('layouts.app')
+
+@section('content')
 <div class="astusection">
             <div class="astuces plusloin">
                 <div class="bande">
@@ -84,6 +86,4 @@
 
 <img class="poubelle center"src="../images/poubellelavie.png" alt="">
 
-@include('/componant/footer');
-</body>
-</html>
+@endsection

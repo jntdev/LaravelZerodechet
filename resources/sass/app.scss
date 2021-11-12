@@ -1,3 +1,12 @@
+// Fonts
+@import url("https://fonts.googleapis.com/css?family=Nunito");
+
+// Variables
+@import "variables";
+
+// Bootstrap
+@import "~bootstrap/scss/bootstrap";
+
 //dart-sass/sass resources/sass/app.scss resources/css/app.css --watch
 @import url("https://fonts.googleapis.com/css2?family=Raleway:wght@300;500;600;700&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=Shadows+Into+Light+Two&display=swap");
@@ -448,12 +457,24 @@ input:checked ~ nav {
 }
 
 .title {
+    width: 95%;
     color: rgb(255, 255, 255);
     display: flex;
     //margin-top: 10px;
     height: 15%;
     background-color: rgba(255, 255, 255, 0);
     align-items: center;
+    justify-content: space-between;
+    .logs {
+        color: white;
+        font-family: var(--primfontfamily);
+        font-size: 18px;
+        font-weight: 600;
+        a {
+            text-decoration: none;
+            color: white;
+        }
+    }
 
     h2 {
         font-size: 30px;
@@ -961,7 +982,7 @@ input:checked ~ nav {
 .textcapitain {
     text-align: end;
     font-family: var(--secondfontfamily);
-    font-size: vaf(--secondaryfontsize);
+    font-size: var(--secondaryfontsize);
 }
 
 .deficontent {
@@ -2081,11 +2102,19 @@ textarea::placeholder {
     }
 }
 .info_topsection_animation_creation {
-    display: flex;
-    flex-direction: row;
     margin-bottom: 20px;
+    justify-content: space-between;
+    div {
+        display: flex;
+        flex-direction: column;
+    }
     .input_titre {
-        width: 60%;
+        width: 300px;
+    }
+
+    #city,
+    #location {
+        width: 50%;
     }
 }
 
@@ -2118,19 +2147,19 @@ textarea::placeholder {
 #listmateriel {
     padding: 2%;
     width: 70%;
-    border-radius: 25px;
+
     height: 150px;
 }
 //__________ tableau de bord
 
 .events {
-    width: 80%;
-    background-color: #d3c2b4;
-    border-radius: 25px;
-    margin: 0 auto;
+    color: var(--maincolor);
+    font-family: var(--primfontfamily);
+    font-size: 20px;
 }
 
 .event_list {
+    margin: 0 auto;
     width: 100%;
     display: flex;
     flex-direction: row;
@@ -2139,10 +2168,145 @@ textarea::placeholder {
 .box_event {
     margin: 50px;
     width: 25%;
-    height: 300px;
+    max-width: 350px;
+    min-height: 300px;
     display: flex;
     flex-direction: column;
-    background-color: rgb(117, 134, 160);
+    justify-content: space-around;
+    background-color: white;
+    border-radius: 0 25px 25px 25px;
+    box-shadow: 3px -1px 15px -2px rgba(0, 0, 0, 0.1);
+    padding: 2%;
+}
+
+.top_event_section {
+    overflow: hidden;
+    justify-content: space-around;
+    img {
+        height: 100%;
+        max-height: 130px;
+    }
+    h3 {
+        padding: 0;
+        margin: 0;
+    }
+    .rdvsection {
+        text-align: end;
+    }
+}
+.bot_event_section {
+    display: flex;
+    justify-content: flex-end;
+    .adminoption {
+        display: flex;
+        flex-direction: row-reverse;
+        justify-content: space-between;
+        width: 100%;
+        button {
+            color: white;
+            font-family: var(--primfontfamily);
+            font-size: 15px;
+            border-radius: 20px;
+            padding: 10px 15px;
+            border: none;
+            background-color: var(--primebackground);
+            margin-top: 20px;
+        }
+    }
+}
+//success create event
+
+.success_create_event {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    .success_event_content {
+        display: flex;
+        flex-direction: column;
+        width: 50%;
+        font-family: var(--primfontfamily);
+        font-size: 25px;
+        border: solid 1px var(--primebackground);
+        border-radius: 25px;
+        padding: 5%;
+        text-align: center;
+    }
+    .success_comeback {
+        justify-content: space-between;
+        padding-top: 3%;
+        button {
+            color: white;
+            font-family: var(--primfontfamily);
+            font-size: 20px;
+            border-radius: 20px;
+            padding: 15px;
+            border: none;
+            background-color: var(--primebackground);
+        }
+    }
+}
+
+// event vue
+.container_event_vue {
+    position: relative;
+    color: var(--maincolor);
+    font-family: var(--primfontfamily);
+    font-size: 20px;
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    align-items: center;
+    justify-content: center;
+    .event_vue_title {
+        position: relative;
+        width: 80%;
+        h2 {
+            color: var(--primebackground);
+            font-size: 55px;
+        }
+    }
+
+    .info_event_vue {
+        width: 80%;
+        display: flex;
+        flex-direction: row;
+        justify-content: space-around;
+        align-items: center;
+
+        //border: 1px solid var(--primebackground);
+    }
+    button,
+    span {
+        color: white;
+        font-family: var(--primfontfamily);
+        font-size: 20px;
+        border-radius: 20px;
+        padding: 15px;
+        border: none;
+        background-color: var(--primebackground);
+    }
+    .return_tolist {
+        background-color: var(--fourthbackground);
+
+        left: 0;
+        top: 50px;
+    }
+}
+.left_event_vue {
+    text-align: start;
+    width: 30%;
+}
+.right_event_vue {
+    text-align: justify;
+    width: 50%;
+}
+.inscription_event_vue {
+    width: 70%;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    padding: 5%;
 }
 
 @media (max-width: 1700px) {
@@ -2640,3 +2804,24 @@ textarea::placeholder {
 //         width: 70%;
 //     }
 // }
+.user_profil_form {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    padding: 4%;
+    div {
+        font-family: var(--primfontfamily);
+        height: 60px;
+        width: 100%;
+        display: flex;
+        justify-content: space-between;
+        input {
+            font-family: var(--primfontfamily);
+            height: 30px;
+            width: 250px;
+            padding: 10px 20px;
+            border-radius: 10px;
+            border: solid var(--maincolor) 1px;
+        }
+    }
+}
