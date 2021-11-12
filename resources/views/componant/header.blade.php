@@ -28,7 +28,7 @@
 <div class="header">
 <!-- <button class="connexion clickable">Connexion / Inscription</button> -->
     <div class="logo " >
-        <img id="logo" class="clickable" src="images/logo.png" alt="logo" onclick="location.href='../accueil';">
+        <img id="logo" class="clickable" src="{{ asset('images/logo.png') }}" alt="logo" onclick="location.href='../accueil';">
     </div>
     <div class="menu relative">
     <input id="burger" type="checkbox" />
