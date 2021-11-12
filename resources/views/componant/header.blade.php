@@ -8,12 +8,12 @@
     <!-- CSRF Token -->
     <meta name="csrf-token" content="{{ csrf_token() }}">
     <title>Osez Zéro Déchet !</title>
-   
+
     <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
-    
+
     <!-- Scripts -->
     <script src="{{ asset('js/app.js') }}" defer></script>
-    
+
     <!-- Fonts -->
     <link rel="dns-prefetch" href="//fonts.gstatic.com">
     <link href="https://fonts.googleapis.com/css?family=Nunito" rel="stylesheet">
@@ -22,7 +22,7 @@
     <link href="{{ asset('css/app.css') }}" rel="stylesheet">
     <link rel="stylesheet" href="//code.jquery.com/ui/1.13.0/themes/base/jquery-ui.css">
     <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.min.js" defer></script>
-    
+
 </head>
 <body>
 <div class="header">
@@ -37,14 +37,14 @@
             <span></span>
             <span></span>
         </label>
-        <nav>    
+        <nav>
           <ul><li class="back6"><a href="../accueil">Accueil</a></li>
             <li class="back1"><a href="/actualites">Actualités</a></li>
             <li class="back2"><a href="/ledefi">Le défi</a></li>
             <li class="back3"><a href="/astuces&ressources">Astuces & ressources</a></li>
             <li class="back4"><a href="/quisommesnous">Qui sommes-nous ?</a></li>
             <li class="back5"><a href="/contact">Contact</a></li>
-          </ul>  
+          </ul>
         </nav>
         <div id="nav" class="nav">
             <ul class="navlinks nav__list">
@@ -59,7 +59,7 @@
                         <li class="back1"><a class="subcat drop1" id="navbuton2" href="../demarchezerodechet">La D&eacute;marche Z&eacute;ro D&eacute;chet</a>
                         </li>
                         <li class="back2"><a class="subcat drop1" id="navbuton2" href="../cartecommercants">La carte des commer&#231;ants Z'h&eacute;ros</a>
-                        </li>    
+                        </li>
                         <li class="back3"><a class="subcat drop1" id="navbuton2"href="../lamaison">Des astuces pour toute la maison</a>
                         </li>
                         <li class="back4"><a class="subcat drop1" id="navbuton2" href="../produitsmenagers">Produits m&eacute;nagers</a>
@@ -76,7 +76,7 @@
         </div>
         <div class="title">
             <h2>Astuces & ressources</h2>
-           
+
             <div class="logins">
                 @guest
                 @if (Route::has('login'))
@@ -99,8 +99,9 @@
                         </form>
                     </div>
                 </div>
-                    
-                @endguest                <!-- <a href="/tableaudebord">Tableau de bord</a> -->
+
+                @endguest
+                    <a href="/tableaudebord/events">Tableau de bord</a><!-- <a href="/tableaudebord">Tableau de bord</a> -->
             </div>
         </div>
         <div class="maintitlealter">

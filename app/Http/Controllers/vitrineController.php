@@ -70,6 +70,7 @@ class VitrineController extends Controller
     public function quisommesnous()
     {
         return view('quisommesnous');
+        //return view('quisommesnous',['title'=>'Qui sommes nous ?']);{{'title'}}
     }
 
     /**

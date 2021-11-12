@@ -9,7 +9,7 @@ use Illuminate\Http\Request;
 
 class EventController extends Controller
 {
-    public function tableaudebord()
+    public function event_list()
     {
         $events = event::orderBy('date')->get();
 
@@ -18,7 +18,7 @@ class EventController extends Controller
             'events' => $events
         ]);
     }
-
+/**CREATE**/
     public function event_create() {
         return view('event_create');
     }
@@ -50,6 +50,8 @@ class EventController extends Controller
      * @param int $id
      * @return \Illuminate\Contracts\Foundation\Application|\Illuminate\Contracts\View\Factory|\Illuminate\Contracts\View\View
      */
+
+/**READ**/
     public function event_vue(int $id)
     {
         $event = event::findOrFail($id);
@@ -59,7 +61,7 @@ class EventController extends Controller
         ]);
 
     }
-
+/**UPDATE**/
     public function event_modify(Request $request, $event_id)
     {
         //event::DB([
@@ -77,8 +79,9 @@ class EventController extends Controller
         //]);
 
         $event =event::find($event_id);
-        $event->title = 'updatesony';
+        $event->title = 'updated';
         $event->save();
         return redirect('success_modify_event');
     }
+/**DELETE**/
 }

@@ -18,19 +18,19 @@
                             <input id="title" class="input_titre"type="text" name="title" placeholder="titre">
                         </div>
                         <div id="event_date_picker">
-                            
+
                         <label for="date">Date</label>
-                            <input id="date"type="text" name="date" placeholder="selectionnez une date" autocomplete="off">    
+                            <input id="date"type="text" name="date" placeholder="selectionnez une date" autocomplete="off">
 
                             <label for="time">Heure</label>
                             <input id="time"type="text" name="time" placeholder="HH/MN" autocomplete="off">
 
-                            
+
                             <label for="duration">Durée</label>
                             <input id="duration"type="text" name="duration" placeholder="HH/MN" autocomplete="off">
 
-                            
-                            
+
+
                         </div>
 
                     </div>
@@ -40,7 +40,7 @@
                             <input id="city"type="text" name="city" placeholder="ville">
                             <input id="adress"type="text" name="adress" placeholder="adresse">
                         </div>
-                        
+
                     </div>
                 </div>
             </div>
@@ -61,7 +61,7 @@
                     <label for="has_toilets">Toilettes disponibles</label>
                     <input class="checkbox" id="has_toilets" type="checkbox" name="has_toilets" checked="">
                 </span>
-                
+
             </section>
             <section class="listmateriel">
                 <textarea name="list_equipment" id="list_materiel" placeholder="Renseignez la liste du materiel nécessaire"></textarea>

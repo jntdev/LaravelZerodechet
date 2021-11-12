@@ -58,18 +58,18 @@ Route::get('/contact', [VitrineController::class, 'contact']);
                 //     Route::get('profile',[AdminController::class,'profile'])->name('profile');
                 //     Route::get('settings',[AdminController::class,'settings'])->name('settings');
                 // });
-                
+
                 // Route::group(['prefix'=>'user','middleware'=>['isUser','auth']],function(){
                 //     Route::get('tableaudebord',[AdminController::class,'index'])->name('tableaudebord');
                 //     Route::get('profile',[AdminController::class,'profile'])->name('profile');
                 //     Route::get('settings',[AdminController::class,'settings'])->name('settings');
                 // });
-                
+
                 // Route::group(['prefix'=>'anim','middleware'=>['isAnim','auth']],function(){
                 //     Route::get('tableaudebord',[AdminController::class,'index'])->name('tableaudebord');
                 //     Route::get('profile',[AdminController::class,'profile'])->name('profile');
                 //     Route::get('settings',[AdminController::class,'settings'])->name('settings');
-                // }); 
+                // });
 
 
 Route::middleware(['middleware'=>'PreventBackHistory'])->group(function(){
@@ -96,20 +96,30 @@ Route::group([
         'auth',
         'PreventBackHistory']],function(){
     Route::get('home',[LoggedController::class,'index'])->name('dashboard');
-    
+
     Route::get('user_profile',[LoggedController::class,'user_profile'])->name('user_profile');
     Route::post('user_delete',[LoggedController::class,'delete'])->name('user_delete');
-    
-    
+
+
     Route::get('settings',[LoggedController::class,'settings'])->name('settings');
-    Route::get('/tableaudebord', [EventController::class, 'tableaudebord']);
+
+    /*Route::get('/tableaudebord', [EventController::class, 'event_list']);
     Route::get('/tableaudebord/{id}', [EventController::class, 'event_vue'])->name('tableaudebord.event_vue');
     Route::get('/event_modify/{id}', [EventController::class, 'event_modify'])->name('tableaudebord.event_modify');
     Route::post('/event_update/{id}', [EventController::class, 'event_update'])->name('tableaudebord.event_update');
     Route::get('/event_create/', [EventController::class, 'event_create'])->name('event_create');
     Route::post('/event_create/', [EventController::class, 'event_store'])->name('event_store');
     Route::get('/succes_create_event/', [EventController::class, 'event_store'])->name('success_create_event');
-    Route::get('/succes_modify_event/', [EventController::class, 'event_update'])->name('success_modify_event');
+    Route::get('/succes_modify_event/', [EventController::class, 'event_update'])->name('success_modify_event');*/
+
+    Route::get('/tableaudebord/events', [EventController::class, 'event_list']);
+    Route::get('/tableaudebord/events/create/', [EventController::class, 'event_create'])->name('event_create');
+    Route::post('/tableaudebord/event_create/', [EventController::class, 'event_store'])->name('event_store');
+    Route::get('/tableaudebord/events/{id}', [EventController::class, 'event_vue'])->name('event_vue');
+    Route::get('/tableaudebord/events/{id}/update', [EventController::class, 'event_update'])->name('event_update');
+    Route::post('/tableaudebord/events/{id}/update', [EventController::class, 'event_update'])->name('event_update');
+    Route::get('/tableaudebord/events/{id}/delete', [EventController::class, 'event_delete'])->name('event_delete');
+    Route::post('/tableaudebord/events/{id}/delete', [EventController::class, 'delete'])->name('event_delete');
 });
 
 //Route::group([
