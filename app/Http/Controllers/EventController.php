@@ -1,7 +1,7 @@
 <?php
 
 namespace App\Http\Controllers;
-
+use Illuminate\Support\Facades\Auth;
 use App\Models\Event;
 use App\User\Checker;
 use App\User\Facades\CheckerFacade;
@@ -23,6 +23,16 @@ class EventController extends Controller
         $events = Event::all();
 
         return view('events.index', compact('events'));
+    }
+
+
+    public function manage() : View
+    {
+        /** @var Event[] $events */
+        $user = Auth::user();
+        $events = Event::where('user_id',$user->id)->orderBy('date')->get();
+
+        return view('events.manage', compact('user','events'));
     }
 
     /**

@@ -29,7 +29,12 @@
             </div>
         </div>
         <section class="inscription_event_vue">
-            <a href="../tableaudebord">
+            @if (Checker::isAdmin() || Checker::isAnim())
+                <a href="{{route('manage')}}">
+                    <button class="return_tolist clickable">Panneau de gestion</button>
+                </a>
+                @endif
+            <a href="../event_index">
                 <button class="return_tolist clickable">Retour à la liste</button>
             </a>
             <span>Nombre de participant inscrit 0/10</span>

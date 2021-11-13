@@ -99,9 +99,9 @@
                         </form>
                     </div>
                 </div>
-
+                <a href="/event_index">Tableau de bord</a>
                 @endguest
-                    <a href="/tableaudebord/events">Tableau de bord</a><!-- <a href="/tableaudebord">Tableau de bord</a> -->
+
             </div>
         </div>
         <div class="maintitlealter">
