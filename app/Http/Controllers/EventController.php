@@ -11,6 +11,7 @@ use Illuminate\Contracts\View\View;
 use Illuminate\Http\RedirectResponse;
 use Illuminate\Http\Request;
 use Illuminate\Http\Response;
+use Illuminate\Support\Facades\Storage;
 
 class EventController extends Controller
 {
@@ -48,8 +49,11 @@ class EventController extends Controller
      * @param Request $request
      * @return RedirectResponse
      */
-    public function store(Request $request) : RedirectResponse
+    public function store(Request $request)
+    //: RedirectResponse
     {
+        //Storage::disk('public')->put('event_images', $request->event_images);
+
         if ($request->event_id) {
             return $this->update($request);
         } else {

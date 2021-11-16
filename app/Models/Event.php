@@ -3,7 +3,7 @@
 namespace App\Models;
 
 use App\Models\User;
-use App\Models\Events_image;
+use App\Models\Event_images;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 
@@ -30,6 +30,7 @@ class Event extends Model
         return $this->belongsTo(User::class);
     }
     public function event_image(){
-        return $this->hasOne(Events_image::class);
+        return $this->hasOne(Event_image::class);
     }
+
 }

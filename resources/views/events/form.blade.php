@@ -4,13 +4,21 @@
     <h1>renseignez les champs</h1>
     <section class="event_create">
         <div class="background_event_create">
-            <form method="POST" action="{{route('event_store')}}">
+            <form method="POST" action="{{route('event_store')}}" enctype="multipart/for">
                 @csrf
                 <input id="event_id" type="hidden" name="event_id" value="{{$event->id ?? ''}}">
                 <input id="user_id" type="hidden" name="user_id" value="{{$event->user_id ?? Auth::user()->id}}">
                 <div class="event_create_container flexrow">
                     <div class="illustration_event">
                         <img src="/images/mpplogo.png" alt="">
+                    </div>
+                    <div>
+                        <label for="event_images">Importez une image d'illustration pour votre animation:</label>
+
+                        <input type="file"
+                               id="event_images" name="event_images"
+                               accept="image/png, image/jpeg">
+
                     </div>
                     <div class="topsection_animation_creation">
                         <div class="info_topsection_animation_creation flexrow">
