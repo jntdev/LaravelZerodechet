@@ -13,13 +13,14 @@ class Event extends Model
     protected $fillable =[
         'title',
         'city',
-        'adress',
+        'address',
         'date',
         'duration',
         'description',
         'has_equipment',
         'child_authorized',
         'has_toilets',
+        'event_picture',
         'list_equipment',
         'user_id',
 

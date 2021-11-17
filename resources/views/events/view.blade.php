@@ -1,7 +1,7 @@
 @extends('layouts.app')
 @section('content')
     <section class="container_event_vue">
-        <img src="../images/logo.png" alt="">
+       <img src="{{ asset('images/event/'. $event->event_picture) }}" alt="">
         <div class="event_vue_title">
             <h2>{{$event->title}}</h2>
         </div>

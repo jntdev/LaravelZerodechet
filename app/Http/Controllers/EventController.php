@@ -1,6 +1,7 @@
 <?php
 
 namespace App\Http\Controllers;
+
 use Illuminate\Support\Facades\Auth;
 use App\Models\Event;
 use App\User\Checker;
@@ -18,7 +19,7 @@ class EventController extends Controller
     /**
      * @return Application|Factory|View
      */
-    public function index() : View
+    public function index(): View
     {
         /** @var Event[] $events */
         $events = Event::all();
@@ -27,20 +28,20 @@ class EventController extends Controller
     }
 
 
-    public function manage() : View
+    public function manage(): View
     {
         /** @var Event[] $events */
         $user = Auth::user();
-        $events = Event::where('user_id',$user->id)->orderBy('date')->get();
+        $events = Event::where('user_id', $user->id)->orderBy('date')->get();
 
-        return view('events.manage', compact('user','events'));
+        return view('events.manage', compact('user', 'events'));
     }
 
     /**
      * Show the form for creating a new resource.
      * @return View
      */
-    public function create() : View
+    public function create(): View
     {
         return view('events.form');
     }
@@ -49,15 +50,27 @@ class EventController extends Controller
      * @param Request $request
      * @return RedirectResponse
      */
-    public function store(Request $request)
-    //: RedirectResponse
+    public function store(Request $request): RedirectResponse
     {
-        //Storage::disk('public')->put('event_images', $request->event_images);
-
         if ($request->event_id) {
             return $this->update($request);
         } else {
-            $event = Event::create($request->all());
+            $data = [];
+            foreach ($request->all() as $key => $value) {
+                /**
+                 * traitement image
+                 */
+                if ($key == 'event_picture') {
+                    $imageName = $request->$key->getClientOriginalName();
+                    $request->$key->move(public_path('images/event'), $imageName);
+                    $data[$key] = $imageName;
+                } else {
+                    $data[$key] = $value;
+                }
+            }
+            /** @var Event $event */
+            $event = Event::create($data);
+
             return redirect()->route('event_show', compact('event'));
         }
     }
@@ -67,7 +80,7 @@ class EventController extends Controller
      * @param Request $request
      * @return RedirectResponse
      */
-    public function update(Request $request) : RedirectResponse
+    public function update(Request $request): RedirectResponse
     {
         try {
             /** @var Event $event */
@@ -77,15 +90,14 @@ class EventController extends Controller
              * @var string $value
              */
             foreach ($request->all() as $key => $value) {
-                if ($key == '_token' || 'event_id') {
+                if ($key == '_token' || $key == 'event_id') {
                     continue;
                 }
                 $event->$key = $value;
             }
-
             $event->save();
-
-            return redirect()->route('event_show', ['event' => $request->event_id])->with('success', 'L\'animation a bien été mis à jour');;
+            return redirect()->route('event_show', ['event' => $request->event_id])
+                ->with('success', 'L\'animation a bien été mis à jour');;
         } catch (Exception $e) {
             return redirect()->route('event_show', ['event' => $request->event_id])->with('error', 'Une erreur est survenue');
         }
@@ -135,7 +147,7 @@ class EventController extends Controller
         $event = Event::find($eventId);
         if (CheckerFacade::canDeleteEvent($event->user_id)) {
             Event::destroy($eventId);
-            return redirect()->route('event_index')->with('success','L\'animation a été supprimée');
+            return redirect()->route('event_index')->with('success', 'L\'animation a été supprimée');
         }
 
         return redirect()->route('event_index')->with('error', 'Une erreur est survenue');

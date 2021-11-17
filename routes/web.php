@@ -56,7 +56,7 @@ Route::group([
 
     /** Route Profile*/
     Route::get('home',[LoggedController::class,'index'])->name('dashboard');
-    Route::get('user_profile',[LoggedController::class,'user_profile'])->name('user_profile');
+    Route::get('profile',[LoggedController::class,'profile'])->name('profile');
     Route::post('user_delete',[LoggedController::class,'delete'])->name('user_delete');
     Route::get('settings',[LoggedController::class,'settings'])->name('settings');
 
