@@ -12056,7 +12056,7 @@ textarea::placeholder {
   margin: 50px;
   width: 25%;
   max-width: 350px;
-  min-height: 300px;
+  height: 300px;
   display: flex;
   flex-direction: column;
   justify-content: space-around;
@@ -12065,14 +12065,18 @@ textarea::placeholder {
   box-shadow: 3px -1px 15px -2px rgba(0, 0, 0, 0.1);
   padding: 2%;
 }
+.box_event .infosection {
+  text-overflow: ellipsis;
+}
 
 .top_event_section {
   overflow: hidden;
-  justify-content: space-around;
+  justify-content: space-between;
 }
 .top_event_section img {
-  height: 100%;
-  max-height: 130px;
+  max-width: 150px;
+  -o-object-fit: contain;
+     object-fit: contain;
 }
 .top_event_section h3 {
   padding: 0;
@@ -12080,6 +12084,7 @@ textarea::placeholder {
 }
 .top_event_section .rdvsection {
   text-align: end;
+  width: 140px;
 }
 
 .bot_event_section {
@@ -12143,6 +12148,9 @@ textarea::placeholder {
   text-align: center;
   align-items: center;
   justify-content: center;
+}
+.container_event_vue img {
+  height: 300px;
 }
 .container_event_vue .event_vue_title {
   position: relative;

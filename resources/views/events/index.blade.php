@@ -13,18 +13,17 @@
         @foreach($events as $event)
             <div class="box_event">
                 <div class="top_event_section flexrow">
-{{--                    <span>{{$event->event_image->path}}</span>--}}
-                    <img src="" alt="#">
+                    <img src="{{ asset('images/event/'. $event->event_picture) }}" alt="#">
                     <div class="rdvsection">
                         <p>{{$event->date}}</p>
                         <p>{{$event->city}}</p>
-                        <p>Crée par {{$event->user->name}}</p>
+                        <p>Crée par {{$event->user->first_name}}</p>
                     </div>
                 </div>
                 <div class="box_event_content">
                     <div class="infosection">
                         <h3>{{$event->title}}</h3>
-                        <p>{{$event->description}}</p>
+{{--                        <p>{{$event->description}}</p>--}}
                     </div>
                 </div>
                 <a href="{{route('event_show', ['event' => $event->id])}}">Voir en détails</a>

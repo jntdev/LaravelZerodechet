@@ -13,11 +13,11 @@
         @foreach($events as $event)
             <div class="box_event">
                 <div class="top_event_section flexrow">
-                    <img src="images/logo.png" alt="#">
+                    <img src="{{ asset('images/event/'. $event->event_picture) }}" alt="#">
                     <div class="rdvsection">
                         <p>{{$event->date}}</p>
                         <p>{{$event->city}}</p>
-                        <p>Crée par {{$event->user->name}}</p>
+                        <p>Crée par {{$event->user->first_name}}</p>
                     </div>
                 </div>
                 <div class="box_event_content">

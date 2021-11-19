@@ -200,14 +200,14 @@
                                     <button type="submit" class="btn btn-primary">
                                         {{ __('S\'enregistrer') }}
                                     </button>
-                                   {{-- @if (Auth::user()->id)
+                                    @if (Auth::user()->id)
                                         <a href="{{route('user_delete', ['id' => $user->id])}}">
                                             <button type="submit" class="btn btn-danger">
                                                 Supprimer mon compte
                                             </button>
 
                                         </a>
-                                    @endif--}}
+                                    @endif
                                 </div>
                             </div>
                         </form>
