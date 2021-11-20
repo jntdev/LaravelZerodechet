@@ -8,6 +8,7 @@ use App\Http\Controllers\UserController;
 use App\Http\Controllers\AdminController;
 use App\Http\Controllers\CaptnController;
 use App\Http\Controllers\EventController;
+use App\Http\Controllers\RegistrationController;
 use App\Http\Controllers\LoggedController;
 use App\Http\Controllers\VitrineController;
 
@@ -70,6 +71,10 @@ Route::group([
     Route::get('/event_delete/{id}', [EventController::class, 'delete'])->name('event_delete');
 
     Route::post('/event_store/', [EventController::class, 'store'])->name('event_store');
+
+    /** Route Registration*/
+    Route::get('/event_registration/{id}', [RegistrationController::class, 'index'])->name('event_registration');
+
 
 
 

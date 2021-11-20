@@ -33,5 +33,8 @@ class Event extends Model
     public function event_image(){
         return $this->hasOne(Event_image::class);
     }
+    public function registrations(){
+        return $this->belongsTo(Registration::class);
+    }
 
 }

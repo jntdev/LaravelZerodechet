@@ -38,7 +38,7 @@
                 <button class="return_tolist clickable">Retour à la liste</button>
             </a>
             <span>Nombre de participant inscrit 0/10</span>
-            <a href="inscription_event">
+            <a href="{{route('event_registration', ['id' => $event->id])}}">
                 <button class="clickable">Inscription</button>
             </a>
         </section>
