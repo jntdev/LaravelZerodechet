@@ -38,6 +38,15 @@ class RegistrationController extends Controller
         /** @var int $nbPlayers */
         $nbPlayers = 0;
 
+        /** @var Registration|null $userRegistration */
+        $currentUserRegistration = Registration::where('user_id', $request->user_id)->first();
+
+        /** @var int $userRegistrationNbPlayers */
+        $userRegistrationNbPlayers = 0;
+        if ($currentUserRegistration) {
+            $userRegistrationNbPlayers = $currentUserRegistration->nb_players;
+        }
+
         if ($registrations) {
             foreach ($registrations as $registration) {
                 $nbPlayers += $registration->nb_players;
@@ -46,17 +55,22 @@ class RegistrationController extends Controller
         /** @var int $nbPlayersToAdd */
         $nbPlayersToAdd = (int)$request->nb_participant;
 
-        if (($nbPlayers + $nbPlayersToAdd) > $event->nb_max_user) {
+        if (($nbPlayers - $userRegistrationNbPlayers + $nbPlayersToAdd) > $event->nb_max_user) {
             return redirect()->route('event_registration_view', ['id' => $eventId])->with('error', 'nombre de participant max dépassé');
         }
 
-        Registration::create(
-            [
-                'nb_players' => $nbPlayersToAdd,
-                'user_id'    => $request->user_id,
-                'event_id'   => $eventId,
-            ]
-        );
+        if ($currentUserRegistration) {
+            $currentUserRegistration->nb_players = $nbPlayersToAdd;
+            $currentUserRegistration->save();
+        } else {
+            Registration::create(
+                [
+                    'nb_players' => $nbPlayersToAdd,
+                    'user_id'    => $request->user_id,
+                    'event_id'   => $eventId,
+                ]
+            );
+        }
 
         return redirect()->route('event_show', ['event' => $eventId])->with('success', 'Votre inscription a bien été prise en compte');
     }

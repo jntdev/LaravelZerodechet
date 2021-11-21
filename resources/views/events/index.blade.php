@@ -1,5 +1,5 @@
-@include('layouts.app')
-{{--@section('content')--}}
+@extends('layouts.app')
+@section('content')
 @if (Checker::isAdmin() || Checker::isAnim())
     <button><a href="{{route('event_create')}}">créez une animation</a></button>
     <button><a href="{{route('manage')}}">Gerez vos animations</a></button>
@@ -31,4 +31,4 @@
         @endforeach
     </div>
 </section>
-{{--@endsection--}}
+@endsection

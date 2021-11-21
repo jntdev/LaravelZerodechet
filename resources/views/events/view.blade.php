@@ -37,7 +37,7 @@
             <a href="../event_index">
                 <button class="return_tolist clickable">Retour à la liste</button>
             </a>
-            <span class="{{$stats}}">Nombre de participant inscrit {{$nbPlayers}}/  {{$event->nb_max_user}}</span>
+            <span class="{{$stats}}">Nombre de participant inscrit {{$nbPlayers}} /  {{$event->nb_max_user}}</span>
             <a href="{{route('event_registration_view', ['id' => $event->id])}}">
                 <button class="clickable" <?= $stats === 'full' ? 'disabled' : '' ?>>Inscription</button>
             </a>
