@@ -26,11 +26,11 @@ class CreateEventsTable extends Migration
             $table->mediumText('list_equipment')->nullable();
             $table->boolean('has_toilets')->default(0)->nullable();
             $table->string('event_picture');
-            $table->decimal('nb_max_user')->default('1');
+            $table->integer('nb_max_user')->default('1');
 
 
-            $table->timestamp('created_at')->default(now());
-            $table->timestamp('updated_at')->default(now());
+            $table->timestamp('created_at');
+            $table->timestamp('updated_at');
 
              //$table->unsignedBigInteger('user_id');
              //$table->foreign('user_id')->references('id')->on('users');

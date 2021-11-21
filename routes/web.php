@@ -73,10 +73,9 @@ Route::group([
     Route::post('/event_store/', [EventController::class, 'store'])->name('event_store');
 
     /** Route Registration*/
-    Route::get('/event_registration/{id}', [RegistrationController::class, 'index'])->name('event_registration');
+    Route::get('/event_registration/{id}', [RegistrationController::class, 'index'])->name('event_registration_view');
 
-
-
+    Route::post('/event_registration_submit/', [RegistrationController::class, 'submit'])->name('event_registration_submit');
 
     Route::get('/tableaudebord/events', [EventController::class, 'index']);
 

@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Registration;
 use Illuminate\Support\Facades\Auth;
 use App\Models\Event;
 use App\User\Checker;
@@ -114,11 +115,46 @@ class EventController extends Controller
         $eventId = $request->event;
         /** @var Event|null $event */
         $event = Event::find($eventId);
-        if ($event) {
-            return view('events.view', compact('event'));
+
+        if ($event === null) {
+            return redirect()->route('event_index')->with('error', 'L\'animation n\'existe pas ou a été supprimée');
         }
 
-        return redirect()->route('event_index')->with('error', 'L\'animation n\'existe pas ou a été supprimée');
+        /** @var Registration|null $registrations */
+        $registrations = Registration::where('event_id', $eventId)->get();
+        /** @var int $nbPlayers */
+        $nbPlayers = 0;
+
+        if ($registrations) {
+            foreach ($registrations as $registration) {
+                $nbPlayers += $registration->nb_players;
+            }
+        }
+
+        /** @var string $stats */
+        $stats = $this->getStats($event, $nbPlayers);
+
+        return view('events.view', compact('event', 'nbPlayers', 'stats'));
+    }
+
+    /**
+     * @param Event|null $event
+     * @param int $number
+     * @return string
+     */
+    private function getStats(?Event $event, int $number): string
+    {
+        /** @var string $stats */
+        $stats = 'stats-green';
+        if ($number == $event->nb_max_user) {
+            $stats = 'full';
+        } elseif ($number > round($event->nb_max_user * 0.7)) {
+            $stats = 'stats-red';
+        } elseif ($number > round($event->nb_max_user * 0.5)) {
+            $stats = 'stats-orange';
+        }
+
+        return $stats;
     }
 
     /**
@@ -126,15 +162,14 @@ class EventController extends Controller
      * @param int $eventId
      * @return View
      */
-    public function edit(int $eventId)
+    public function edit(int $eventId): View
     {
         /** @var Event $event */
         $event = Event::find($eventId);
         /** @var bool $edit */
         $edit = true;
-        return view('events.form', compact(['event', 'edit']));
+        return view('events.form', compact('event', 'edit'));
     }
-
 
     /**
      * Remove the specified resource from storage.

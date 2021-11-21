@@ -10,7 +10,7 @@
                 <input id="user_id" type="hidden" name="user_id" value="{{$event->user_id ?? Auth::user()->id}}">
                 <div class="event_create_container flexrow">
                     <div class="illustration_event">
-                        <img src="/images/mpplogo.png" alt="">
+                        <img src="{{ asset('images/mpplogo.png') }}" alt="">
                     </div>
                     <div>
                         <label for="event_picture">Importez une image d'illustration pour votre animation:</label>
@@ -47,19 +47,26 @@
                     </textarea>
                 </section>
                 <section class="radio_event_create">
-                <span class="checkbox_event_create">
-                    <label for="has_equipment">Materiel nécessaire</label>
-                    <input class="checkbox" id="has_equipment" type="checkbox" name="has_equipment" checked="" value="{{$event->has_equipment ?? ''}}">
-                </span>
                     <span class="checkbox_event_create">
-                    <label for="child_authorized">Enfants acceptés</label>
-                    <input class="checkbox" id="child_authorized" type="checkbox" name="child_authorized" checked="" value="{{$event->child_authorized ?? ''}}">
-                </span>
+                        <label for="has_equipment">Materiel nécessaire</label>
+                        <input class="checkbox" id="has_equipment" type="checkbox" name="has_equipment" checked="" value="{{$event->has_equipment ?? ''}}">
+                    </span>
                     <span class="checkbox_event_create">
-                    <label for="has_toilets">Toilettes disponibles</label>
-                    <input class="checkbox" id="has_toilets" type="checkbox" name="has_toilets" checked="" value="{{$event->has_toilets ?? ''}}">
-                </span>
-
+                        <label for="child_authorized">Enfants acceptés</label>
+                        <input class="checkbox" id="child_authorized" type="checkbox" name="child_authorized" checked="" value="{{$event->child_authorized ?? ''}}">
+                    </span>
+                    <span class="checkbox_event_create">
+                        <label for="has_toilets">Toilettes disponibles</label>
+                        <input class="checkbox" id="has_toilets" type="checkbox" name="has_toilets" checked="" value="{{$event->has_toilets ?? ''}}">
+                    </span>
+                    <span class="checkbox_event_create">
+                        <label for="has_toilets">Toilettes disponibles</label>
+                        <input class="checkbox" id="has_toilets" type="checkbox" name="has_toilets" checked="" value="{{$event->has_toilets ?? ''}}">
+                    </span>
+                    <span class="checkbox_event_create">
+                        <label for="nb_max_user">Nombre de joueur max</label>
+                        <input class="text" id="nb_max_user" type="number" name="nb_max_user" checked="" value="{{$event->nb_max_user ?? 0}}">
+                    </span>
                 </section>
                 <section class="listmateriel">
                     <textarea name="list_equipment" id="list_materiel" placeholder="Renseignez la liste du materiel nécessaire">

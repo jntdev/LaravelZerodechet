@@ -33,13 +33,13 @@
                 <a href="{{route('manage')}}">
                     <button class="return_tolist clickable">Panneau de gestion</button>
                 </a>
-                @endif
+            @endif
             <a href="../event_index">
                 <button class="return_tolist clickable">Retour à la liste</button>
             </a>
-            <span>Nombre de participant inscrit 0/10</span>
-            <a href="{{route('event_registration', ['id' => $event->id])}}">
-                <button class="clickable">Inscription</button>
+            <span class="{{$stats}}">Nombre de participant inscrit {{$nbPlayers}}/  {{$event->nb_max_user}}</span>
+            <a href="{{route('event_registration_view', ['id' => $event->id])}}">
+                <button class="clickable" <?= $stats === 'full' ? 'disabled' : '' ?>>Inscription</button>
             </a>
         </section>
         @if (Checker::isAdmin() || Checker::eventBelongsToCurrentUser($event->user_id))
