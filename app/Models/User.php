@@ -13,6 +13,10 @@ class User extends Authenticatable
 {
     use HasApiTokens, HasFactory, Notifiable;
 
+    public function getId()
+    {
+        return $this->id;
+    }
     /**
      * The attributes that are mass assignable.
      *
@@ -24,9 +28,6 @@ class User extends Authenticatable
         'email',
         'role',
         'password',
-        'address',
-        'zipcode',
-        'city',
         'phone_nb',
         'captn_mail',
     ];

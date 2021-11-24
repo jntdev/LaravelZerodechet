@@ -1,4 +1,5 @@
-@include('layouts.app')
+@extends('layouts.app')
+@section('content')
 @if (Checker::isAdmin() || Checker::isAnim())
     <button><a href="{{route('event_create')}}">créez une animation</a></button>
 @endif
@@ -29,22 +30,8 @@
                         <p>{{$event->description}}</p>
                     </div>
                 </div>
-                {{--<div class="bot_event_section">
-                    <div class="adminoption">
-                        <a href="{{ route('tableaudebord.show', ['id' => $event->id])}}">
-                            <button>
-                                Voir plus
-                            </button>
-                        </a>
-                        @if (Checker::isAdmin()||Checker::canDeleteEvent($event->user_id))
-                            <a href="{{ route('tableaudebord.edit', ['id' => $event->id])}}">
-                                <button>modifier</button>
-                            </a>
-                        @endif
-                    </div>
-                </div>--}}
                 <a href="{{route('event_show', ['event' => $event->id])}}">Voir en détails</a>
             </div>
         @endforeach
     </div>
-</section>
+@endsection

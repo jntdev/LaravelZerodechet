@@ -1,9 +1,15 @@
 @extends('layouts.app')
 @section('content')
-@if (Checker::isAdmin() || Checker::isAnim())
-    <button><a href="{{route('event_create')}}">créez une animation</a></button>
-    <button><a href="{{route('manage')}}">Gerez vos animations</a></button>
-@endif
+    <section class="index_vue_pannel">
+
+        @if (Checker::isAdmin() || Checker::isAnim())
+            <a href="{{route('event_create')}}"><button class="adminbutton">créez une animation</button></a>
+            <a href="{{route('manage')}}"><button class="adminbutton">Gerez vos animations</button></a>
+        @endif
+        <a href="{{route('registered')}}"><button class="userbutton">Vos inscriptions</button></a>
+
+    </section>
+
 
 <section class="events">
     <div class="titlesection">
@@ -23,7 +29,7 @@
                 <div class="box_event_content">
                     <div class="infosection">
                         <h3>{{$event->title}}</h3>
-{{--                        <p>{{$event->description}}</p>--}}
+                       <p>{{$event->description}}</p>
                     </div>
                 </div>
                 <a href="{{route('event_show', ['event' => $event->id])}}">Voir en détails</a>

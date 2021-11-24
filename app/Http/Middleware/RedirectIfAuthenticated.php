@@ -2,8 +2,12 @@
 
 namespace App\Http\Middleware;
 
+use App\Http\Controllers\LoggedController;
+use App\Models\Event;
 use App\Providers\RouteServiceProvider;
 use Closure;
+use http\Message;
+use Illuminate\Http\RedirectResponse;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 
@@ -21,20 +25,13 @@ class RedirectIfAuthenticated
     {
         $guards = empty($guards) ? [null] : $guards;
 
+
         foreach ($guards as $guard) {
              if (Auth::guard($guard)->check()) {
                  //return redirect(RouteServiceProvider::HOME);
                  return redirect()->route('home');
              }
-            // if( auth::guard($guard)->check() && auth::user()->role == 1){
-            //     return redirect()->route('home');
-            // }
-            // elseif(auth::guard($guard)->check() && auth::user()->role == 2){
-            //     return redirect()->route('home');
-            // }
-            
         }
-
         return $next($request);
     }
 }

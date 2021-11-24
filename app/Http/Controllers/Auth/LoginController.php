@@ -29,11 +29,6 @@ class LoginController extends Controller
      */
     protected $redirectTo = RouteServiceProvider::HOME;
         protected function redirectTo(){
-            //if( Auth()->user()->role ==1){
-            //    return route('admin.dashboard');
-            //}elseif( Auth()->user()==2){
-            //    return route('anim.dashboard');
-            //}
             return route('dashboard');
         }
 
@@ -46,7 +41,6 @@ class LoginController extends Controller
     {
         $this->middleware('guest')->except('logout');
     }
-
     public function login(Request $request){
         $input = $request->all();
         $this->validate($request,[
@@ -54,19 +48,6 @@ class LoginController extends Controller
             'password'=> 'required'
         ]);
         if( auth()-> attempt(array('email'=>$input['email'],'password'=>$input['password']))){
-             // if(auth()->user()->role == 1){
-             //     //return redirect()->route('admin.dashboard');
-             //     return redirect()->route('admin.dashboard');
-             // }        
-             // elseif( auth()->user()->role == 2){
-             //         return redirect()->route('anim.dashboard');
-             //          }
-             // elseif( auth()->user()->role == 3){
-             //    return redirect()->route('captn.dashboard');
-             //     }
-             // elseif( auth()->user()->role == 4){
-             //     return redirect()->route('user.dashboard');
-             //}
              return redirect()->route('dashboard');
         }else{
             return redirect()->route('login')->with('error','email and password are wrong');

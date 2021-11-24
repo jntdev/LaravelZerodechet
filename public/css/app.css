@@ -10026,6 +10026,9 @@ h3 {
   --fourthbackground: #88c4a1;
   --fourthbackground2: #e9f4ec;
   --fourthbackground3: #edfcda;
+  --fullspan: #b13e3e;
+  --orangespan: #fd8a47;
+  --yellowspan:#ffb338;
 }
 
 .firstfontfamilly {
@@ -12038,6 +12041,26 @@ textarea::placeholder {
   height: 150px;
 }
 
+.index_vue_pannel {
+  width: 80%;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  padding: 5%;
+}
+.index_vue_pannel button {
+  color: white;
+  font-family: var(--primfontfamily);
+  font-size: 20px;
+  border-radius: 20px;
+  padding: 10px 15px;
+  border: none;
+  background-color: var(--fourthbackground);
+}
+.index_vue_pannel .userbutton {
+  background-color: var(--primebackground);
+}
+
 .events {
   color: var(--maincolor);
   font-family: var(--primfontfamily);
@@ -12055,8 +12078,9 @@ textarea::placeholder {
 .box_event {
   margin: 50px;
   width: 25%;
-  max-width: 350px;
-  height: 300px;
+  max-width: 370px;
+  height: 450px;
+  max-height: 400px;
   display: flex;
   flex-direction: column;
   justify-content: space-around;
@@ -12064,9 +12088,6 @@ textarea::placeholder {
   border-radius: 0 25px 25px 25px;
   box-shadow: 3px -1px 15px -2px rgba(0, 0, 0, 0.1);
   padding: 2%;
-}
-.box_event .infosection {
-  text-overflow: ellipsis;
 }
 
 .top_event_section {
@@ -12176,6 +12197,15 @@ textarea::placeholder {
   padding: 15px;
   border: none;
   background-color: var(--primebackground);
+}
+.container_event_vue #full {
+  background-color: var(--fullspan);
+}
+.container_event_vue #orange_span {
+  background-color: var(--orangespan);
+}
+.container_event_vue #yellow_span {
+  background-color: var(--yellowspan);
 }
 .container_event_vue .return_tolist {
   background-color: var(--fourthbackground);

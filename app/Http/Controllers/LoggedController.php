@@ -1,55 +1,68 @@
 <?php
 
 namespace App\Http\Controllers;
+use App\Http\Requests\Users\UpdateProfileRequest;
 use App\Models\user;
 use Illuminate\Http\RedirectResponse;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\Hash;
 
 class LoggedController extends Controller
 {
 
+    /**
+     * @param user $user
+     * @param Request $request
+     * @return \Illuminate\Contracts\Foundation\Application|\Illuminate\Contracts\View\Factory|\Illuminate\Contracts\View\View|RedirectResponse
+     */
+    function index(user $user, request $request){
 
-    function index(){
-        return view('/home');
+        if (Auth::user()->id == $user->id){
+            //dd('tata');
+            return $this->update($request);
+        }
+        else{
+
+            return view('/home');
+
+        }
+
     }
+
+    /**
+     * @return \Illuminate\Contracts\Foundation\Application|\Illuminate\Contracts\View\Factory|\Illuminate\Contracts\View\View
+     */
     function profile(){
         $user = Auth::user();
-        return view('/auth.register',compact('user'));
+        return view('/auth.profile',compact('user'));
     }
 
-    function update(Request $request) : RedirectResponse{
-        try {
-            /** @var User $user */
-            $user = User::find($request->user_id);
-            /**
-             * @var string $key
-             * @var string $value
-             */
-            foreach ($request->all() as $key => $value) {
-                if ($key == '_token' || 'user_id') {
-                    continue;
-                }
-                $user->$key = $value;
-            }
+    /**
+     * @param Request $request
+     * @return RedirectResponse
+     */
+    function update(UpdateProfileRequest $request) : RedirectResponse{
+            $user = Auth::user();
 
-            $user->save();
-        return redirect()->route('/')->with('success', 'Votre profil a bien été mis à jour');
-    }catch (Exception $e) {
-            return redirect()->route('profile')->with('error', 'Une erreur est survenue');
-        }
+            $user ->update([
+                'first_name'=> $request->first_name,
+                'last_name' => $request->last_name,
+                'email' => $request->email,
+                'password' => Hash::make($request->password),
+                'phone_nb' => $request->phone_nb,
+                'captn_mail' => $request->captn_mail,
+            ]);
+        return redirect()->route('profile')->with('success', 'Votre profil a bien été mis à jour');
     }
 
-
-    /*catch (Exception $e) {
-return redirect()->route('profile', ['user' => $request->user_id])->with('error', 'Une erreur est survenue');
-
-    }*/
-
-    //fonction qui supprime l'utilisateur de la bdd
+    /**
+     * @param Request $request
+     * @return \Illuminate\Contracts\Foundation\Application|RedirectResponse|\Illuminate\Routing\Redirector
+     */
     public function delete(Request $request){
 
-        $user=user::find($request->user_id);
+        $user=Auth::user();
 
         $user->delete();
         $request->session()->invalidate();

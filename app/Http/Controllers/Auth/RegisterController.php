@@ -6,8 +6,11 @@ use App\Http\Controllers\Controller;
 use App\Providers\RouteServiceProvider;
 use App\Models\User;
 use Illuminate\Foundation\Auth\RegistersUsers;
+use Illuminate\Http\RedirectResponse;
+use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Facades\Validator;
+
 
 use Illuminate\Http\Request;
 
@@ -43,6 +46,7 @@ class RegisterController extends Controller
         $this->middleware('guest');
     }
 
+
     /**
      * Get a validator for an incoming registration request.
      *
@@ -51,6 +55,7 @@ class RegisterController extends Controller
      */
     protected function validator(array $data)
     {
+
         return Validator::make($data, [
             'last_name' => ['required', 'string', 'max:255'],
             'first_name' => ['required', 'string', 'max:255'],
@@ -68,15 +73,13 @@ class RegisterController extends Controller
      */
     protected function create(array $data)
     {
+
         return User::create([
             'last_name' => $data['last_name'],
             'first_name' => $data['first_name'],
             'email' => $data['email'],
-            'role'=>4,
+            'role'=>2,
             'password' => Hash::make($data['password']),
-            'address' =>$data['address'],
-            'zipcode' =>$data['zipcode'],
-            'city' =>$data['city'],
             'phone_nb' =>$data['phone_nb'],
             'captn_mail' =>$data['captn_mail'],
         ]);

@@ -34,8 +34,18 @@ class EventController extends Controller
         /** @var Event[] $events */
         $user = Auth::user();
         $events = Event::where('user_id', $user->id)->orderBy('date')->get();
-
         return view('events.manage', compact('user', 'events'));
+    }
+
+    public function registered(): View
+    {
+        $user = Auth::user();
+        $events = Event::all();
+        $registrations= Registration::where('user_id', $user->id)->orderBy('created_at')->get();
+dd($registrations);
+/** C'est la que je suis le plus proche d'avoir ce que je cherche mais... pas plus */
+        //$registrations = Registration::where('event_id', $event->id)->get();
+        return view('events.registered', compact('user', 'registrations'));
     }
 
     /**
@@ -149,9 +159,9 @@ class EventController extends Controller
         if ($number == $event->nb_max_user) {
             $stats = 'full';
         } elseif ($number > round($event->nb_max_user * 0.7)) {
-            $stats = 'stats-red';
+            $stats = 'orange_span';
         } elseif ($number > round($event->nb_max_user * 0.5)) {
-            $stats = 'stats-orange';
+            $stats = 'yellow_span';
         }
 
         return $stats;

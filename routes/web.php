@@ -9,6 +9,7 @@ use App\Http\Controllers\AdminController;
 use App\Http\Controllers\CaptnController;
 use App\Http\Controllers\EventController;
 use App\Http\Controllers\RegistrationController;
+use App\Http\Controllers\RegisterController;
 use App\Http\Controllers\LoggedController;
 use App\Http\Controllers\VitrineController;
 
@@ -58,25 +59,22 @@ Route::group([
     /** Route Profile*/
     Route::get('home',[LoggedController::class,'index'])->name('dashboard');
     Route::get('profile',[LoggedController::class,'profile'])->name('profile');
-    Route::post('user_delete',[LoggedController::class,'delete'])->name('user_delete');
-    Route::get('settings',[LoggedController::class,'settings'])->name('settings');
+    Route::get('user_delete',[LoggedController::class,'delete'])->name('user_delete');
+    Route::put('user_update',[LoggedController::class,'update'])->name('user_update');
 
 
     /** Route Event */
     Route::get('/event_index/', [EventController::class, 'index'])->name('event_list');
     Route::get('/event_manage/', [EventController::class, 'manage'])->name('manage');
+    Route::get('/registered/', [EventController::class, 'registered'])->name('registered');
     Route::get('/event_show/{event}', [EventController::class, 'show'])->name('event_show');
     Route::get('/event_create/', [EventController::class, 'create'])->name('event_create');
     Route::get('/event_edit/{id}', [EventController::class, 'edit'])->name('event_edit');
     Route::get('/event_delete/{id}', [EventController::class, 'delete'])->name('event_delete');
-
     Route::post('/event_store/', [EventController::class, 'store'])->name('event_store');
 
     /** Route Registration*/
     Route::get('/event_registration/{id}', [RegistrationController::class, 'index'])->name('event_registration_view');
-
     Route::post('/event_registration_submit/', [RegistrationController::class, 'submit'])->name('event_registration_submit');
-
     Route::get('/tableaudebord/events', [EventController::class, 'index']);
-
 });

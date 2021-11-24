@@ -21,6 +21,7 @@
     --sizelink: 25px;
     --weightlink: 700;
     --secondaryfontsize: 25px;
+
     //backgroundcolor
     //premier echantillons couleur
     //--primebackground: rgb(86, 129, 223);
@@ -45,6 +46,9 @@
     --fourthbackground: #88c4a1;
     --fourthbackground2: #e9f4ec;
     --fourthbackground3: #edfcda;
+    --fullspan : #b13e3e;
+    --orangespan : #fd8a47;
+    --yellowspan:#ffb338;
     //second echantillons couleur
     //--encartbackground: #1d485180;
     //--primebackground: #f9e5ad;
@@ -2152,6 +2156,26 @@ textarea::placeholder {
 }
 //__________ tableau de bord
 
+.index_vue_pannel{
+    width: 80%;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    padding: 5%;
+    button{
+        color: white;
+        font-family: var(--primfontfamily);
+        font-size: 20px;
+        border-radius: 20px;
+        padding: 10px 15px;
+        border: none;
+        background-color: var(--fourthbackground);
+
+    }
+    .userbutton{
+        background-color: var(--primebackground);
+    }
+}
 .events {
     color: var(--maincolor);
     font-family: var(--primfontfamily);
@@ -2168,8 +2192,9 @@ textarea::placeholder {
 .box_event {
     margin: 50px;
     width: 25%;
-    max-width: 350px;
-   height: 300px;
+    max-width: 370px;
+    height: 450px;
+    max-height: 400px;
     display: flex;
     flex-direction: column;
     justify-content: space-around;
@@ -2177,12 +2202,6 @@ textarea::placeholder {
     border-radius: 0 25px 25px 25px;
     box-shadow: 3px -1px 15px -2px rgba(0, 0, 0, 0.1);
     padding: 2%;
-    .infosection{
-
-            text-overflow:ellipsis;
-
-
-    }
 }
 
 .top_event_section {
@@ -2297,6 +2316,15 @@ textarea::placeholder {
         padding: 15px;
         border: none;
         background-color: var(--primebackground);
+    }
+   #full{
+        background-color: var(--fullspan);
+    }
+    #orange_span{
+        background-color: var(--orangespan);
+    }
+    #yellow_span{
+        background-color: var(--yellowspan);
     }
     .return_tolist {
         background-color: var(--fourthbackground);
@@ -2837,3 +2865,5 @@ textarea::placeholder {
         }
     }
 }
+
+
