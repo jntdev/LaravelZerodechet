@@ -1,6 +1,9 @@
 @extends('layouts.app')
 
 @section('content')
+    @if (Auth::check())
+        <a href="{{route('event_list')}}"><button id="tableaudebord">Tableau de bord</button></a>
+    @endif
     <div class="astucontent">
         <div class="introastuce">
             <p>Ici, c'est la zone <strong>bons plans</strong> !</p>
@@ -28,7 +31,7 @@
         <div class="astusection fourthbackground " onclick="location.href='produitsmenagers';">
             <div class="astuces menage clickable">
                 <div class="bande ">
-                    <h2>Produits ménagers</h2> 
+                    <h2>Produits ménagers</h2>
                 </div>
             </div>
         </div>
@@ -40,4 +43,4 @@
             </div>
         </div>
     </div>
-    @endsection
+@endsection

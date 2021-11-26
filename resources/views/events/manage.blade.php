@@ -1,8 +1,18 @@
 @extends('layouts.app')
 @section('content')
-@if (Checker::isAdmin() || Checker::isAnim())
-    <button><a href="{{route('event_create')}}">créez une animation</a></button>
-@endif
+    <section class="index_vue_page">
+    <aside class="index_vue_pannel">
+        <div class="button_controller">
+            <a href="{{route('event_list')}}"><button class="userbutton">Tableau de bord</button></a>
+            <a href="{{route('registered')}}"><button class="userbutton">Vos inscriptions</button></a>
+            <a href="{{route('profile')}}"><button class="userbutton">Votre profile</button></a>
+            @if (Checker::isAdmin() || Checker::isAnim())
+                <a href="{{route('event_create')}}"><button class="animbutton">créez une animation</button></a>
+
+            @endif
+        </div>
+        <div class="calendar"></div>
+    </aside>
 <section class="events">
     <div class="titlesection">
         <h2>Liste des animations</h2>
@@ -34,4 +44,5 @@
             </div>
         @endforeach
     </div>
+</section>
 @endsection

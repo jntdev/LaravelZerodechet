@@ -24,6 +24,7 @@ class Event extends Model
         'event_picture',
         'list_equipment',
         'user_id',
+        'nb_max_user',
 
     ];
     protected $dates =['date'];
@@ -35,7 +36,7 @@ class Event extends Model
         return $this->hasOne(Event_image::class);
     }
     public function registrations(){
-        return $this->belongsTo(Registration::class);
+        return $this->hasMany(Registration::class);
     }
 
 }

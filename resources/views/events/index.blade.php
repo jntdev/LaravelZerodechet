@@ -1,17 +1,19 @@
 @extends('layouts.app')
 @section('content')
-    <section class="index_vue_pannel">
-
-        @if (Checker::isAdmin() || Checker::isAnim())
-            <a href="{{route('event_create')}}"><button class="adminbutton">créez une animation</button></a>
-            <a href="{{route('manage')}}"><button class="adminbutton">Gerez vos animations</button></a>
-        @endif
-        <a href="{{route('registered')}}"><button class="userbutton">Vos inscriptions</button></a>
-
-    </section>
-
-
-<section class="events">
+    <section class="index_vue_page">
+{{--        <aside class="underindex_vue_pannel"></aside>--}}
+        <aside class="index_vue_pannel">
+            <div class="button_controller">
+                <a href="{{route('profile')}}"><button class="userbutton">Mon profil</button></a>
+                <a href="{{route('registered')}}"><button class="userbutton">Vos inscriptions</button></a>
+                @if (Checker::isAdmin() || Checker::isAnim())
+                    <a href="{{route('event_create')}}"><button class="animbutton">créez une animation</button></a>
+                    <a href="{{route('manage')}}"><button class="animbutton">Gerez vos animations</button></a>
+                @endif
+            </div>
+            <div class="calendar"></div>
+        </aside>
+    <section class="events">
     <div class="titlesection">
         <h2>Liste des animations</h2>
     </div>
@@ -21,7 +23,7 @@
                 <div class="top_event_section flexrow">
                     <img src="{{ asset('images/event/'. $event->event_picture) }}" alt="#">
                     <div class="rdvsection">
-                        <p>{{$event->date}}</p>
+                        <p>{{$event->date->format('d/m/Y')}}</p>
                         <p>{{$event->city}}</p>
                         <p>Crée par {{$event->user->first_name}}</p>
                     </div>
@@ -37,4 +39,5 @@
         @endforeach
     </div>
 </section>
+    </section>
 @endsection

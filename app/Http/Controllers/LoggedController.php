@@ -24,7 +24,7 @@ class LoggedController extends Controller
         }
         else{
 
-            return view('/home');
+            return view('/home',['title'=>'Bienvenue !']);
 
         }
 
@@ -35,7 +35,7 @@ class LoggedController extends Controller
      */
     function profile(){
         $user = Auth::user();
-        return view('/auth.profile',compact('user'));
+        return view('/auth.profile',compact('user'),['title'=>'Mon profil']);
     }
 
     /**
@@ -43,17 +43,16 @@ class LoggedController extends Controller
      * @return RedirectResponse
      */
     function update(UpdateProfileRequest $request) : RedirectResponse{
-            $user = Auth::user();
-
-            $user ->update([
-                'first_name'=> $request->first_name,
-                'last_name' => $request->last_name,
-                'email' => $request->email,
-                'password' => Hash::make($request->password),
-                'phone_nb' => $request->phone_nb,
-                'captn_mail' => $request->captn_mail,
-            ]);
-        return redirect()->route('profile')->with('success', 'Votre profil a bien été mis à jour');
+        $user = Auth::user();
+        $user ->update([
+            'first_name'=> $request->first_name,
+            'last_name' => $request->last_name,
+            'email' => $request->email,
+            'password' => Hash::make($request->password),
+            'phone_nb' => $request->phone_nb,
+            'team_name' => $request->team_name,
+        ]);
+        return redirect()->route('profile',compact('user'))->with('success', 'Votre profil a bien été mis à jour');
     }
 
     /**
@@ -66,6 +65,6 @@ class LoggedController extends Controller
 
         $user->delete();
         $request->session()->invalidate();
-        return redirect('/');
+        return redirect('/',['title'=>'Bienvenu !'])->with('error', 'Votre profil a bien été supprimé');
     }
 }

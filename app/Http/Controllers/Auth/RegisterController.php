@@ -81,7 +81,7 @@ class RegisterController extends Controller
             'role'=>2,
             'password' => Hash::make($data['password']),
             'phone_nb' =>$data['phone_nb'],
-            'captn_mail' =>$data['captn_mail'],
+            'team_name' =>$data['team_name'],
         ]);
     }
 }

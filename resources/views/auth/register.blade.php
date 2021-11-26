@@ -5,8 +5,6 @@
         <div class="row justify-content-center">
             <div class="col-md-8">
                 <div class="card">
-
-
                     <div class="card-body">
                         <form method="POST" action="{{route('register') }}">
                             @csrf
@@ -18,7 +16,7 @@
                                 <div class="col-md-6">
                                     <input id="last_name" type="text"
                                            class="form-control @error('last_name') is-invalid @enderror"
-                                           name="last_name" value="{{$user->last_name ?? ''}}" required autocomplete="last_name"
+                                           name="last_name" value="" required autocomplete="last_name"
                                            autofocus>
                                     @error('name')
                                     <span class="invalid-feedback" role="alert">
@@ -35,7 +33,7 @@
                                 <div class="col-md-6">
                                     <input id="first_name" type="text"
                                            class="form-control @error('first_name') is-invalid @enderror"
-                                           name="first_name" value="{{$user->first_name ?? ''}}" required
+                                           name="first_name" value="" required
                                            autocomplete="first_name" autofocus>
                                     @error('first_name')
                                     <span class="invalid-feedback" role="alert">
@@ -52,7 +50,7 @@
                                 <div class="col-md-6">
                                     <input id="email" type="email"
                                            class="form-control @error('email') is-invalid @enderror" name="email"
-                                           value="{{$user->email ?? ''}}" required autocomplete="email">
+                                           value="" required autocomplete="email">
 
                                     @error('email')
                                     <span class="invalid-feedback" role="alert">
@@ -93,30 +91,23 @@
                             <div class="form-group row">
                                 <label for="phone_nb"
                                        class="col-md-4 col-form-label text-md-right">Numéro de téléphone</label>
-
                                 <div class="col-md-6">
                                     <input id="phone_nb" type="text"
-                                           class="form-control @error('phone_nb') is-invalid @enderror" name="phone_nb"
-                                           value="{{$user->phone_nb ?? ''}}"required autocomplete="Numéro de téléphone">
-
-                                    @error('phone_nb')
-                                    <span class="invalid-feedback" role="alert">
-                                        <strong>{{ $message }}</strong>
-                                    </span>
-                                    @enderror
+                                           class="form-control" name="phone_nb"
+                                           value="">
                                 </div>
                             </div>
-{{--                            INPUT CAPITAIN--}}
+                            {{--                            INPUT CAPITAIN--}}
                             <div class="form-group row">
-                                <label for="captn_mail"
-                                       class="col-md-4 col-form-label text-md-right">{{ __('Email du Capitaine') }}</label>
+                                <label for="team_name"
+                                       class="col-md-4 col-form-label text-md-right">{{ __('Nom de l\'équipe') }}</label>
 
                                 <div class="col-md-6">
-                                    <input id="captn_mail" type="text"
-                                           class="form-control @error('captn_mail') is-invalid @enderror" name="captn_mail"
-                                           value="{{$user->captn_mail ?? ''}}"required autocomplete="Email du Capitaine">
+                                    <input id="team_name" type="text"
+                                           class="form-control @error('team_name') is-invalid @enderror" name="team_name"
+                                           value=""required autocomplete="Nom de l'équipe">
 
-                                    @error('captn_mail')
+                                    @error('team_name')
                                     <span class="invalid-feedback" role="alert">
                                         <strong>{{ $message }}</strong>
                                     </span>
@@ -125,9 +116,9 @@
                             </div>
                             <div class="form-group row mb-0">
                                 <div class="col-md-7 offset-md-4">
-                                        <button type="submit" class="btn btn-primary">
-                                            {{  Auth::check() ? 'Modifier mon profil' : 'S\'enregistrer' }}
-                                        </button>
+                                    <button type="submit" class="btn btn-primary">
+                                        {{  Auth::check() ? 'Modifier mon profil' : 'S\'enregistrer' }}
+                                    </button>
                                 </div>
                             </div>
                         </form>

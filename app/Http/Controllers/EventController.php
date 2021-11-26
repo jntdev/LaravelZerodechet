@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Models\Registration;
 use Illuminate\Support\Facades\Auth;
 use App\Models\Event;
+use App\Models\User;
 use App\User\Checker;
 use App\User\Facades\CheckerFacade;
 use Illuminate\Contracts\Foundation\Application;
@@ -12,6 +13,7 @@ use Illuminate\Contracts\View\Factory;
 use Illuminate\Contracts\View\View;
 use Illuminate\Http\RedirectResponse;
 use Illuminate\Http\Request;
+
 use Illuminate\Http\Response;
 use Illuminate\Support\Facades\Storage;
 
@@ -25,7 +27,7 @@ class EventController extends Controller
         /** @var Event[] $events */
         $events = Event::all();
 
-        return view('events.index', compact('events'));
+        return view('events.index', compact('events'),['title'=>'Tableau de bord']);
     }
 
 
@@ -34,18 +36,22 @@ class EventController extends Controller
         /** @var Event[] $events */
         $user = Auth::user();
         $events = Event::where('user_id', $user->id)->orderBy('date')->get();
-        return view('events.manage', compact('user', 'events'));
+        return view('events.manage', compact('user', 'events'),['title'=>'Gerez vos animations']);
     }
 
+    /**
+     * @return View
+     */
     public function registered(): View
     {
         $user = Auth::user();
-        $events = Event::all();
-        $registrations= Registration::where('user_id', $user->id)->orderBy('created_at')->get();
-dd($registrations);
-/** C'est la que je suis le plus proche d'avoir ce que je cherche mais... pas plus */
-        //$registrations = Registration::where('event_id', $event->id)->get();
-        return view('events.registered', compact('user', 'registrations'));
+        $events = Registration::where('user_id', $user->id)->get();
+        $eventIds = [];
+        foreach($events as $event){
+            $eventIds[]=$event->event_id;
+        }
+        $events=Event::whereIn('id', $eventIds)->get();
+        return view('events.registered', compact('user','events'),['title'=>'Vos inscriptions']);
     }
 
     /**
@@ -54,7 +60,7 @@ dd($registrations);
      */
     public function create(): View
     {
-        return view('events.form');
+        return view('events.form',['title'=>'Créez votre animation']);
     }
 
     /**
@@ -144,7 +150,7 @@ dd($registrations);
         /** @var string $stats */
         $stats = $this->getStats($event, $nbPlayers);
 
-        return view('events.view', compact('event', 'nbPlayers', 'stats'));
+        return view('events.view', compact('event', 'nbPlayers', 'stats'),['title'=>$event->title]);
     }
 
     /**
@@ -174,6 +180,7 @@ dd($registrations);
      */
     public function edit(int $eventId): View
     {
+
         /** @var Event $event */
         $event = Event::find($eventId);
         /** @var bool $edit */

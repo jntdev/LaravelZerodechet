@@ -16,11 +16,11 @@ class Registration extends Model
         'event_id',
     ];
 
-    public function users(){
-        return $this->hasMany(User::class);
+    public function user(){
+        return $this->belongsTo(User::class);
     }
-    public function events(){
-        return $this->hasMany(Event::class);
+    public function event(){
+        return $this->belongsTo(Event::class);
     }
 
 }

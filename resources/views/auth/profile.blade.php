@@ -1,26 +1,34 @@
 @extends('layouts.app')
-
 @section('content')
-    <div class="container">
+    <section class="index_vue_page">
+        <aside class="index_vue_pannel">
+            <div class="button_controller">
+                <a href="{{route('event_list')}}"><button class="userbutton">Tableau de bord</button></a>
+                <a href="{{route('registered')}}"><button class="userbutton">Vos inscriptions</button></a>
+                @if (Checker::isAdmin() || Checker::isAnim())
+                    <a href="{{route('event_create')}}"><button class="animbutton">créez une animation</button></a>
+                    <a href="{{route('manage')}}"><button class="animbutton">Gerez vos animations</button></a>
+                @endif
+            </div>
+            <div class="calendar"></div>
+        </aside>
+    <div class="container backoffice_borderleft ">
         <div class="row justify-content-center">
             <div class="col-md-8">
-                <div class="card">
-                    <div class="card-body">
+                <div class="card border-info">
+                    <div class="card-body bottomform relative">
                         <form method="POST" action="{{ route('user_update') }}">
                             @csrf
                             @method('PUT')
-
                             {{--                        INPUT NOM--}}
                             <div class="form-group row">
                                 <label for="last_name"
                                        class="col-md-4 col-form-label text-md-right">{{ __('Nom') }}</label>
-
                                 <div class="col-md-6">
                                     <input id="last_name" type="text"
                                            class="form-control @error('last_name') is-invalid @enderror"
                                            name="last_name" value="{{$user->last_name}}" required autocomplete="last_name"
                                            autofocus>
-
                                     @error('name')
                                     <span class="invalid-feedback" role="alert">
                                         <strong>{{ $message }}</strong>
@@ -32,13 +40,11 @@
                             <div class="form-group row">
                                 <label for="first_name"
                                        class="col-md-4 col-form-label text-md-right">{{ __('Prénom') }}</label>
-
                                 <div class="col-md-6">
                                     <input id="first_name" type="text"
                                            class="form-control @error('first_name') is-invalid @enderror"
                                            name="first_name" value="{{$user->first_name}}" required
                                            autocomplete="first_name" autofocus>
-
                                     @error('first_name')
                                     <span class="invalid-feedback" role="alert">
                                         <strong>{{ $message }}</strong>
@@ -50,12 +56,10 @@
                             <div class="form-group row">
                                 <label for="email"
                                        class="col-md-4 col-form-label text-md-right">{{ __('E-Mail') }}</label>
-
                                 <div class="col-md-6">
                                     <input id="email" type="email"
                                            class="form-control @error('email') is-invalid @enderror" name="email"
                                            value="{{$user->email}}" required autocomplete="email">
-
                                     @error('email')
                                     <span class="invalid-feedback" role="alert">
                                         <strong>{{ $message }}</strong>
@@ -67,12 +71,10 @@
                             <div class="form-group row">
                                 <label for="password"
                                        class="col-md-4 col-form-label text-md-right">{{ __('Mot de passe') }}</label>
-
                                 <div class="col-md-6">
                                     <input id="password" type="password"
                                            class="form-control @error('password') is-invalid @enderror" name="password"
                                            required autocomplete="new-password">
-
                                     @error('password')
                                     <span class="invalid-feedback" role="alert">
                                         <strong>{{ $message }}</strong>
@@ -84,41 +86,30 @@
                             <div class="form-group row">
                                 <label for="password-confirm"
                                        class="col-md-4 col-form-label text-md-right">{{ __('Confirmation') }}</label>
-
                                 <div class="col-md-6">
                                     <input id="password-confirm" type="password" class="form-control"
                                            name="password_confirmation" required autocomplete="new-password">
                                 </div>
                             </div>
-
                             {{--                        INPUT PHONE--}}
                             <div class="form-group row">
                                 <label for="phone_nb"
                                        class="col-md-4 col-form-label text-md-right">Numéro de téléphone</label>
-
                                 <div class="col-md-6">
                                     <input id="phone_nb" type="text"
-                                           class="form-control @error('phone_nb') is-invalid @enderror" name="phone_nb"
+                                           class="form-control" name="phone_nb"
                                            value="{{$user->phone_nb}}"required autocomplete="Numéro de téléphone">
-
-                                    @error('phone_nb')
-                                    <span class="invalid-feedback" role="alert">
-                                        <strong>{{ $message }}</strong>
-                                    </span>
-                                    @enderror
                                 </div>
                             </div>
                             {{--                            INPUT CAPITAIN--}}
                             <div class="form-group row">
-                                <label for="captn_mail"
-                                       class="col-md-4 col-form-label text-md-right">{{ __('Email du Capitaine') }}</label>
-
+                                <label for="team_name"
+                                       class="col-md-4 col-form-label text-md-right">{{ __('Nom de l\'équipe') }}</label>
                                 <div class="col-md-6">
-                                    <input id="captn_mail" type="text"
-                                           class="form-control @error('captn_mail') is-invalid @enderror" name="captn_mail"
-                                           value="{{$user->captn_mail}}"required autocomplete="Email du Capitaine">
-
-                                    @error('captn_mail')
+                                    <input id="team_name" type="text"
+                                           class="form-control @error('team_name') is-invalid @enderror" name="team_name"
+                                           value="{{$user->team_name ?? ''}}"required autocomplete="Nom de l'équipe">
+                                    @error('team_name')
                                     <span class="invalid-feedback" role="alert">
                                         <strong>{{ $message }}</strong>
                                     </span>
@@ -132,11 +123,10 @@
                                        Modifier mon profil
                                     </button>
                                     </a>
-
                                 </div>
                             </div>
                         </form>
-                        <a href="{{route('user_delete')}}">
+                        <a class="excentersupprbutton" href="{{route('user_delete')}}">
                             <button type="alert" class="btn btn-danger">
                                 Supprimer mon compte
                             </button>
@@ -146,4 +136,5 @@
             </div>
         </div>
     </div>
+    </section>
 @endsection

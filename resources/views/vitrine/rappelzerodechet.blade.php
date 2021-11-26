@@ -1,6 +1,9 @@
 @extends('layouts.app')
 
 @section('content')
+    @if (Auth::check())
+        <a href="{{route('event_list')}}"><button id="tableaudebord">Tableau de bord</button></a>
+    @endif
     <div class="astusection mt100">
         <div class="astuces border cinqr"></div>
     </div>

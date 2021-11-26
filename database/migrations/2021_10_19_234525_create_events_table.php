@@ -17,25 +17,22 @@ class CreateEventsTable extends Migration
             $table->id();
             $table->string('title')->nullable();
             $table->dateTime('date')->nullable();
-            $table->time('duration')->default('0100')->nullable();
-            $table->string('address')->default('')->nullable();
-            $table->string('time')->default('')->nullable();
-
-            $table->string('city')->default('')->nullable();
-            $table->mediumText('description')->nullable();
+            $table->time('duration')->default('0100');
+            $table->string('address')->default('');
+            $table->string('time')->default('');
+            $table->string('city')->default('');
+            $table->mediumText('description');
             $table->boolean('has_equipment')->default(0)->nullable();
             $table->boolean('child_authorized')->default(0)->nullable();
             $table->mediumText('list_equipment')->nullable();
             $table->boolean('has_toilets')->default(0)->nullable();
-            $table->string('event_picture');
-            $table->integer('nb_max_user')->default('1');
+            $table->string('event_picture')->default('logo.png');
+            $table->integer('nb_max_user');
 
 
             $table->timestamp('created_at');
             $table->timestamp('updated_at');
 
-             //$table->unsignedBigInteger('user_id');
-             //$table->foreign('user_id')->references('id')->on('users');
             $table->foreignId('user_id')->constrained()->onDelete('cascade');;
         });
     }

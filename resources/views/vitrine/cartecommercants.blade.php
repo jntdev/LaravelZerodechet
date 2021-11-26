@@ -1,5 +1,8 @@
 @extends('layouts.app')
 @section('content')
+    @if (Auth::check())
+        <a href="{{route('event_list')}}"><button id="tableaudebord">Tableau de bord</button></a>
+    @endif
     <div class="astusection secondbackground clickable backgroundwhite" onclick="location.href='cartecommercants.php';">
         <div class="astuces commercants border">
             <div class="map "></div>

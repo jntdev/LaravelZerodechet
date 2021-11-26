@@ -8,51 +8,51 @@ class VitrineController extends Controller
 {
     public function index()
     {
-        return view('index');
+        return view('index',['title'=>'Bienvenue !']);
     }
     public function actu()
     {
-        return view('actu');
+        return view('vitrine.actu',['title'=>'Actualités']);
     }
     public function ledefi()
     {
-        return view('ledefi');
+        return view('vitrine.ledefi',['title'=>'Le défi']);
     }
     public function astuces()
     {
-        return view('astuces');
+        return view('vitrine.astuces',['title'=>'Astuces & ressources']);
     }
     public function rappelzerodechet()
     {
-        return view('rappelzerodechet');
+        return view('vitrine.rappelzerodechet',['title'=>'La démarche zéro déchet']);
     }
     public function cartecommercants()
     {
-        return view('cartecommercants');
+        return view('vitrine.cartecommercants' ,['title'=>'La carte des commerçants']);
     }
     public function ressources()
     {
-        return view('ressources');
+        return view('vitrine.ressources',['title'=>'Des astuces pour toute la maison']);
     }
     public function produitsmenagers()
     {
-        return view('produitsmenagers');
+        return view('vitrine.produitsmenagers',['title'=>'Les produits ménagers']);
     }
     public function biblio()
     {
-        return view('biblio');
+        return view('vitrine.biblio',['title'=>'Pour aller plus loin...']);
     }
     public function cuisine()
     {
-        return view('cuisine');
+        return view('vitrine.cuisine',['title'=>'La cuisine']);
     }
     public function salledebain()
     {
-        return view('salledebain');
+        return view('vitrine.salledebain',['title'=>'La salle de bain']);
     }
     public function bureau()
     {
-        return view('bureau');
+        return view('vitrine.bureau',['title'=>'Le bureau']);
     }
 
     /**
@@ -60,7 +60,7 @@ class VitrineController extends Controller
      */
     public function enfants()
     {
-        return view('enfants');
+        return view('vitrine.enfants',['title'=>'Les enfants']);
 
     }
 
@@ -69,7 +69,7 @@ class VitrineController extends Controller
      */
     public function quisommesnous()
     {
-        return view('quisommesnous');
+        return view('vitrine.quisommesnous',['title'=>'Qui sommes nous ?']);
         //return view('quisommesnous',['title'=>'Qui sommes nous ?']);{{'title'}}
     }
 
@@ -78,6 +78,6 @@ class VitrineController extends Controller
      */
     public function contact()
     {
-        return view('contact');
+        return view('vitrine.contact',['title'=>'Contact']);
     }
 }

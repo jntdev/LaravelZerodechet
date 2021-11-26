@@ -10040,6 +10040,23 @@ h3 {
   font-family: var(--secondfontfamily);
 }
 
+.space_around {
+  display: flex;
+  justify-content: space-around;
+}
+
+#tableaudebord {
+  margin: 20px 0 0 30px;
+  color: white;
+  width: 200px;
+  font-family: var(--primfontfamily);
+  font-size: 20px;
+  border-radius: 20px;
+  padding: 10px 15px;
+  border: none;
+  background-color: var(--primebackground);
+}
+
 .black {
   color: black;
 }
@@ -11898,6 +11915,38 @@ input:checked ~ nav > ul > li a {
   color: black;
 }
 
+.bottomform {
+  padding-bottom: 10%;
+}
+
+.home_text {
+  font-family: var(--primfontfamily);
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+}
+
+.normalbutton {
+  color: white;
+  font-family: var(--primfontfamily);
+  font-size: 15px;
+  border-radius: 20px;
+  padding: 10px 15px;
+  border: none;
+  background-color: var(--primebackground);
+}
+
+.excentersupprbutton {
+  position: absolute;
+  right: 0px;
+  bottom: 0px;
+}
+
+.backoffice_borderleft {
+  border-left: solid 2px var(--maincolor);
+  margin-left: 350px;
+}
+
 label {
   font-family: var(--primfontfamily);
 }
@@ -11926,16 +11975,20 @@ textarea::placeholder {
   font-family: var(--primfontfamily);
 }
 
+.form_event_relativ {
+  position: relative;
+}
+.form_event_relativ i {
+  position: absolute;
+  top: 0px;
+  right: 30px;
+}
+
 .background_event_create {
   background-color: white;
   border-radius: 25px;
   position: relative;
   padding-bottom: 2%;
-}
-.background_event_create i {
-  position: absolute;
-  top: 30px;
-  right: 30px;
 }
 .background_event_create button {
   display: block;
@@ -12021,6 +12074,7 @@ textarea::placeholder {
 }
 
 .radio_event_create {
+  width: 100%;
   margin: 30px;
   padding: 0 5%;
   display: flex;
@@ -12041,30 +12095,67 @@ textarea::placeholder {
   height: 150px;
 }
 
-.index_vue_pannel {
-  width: 80%;
+.index_vue_page {
   display: flex;
-  flex-direction: row;
-  justify-content: space-between;
-  padding: 5%;
+  min-height: 500px;
 }
-.index_vue_pannel button {
+
+.button_controller {
+  display: flex;
+  flex-direction: column;
+  height: 250px;
+}
+
+.underindex_vue_pannel {
+  width: 580px;
+  height: 400px;
+}
+
+/*.calendar{
+    height: 50%;
+    width:  80%;
+    background: #1d68a7;
+}*/
+.index_vue_pannel {
+  margin-top: -50px;
+  position: fixed;
+  width: 350px;
+  height: 500px;
+  display: flex;
+  flex-direction: column;
+  padding: 2%;
+}
+.index_vue_pannel .animbutton {
+  margin-bottom: 30px;
   color: white;
+  width: 90%;
+  font-family: var(--primfontfamily);
+  font-size: 20px;
+  border-radius: 20px;
+  padding: 10px 15px;
+  margin-bottom: 20px;
+  border: none;
+  background-color: var(--fourthbackground);
+}
+.index_vue_pannel .userbutton {
+  color: white;
+  width: 90%;
   font-family: var(--primfontfamily);
   font-size: 20px;
   border-radius: 20px;
   padding: 10px 15px;
   border: none;
-  background-color: var(--fourthbackground);
-}
-.index_vue_pannel .userbutton {
   background-color: var(--primebackground);
+  margin-bottom: 20px;
 }
 
 .events {
+  margin-left: 370px;
+  padding-left: 30px;
   color: var(--maincolor);
   font-family: var(--primfontfamily);
   font-size: 20px;
+  border-left: solid 2px var(--maincolor);
 }
 
 .event_list {
@@ -12077,10 +12168,8 @@ textarea::placeholder {
 
 .box_event {
   margin: 50px;
-  width: 25%;
-  max-width: 370px;
+  width: 370px;
   height: 450px;
-  max-height: 400px;
   display: flex;
   flex-direction: column;
   justify-content: space-around;

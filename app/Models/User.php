@@ -29,7 +29,7 @@ class User extends Authenticatable
         'role',
         'password',
         'phone_nb',
-        'captn_mail',
+        'team_name',
     ];
 
     /**
@@ -55,6 +55,6 @@ class User extends Authenticatable
         return $this->hasMany(Event::class);
     }
     public function registrations(){
-        return $this->belongsTo(Registration::class);
+        return $this->hasMany(Registration::class);
     }
 }

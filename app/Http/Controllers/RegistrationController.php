@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\Event;
 use App\Models\Registration;
+use App\Models\loggedController;
 use Illuminate\Http\RedirectResponse;
 use Illuminate\Http\Request;
 use Illuminate\Contracts\View\View;
@@ -35,11 +36,14 @@ class RegistrationController extends Controller
 
         /** @var Registration|null $registrations */
         $registrations = Registration::where('event_id', $eventId)->get();
+
+
         /** @var int $nbPlayers */
         $nbPlayers = 0;
 
         /** @var Registration|null $userRegistration */
-        $currentUserRegistration = Registration::where('user_id', $request->user_id)->first();
+        $currentUserRegistration = Registration::where([['user_id', "=","$request->user_id"],['event_id', "=","$request->event_id"]])->first();
+
 
         /** @var int $userRegistrationNbPlayers */
         $userRegistrationNbPlayers = 0;
@@ -60,9 +64,11 @@ class RegistrationController extends Controller
         }
 
         if ($currentUserRegistration) {
+
             $currentUserRegistration->nb_players = $nbPlayersToAdd;
             $currentUserRegistration->save();
         } else {
+
             Registration::create(
                 [
                     'nb_players' => $nbPlayersToAdd,

@@ -10,10 +10,8 @@
     <title>Osez Zéro Déchet !</title>
 
     <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
-
     <!-- Scripts -->
     <script src="{{ asset('js/app.js') }}" defer></script>
-
     <!-- Fonts -->
     <link rel="dns-prefetch" href="//fonts.gstatic.com">
     <link href="https://fonts.googleapis.com/css?family=Nunito" rel="stylesheet">
@@ -75,7 +73,7 @@
             </ul>
         </div>
         <div class="title">
-            <h2>Astuces & ressources</h2>
+            <h1>{{$title ?? ''}}</h1>
 
             <div class="logins">
                 @guest
@@ -87,7 +85,7 @@
                 @endif
                 @else
                 <div class="flexrow logs">
-                <p>Bonjour {{ Auth::user()->name }} !  |</p>
+                <p>Bonjour {{ Auth::user()->first_name }} !  &nbsp;||&nbsp;  </p>
                     <div class="" >
                         <a class="" href="{{ route('logout') }}"
                            onclick="event.preventDefault();
@@ -99,7 +97,7 @@
                         </form>
                     </div>
                 </div>
-                <a href="/event_index">Tableau de bord</a>
+
                 @endguest
 
             </div>

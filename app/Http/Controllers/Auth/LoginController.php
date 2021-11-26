@@ -29,7 +29,7 @@ class LoginController extends Controller
      */
     protected $redirectTo = RouteServiceProvider::HOME;
         protected function redirectTo(){
-            return route('dashboard');
+            return route('dashboard',['title'=>'Tableau de bord']);
         }
 
     /**
@@ -48,9 +48,9 @@ class LoginController extends Controller
             'password'=> 'required'
         ]);
         if( auth()-> attempt(array('email'=>$input['email'],'password'=>$input['password']))){
-             return redirect()->route('dashboard');
+             return redirect()->route('dashboard',['title'=>'Tableau de bord']);
         }else{
-            return redirect()->route('login')->with('error','email and password are wrong');
+            return redirect()->route('login',['title'=>'Connexion'])->with('error','email and password are wrong');
         }
     }
 }
