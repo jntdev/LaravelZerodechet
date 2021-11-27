@@ -16,7 +16,6 @@ class Event extends Model
         'address',
         'time',
         'date',
-        'duration',
         'description',
         'has_equipment',
         'child_authorized',

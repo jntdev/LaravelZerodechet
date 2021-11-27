@@ -60,7 +60,7 @@ Route::group([
     Route::get('home',[LoggedController::class,'index'])->name('dashboard');
     Route::get('profile',[LoggedController::class,'profile'])->name('profile');
     Route::get('user_delete',[LoggedController::class,'delete'])->name('user_delete');
-    Route::put('user_update',[LoggedController::class,'update'])->name('user_update');
+    Route::post('user_update',[LoggedController::class,'update'])->name('user_update');
 
 
     /** Route Event */
@@ -72,6 +72,7 @@ Route::group([
     Route::get('/event_edit/{id}', [EventController::class, 'edit'])->name('event_edit');
     Route::get('/event_delete/{id}', [EventController::class, 'delete'])->name('event_delete');
     Route::post('/event_store/', [EventController::class, 'store'])->name('event_store');
+    Route::get('/event_mailAll/', [EventController::class, 'mailAll'])->name('event_mailAll');
 
     /** Route Registration*/
     Route::get('/event_registration/{id}', [RegistrationController::class, 'index'])->name('event_registration_view');

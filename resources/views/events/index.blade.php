@@ -24,6 +24,7 @@
                     <img src="{{ asset('images/event/'. $event->event_picture) }}" alt="#">
                     <div class="rdvsection">
                         <p>{{$event->date->format('d/m/Y')}}</p>
+                        <p>{{$event->time}}</p>
                         <p>{{$event->city}}</p>
                         <p>Crée par {{$event->user->first_name}}</p>
                     </div>

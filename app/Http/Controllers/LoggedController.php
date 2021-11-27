@@ -35,6 +35,7 @@ class LoggedController extends Controller
      */
     function profile(){
         $user = Auth::user();
+
         return view('/auth.profile',compact('user'),['title'=>'Mon profil']);
     }
 
@@ -42,29 +43,33 @@ class LoggedController extends Controller
      * @param Request $request
      * @return RedirectResponse
      */
-    function update(UpdateProfileRequest $request) : RedirectResponse{
+        function update(Request $request) : RedirectResponse
+    {
+
         $user = Auth::user();
-        $user ->update([
-            'first_name'=> $request->first_name,
-            'last_name' => $request->last_name,
-            'email' => $request->email,
-            'password' => Hash::make($request->password),
-            'phone_nb' => $request->phone_nb,
-            'team_name' => $request->team_name,
-        ]);
-        return redirect()->route('profile',compact('user'))->with('success', 'Votre profil a bien été mis à jour');
-    }
+        foreach ($request->except('password_confirmation') as $key => $value) {
+            if ($key == '_token' || $key == 'user_id') {
+                continue;
+            }
+            if ($key == 'password') {
+                $hashedPassword = Hash::make($request->password);
+                $user[$key] = $hashedPassword;
+            } else {
+                $user[$key] = $value;
+            }
+        }$user->save();
+            return redirect()->route('profile', compact('user'))->with('success', 'Votre profil a bien été mis à jour');
+        }
+
 
     /**
      * @param Request $request
      * @return \Illuminate\Contracts\Foundation\Application|RedirectResponse|\Illuminate\Routing\Redirector
      */
     public function delete(Request $request){
-
         $user=Auth::user();
-
         $user->delete();
         $request->session()->invalidate();
-        return redirect('/',['title'=>'Bienvenu !'])->with('error', 'Votre profil a bien été supprimé');
+        return redirect('/')->with('error', 'Votre profil a bien été supprimé');
     }
 }

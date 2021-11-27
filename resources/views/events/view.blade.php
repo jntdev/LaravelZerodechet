@@ -21,37 +21,48 @@
         </div>
         <div class="info_event_vue">
             <div class="left_event_vue">
-                <p>Date : {{$event->date->format('d/m/Y')}}</p>
-                <p>Rendez-vous à {{$event->time}}</p>
+                <p>Date : {{$event->date->format('d/m/Y')}}</br>
+                Rendez-vous à {{$event->time}}</br>
 
-                <p>{{$event->city}}</p>
-                @if($event->WC == '0')
-                    <p>WC non disponibles</p>
+                {{$event->city}}</br>
+                @if($event->has_toilets == '0')
+                    WC non disponibles</br>
                 @else
-                    <p>WC disponibles</p>
+                    WC disponibles</br>
                 @endif
-                @if($event->child == '0')
-                    <p>Non accessible aux enfants :-(</p>
+                @if($event->child_authorized == '0')
+                    Non accessible aux enfants :-(</br>
                 @else
-                    <p>Enfants Bienvenus ! :)</p>
+                    Enfants Bienvenus ! :)</p>
                 @endif
+                <h4><u>{{$event->list_equipment ? 'Liste du materiel à apporter' :''}}</u></h4>
+                <p>{{$event->list_equipment}}</p>
             </div>
             <div class="right_event_vue">
-                <p>{{$event->description}}</p> </br>
-            <!-- <p>Rendez vous au {{$event->location}} à {{$event->city}} !</p> -->
-                <p>{{$event->list_equipment}}</p>
-                <p>Si l'animation est complète, envoyez moi un mail à <a href="mailto:"{{$event->user->email }}">{{$event->user->email }}</a> et je vous tiendrai au courant si une place se libère.</p>
+                <h3><u>Description</u></h3>
+                </br>
+                <p>{{$event->description}}</p>
+                </br>
+                </br>
+
             </div>
         </div>
+        </br>
+
+        <p class="ifcomplete">Si l'animation est complète, envoyez moi un mail à <a href="mailto:"{{$event->user->email }}">{{$event->user->email }}</a> et je vous tiendrai au courant si une place se libère.</p>
         <section class="inscription_event_vue">
+
             <span id="{{$stats}}">Nombre de participant inscrit {{$nbPlayers}} /  {{$event->nb_max_user}}</span>
             <a href="{{route('event_registration_view', ['id' => $event->id])}}">
                 <button class="clickable" <?= $stats === 'full' ? 'disabled' : '' ?>>Inscription</button>
             </a>
         </section>
+
         @if (Checker::isAdmin() || Checker::eventBelongsToCurrentUser($event->user_id))
             <a href="{{route('event_edit', ['id' => $event->id])}}">Modifier l'évènement</a>
+            <a href="{{route('event_mailAll', ['id' => $event->id])}}">Ecrire à tout les participants</a>
         @endif
     </section>
+
     </section>
 @endsection

@@ -12178,6 +12178,16 @@ textarea::placeholder {
   box-shadow: 3px -1px 15px -2px rgba(0, 0, 0, 0.1);
   padding: 2%;
 }
+.box_event .infosection {
+  height: 180px;
+}
+.box_event .infosection p {
+  text-overflow: ellipsis;
+  -webkit-line-clamp: 4;
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
 
 .top_event_section {
   overflow: hidden;
@@ -12258,6 +12268,9 @@ textarea::placeholder {
   text-align: center;
   align-items: center;
   justify-content: center;
+}
+.container_event_vue .ifcomplete {
+  padding: 0 60px;
 }
 .container_event_vue img {
   height: 300px;

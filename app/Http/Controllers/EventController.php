@@ -58,9 +58,10 @@ class EventController extends Controller
      * Show the form for creating a new resource.
      * @return View
      */
-    public function create(): View
+    public function create(event $event): View
     {
-        return view('events.form',['title'=>'Créez votre animation']);
+
+        return view('events.form',['title'=>'Créez votre animation'],compact('event'));
     }
 
     /**
@@ -92,6 +93,10 @@ class EventController extends Controller
         }
     }
 
+    public function additionner(int $nombre1, $nombre2){
+        return $nombre1 + $nombre2;
+    }
+
     /**
      * Update the specified resource in storage.
      * @param Request $request
@@ -110,11 +115,18 @@ class EventController extends Controller
                 if ($key == '_token' || $key == 'event_id') {
                     continue;
                 }
-                $event->$key = $value;
+//                adaptation du traitement image pour la fonction update
+                if ($key == 'event_picture') {
+                    $imageName = $request->$key->getClientOriginalName();
+                    $request->$key->move(public_path('images/event'), $imageName);
+                    $event[$key] = $imageName;
+                } else {
+                    $event[$key] = $value;
+                }
             }
             $event->save();
             return redirect()->route('event_show', ['event' => $request->event_id])
-                ->with('success', 'L\'animation a bien été mis à jour');;
+                ->with('success', 'L\'animation a bien été mis à jour');
         } catch (Exception $e) {
             return redirect()->route('event_show', ['event' => $request->event_id])->with('error', 'Une erreur est survenue');
         }
@@ -199,9 +211,17 @@ class EventController extends Controller
         $event = Event::find($eventId);
         if (CheckerFacade::canDeleteEvent($event->user_id)) {
             Event::destroy($eventId);
-            return redirect()->route('event_index')->with('success', 'L\'animation a été supprimée');
+            return redirect()->route('event_list')->with('success', 'L\'animation a été supprimée');
         }
 
-        return redirect()->route('event_index')->with('error', 'Une erreur est survenue');
+        return redirect()->route('event_list')->with('error', 'Une erreur est survenue');
+    }
+
+    public function mailAll(): View
+    {
+
+
+        return view('events.mailAll',['title'=>'Ecrivez à tout les participants']);
     }
 }
+

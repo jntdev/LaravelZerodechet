@@ -133,15 +133,19 @@
                                 <section class="radio_event_create">
                     <span class="checkbox_event_create">
                         <label for="has_equipment">Materiel nécessaire</label>
-                        <input class="checkbox" id="has_equipment" type="checkbox" name="has_equipment"  value="{{$event->has_equipment ?? ''}}">
+                        <input type="hidden" name="has_equipment" value="0">
+
+                        <input class="checkbox" id="has_equipment" type="checkbox" name="has_equipment"  value="1" @if($event->has_equipment){{ $event->has_equipment || old('has_equipment', 0) === 1 ? 'checked':''}}@endif>
                     </span>
                                     <span class="checkbox_event_create">
                         <label for="child_authorized">Enfants acceptés</label>
-                        <input class="checkbox" id="child_authorized" type="checkbox" name="child_authorized"  value="{{$event->child_authorized ?? ''}}">
+                                         <input type="hidden" name="child_authorized" value="0">
+                        <input class="checkbox" id="child_authorized" type="checkbox" name="child_authorized"  value="1" @if($event->child_authorized){{ $event->child_authorized || old('child_authorized', 0) === 1 ? 'checked':'' }}@endif>
                     </span>
                                     <span class="checkbox_event_create">
                         <label for="has_toilets">Toilettes disponibles</label>
-                        <input class="checkbox" id="has_toilets" type="checkbox" name="has_toilets"  value="{{$event->has_toilets ?? ''}}">
+                                        <input type="hidden" name="has_toilets" value="0">
+                        <input class="checkbox" id="has_toilets" type="checkbox" name="has_toilets"  value="1" @if($event->has_toilets){{ $event->has_toilets || old('has_toilets', 0) === 1 ? 'checked':''}}@endif>
                     </span>
 
                                 </section>
@@ -154,7 +158,7 @@
                                 <div class="col-md-6">
                                     <textarea  id="list_equipment" type="textarea" rows="4"
                                            class="form-control" name="list_equipment"
-                                               value="{{$event->list_equipment ?? ''}}" placeholder="Indiquez la liste de materiel que devront apporter les participants "></textarea>
+                                               placeholder="Indiquez la liste de materiel que devront apporter les participants ">{{$event->list_equipment ?? ''}}</textarea>
 
                                     @error('list_equipment')
                                     <span class="invalid-feedback" role="alert">
