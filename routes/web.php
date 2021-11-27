@@ -62,6 +62,8 @@ Route::group([
     Route::get('user_delete',[LoggedController::class,'delete'])->name('user_delete');
     Route::post('user_update',[LoggedController::class,'update'])->name('user_update');
 
+    /** Route Admin*/
+    Route::get('all_user',[LoggedController::class,'all_user'])->name('all_user');
 
     /** Route Event */
     Route::get('/event_index/', [EventController::class, 'index'])->name('event_list');

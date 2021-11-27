@@ -72,4 +72,10 @@ class LoggedController extends Controller
         $request->session()->invalidate();
         return redirect('/')->with('error', 'Votre profil a bien été supprimé');
     }
+
+    function all_user(){
+        $users = User::All();
+
+        return view('/auth.all_user',compact('users'),['title'=>'The Fanny\'s ']);
+    }
 }

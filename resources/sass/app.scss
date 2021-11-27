@@ -2069,6 +2069,18 @@ input:checked ~ nav {
     background-color: var(--primebackground);
 }
 
+.adminbutton{
+    color: white;
+    width: 90%;
+    font-family: var(--primfontfamily);
+    font-size: 20px;
+    border-radius: 20px;
+    padding: 10px 15px;
+    border: none;
+    background-color: var(--secondbackground);
+}
+
+
 .excentersupprbutton{
     position: absolute;
     right: 0px;
@@ -2076,7 +2088,6 @@ input:checked ~ nav {
 }
 .backoffice_borderleft{
     border-left:solid 2px var(--maincolor);
-    margin-left: 350px;
 }
 
 //__________ event create //
@@ -2230,8 +2241,8 @@ position: relative;
 
 .index_vue_pannel{
     margin-top: -50px;
-    position: fixed;
-    width: 350px;
+
+    width: 390px;
     height: 500px;
     display: flex;
     flex-direction: column;
@@ -2262,7 +2273,6 @@ position: relative;
 }
 
 .events {
-    margin-left: 370px;
     padding-left: 30px;
     color: var(--maincolor);
     font-family: var(--primfontfamily);
@@ -2450,6 +2460,15 @@ position: relative;
     flex-direction: row;
     justify-content: space-between;
     padding: 5%;
+}
+
+//panneau admin
+
+.userinfos{
+    display: flex;
+    justify-content: space-around;
+    width: 70%;
+
 }
 
 @media (max-width: 1700px) {
