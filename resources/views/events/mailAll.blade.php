@@ -9,6 +9,9 @@
                     <a href="{{route('event_create')}}"><button class="animbutton">créez une animation</button></a>
                     <a href="{{route('manage')}}"><button class="animbutton">Gerez vos animations</button></a>
                 @endif
+                @if (Checker::isAdmin())
+                    <a href="{{route('all_user')}}"><button class="adminbutton">Tout les participants</button></a>
+                @endif
             </div>
             <div class="calendar"></div>
         </aside>

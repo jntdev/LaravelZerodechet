@@ -8,7 +8,9 @@
             <a href="{{route('profile')}}"><button class="userbutton">Votre profile</button></a>
             @if (Checker::isAdmin() || Checker::isAnim())
                 <a href="{{route('event_create')}}"><button class="animbutton">créez une animation</button></a>
-
+            @endif
+            @if (Checker::isAdmin())
+                <a href="{{route('all_user')}}"><button class="adminbutton">Tout les participants</button></a>
             @endif
         </div>
         <div class="calendar"></div>
