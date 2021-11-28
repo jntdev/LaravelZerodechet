@@ -4,15 +4,18 @@ namespace App\Http\Controllers;
 
 use App\Models\Registration;
 use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\Mail;
 use App\Models\Event;
 use App\Models\User;
-use App\User\Checker;
+use App\Mail\event_modified;
+
 use App\User\Facades\CheckerFacade;
 use Illuminate\Contracts\Foundation\Application;
 use Illuminate\Contracts\View\Factory;
 use Illuminate\Contracts\View\View;
 use Illuminate\Http\RedirectResponse;
 use Illuminate\Http\Request;
+
 
 use Illuminate\Http\Response;
 use Illuminate\Support\Facades\Storage;
@@ -121,6 +124,24 @@ class EventController extends Controller
                 }
             }
             $event->save();
+
+            $currenteventRegistrations = Registration::where('event_id',$request->event_id)->get();
+//dd($currenteventRegistrations);
+//ici, j ai bien les 2 registrations
+            foreach ($currenteventRegistrations as $currenteventRegistration){
+                $userId=$currenteventRegistration->user_id;
+
+                $user=User::where('id',$userId)->get();
+                dd($user);
+//                ici j ai le user avec toutes ses colonnes
+
+            }
+
+
+
+            Mail::to('test@mail.test')->send(new event_modified());
+
+
             return redirect()->route('event_show', ['event' => $request->event_id])
                 ->with('success', 'L\'animation a bien été mis à jour');
         } catch (Exception $e) {

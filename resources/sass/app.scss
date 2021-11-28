@@ -2166,6 +2166,7 @@ textarea::placeholder {
 }
 .form_event_relativ{
 position: relative;
+    padding-bottom: 6%;
     i {
         position: absolute;
         top: 0px;
@@ -2310,6 +2311,7 @@ position: relative;
             width: 100%;
             display:flex;
             justify-content: center;
+            text-decoration: none;
         }
     .animbutton{
         margin-bottom: 30px;

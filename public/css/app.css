@@ -12053,6 +12053,7 @@ textarea::placeholder {
 
 .form_event_relativ {
   position: relative;
+  padding-bottom: 6%;
 }
 .form_event_relativ i {
   position: absolute;
@@ -12194,6 +12195,7 @@ textarea::placeholder {
   width: 100%;
   display: flex;
   justify-content: center;
+  text-decoration: none;
 }
 .index_vue_panel .button_controller .animbutton {
   margin-bottom: 30px;

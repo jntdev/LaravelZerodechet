@@ -20,7 +20,7 @@
 
         <div class="row justify-content-center ">
             <div class="col-md-8">
-                <div class="card border-info">
+                <div class="card border-info ">
                     <div class="card-body form_event_relativ">
                         <form method="POST" action="{{route('event_store')}}" enctype="multipart/form-data">
                             @csrf
@@ -200,7 +200,7 @@
                             </div>
 
                             <div class="form-group row mb-0">
-                                <div class="col-md-7 offset-md-4">
+                                <div class="col-md-7 offset-md-2">
                                         <button type="submit" class="btn btn-primary">
                                             <?= (!empty($edit)) ? 'Modifier l\'animation' : 'Enregistrer l\'animation' ?>
                                         </button>
@@ -208,7 +208,7 @@
                             </div>
                         </form>
                         @if (!empty($edit))
-                        <a href="{{route('event_delete', ['id' => $event->id])}}">
+                        <a class="excentersupprbutton" href="{{route('event_delete', ['id' => $event->id])}}">
                             <button type="alert" class="btn btn-danger">
                                 Supprimer l'animation
                             </button>

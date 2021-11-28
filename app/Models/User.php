@@ -32,6 +32,12 @@ class User extends Authenticatable
         'team_name',
     ];
 
+ const ForgetThose = [
+        '_token',
+        'user_id',
+        'password_confirmation',
+        ];
+
     /**
      * The attributes that should be hidden for serialization.
      *

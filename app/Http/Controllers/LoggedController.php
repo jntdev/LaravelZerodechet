@@ -46,10 +46,9 @@ class LoggedController extends Controller
     {
 
         $user = Auth::user();
-        foreach ($request->except('password_confirmation') as $key => $value) {
-            if ($key == '_token' || $key == 'user_id') {
-                continue;
-            }
+        foreach ($request->all() as $key => $value) {
+            if (in_array($key, User::ForgetThose))
+            {continue;}
             if ($key == 'password') {
                 $hashedPassword = Hash::make($request->password);
                 $user[$key] = $hashedPassword;

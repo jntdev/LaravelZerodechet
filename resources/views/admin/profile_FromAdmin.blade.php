@@ -128,7 +128,7 @@
                             <form method="POST" action="{{route('delete_profile')}}">
                                 @csrf
                                 <input type="hidden" id="user_id" name="user_id" value="{{$user->id}}">
-                                <button class="btn btn-danger">
+                                <button class="btn btn-danger excentersupprbutton">
                                     Supprimer le compte
                                 </button>
                             </form>
