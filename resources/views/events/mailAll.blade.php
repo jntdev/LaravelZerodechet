@@ -1,7 +1,7 @@
 @extends('layouts.app')
 @section('content')
     <section class="index_vue_page">
-        <aside class="index_vue_pannel">
+        <aside class="index_vue_panel">
             <div class="button_controller">
                 <a href="{{route('profile')}}"><button class="userbutton">Mon profil</button></a>
                 <a href="{{route('registered')}}"><button class="userbutton">Vos inscriptions</button></a>

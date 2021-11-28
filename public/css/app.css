@@ -12199,6 +12199,7 @@ textarea::placeholder {
   width: 100%;
   display: flex;
   justify-content: center;
+  text-decoration: none;
 }
 .index_vue_panel .button_controller .animbutton {
   margin-bottom: 30px;
