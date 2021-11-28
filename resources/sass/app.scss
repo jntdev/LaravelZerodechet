@@ -2259,6 +2259,10 @@ position: relative;
         padding: 10px;
     }
 }
+.ck-editor__editable_inline  {
+    font-family: var(--primfontfamily);
+    min-height: 400px;
+}
 
 .radio_event_create {
     width: 100%;

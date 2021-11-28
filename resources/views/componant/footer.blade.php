@@ -9,5 +9,7 @@
     <img onclick="window.open('https://www.bretagne-vivante.org/')" class="biocoop clickable"src="{{ asset('images/bretagne_vivante.png') }}" alt="">
 </div>
 <script src="js/script.js"></script>
+<script src="https://cdn.ckeditor.com/ckeditor5/30.0.0/classic/ckeditor.js"></script>
+@yield('mailtoAll_scripts')
 </body>
 </html>
