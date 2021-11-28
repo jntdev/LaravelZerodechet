@@ -17,9 +17,9 @@ class CreateRegistrationsTable extends Migration
             $table->id();
             $table->integer('nb_players');
             $table->unsignedBigInteger('user_id');
-            $table->foreign('user_id')->references('id')->on('users');
+            $table->foreign('user_id')->references('id')->on('users')->constrained()->onDelete('cascade');
             $table->unsignedBigInteger('event_id');
-            $table->foreign('event_id')->references('id')->on('events');
+            $table->foreign('event_id')->references('id')->on('events')->constrained()->onDelete('cascade');
             $table->timestamp('created_at');
             $table->timestamp('updated_at');
         });

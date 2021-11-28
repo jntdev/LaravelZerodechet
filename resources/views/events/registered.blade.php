@@ -1,10 +1,10 @@
 @extends('layouts.app')
 @section('content')
     <section class="index_vue_page">
-    <aside class="index_vue_pannel">
+    <aside class="index_vue_panel">
         <div class="button_controller">
             <a href="{{route('event_list')}}"><button class="userbutton">Tableau de bord</button></a>
-            <a href="{{route('profile')}}"><button class="userbutton">Mon profil</button></a>
+            <a href="{{route('profile')}}"><button class="userbutton">Votre profil</button></a>
             @if (Checker::isAdmin() || Checker::isAnim())
                 <a href="{{route('event_create')}}"><button class="animbutton">créez une animation</button></a>
                 <a href="{{route('manage')}}"><button class="animbutton">Gerez vos animations</button></a>

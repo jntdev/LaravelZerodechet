@@ -99,19 +99,19 @@
                             </div>
                             {{--                            INPUT CAPITAIN--}}
                             <div class="form-group row">
-                                <label for="team_name"
+                                <label for="team_name2"
                                        class="col-md-4 col-form-label text-md-right">{{ __('Nom de l\'équipe') }}</label>
-
                                 <div class="col-md-6">
-                                    <input id="team_name" type="text"
-                                           class="form-control @error('team_name') is-invalid @enderror" name="team_name"
-                                           value=""required autocomplete="Nom de l'équipe">
-
-                                    @error('team_name')
-                                    <span class="invalid-feedback" role="alert">
-                                        <strong>{{ $message }}</strong>
-                                    </span>
-                                    @enderror
+                                    <select id="team_name2" name="team_name" class="custom-select custom-select-md mb-3">
+                                        <option selected>Sélectionnez votre équipe</option>
+                                        <option value="Les Tricotards">Les Tricotards</option>
+                                        <option value="To be tri">To be tri</option>
+                                        <option value=" Le Corps-Bousier"> Le Corps-Bousier</option>
+                                        <option value="Waste-busters">Waste-busters</option>
+                                        <option value="Noname">Noname</option>
+                                        <option value="Les parfaits consignés">Les parfaits consignés</option>
+                                        <option value="Noname">Noname</option>
+                                    </select>
                                 </div>
                             </div>
                             <div class="form-group row mb-0">

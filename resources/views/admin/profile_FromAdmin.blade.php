@@ -3,24 +3,15 @@
     <section class="index_vue_page">
         <aside class="index_vue_panel">
             <div class="button_controller">
-                <a href="{{route('event_list')}}">
-                    <button class="userbutton">Tableau de bord</button>
-                </a>
-                <a href="{{route('registered')}}">
-                    <button class="userbutton">Vos inscriptions</button>
-                </a>
+
+                <a href="{{route('event_list')}}"><button class="userbutton">Tableau de bord</button></a>
+                <a href="{{route('registered')}}"><button class="userbutton">Vos inscriptions</button></a>
                 @if (Checker::isAdmin() || Checker::isAnim())
-                    <a href="{{route('event_create')}}">
-                        <button class="animbutton">créez une animation</button>
-                    </a>
-                    <a href="{{route('manage')}}">
-                        <button class="animbutton">Gerez vos animations</button>
-                    </a>
+                    <a href="{{route('event_create')}}"><button class="animbutton">créez une animation</button></a>
+                    <a href="{{route('manage')}}"><button class="animbutton">Gerez vos animations</button></a>
                 @endif
                 @if (Checker::isAdmin())
-                    <a href="{{route('all_user')}}">
-                        <button class="adminbutton">Tout les participants</button>
-                    </a>
+                    <a href="{{route('all_user')}}"><button class="adminbutton">Tout les participants</button></a>
                 @endif
             </div>
             <div class="calendar"></div>
@@ -30,17 +21,17 @@
                 <div class="col-md-8">
                     <div class="card border-info">
                         <div class="card-body bottomform relative">
-                            <form method="POST" action="{{ route('user_update') }}">
+                            <form method="POST" action="{{ route('update_profile') }}">
                                 @csrf
                                 {{--                        INPUT NOM--}}
+                                <input type="hidden" id="user_id" name="user_id" value="{{$user->id}}">
                                 <div class="form-group row">
                                     <label for="last_name"
                                            class="col-md-4 col-form-label text-md-right">{{ __('Nom') }}</label>
                                     <div class="col-md-6">
                                         <input id="last_name" type="text"
                                                class="form-control @error('last_name') is-invalid @enderror"
-                                               name="last_name" value="{{$user->last_name}}" required
-                                               autocomplete="last_name"
+                                               name="last_name" value="{{$user->last_name}}" required autocomplete="last_name"
                                                autofocus>
                                         @error('name')
                                         <span class="invalid-feedback" role="alert">
@@ -80,31 +71,6 @@
                                         @enderror
                                     </div>
                                 </div>
-                                {{--                        INPUT PASSWORD--}}
-                                <div class="form-group row">
-                                    <label for="password"
-                                           class="col-md-4 col-form-label text-md-right">{{ __('Mot de passe') }}</label>
-                                    <div class="col-md-6">
-                                        <input id="password" type="password"
-                                               class="form-control @error('password') is-invalid @enderror"
-                                               name="password"
-                                               required autocomplete="new-password">
-                                        @error('password')
-                                        <span class="invalid-feedback" role="alert">
-                           <strong>{{ $message }}</strong>
-                       </span>
-                                        @enderror
-                                    </div>
-                                </div>
-                                {{-- INPUT CONFIRM--}}
-                                <div class="form-group row">
-                                    <label for="password-confirm"
-                                           class="col-md-4 col-form-label text-md-right">{{ __('Confirmation') }}</label>
-                                    <div class="col-md-6">
-                                        <input id="password-confirm" type="password" class="form-control"
-                                               name="password_confirmation" required autocomplete="new-password">
-                                    </div>
-                                </div>
                                 {{--                        INPUT PHONE--}}
                                 <div class="form-group row">
                                     <label for="phone_nb"
@@ -115,6 +81,7 @@
                                                value="{{$user->phone_nb}}" required autocomplete="Numéro de téléphone">
                                     </div>
                                 </div>
+                                {{--                            INPUT CAPITAIN--}}
                                 <div class="form-group row">
                                     <label for="team_name2"
                                            class="col-md-4 col-form-label text-md-right">{{ __('Nom de l\'équipe') }}</label>
@@ -131,19 +98,40 @@
                                         </select>
                                     </div>
                                 </div>
+{{--                                INPUT ROLE--}}
+                                <div class="form-group row">
+                                    <label for="role"
+                                           class="col-md-4 col-form-label text-md-right">Rôle du profil</label>
+                                    <div class="col-md-6">
+                                        <select id="role" name="role" class="custom-select custom-select-md mb-3">
+                                            <option selected>
+                                                @if($user->role =="1")Administrateur
+                                                @elseif($user->role == "2")Animateur
+                                                @elseif($user->role == "3")Capitaine
+                                                @elseif($user->role == "4")Participant @endif
+                                            </option>
+                                            <option value="4">Participant</option>
+                                            <option value="3">Capitaine</option>
+                                            <option value="2">Animateur</option>
+                                            <option value="1">Administrateur</option>
+                                        </select>
+                                    </div>
+                                </div>
                                 <div class="form-group row mb-0">
                                     <div class="col-md-7 offset-md-4">
                                         <button type="submit" class="btn btn-primary">
-                                            Modifier mon profil
+                                            Modifier le profil
                                         </button>
                                     </div>
                                 </div>
                             </form>
-                            <a class="excentersupprbutton" href="{{route('user_delete')}}">
-                                <button type="alert" class="btn btn-danger">
-                                    Supprimer mon compte
+                            <form method="POST" action="{{route('delete_profile')}}">
+                                @csrf
+                                <input type="hidden" id="user_id" name="user_id" value="{{$user->id}}">
+                                <button class="btn btn-danger">
+                                    Supprimer le compte
                                 </button>
-                            </a>
+                            </form>
                         </div>
                     </div>
                 </div>

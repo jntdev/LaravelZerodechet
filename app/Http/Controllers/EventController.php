@@ -93,10 +93,6 @@ class EventController extends Controller
         }
     }
 
-    public function additionner(int $nombre1, $nombre2){
-        return $nombre1 + $nombre2;
-    }
-
     /**
      * Update the specified resource in storage.
      * @param Request $request

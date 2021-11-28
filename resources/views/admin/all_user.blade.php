@@ -1,7 +1,7 @@
 @extends('layouts.app')
 @section('content')
     <section class="index_vue_page">
-        <aside class="index_vue_pannel">
+        <aside class="index_vue_panel">
             <div class="button_controller">
                 <a href="{{route('event_list')}}"><button class="userbutton">Tableau de bord</button></a>
                 <a href="{{route('registered')}}"><button class="userbutton">Vos inscriptions</button></a>
@@ -18,14 +18,14 @@
             <div class="row justify-content-center ">
                 <div class="col-md-8">
                     @foreach($users as $user)
-                    <div class="card border-info">
+                    <div class="card border-info admincard">
                         <div class="userinfos">
                            <div>{{$user->first_name}}</div>
                            <div>{{$user->last_name}}</div>
                             <div>{{$user->email}}</div>
                         </div>
                         <div class="adminpanel">
-                            <a href="{{route('profile', ['user' => $user->id])}}">
+                            <a href="{{route('profile_FromAdmin', ['user' => $user->id])}}">
                                 <button class="btn btn-primary">Editer</button>
                             </a>
                         </div>

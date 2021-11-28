@@ -78,10 +78,10 @@
             <div class="logins">
                 @guest
                 @if (Route::has('login'))
-                    <a class="" href="{{ route('login') }}">{{ __('Login') }}</a>
+                    <a class="" href="{{ route('login') }}">Connexion</a>
                 @endif
                 @if (Route::has('register'))
-                    <a class="" href="{{ route('register') }}">{{ __('Register') }}</a>
+                    <a class="" href="{{ route('register') }}">Inscription</a>
                 @endif
                 @else
                 <div class="flexrow logs">
@@ -90,7 +90,7 @@
                         <a class="" href="{{ route('logout') }}"
                            onclick="event.preventDefault();
                                          document.getElementById('logout-form').submit();">
-                            {{ __('Logout') }}
+                            Déconnexion
                         </a>
                         <form id="logout-form" action="{{ route('logout') }}" method="POST" class="d-none">
                             @csrf

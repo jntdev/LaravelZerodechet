@@ -257,7 +257,6 @@ body {
     border: 0px;
     bottom: 0;
     right: 250px;
-
     height: 40px;
     border-radius: 15px;
     background-color: var(--maincolor);
@@ -275,8 +274,47 @@ body {
     border-radius: 50%;
 }
 
+.logins{
+    width: 70%;
+    display: flex;
+    justify-content: flex-end;
+    color: white;
+    text-decoration: none;
+    a{
+        color: white !important;
+        text-decoration: none;
+        font-size: 25px;
+        margin-right: 20px;
+    }
+}
+.logins_index{
+    width: 96%;
+    display: flex;
+    justify-content: flex-end;
+    color: white;
+    font-weight: 600;
+    text-decoration: none;
+    .logs{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        background: rgba(0, 42, 57, 0.55);
+        color: white;
+        font-family: var(--primfontfamily);
+        font-size: 25px;
+        font-weight: 600;
+        padding: 5px 10px;
+        border-radius: 10px;
+    }
+    a{
+        color: white !important;
+        text-decoration: none;
+        font-size: 25px;
+
+    }
+}
+
 .logo {
-    //padding: 2% 0 0 2%;
     margin-right: 30px;
 }
 //burger
@@ -486,17 +524,30 @@ input:checked ~ nav {
     align-items: center;
     justify-content: space-between;
     .logs {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        background: rgba(0, 42, 57, 0.55);
         color: white;
         font-family: var(--primfontfamily);
-        font-size: 18px;
+        font-size: 25px;
         font-weight: 600;
+        padding: 5px 10px;
+        border-radius: 10px;
         a {
             text-decoration: none;
             color: white;
+            padding: 0;
+            margin: 0;
+        }
+        p{
+            padding: 0;
+            margin: 0;
         }
     }
 
-    h2 {
+    h1{
+
         font-size: 30px;
         font-weight: 400;
         margin-left: 20px;
@@ -2057,6 +2108,19 @@ input:checked ~ nav {
     display: flex;
     justify-content: space-around;
     align-items: center;
+    font-size: 20px;
+    .userbutton{
+        color: white;
+        font-family: var(--primfontfamily);
+        font-size: 20px;
+        border-radius: 20px;
+        padding: 10px 25px;
+        border: none;
+        background-color: var(--primebackground);
+    }
+}
+.home_container{
+    height: 45vh;
 }
 
 .normalbutton{
@@ -2223,23 +2287,12 @@ position: relative;
     display: flex;
     min-height: 500px;
 
-}
-.button_controller{
-    display: flex;
-    flex-direction: column;
-    height: 250px;
-}
-.underindex_vue_pannel{
-    width: 580px;
-    height: 400px;
-}
-/*.calendar{
-    height: 50%;
-    width:  80%;
-    background: #1d68a7;
-}*/
 
-.index_vue_pannel{
+}
+
+
+
+.index_vue_panel{
     margin-top: -50px;
 
     width: 390px;
@@ -2247,6 +2300,17 @@ position: relative;
     display: flex;
     flex-direction: column;
     padding: 2%;
+
+    .button_controller{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        height: 250px;
+        a{
+            width: 100%;
+            display:flex;
+            justify-content: center;
+        }
     .animbutton{
         margin-bottom: 30px;
         color: white;
@@ -2259,7 +2323,7 @@ position: relative;
         border: none;
         background-color: var(--fourthbackground);
     }
-    .userbutton{
+    .userbutton {
         color: white;
         width: 90%;
         font-family: var(--primfontfamily);
@@ -2269,6 +2333,7 @@ position: relative;
         border: none;
         background-color: var(--primebackground);
         margin-bottom: 20px;
+    }
     }
 }
 
@@ -2464,13 +2529,23 @@ position: relative;
 
 //panneau admin
 
+.admincard{
+        padding: 2%;
+        margin-bottom: 20px;
+        align-items: center;
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        border: 1px solid var(--secondbackground);
+        border-radius: 15px;
+}
+
 .userinfos{
     display: flex;
     justify-content: space-around;
     width: 70%;
     font-family: var(--primfontfamily);
     font-size: 20px;
-
 }
 
 @media (max-width: 1700px) {

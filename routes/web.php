@@ -10,6 +10,7 @@ use App\Http\Controllers\CaptnController;
 use App\Http\Controllers\EventController;
 use App\Http\Controllers\RegistrationController;
 use App\Http\Controllers\RegisterController;
+use App\Http\Controllers\FromAdminController;
 use App\Http\Controllers\LoggedController;
 use App\Http\Controllers\VitrineController;
 
@@ -63,7 +64,11 @@ Route::group([
     Route::post('user_update',[LoggedController::class,'update'])->name('user_update');
 
     /** Route Admin*/
-    Route::get('all_user',[LoggedController::class,'all_user'])->name('all_user');
+    Route::get('all_user',[FromAdminController::class,'all_user'])->name('all_user');
+    Route::get('profile_FromAdmin',[FromAdminController::class,'show'])->name('profile_FromAdmin');
+
+    Route::post('profile_FromAdmin_update',[FromAdminController::class,'update'])->name('update_profile');
+    Route::post('profile_FromAdmin_delete',[FromAdminController::class,'delete'])->name('delete_profile');
 
     /** Route Event */
     Route::get('/event_index/', [EventController::class, 'index'])->name('event_list');

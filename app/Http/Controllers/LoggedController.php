@@ -19,7 +19,6 @@ class LoggedController extends Controller
     function index(user $user, request $request){
 
         if (Auth::user()->id == $user->id){
-            //dd('tata');
             return $this->update($request);
         }
         else{
@@ -36,7 +35,7 @@ class LoggedController extends Controller
     function profile(){
         $user = Auth::user();
 
-        return view('/auth.profile',compact('user'),['title'=>'Mon profil']);
+        return view('/auth.profile',compact('user'),['title'=>'Votre profil']);
     }
 
     /**
@@ -71,11 +70,5 @@ class LoggedController extends Controller
         $user->delete();
         $request->session()->invalidate();
         return redirect('/')->with('error', 'Votre profil a bien été supprimé');
-    }
-
-    function all_user(){
-        $users = User::All();
-
-        return view('/auth.all_user',compact('users'),['title'=>'The Fanny\'s ']);
     }
 }
