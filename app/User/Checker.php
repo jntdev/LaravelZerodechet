@@ -54,4 +54,9 @@ class Checker
     {
         return Auth::user()->id == $event_user_id;
     }
+
+    public function canDeleteRegistration($registration_user_id)
+    {
+        return Auth::user()->id == $registration_user_id;
+    }
 }

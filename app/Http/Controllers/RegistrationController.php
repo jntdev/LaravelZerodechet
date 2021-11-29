@@ -5,9 +5,11 @@ namespace App\Http\Controllers;
 use App\Models\Event;
 use App\Models\Registration;
 use App\Models\loggedController;
+use App\User\Facades\CheckerFacade;
 use Illuminate\Http\RedirectResponse;
 use Illuminate\Http\Request;
 use Illuminate\Contracts\View\View;
+use Illuminate\Support\Facades\Auth;
 
 class RegistrationController extends Controller
 {
@@ -15,8 +17,12 @@ class RegistrationController extends Controller
     {
         /** @var Event|null $event */
         $event = Event::find($eventId);
+        $userId = Auth::user()->id;
+        $currentUserRegistration = Registration::where([['user_id', "=","$userId"],['event_id', "=","$eventId"]])->first();
 
-        return view('events.registration', compact('event'));
+
+
+        return view('events.registration', compact('event','currentUserRegistration'));
     }
 
     /**
@@ -79,6 +85,19 @@ class RegistrationController extends Controller
         }
 
         return redirect()->route('event_show', ['event' => $eventId])->with('success', 'Votre inscription a bien été prise en compte');
+    }
+
+    public function delete(): RedirectResponse
+    {
+        $userId = Auth::user()->id;
+        $currentUserRegistration = Registration::where('user_id',$userId)->first();
+
+        if (CheckerFacade::canDeleteRegistration($currentUserRegistration->user_id)) {
+            Registration::destroy($currentUserRegistration->id);
+            return redirect()->route('event_list')->with('success', 'La réserveration a été supprimée');
+        }
+        return redirect()->route('events.registration')->with('error', 'Une erreur est survenue');
+
     }
 }
 
