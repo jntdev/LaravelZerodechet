@@ -22,7 +22,7 @@
                 <div class="col-md-8">
                     <div class="card border-info">
                         <div class="card-body form_event_relativ">
-                            <form method="POST" action="{{route('event_mailAll')}}" enctype="multipart/form-data">
+                            <form method="POST" action="{{route('mailToAllSent')}}" enctype="multipart/form-data">
                                 @csrf
                                 <input id="event_id" type="hidden" name="event_id" value="{{$event->id ?? ''}}">
                                 <input id="user_id" type="hidden" name="user_id" value="{{$event->user_id ?? Auth::user()->id}}">
@@ -44,11 +44,11 @@
                                 {{--                        INPUT mailtoAll--}}
                                 <div class="form-group col">
                                     <div class="col-md-12">
-                                    <textarea id="mailtoAll"
-                                              class="form-control @error('mailtoAll') is-invalid @enderror" name="mailtoAll" rows="10"
-                                              required autocomplete="mailtoAll" placeholder="Ecrivez votre message"></textarea>
+                                    <textarea id="content_of_mail"
+                                              class="form-control @error('content_of_mail') is-invalid @enderror" name="content_of_mail" rows="10"
+                                              required autocomplete="content_of_mail" placeholder="Ecrivez votre message"></textarea>
 
-                                        @error('mailtoAll')
+                                        @error('content_of_mail')
                                         <span class="invalid-feedback" role="alert">
                                         <strong>{{ $message }}</strong>
                                     </span>
@@ -59,9 +59,12 @@
 
                                 <div class="form-group row mb-0">
                                     <div class="col-md-7 offset-md-4">
-                                        <button type="submit" class="btn btn-primary">
-                                           Envoyez à tous
-                                        </button>
+                                        <a href="{{route('mailToAllSent')}}">
+                                            <button type="submit" class="btn btn-primary">
+                                                Envoyez à tous
+                                            </button>
+                                        </a>
+
                                     </div>
                                 </div>
                             </form>

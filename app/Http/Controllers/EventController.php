@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Mail\MailToAll;
 use App\Models\Registration;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Mail;
@@ -126,14 +127,14 @@ class EventController extends Controller
             $event->save();
 
             $currenteventRegistrations = Registration::where('event_id',$request->event_id)->get();
-//dd($currenteventRegistrations);
-//ici, j ai bien les 2 registrations
+            //                      dd($currenteventRegistrations);
+            //                      ici, j ai bien les 2 registrations
             foreach ($currenteventRegistrations as $currenteventRegistration){
                 $userId=$currenteventRegistration->user_id;
 
                 $user=User::where('id',$userId)->get();
                 dd($user);
-//                ici j ai le user avec toutes ses colonnes
+                //                ici j ai le user avec toutes ses colonnes
 
             }
 
@@ -234,11 +235,17 @@ class EventController extends Controller
         return redirect()->route('event_list')->with('error', 'Une erreur est survenue');
     }
 
-    public function mailAll(): View
+    public function mailAll(): view
+    {
+        return view('events.mailAll',['title'=>'Ecrivez à tout les participants']);
+    }
+
+    public function mailToAllSent(Request $request)
     {
 
-
-        return view('events.mailAll',['title'=>'Ecrivez à tout les participants']);
+        Mail::to('allusers@mail.test')->send(new MailToAll());
+        //return $this->show($request);
+        return view('events.mailAll',['title'=>'Ecrivez à tout les participants'])->with('success', 'Votre mail a été envoyé');
     }
 }
 

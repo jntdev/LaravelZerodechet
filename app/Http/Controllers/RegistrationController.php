@@ -2,6 +2,10 @@
 
 namespace App\Http\Controllers;
 
+
+use App\Mail\RegisterToAnim;
+use App\Mail\RegisterToUser;
+use App\Mail\RegistrationDelete;
 use App\Models\Event;
 use App\Models\Registration;
 use App\Models\loggedController;
@@ -10,6 +14,7 @@ use Illuminate\Http\RedirectResponse;
 use Illuminate\Http\Request;
 use Illuminate\Contracts\View\View;
 use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\Mail;
 
 class RegistrationController extends Controller
 {
@@ -84,6 +89,12 @@ class RegistrationController extends Controller
             );
         }
 
+        //pour le User, on a besoin de passer toutes les infos de l'event
+        Mail::to('user@mail.test')->send(new RegisterToUser());
+        //pour l'anim, on a besoin de passer les infos utiles du user
+        //option : ajouter le compte restant des registrations: x/y
+        Mail::to('anim@mail.test')->send(new RegisterToAnim());
+
         return redirect()->route('event_show', ['event' => $eventId])->with('success', 'Votre inscription a bien été prise en compte');
     }
 
@@ -94,6 +105,10 @@ class RegistrationController extends Controller
 
         if (CheckerFacade::canDeleteRegistration($currentUserRegistration->user_id)) {
             Registration::destroy($currentUserRegistration->id);
+
+            //pour l'anim, on a besoin de passer les infos utiles du user
+            //option : ajouter le compte restant des registrations: x/y
+            Mail::to('anim@mail.test')->send(new RegistrationDelete());
             return redirect()->route('event_list')->with('success', 'La réserveration a été supprimée');
         }
         return redirect()->route('events.registration')->with('error', 'Une erreur est survenue');

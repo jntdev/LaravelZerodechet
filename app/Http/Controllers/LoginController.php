@@ -54,21 +54,7 @@ class LoginController extends Controller
             'password'=> 'required'
         ]);
         if( auth()-> attempt(array('email'=>$input['email'],'password'=>$input['password']))){
-            //  if(auth()->user()->role == 1){
-            //      return redirect()->route('admin.dashboard');
-            //  }        
-            //  elseif( auth()->user()->role == 2){
-            //          return redirect()->route('anim.dashboard');
-          
-            //  }
-            //  elseif( auth()->user()->role == 3){
-            //     return redirect()->route('captn.dashboard');
-     
-            //  }
-            //  elseif( auth()->user()->role == 4){
-            //      return redirect()->route('user.dashboard');
- 
-            // }
+
              return redirect()->route('dashbord.index');
         }else{
             return redirect()->route('login')->with('error','email and password are wrong');

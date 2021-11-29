@@ -104,7 +104,7 @@
                                            class="col-md-4 col-form-label text-md-right">Rôle du profil</label>
                                     <div class="col-md-6">
                                         <select id="role" name="role" class="custom-select custom-select-md mb-3">
-                                            <option selected>
+                                            <option value="{{$user->role}}" selected>
                                                 @if($user->role =="1")Administrateur
                                                 @elseif($user->role == "2")Animateur
                                                 @elseif($user->role == "3")Capitaine
