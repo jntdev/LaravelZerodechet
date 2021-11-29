@@ -1,7 +1,7 @@
 @extends('layouts.app')
 @section('content')
     <section class="index_vue_page">
-        <aside class="index_vue_pannel">
+        <aside class="index_vue_panel">
             <div class="button_controller">
                 <a href="{{route('profile')}}"><button class="userbutton">Mon profil</button></a>
                 <a href="{{route('registered')}}"><button class="userbutton">Vos inscriptions</button></a>
@@ -28,15 +28,13 @@
                                 <input id="user_id" type="hidden" name="user_id" value="{{$event->user_id ?? Auth::user()->id}}">
                                 {{--                        INPUT TITLE--}}
                                 <div class="form-group col">
-                                    <label for="title"
-                                           class="col-md-4 col-form-label text-md-right">{{ __('Titre de l\'animation') }}</label>
-                                    <div class="col-md-6">
-                                        <input id="title" type="text"
-                                               class="form-control @error('Titre de l\'animation') is-invalid @enderror"
-                                               name="title" value="{{$event->title ?? ''}}" required autocomplete="title"
-                                               autofocus placeholder="Titre de l'animation">
+                                    <div class="col-md-12">
+                                        <input id="title_mailtoAll" type="text"
+                                               class="form-control @error('Sujet du mail') is-invalid @enderror"
+                                               name="title_mailtoAll" required autocomplete="title_mailtoAll"
+                                               autofocus placeholder="Sujet du mail">
 
-                                        @error('Titre de l\'animation')
+                                        @error('Sujet du mail')
                                         <span class="invalid-feedback" role="alert">
                                         <strong>{{ $message }}</strong>
                                     </span>
@@ -45,10 +43,7 @@
                                 </div>
                                 {{--                        INPUT mailtoAll--}}
                                 <div class="form-group col">
-                                    <label for="mailtoAll"
-                                           class="col-md-4 col-form-label text-md-right">Contenu du mail</label>
-
-                                    <div class="col-md-6">
+                                    <div class="col-md-12">
                                     <textarea id="mailtoAll"
                                               class="form-control @error('mailtoAll') is-invalid @enderror" name="mailtoAll" rows="10"
                                               required autocomplete="mailtoAll" placeholder="Ecrivez votre message"></textarea>
@@ -77,4 +72,13 @@
             </div>
         </div>
     </section>
+@endsection
+@section('mailtoAll_scripts')
+    <script>
+        ClassicEditor
+            .create( document.querySelector( '#mailtoAll' ) )
+            .catch( error => {
+                console.error( error );
+            } );
+    </script>
 @endsection

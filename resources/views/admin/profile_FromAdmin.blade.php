@@ -92,9 +92,9 @@
                                             <option value="To be tri">To be tri</option>
                                             <option value=" Le Corps-Bousier"> Le Corps-Bousier</option>
                                             <option value="Waste-busters">Waste-busters</option>
-                                            <option value="Noname">Noname</option>
+                                            <option value="Tris'k'ailes">Tris'k'ailes</option>
                                             <option value="Les parfaits consignés">Les parfaits consignés</option>
-                                            <option value="Noname">Noname</option>
+                                            <option value="Yes We Try !">Yes We Try !</option>
                                         </select>
                                     </div>
                                 </div>
