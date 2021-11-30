@@ -66,7 +66,6 @@ Route::group([
     /** Route Admin*/
     Route::get('all_user',[FromAdminController::class,'all_user'])->name('all_user');
     Route::get('profile_FromAdmin',[FromAdminController::class,'show'])->name('profile_FromAdmin');
-
     Route::post('profile_FromAdmin_update',[FromAdminController::class,'update'])->name('update_profile');
     Route::post('profile_FromAdmin_delete',[FromAdminController::class,'delete'])->name('delete_profile');
 
@@ -74,7 +73,7 @@ Route::group([
     Route::get('/event_index/', [EventController::class, 'index'])->name('event_list');
     Route::get('/event_manage/', [EventController::class, 'manage'])->name('manage');
     Route::get('/registered/', [EventController::class, 'registered'])->name('registered');
-    Route::get('/event_show/{event}', [EventController::class, 'show'])->name('event_show');
+    Route::get('/event_show/{event_id}', [EventController::class, 'show'])->name('event_show');
     Route::get('/event_create/', [EventController::class, 'create'])->name('event_create');
     Route::get('/event_edit/{id}', [EventController::class, 'edit'])->name('event_edit');
     Route::get('/event_delete/{id}', [EventController::class, 'delete'])->name('event_delete');
@@ -82,10 +81,8 @@ Route::group([
     Route::get('/event_mailAll/', [EventController::class, 'mailAll'])->name('event_mailAll');
     Route::post('/mailToAllSent/', [EventController::class, 'mailToAllSent'])->name('mailToAllSent');
 
-
     /** Route Registration*/
     Route::get('/event_registration/{id}', [RegistrationController::class, 'index'])->name('event_registration_view');
     Route::post('/event_registration_submit/', [RegistrationController::class, 'submit'])->name('event_registration_submit');
-    Route::get('/event_registration_delete/', [RegistrationController::class, 'delete'])->name('event_registration_delete');
-    //Route::get('/tableaudebord/events', [EventController::class, 'index']);
+    Route::post('/event_registration_delete/', [RegistrationController::class, 'delete'])->name('event_registration_delete');
 });

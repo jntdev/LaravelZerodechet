@@ -50,9 +50,15 @@
                                         type="submit">{{$currentUserRegistration ? 'Modifier mon inscription' :'M\'enregistrer'}}</button>
                             </form>
                             @if($currentUserRegistration !== null)
-                                <a class="excentersupprbutton" href="{{route('event_registration_delete')}}">
+                                <form method="POST" action="{{route('event_registration_delete')}}">
+                                    @csrf
+                                    <input id="event_id" type="hidden" name="event_id" value="{{$event->id}}">
+                                    <input id="nb_participant" type="hidden" name="nb_participant"
+                                           value="{{$currentUserRegistration->nb_players}}">
+                                <a class="excentersupprbutton">
                                     <button class="btn btn-danger" type="submit">Supprimer mon inscription</button>
                                 </a>
+                                </form>
                             @endif
                         </div>
                     </div>

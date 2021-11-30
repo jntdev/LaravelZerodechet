@@ -90,25 +90,37 @@ class RegistrationController extends Controller
         }
 
         //pour le User, on a besoin de passer toutes les infos de l'event
-        Mail::to('user@mail.test')->send(new RegisterToUser());
+        $user= Auth::user();
+
+
+        Mail::to($user->email)->send(new RegisterToUser($event));
         //pour l'anim, on a besoin de passer les infos utiles du user
         //option : ajouter le compte restant des registrations: x/y
-        Mail::to('anim@mail.test')->send(new RegisterToAnim());
+
+
+        Mail::to($event->user->email)->send(new RegisterToAnim($user, $event, $nbPlayers, $nbPlayersToAdd ));
 
         return redirect()->route('event_show', ['event' => $eventId])->with('success', 'Votre inscription a bien été prise en compte');
     }
 
-    public function delete(): RedirectResponse
+    public function delete(Request $request): RedirectResponse
     {
+
+        $eventId = $request->event_id;
         $userId = Auth::user()->id;
-        $currentUserRegistration = Registration::where('user_id',$userId)->first();
+        $user=Auth::user();
+        $currentUserRegistration = Registration::where([['user_id', "=","$userId"],['event_id', "=","$eventId"]])->first();
+        $event = Event::find($eventId);
+        $slots= $request->nb_participant;
+
+
 
         if (CheckerFacade::canDeleteRegistration($currentUserRegistration->user_id)) {
             Registration::destroy($currentUserRegistration->id);
 
-            //pour l'anim, on a besoin de passer les infos utiles du user
             //option : ajouter le compte restant des registrations: x/y
-            Mail::to('anim@mail.test')->send(new RegistrationDelete());
+
+            Mail::to('anim@mail.test')->send(new RegistrationDelete($user, $event,$slots));
             return redirect()->route('event_list')->with('success', 'La réserveration a été supprimée');
         }
         return redirect()->route('events.registration')->with('error', 'Une erreur est survenue');

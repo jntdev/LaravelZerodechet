@@ -11,5 +11,6 @@
 <script src="js/script.js"></script>
 <script src="https://cdn.ckeditor.com/ckeditor5/30.0.0/classic/ckeditor.js"></script>
 @yield('mailtoAll_scripts')
+@yield('form_scripts')
 </body>
 </html>

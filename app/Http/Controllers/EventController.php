@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Mail\EventModified;
 use App\Mail\MailToAll;
 use App\Models\Registration;
 use Illuminate\Support\Facades\Auth;
@@ -40,7 +41,8 @@ class EventController extends Controller
         /** @var Event[] $events */
         $user = Auth::user();
         $events = Event::where('user_id', $user->id)->orderBy('date')->get();
-        return view('events.manage', compact('user', 'events'),['title'=>'Gerez vos animations']);
+
+        return view('events.manage', compact('user', 'events'), ['title' => 'Gerez vos animations']);
     }
 
     /**
@@ -51,11 +53,12 @@ class EventController extends Controller
         $user = Auth::user();
         $events = Registration::where('user_id', $user->id)->get();
         $eventIds = [];
-        foreach($events as $event){
-            $eventIds[]=$event->event_id;
+        foreach ($events as $event) {
+            $eventIds[] = $event->event_id;
         }
-        $events=Event::whereIn('id', $eventIds)->get();
-        return view('events.registered', compact('user','events'),['title'=>'Vos inscriptions']);
+        $events = Event::whereIn('id', $eventIds)->get();
+
+        return view('events.registered', compact('user', 'events'), ['title' => 'Vos inscriptions']);
     }
 
     /**
@@ -64,8 +67,7 @@ class EventController extends Controller
      */
     public function create(event $event): View
     {
-
-        return view('events.form',['title'=>'Créez votre animation'],compact('event'));
+        return view('events.form', ['title' => 'Créez votre animation'], compact('event'));
     }
 
     /**
@@ -75,6 +77,7 @@ class EventController extends Controller
     public function store(Request $request): RedirectResponse
     {
         if ($request->event_id) {
+
             return $this->update($request);
         } else {
             $data = [];
@@ -93,7 +96,7 @@ class EventController extends Controller
             /** @var Event $event */
             $event = Event::create($data);
 
-            return redirect()->route('event_show', compact('event'));
+            return redirect()->route('event_show',['event_id'=> $event->id]);
         }
     }
 
@@ -126,24 +129,14 @@ class EventController extends Controller
             }
             $event->save();
 
-            $currenteventRegistrations = Registration::where('event_id',$request->event_id)->get();
-            //                      dd($currenteventRegistrations);
-            //                      ici, j ai bien les 2 registrations
-            foreach ($currenteventRegistrations as $currenteventRegistration){
-                $userId=$currenteventRegistration->user_id;
+            $registrations = Registration::where('event_id', $event->id)->get();
 
-                $user=User::where('id',$userId)->get();
-                dd($user);
-                //                ici j ai le user avec toutes ses colonnes
+            foreach ($registrations as $registration) {
 
+                Mail::to($registration->user->email)->send(new EventModified($event));
             }
 
-
-
-            Mail::to('test@mail.test')->send(new event_modified());
-
-
-            return redirect()->route('event_show', ['event' => $request->event_id])
+            return redirect()->route('event_show', ['event_id' => $request->event_id])
                 ->with('success', 'L\'animation a bien été mis à jour');
         } catch (Exception $e) {
             return redirect()->route('event_show', ['event' => $request->event_id])->with('error', 'Une erreur est survenue');
@@ -158,12 +151,13 @@ class EventController extends Controller
     public function show(Request $request)
     {
         /** @var int $eventId */
-        $eventId = $request->event;
+        $eventId = $request->event_id;
         /** @var Event|null $event */
         $event = Event::find($eventId);
 
         if ($event === null) {
-            return redirect()->route('event_index')->with('error', 'L\'animation n\'existe pas ou a été supprimée');
+
+            return redirect()->route('event_list')->with('error', 'L\'animation n\'existe pas ou a été supprimée');
         }
 
         /** @var Registration|null $registrations */
@@ -180,7 +174,7 @@ class EventController extends Controller
         /** @var string $stats */
         $stats = $this->getStats($event, $nbPlayers);
 
-        return view('events.view', compact('event', 'nbPlayers', 'stats'),['title'=>$event->title]);
+        return view('events.view', compact('event', 'nbPlayers', 'stats'), ['title' => $event->title]);
     }
 
     /**
@@ -215,6 +209,7 @@ class EventController extends Controller
         $event = Event::find($eventId);
         /** @var bool $edit */
         $edit = true;
+
         return view('events.form', compact('event', 'edit'));
     }
 
@@ -229,23 +224,32 @@ class EventController extends Controller
         $event = Event::find($eventId);
         if (CheckerFacade::canDeleteEvent($event->user_id)) {
             Event::destroy($eventId);
+
             return redirect()->route('event_list')->with('success', 'L\'animation a été supprimée');
         }
 
         return redirect()->route('event_list')->with('error', 'Une erreur est survenue');
     }
 
-    public function mailAll(): view
+    public function mailAll(Request $request): View
     {
-        return view('events.mailAll',['title'=>'Ecrivez à tout les participants']);
+        $event = Event::find($request->id);
+
+        return view('events.mailAll', ['title' => 'Ecrivez à tout les participants'], compact('event'));
     }
 
-    public function mailToAllSent(Request $request)
-    {
 
-        Mail::to('allusers@mail.test')->send(new MailToAll());
-        //return $this->show($request);
-        return view('events.mailAll',['title'=>'Ecrivez à tout les participants'])->with('success', 'Votre mail a été envoyé');
+    public function mailToAllSent(Request $request): RedirectResponse
+    {
+        $event = Event::find($request->event_id);
+
+        $registrations = Registration::where('event_id', $event->id)->get();
+        foreach ($registrations as $registration) {
+            Mail::to($registration->user->email)->send(new MailToAll($event));
+        }
+
+        return redirect()->route('event_show', ['event_id' => $event->id])->with('success', 'Votre mail a bien été envoyé');
+
     }
 }
 

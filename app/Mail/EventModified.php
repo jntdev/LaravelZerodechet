@@ -7,7 +7,7 @@ use Illuminate\Contracts\Queue\ShouldQueue;
 use Illuminate\Mail\Mailable;
 use Illuminate\Queue\SerializesModels;
 
-class Event_modified extends Mailable
+class EventModified extends Mailable
 {
     use Queueable, SerializesModels;
 

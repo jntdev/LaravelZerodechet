@@ -221,3 +221,21 @@
     </div>
     </section>
 @endsection
+@section('form_scripts')
+    <script>
+        ClassicEditor
+            .create( document.querySelector( '#description' ) )
+            .catch( error => {
+                console.error( error );
+            } );
+
+        ClassicEditor
+            .create( document.querySelector( '#list_equipment' ) )
+            .catch( error => {
+                console.error( error );
+            } );
+    </script>
+@endsection
+
+
+
