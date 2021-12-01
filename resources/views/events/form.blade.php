@@ -53,7 +53,7 @@
                                     <input id="date" type="text"
                                            class=" datepicker form-control @error('Date') is-invalid @enderror"
                                            name="date" value="{{$event->date??''}}" required
-                                           autocomplete="date" autofocus placeholder="Selectionnez une date">
+                                           autocomplete="date" autofocus placeholder="Sélectionnez une date">
 
                                     @error('date')
                                     <span class="invalid-feedback" role="alert">
@@ -71,7 +71,7 @@
                                 <div class="col-md-6">
                                     <input id="time" type="text"
                                            class="form-control @error('Heure') is-invalid @enderror" name="time"
-                                           value="{{$event->time??''}}" required autocomplete="Heure" placeholder="format HH/MN">
+                                           value="{{$event->time??''}}" required autocomplete="Heure" placeholder="Format HH:MN">
 
                                     @error('email')
                                     <span class="invalid-feedback" role="alert">
@@ -135,7 +135,7 @@
                             <div class="form-group row">
                                 <section class="radio_event_create">
                     <span class="checkbox_event_create">
-                        <label for="has_equipment">Materiel nécessaire</label>
+                        <label for="has_equipment">Matériel nécessaire</label>
                         <input type="hidden" name="has_equipment" value="0">
 
                         <input class="checkbox" id="has_equipment" type="checkbox" name="has_equipment"  value="1" @if($event->has_equipment){{ $event->has_equipment || old('has_equipment', 0) === 1 ? 'checked':''}}@endif>
@@ -156,12 +156,12 @@
                             {{--                            INPUT LIST_EQUIPMENT--}}
                             <div class="form-group row" id="section_list_equipment">
                                 <label for="list_equipment"
-                                       class="col-md-4 col-form-label text-md-right">{{ __('Liste du materiel nécessaire') }}</label>
+                                       class="col-md-4 col-form-label text-md-right">{{ __('Liste du matériel nécessaire') }}</label>
 
                                 <div class="col-md-6">
                                     <textarea  id="list_equipment" type="textarea" rows="4"
                                            class="textarea_listmateriel form-control" name="list_equipment"
-                                               placeholder="Indiquez la liste de materiel que devront apporter les participants ">{{$event->list_equipment ?? ''}}</textarea>
+                                               placeholder="Indiquez la liste du matériel que devront apporter les participants ">{{$event->list_equipment ?? ''}}</textarea>
 
                                     @error('list_equipment')
                                     <span class="invalid-feedback" role="alert">
@@ -173,12 +173,12 @@
 {{--                                                        NB_MAX_USER--}}
                             <div class="form-group row">
                                 <label for="nb_max_user"
-                                       class="col-md-4 col-form-label text-md-right">{{ __('Nombre maximum de participant') }}</label>
+                                       class="col-md-4 col-form-label text-md-right">{{ __('Nombre maximum de participants') }}</label>
 
                                 <div class="col-md-6">
                                     <input id="nb_max_user" type="number"
                                            class="form-control @error('nb_max_user') is-invalid @enderror" name="nb_max_user"
-                                           value="{{$event->nb_max_user ?? ''}}"required autocomplete="Nombre maximum de participant">
+                                           value="{{$event->nb_max_user ?? ''}}"required autocomplete="Nombre maximum de participants">
 
                                     @error('nb_max_user')
                                     <span class="invalid-feedback" role="alert">

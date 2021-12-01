@@ -16,7 +16,7 @@
             <div class="calendar"></div>
         </aside>
         <div class="container text-center backoffice_borderleft">
-            <h2>renseignez les champs</h2>
+            <h2>Renseignez les champs</h2>
 
             <div class="row justify-content-center ">
                 <div class="col-md-8">

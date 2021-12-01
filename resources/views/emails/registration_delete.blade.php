@@ -30,11 +30,11 @@
                                 <tr>
                                     <td style="font-family: roboto, sans-serif; font-size: 20px; vertical-align: top;" valign="top">
                                         <p style="font-family: roboto, sans-serif; font-size: 20px; font-weight: normal; margin: 0; margin-bottom: 15px;">Bonjour,</p>
-                                        <p style="font-family: roboto,sans-serif; font-size: 20px; font-weight: normal; margin: 0; margin-bottom: 15px;">l'utilisateur {{$data_user->first_name}} s'est finalement désisté.</p>
+                                        <p style="font-family: roboto,sans-serif; font-size: 20px; font-weight: normal; margin: 0; margin-bottom: 15px;">L'utilisateur {{$data_user->first_name}} s'est finalement désisté.</p>
                                         <table role="presentation" border="0" cellpadding="0" cellspacing="0" class="btn btn-primary" style="border-collapse: separate; mso-table-lspace: 0pt; mso-table-rspace: 0pt; box-sizing: border-box; width: 100%;" width="100%">
 
-                                            <p style="font-family: roboto, sans-serif; font-size: 20px; font-weight: normal; margin: 0; margin-bottom: 15px;">Il libère donc {{$data_slots}} @if($data_slots >1) places @else place @endif pour votre animation "{{$data_event->title}}".</p>
-                                            <p style="font-family: roboto, sans-serif; font-size: 20px; font-weight: normal; margin: 0; margin-bottom: 15px;">Si vos réservations étaient complètes, pensez à contacter les personnes de votre liste d'attente :)</p>
+                                            <p style="font-family: roboto, sans-serif; font-size: 20px; font-weight: normal; margin: 0; margin-bottom: 15px;">Il libère donc {{$data_slots}} @if($data_slots >1)places @else place @endif pour votre animation "{{$data_event->title}}".</p>
+                                            <p style="font-family: roboto, sans-serif; font-size: 20px; font-weight: normal; margin: 0; margin-bottom: 15px;">Si vos réservations étaient complètes, pensez à contacter les personnes de votre liste d'attente. :)</p>
 
                                             <p style="font-family: roboto, sans-serif; font-size: 20px; font-weight: normal; margin: 0; margin-bottom: 15px;">Bonne journée !</p>
                                             </td>

@@ -57,12 +57,12 @@
             </div>
             </br>
 
-            <p class="ifcomplete">Si l'animation est complète, envoyez moi un mail à <a
-                    href="mailto:"{{$event->user->email }}">{{$event->user->email }}</a> et je vous tiendrai au courant
+            <p class="ifcomplete">Si l'animation est complète, envoyé un mail à <a
+                    href="mailto:"{{$event->user->email }}">{{$event->user->email }}</a>. Je vous tiendrai informé
                 si une place se libère.</p>
             <section class="inscription_event_vue">
 
-                <span id="{{$stats}}">Nombre de participant inscrit {{$nbPlayers}} /  {{$event->nb_max_user}}</span>
+                <span id="{{$stats}}">Nombre de participants inscrits {{$nbPlayers}} /  {{$event->nb_max_user}}</span>
 
                 <a href="{{route('event_registration_view', ['id' => $event->id])}}">
                     <button class="clickable">Les inscriptions</button>
@@ -71,8 +71,8 @@
             </section>
 
             @if (Checker::isAdmin() || Checker::eventBelongsToCurrentUser($event->user_id))
-                <a href="{{route('event_edit', ['id' => $event->id])}}">Modifier l'évènement</a>
-                <a href="{{route('event_mailAll', ['id' => $event->id])}}">Ecrire à tout les participants</a>
+                <a href="{{route('event_edit', ['id' => $event->id])}}">Modifier l'événement</a>
+                <a href="{{route('event_mailAll', ['id' => $event->id])}}">Ecrire à tous les participants</a>
             @endif
         </section>
 

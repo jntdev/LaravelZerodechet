@@ -28,7 +28,7 @@
                                 <input id="user_id" type="hidden" name="user_id" value="{{Auth::user()->id}}">
                                 <div class="form-group row">
                                     <label for="nb_participant" class="col-md-4 col-form-label text-md-right">
-                                        {{ __('Nombre de personne que vous inscrivez') }}
+                                        {{ __('Nombre de personnes que vous inscrivez') }}
                                     </label>
                                     <div class="col-md-6">
                                         <input class="form-control" id="nb_participant" type="number"
