@@ -44,11 +44,14 @@
 
                 </div>
                 <div class="right_event_vue">
-                    <h3><u>Description</u></h3>
-                    </br>
-                    <textarea readonly class="textarea_description_event">{!! $event->description !!}</textarea>
-                    </br>
-                    </br>
+                    <div>
+                        <h3><u>Description</u></h3>
+                        </br>
+                        <textarea readonly class="textarea_description_event">{!! $event->description !!}</textarea>
+                        </br>
+                        </br>
+                    </div>
+
 
                 </div>
             </div>

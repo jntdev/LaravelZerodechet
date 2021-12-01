@@ -478,6 +478,7 @@ input:checked ~ nav {
             }
         }
         .nav__listitemdrop {
+
             li {
                 a {
                     color: var(--maincolor);
@@ -568,6 +569,7 @@ input:checked ~ nav {
             }
             &:hover .nav__listitemdrop,
             &:focus .nav__listitemdrop {
+                z-index: 2;
                 opacity: 1;
                 visibility: visible;
             }
@@ -2533,6 +2535,7 @@ position: relative;
     .event_vue_title {
         position: relative;
         width: 80%;
+        margin-bottom: 40px;
         h2 {
             color: var(--primebackground);
             font-size: 55px;
@@ -2545,6 +2548,7 @@ position: relative;
         flex-direction: row;
         justify-content: space-around;
         align-items: center;
+        align-self: flex-start;
 
 
         //border: 1px solid var(--primebackground);

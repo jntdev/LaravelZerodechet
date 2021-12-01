@@ -10525,6 +10525,7 @@ input:checked ~ nav > ul > li a {
   font-weight: 600;
 }
 .nav__listitem:hover .nav__listitemdrop, .nav__listitem:focus .nav__listitemdrop {
+  z-index: 2;
   opacity: 1;
   visibility: visible;
 }
@@ -12404,6 +12405,7 @@ textarea::placeholder {
 .container_event_vue .event_vue_title {
   position: relative;
   width: 80%;
+  margin-bottom: 40px;
 }
 .container_event_vue .event_vue_title h2 {
   color: var(--primebackground);
@@ -12415,6 +12417,7 @@ textarea::placeholder {
   flex-direction: row;
   justify-content: space-around;
   align-items: center;
+  align-self: flex-start;
 }
 .container_event_vue button,
 .container_event_vue span {
