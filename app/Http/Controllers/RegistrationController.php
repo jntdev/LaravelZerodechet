@@ -81,8 +81,11 @@ class RegistrationController extends Controller
             $currentUserRegistration->nb_players = $nbPlayersToAdd;
             $currentUserRegistration->save();
             $user= Auth::user();
+            $Registrations = Registration::where('event_id', $eventId)->get();
 
-            Mail::to($event->user->email)->send(new RegistrationModified($user, $event, $nbPlayers, $nbPlayersToAdd ));
+            $nbRegistrations = $Registrations->sum('nb_players');
+
+            Mail::to($event->user->email)->send(new RegistrationModified($user, $event, $nbRegistrations, $nbPlayersToAdd ));
         } else {
 
             Registration::create(
@@ -96,7 +99,11 @@ class RegistrationController extends Controller
 
 
             Mail::to($user->email)->send(new RegisterToUser($event));
-            Mail::to($event->user->email)->send(new RegisterToAnim($user, $event, $nbPlayers, $nbPlayersToAdd ));
+
+            $Registrations = Registration::where('event_id', $eventId)->get();
+            $totalNbPlayers = $Registrations->sum('nb_players');
+
+            Mail::to($event->user->email)->send(new RegisterToAnim($user, $event, $totalNbPlayers, $nbPlayersToAdd ));
         }
 
         //pour le User, on a besoin de passer toutes les infos de l'event

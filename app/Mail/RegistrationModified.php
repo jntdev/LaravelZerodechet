@@ -13,7 +13,7 @@ class RegistrationModified extends Mailable
 
     public $data_user=[];
     public $data_event=[];
-    public $data_nb_registration=[];
+    public $data_totalNbPlayers=[];
     public $data_nb_user_to_add=[];
 
 
@@ -23,11 +23,11 @@ class RegistrationModified extends Mailable
      * @return void
      */
 
-    public function __construct($user,$event,$nbPlayers,$nbPlayersToAdd)
+    public function __construct($user,$event,$totalNbPlayers,$nbPlayersToAdd)
     {
         $this->data_user=$user;
         $this->data_event=$event;
-        $this->data_nb_registration=$nbPlayers;
+        $this->data_totalNbPlayers=$totalNbPlayers;
         $this->data_nb_user_to_add=$nbPlayersToAdd;
     }
 

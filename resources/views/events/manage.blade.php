@@ -1,21 +1,21 @@
 @extends('layouts.app')
 @section('content')
     <section class="index_vue_page">
-    <aside class="index_vue_panel">
-        <div class="button_controller">
-            <a href="{{route('event_list')}}"><button class="userbutton">Tableau de bord</button></a>
-            <a href="{{route('registered')}}"><button class="userbutton">Vos inscriptions</button></a>
-            <a href="{{route('profile')}}"><button class="userbutton">Votre profile</button></a>
-            @if (Checker::isAdmin() || Checker::isAnim())
-                <a href="{{route('event_create')}}"><button class="animbutton">créez une animation</button></a>
-            @endif
-            @if (Checker::isAdmin())
-                <a href="{{route('all_user')}}"><button class="adminbutton">Tout les participants</button></a>
-            @endif
-        </div>
-        <div class="calendar"></div>
-    </aside>
-<section class="events">
+        <aside class="index_vue_panel">
+            <div class="button_controller">
+                <a href="{{route('profile')}}"><button class="userbutton">Mon profil</button></a>
+                <a href="{{route('registered')}}"><button class="userbutton">Vos inscriptions</button></a>
+                @if (Checker::isAdmin() || Checker::isAnim())
+                    <a href="{{route('event_create')}}"><button class="animbutton">Créez une animation</button></a>
+                    <a href="{{route('manage')}}"><button class="animbutton">Gerez vos animations</button></a>
+                @endif
+                @if (Checker::isAdmin())
+                    <a href="{{route('all_user')}}"><button class="adminbutton">Tous les participants</button></a>
+                @endif
+            </div>
+            <div class="calendar"></div>
+        </aside>
+<section class="events backoffice_borderleft">
     <div class="titlesection">
         <h2>Liste des animations</h2>
     </div>
@@ -40,7 +40,8 @@
                     </div> -->
                     <div class="infosection">
                         <h3>{{$event->title}}</h3>
-                        <p>{{$event->description}}</p>
+                        <div><textarea readonly>{{ $event->description }}</textarea></div>
+                        <p class="end_of_textarea">...</p>
                     </div>
                 </div>
                 <a href="{{route('event_show', ['event_id' => $event->id])}}">Voir en détails</a>

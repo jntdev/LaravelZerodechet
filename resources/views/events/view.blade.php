@@ -4,14 +4,14 @@
     <section class="index_vue_page">
         <aside class="index_vue_panel">
             <div class="button_controller">
-                <a href="{{route('event_list')}}"><button class="userbutton">Tableau de bord</button></a>
                 <a href="{{route('profile')}}"><button class="userbutton">Mon profil</button></a>
+                <a href="{{route('registered')}}"><button class="userbutton">Vos inscriptions</button></a>
                 @if (Checker::isAdmin() || Checker::isAnim())
-                    <a href="{{route('event_create')}}"><button class="animbutton">créez une animation</button></a>
+                    <a href="{{route('event_create')}}"><button class="animbutton">Créez une animation</button></a>
                     <a href="{{route('manage')}}"><button class="animbutton">Gerez vos animations</button></a>
                 @endif
                 @if (Checker::isAdmin())
-                    <a href="{{route('all_user')}}"><button class="adminbutton">Tout les participants</button></a>
+                    <a href="{{route('all_user')}}"><button class="adminbutton">Tous les participants</button></a>
                 @endif
             </div>
             <div class="calendar"></div>
@@ -40,12 +40,13 @@
                             @endif</li>
                     </ul>
                     <h4><u>{{$event->list_equipment ? 'Liste du materiel à apporter' :''}}</u></h4>
-                    <p>{{$event->list_equipment}}</p>
+                    <textarea readonly class="textarea_listequipment_event">{!! $event->list_equipment !!}</textarea>
+
                 </div>
                 <div class="right_event_vue">
                     <h3><u>Description</u></h3>
                     </br>
-                    <p>{{$event->description}}</p>
+                    <textarea readonly class="textarea_description_event">{!! $event->description !!}</textarea>
                     </br>
                     </br>
 
@@ -59,15 +60,11 @@
             <section class="inscription_event_vue">
 
                 <span id="{{$stats}}">Nombre de participant inscrit {{$nbPlayers}} /  {{$event->nb_max_user}}</span>
-                @if($registration->user_id == Auth::user()->id)
-                    <a href="{{route('event_registration_view', ['id' => $event->id])}}">
-                        <button class="clickable" >Ma réservation</button>
-                    </a>
-                @else
+
                 <a href="{{route('event_registration_view', ['id' => $event->id])}}">
-                    <button class="clickable" <?= $stats === 'full' ? 'disabled' : '' ?>>Inscription</button>
+                    <button class="clickable">Les inscriptions</button>
                 </a>
-                    @endif
+
             </section>
 
             @if (Checker::isAdmin() || Checker::eventBelongsToCurrentUser($event->user_id))

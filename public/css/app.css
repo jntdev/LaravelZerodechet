@@ -12021,6 +12021,7 @@ input:checked ~ nav > ul > li a {
 
 .backoffice_borderleft {
   border-left: solid 2px var(--maincolor);
+  width: 80%;
 }
 
 label {
@@ -12137,19 +12138,44 @@ textarea::placeholder {
   width: 50%;
 }
 
-.description_event {
-  width: 80%;
-  margin: 0 auto;
-  height: 300px;
-  display: flex;
-  flex-direction: column;
-}
-.description_event textarea {
-  height: 300px;
-  border-radius: 25px;
-  padding: 10px;
+.textarea_description_event {
+  resize: none;
+  height: 350px;
+  width: 650px;
+  border: none;
 }
 
+.textarea_description_event:focus-visible {
+  border: 0 none #FFF;
+  overflow: hidden;
+  outline: none;
+}
+
+.textarea_listequipment_event {
+  resize: none;
+  height: 250px;
+  width: 300px;
+  border: none;
+}
+
+.textarea_listequipment_event:focus-visible {
+  border: 0 none #FFF;
+  overflow: hidden;
+  outline: none;
+}
+
+/*.description_event {
+    width: 80%;
+    margin: 0 auto;
+    height: 300px;
+    display: flex;
+    flex-direction: column;
+    textarea {
+        height: 300px;
+        border-radius: 25px;
+        padding: 10px;
+    }
+}*/
 .ck-editor__editable_inline {
   font-family: var(--primfontfamily);
   min-height: 400px;
@@ -12270,12 +12296,20 @@ textarea::placeholder {
 .box_event .infosection {
   height: 180px;
 }
-.box_event .infosection p {
-  text-overflow: ellipsis;
-  -webkit-line-clamp: 4;
-  display: -webkit-box;
-  -webkit-box-orient: vertical;
+.box_event .infosection textarea {
+  width: 300px;
+  height: 100px;
+  resize: none;
+  border: none;
+}
+.box_event .infosection textarea:focus-visible {
+  border: 0 none #FFF;
   overflow: hidden;
+  outline: none;
+}
+.box_event .infosection .end_of_textarea {
+  margin-top: -20px;
+  padding: 0;
 }
 
 .top_event_section {
@@ -12294,6 +12328,9 @@ textarea::placeholder {
 .top_event_section .rdvsection {
   text-align: end;
   width: 140px;
+}
+.top_event_section .rdvsection .p_city {
+  margin-bottom: 0;
 }
 
 .bot_event_section {

@@ -3,14 +3,14 @@
     <section class="index_vue_page">
         <aside class="index_vue_panel">
             <div class="button_controller">
-                <a href="{{route('event_list')}}"><button class="userbutton">Tableau de bord</button></a>
+                <a href="{{route('profile')}}"><button class="userbutton">Mon profil</button></a>
                 <a href="{{route('registered')}}"><button class="userbutton">Vos inscriptions</button></a>
-                <a href="{{route('profile')}}"><button class="userbutton">Votre profile</button></a>
                 @if (Checker::isAdmin() || Checker::isAnim())
+                    <a href="{{route('event_create')}}"><button class="animbutton">Créez une animation</button></a>
                     <a href="{{route('manage')}}"><button class="animbutton">Gerez vos animations</button></a>
                 @endif
                 @if (Checker::isAdmin())
-                    <a href="{{route('all_user')}}"><button class="adminbutton">Tout les participants</button></a>
+                    <a href="{{route('all_user')}}"><button class="adminbutton">Tous les participants</button></a>
                 @endif
             </div>
             <div class="calendar"></div>
@@ -122,7 +122,7 @@
 
                                 <div class="col-md-6">
                                     <textarea id="description"
-                                           class="form-control @error('description') is-invalid @enderror" name="description" rows="10"
+                                           class="textarea_description form-control @error('description') is-invalid @enderror" name="description" rows="10"
                                               required autocomplete="Description" placeholder="Description de l'animation">{{$event->description ?? ''}}</textarea>
 
                                     @error('description')
@@ -160,7 +160,7 @@
 
                                 <div class="col-md-6">
                                     <textarea  id="list_equipment" type="textarea" rows="4"
-                                           class="form-control" name="list_equipment"
+                                           class="textarea_listmateriel form-control" name="list_equipment"
                                                placeholder="Indiquez la liste de materiel que devront apporter les participants ">{{$event->list_equipment ?? ''}}</textarea>
 
                                     @error('list_equipment')
@@ -221,21 +221,7 @@
     </div>
     </section>
 @endsection
-@section('form_scripts')
-    <script>
-        ClassicEditor
-            .create( document.querySelector( '#description' ) )
-            .catch( error => {
-                console.error( error );
-            } );
 
-        ClassicEditor
-            .create( document.querySelector( '#list_equipment' ) )
-            .catch( error => {
-                console.error( error );
-            } );
-    </script>
-@endsection
 
 
 

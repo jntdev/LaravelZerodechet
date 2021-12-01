@@ -25,4 +25,27 @@ $(function() {
             $('#section_list_equipment').hide('slow');
         }
     })
+
+    $('.textarea_description').keypress(function(e) {
+        var tval = $('.textarea_description').val(),
+            tlength = tval.length,
+            set = 300,
+            remain = parseInt(set - tlength);
+        $('p').text(remain);
+        if (remain <= 0 && e.which !== 0 && e.charCode !== 0) {
+            $('.textarea_description').val((tval).substring(0, tlength - 1));
+            return false;
+        }
+    })
+    $('.textarea_listmateriel').keypress(function(e) {
+        var tval = $('.textarea_listmateriel').val(),
+            tlength = tval.length,
+            set = 100,
+            remain = parseInt(set - tlength);
+        $('p').text(remain);
+        if (remain <= 0 && e.which !== 0 && e.charCode !== 0) {
+            $('.textarea_listmateriel').val((tval).substring(0, tlength - 1));
+            return false;
+        }
+    })
 });

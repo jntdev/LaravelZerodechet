@@ -173,6 +173,8 @@ class EventController extends Controller
 
         /** @var string $stats */
         $stats = $this->getStats($event, $nbPlayers);
+        $userId = Auth::user()->id;
+        $registration = Registration::where([['user_id', "=","userId"],['event_id', "=","$event"]])->first();
 
         return view('events.view', compact('event', 'nbPlayers', 'stats','registration'), ['title' => $event->title]);
     }

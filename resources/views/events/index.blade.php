@@ -7,16 +7,16 @@
                 <a href="{{route('profile')}}"><button class="userbutton">Mon profil</button></a>
                 <a href="{{route('registered')}}"><button class="userbutton">Vos inscriptions</button></a>
                 @if (Checker::isAdmin() || Checker::isAnim())
-                    <a href="{{route('event_create')}}"><button class="animbutton">créez une animation</button></a>
+                    <a href="{{route('event_create')}}"><button class="animbutton">Créez une animation</button></a>
                     <a href="{{route('manage')}}"><button class="animbutton">Gerez vos animations</button></a>
                 @endif
                 @if (Checker::isAdmin())
-                    <a href="{{route('all_user')}}"><button class="adminbutton">Tout les participants</button></a>
+                    <a href="{{route('all_user')}}"><button class="adminbutton">Tous les participants</button></a>
                 @endif
             </div>
             <div class="calendar"></div>
         </aside>
-    <section class="events">
+    <section class="events backoffice_borderleft">
     <div class="titlesection">
         <h2>Liste des animations</h2>
     </div>
@@ -28,14 +28,15 @@
                     <div class="rdvsection">
                         <p>{{$event->date->format('d/m/Y')}} </br>
                             {{$event->time}}</p>
-                        <p>{{$event->city}}</p>
+                        <p class="p_city">{{$event->city}}</p>
                         <p>Crée par {{$event->user->first_name}}</p>
                     </div>
                 </div>
                 <div class="box_event_content">
                     <div class="infosection">
                         <h3>{{$event->title}}</h3>
-                       <div>{{$event->description}}</div>
+                        <div><textarea readonly>{{ $event->description }}</textarea></div>
+                        <p class="end_of_textarea">...</p>
                     </div>
                 </div>
                 <a href="{{route('event_show', ['event_id' => $event->id])}}">Voir en détails</a>

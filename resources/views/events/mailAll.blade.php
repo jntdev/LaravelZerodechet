@@ -6,11 +6,11 @@
                 <a href="{{route('profile')}}"><button class="userbutton">Mon profil</button></a>
                 <a href="{{route('registered')}}"><button class="userbutton">Vos inscriptions</button></a>
                 @if (Checker::isAdmin() || Checker::isAnim())
-                    <a href="{{route('event_create')}}"><button class="animbutton">créez une animation</button></a>
+                    <a href="{{route('event_create')}}"><button class="animbutton">Créez une animation</button></a>
                     <a href="{{route('manage')}}"><button class="animbutton">Gerez vos animations</button></a>
                 @endif
                 @if (Checker::isAdmin())
-                    <a href="{{route('all_user')}}"><button class="adminbutton">Tout les participants</button></a>
+                    <a href="{{route('all_user')}}"><button class="adminbutton">Tous les participants</button></a>
                 @endif
             </div>
             <div class="calendar"></div>
@@ -45,7 +45,7 @@
                                 <div class="form-group col">
                                     <div class="col-md-12">
                                     <textarea id="content_of_mail"
-                                              class="form-control @error('content_of_mail') is-invalid @enderror" name="content_of_mail" rows="10"
+                                              class="text_area form-control @error('content_of_mail') is-invalid @enderror" name="content_of_mail" rows="10"
                                               required autocomplete="content_of_mail" placeholder="Ecrivez votre message">
 
                                     </textarea>
@@ -75,7 +75,7 @@
         </div>
     </section>
 @endsection
-@section('mailtoAll_scripts')
+{{--@section('textarea_scripts')
     <script>
         ClassicEditor
             .create( document.querySelector( '#content_of_mail' ) )
@@ -83,4 +83,4 @@
                 console.error( error );
             } );
     </script>
-@endsection
+@endsection--}}

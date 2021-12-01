@@ -10,7 +10,13 @@
 </div>
 <script src="{{ asset('js/script.js') }}"></script>
 <script src="https://cdn.ckeditor.com/ckeditor5/30.0.0/classic/ckeditor.js"></script>
-@yield('mailtoAll_scripts')
+<script>
+    ClassicEditor
+        .create( document.querySelector( '.text_area' ) )
+        .catch( error => {
+            console.error( error );
+        } );
+</script>
 {{--@yield('form_scripts')--}}
 </body>
 </html>

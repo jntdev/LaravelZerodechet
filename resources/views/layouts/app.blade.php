@@ -5,4 +5,4 @@
             @yield('content')
         </main>
     </div>
-    @include('/componant/footer')
+@include('/componant/footer')
