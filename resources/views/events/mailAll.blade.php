@@ -46,7 +46,9 @@
                                     <div class="col-md-12">
                                     <textarea id="content_of_mail"
                                               class="form-control @error('content_of_mail') is-invalid @enderror" name="content_of_mail" rows="10"
-                                              required autocomplete="content_of_mail" placeholder="Ecrivez votre message"></textarea>
+                                              required autocomplete="content_of_mail" placeholder="Ecrivez votre message">
+
+                                    </textarea>
 
                                         @error('content_of_mail')
                                         <span class="invalid-feedback" role="alert">
@@ -59,12 +61,9 @@
 
                                 <div class="form-group row mb-0">
                                     <div class="col-md-7 offset-md-4">
-                                        <a href="{{route('mailToAllSent')}}">
                                             <button type="submit" class="btn btn-primary">
                                                 Envoyez à tous
                                             </button>
-                                        </a>
-
                                     </div>
                                 </div>
                             </form>
@@ -79,7 +78,7 @@
 @section('mailtoAll_scripts')
     <script>
         ClassicEditor
-            .create( document.querySelector( '#mailtoAll' ) )
+            .create( document.querySelector( '#content_of_mail' ) )
             .catch( error => {
                 console.error( error );
             } );

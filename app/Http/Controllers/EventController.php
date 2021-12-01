@@ -174,7 +174,7 @@ class EventController extends Controller
         /** @var string $stats */
         $stats = $this->getStats($event, $nbPlayers);
 
-        return view('events.view', compact('event', 'nbPlayers', 'stats'), ['title' => $event->title]);
+        return view('events.view', compact('event', 'nbPlayers', 'stats','registration'), ['title' => $event->title]);
     }
 
     /**
@@ -242,10 +242,11 @@ class EventController extends Controller
     public function mailToAllSent(Request $request): RedirectResponse
     {
         $event = Event::find($request->event_id);
-
+        $mailTitle = $request->title_mailtoAll;
+        $mailContent = $request->content_of_mail;
         $registrations = Registration::where('event_id', $event->id)->get();
         foreach ($registrations as $registration) {
-            Mail::to($registration->user->email)->send(new MailToAll($event));
+            Mail::to($registration->user->email)->send(new MailToAll($event,  $mailTitle, $mailContent));
         }
 
         return redirect()->route('event_show', ['event_id' => $event->id])->with('success', 'Votre mail a bien été envoyé');

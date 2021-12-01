@@ -59,9 +59,15 @@
             <section class="inscription_event_vue">
 
                 <span id="{{$stats}}">Nombre de participant inscrit {{$nbPlayers}} /  {{$event->nb_max_user}}</span>
+                @if($registration->user_id == Auth::user()->id)
+                    <a href="{{route('event_registration_view', ['id' => $event->id])}}">
+                        <button class="clickable" >Ma réservation</button>
+                    </a>
+                @else
                 <a href="{{route('event_registration_view', ['id' => $event->id])}}">
                     <button class="clickable" <?= $stats === 'full' ? 'disabled' : '' ?>>Inscription</button>
                 </a>
+                    @endif
             </section>
 
             @if (Checker::isAdmin() || Checker::eventBelongsToCurrentUser($event->user_id))

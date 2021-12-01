@@ -2260,10 +2260,31 @@ position: relative;
         padding: 10px;
     }
 }
+
+
 .ck-editor__editable_inline  {
     font-family: var(--primfontfamily);
     min-height: 400px;
+    p{
+        width: 100%;
+    }
 }
+
+#section_list_equipment{
+    .ck-editor__editable_inline {
+        font-family: var(--primfontfamily);
+        min-height: 100px;
+    }
+}
+
+#section_input_description{
+        .ck-editor__editable_inline {
+            font-family: var(--primfontfamily);
+            min-height: 150px;
+        }
+    }
+
+
 
 .radio_event_create {
     width: 100%;

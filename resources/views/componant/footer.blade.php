@@ -8,9 +8,9 @@
     <img onclick="window.open('https://www.facebook.com/Les-graines-du-go%C3%ABlo-1626470134314629')" class="coherence clickable"src="{{ asset('images/graines_goelo.jpg') }}" alt="">
     <img onclick="window.open('https://www.bretagne-vivante.org/')" class="biocoop clickable"src="{{ asset('images/bretagne_vivante.png') }}" alt="">
 </div>
-<script src="js/script.js"></script>
+<script src="{{ asset('js/script.js') }}"></script>
 <script src="https://cdn.ckeditor.com/ckeditor5/30.0.0/classic/ckeditor.js"></script>
 @yield('mailtoAll_scripts')
-@yield('form_scripts')
+{{--@yield('form_scripts')--}}
 </body>
 </html>

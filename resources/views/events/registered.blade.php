@@ -47,7 +47,7 @@
                         <p>{{$event->description}}</p>
                     </div>
                 </div>
-                <a href="{{route('event_show', ['event' => $event->id])}}">Voir en détails</a>
+                <a href="{{route('event_show', ['event_id' => $event->id])}}">Voir en détails</a>
             </div>
         @endforeach
     </div>

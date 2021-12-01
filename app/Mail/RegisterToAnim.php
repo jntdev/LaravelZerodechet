@@ -42,4 +42,9 @@ class RegisterToAnim extends Mailable
             ->subject('Vous avez une nouvelle inscription !')
             ->view('emails.register_to_anim');
     }
+
+    public static function startSection($section, $content = '')
+    {
+        \Illuminate\View\Factory::startSection($section, $content);
+    }
 }

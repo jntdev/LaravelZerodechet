@@ -11,14 +11,15 @@ class EventModified extends Mailable
 {
     use Queueable, SerializesModels;
 
+    public $event_data=[];
     /**
      * Create a new message instance.
      *
      * @return void
      */
-    public function __construct()
+    public function __construct($event)
     {
-        //
+        $this->event_data = $event;
     }
 
     /**

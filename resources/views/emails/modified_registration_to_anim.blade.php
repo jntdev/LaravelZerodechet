@@ -8,12 +8,12 @@
     <title>Document</title>
 </head>
 <body>
-<h1>Vous avez une nouvelle réservation!</h1>
+L'un des participants a modifier sa réservation !
 
 
-{{$data_user->first_name}} s'est inscrit à ton animation "{{$data_event->title}}.
+{{$data_user->first_name}} a modifié sa reservation à ton animation "{{$data_event->title}}.
 
-Sa réservation compte pour {{$data_nb_user_to_add}} @if($data_nb_user_to_add > 1)personnes @else personne @endif.
+Sa réservation compte maintenant pour {{$data_nb_user_to_add}} @if($data_nb_user_to_add > 1)personnes @else personne @endif.
 
 Voici l'état de votre niveau de réservation : {{$data_nb_registration}} / {{$data_event->nb_max_user}}
 

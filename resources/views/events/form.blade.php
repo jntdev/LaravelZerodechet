@@ -116,7 +116,7 @@
                                 </div>
                             </div>
                             {{--                        INPUT DESCRIPTION--}}
-                            <div class="form-group row">
+                            <div class="form-group row" id="section_input_description">
                                 <label for="description"
                                        class="col-md-4 col-form-label text-md-right">Description</label>
 
@@ -154,7 +154,7 @@
                                 </section>
                             </div>
                             {{--                            INPUT LIST_EQUIPMENT--}}
-                            <div class="form-group row" id="input_list_equipment">
+                            <div class="form-group row" id="section_list_equipment">
                                 <label for="list_equipment"
                                        class="col-md-4 col-form-label text-md-right">{{ __('Liste du materiel nécessaire') }}</label>
 

@@ -35,7 +35,7 @@
                 <div class="box_event_content">
                     <div class="infosection">
                         <h3>{{$event->title}}</h3>
-                       <p>{{$event->description}}</p>
+                       <div>{{$event->description}}</div>
                     </div>
                 </div>
                 <a href="{{route('event_show', ['event_id' => $event->id])}}">Voir en détails</a>

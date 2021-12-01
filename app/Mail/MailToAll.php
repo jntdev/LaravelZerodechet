@@ -10,15 +10,19 @@ use Illuminate\Queue\SerializesModels;
 class MailToAll extends Mailable
 {
     use Queueable, SerializesModels;
-
+    public $event_data=[];
+    public $mailTitle_data=[];
+    public $mailContent_data=[];
     /**
      * Create a new message instance.
      *
      * @return void
      */
-    public function __construct()
+    public function __construct($event,$mailTitle, $mailContent)
     {
-        //
+        $this->event_data = $event;
+        $this->mailTitle_data = $mailTitle;
+        $this->mailContent_data = $mailContent;
     }
 
     /**

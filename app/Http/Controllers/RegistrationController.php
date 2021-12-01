@@ -3,9 +3,11 @@
 namespace App\Http\Controllers;
 
 
+use App\Mail\EventModified;
 use App\Mail\RegisterToAnim;
 use App\Mail\RegisterToUser;
 use App\Mail\RegistrationDelete;
+use App\Mail\RegistrationModified;
 use App\Models\Event;
 use App\Models\Registration;
 use App\Models\loggedController;
@@ -78,6 +80,9 @@ class RegistrationController extends Controller
 
             $currentUserRegistration->nb_players = $nbPlayersToAdd;
             $currentUserRegistration->save();
+            $user= Auth::user();
+
+            Mail::to($event->user->email)->send(new RegistrationModified($user, $event, $nbPlayers, $nbPlayersToAdd ));
         } else {
 
             Registration::create(
@@ -87,20 +92,22 @@ class RegistrationController extends Controller
                     'event_id'   => $eventId,
                 ]
             );
+            $user= Auth::user();
+
+
+            Mail::to($user->email)->send(new RegisterToUser($event));
+            Mail::to($event->user->email)->send(new RegisterToAnim($user, $event, $nbPlayers, $nbPlayersToAdd ));
         }
 
         //pour le User, on a besoin de passer toutes les infos de l'event
-        $user= Auth::user();
 
-
-        Mail::to($user->email)->send(new RegisterToUser($event));
         //pour l'anim, on a besoin de passer les infos utiles du user
         //option : ajouter le compte restant des registrations: x/y
 
 
-        Mail::to($event->user->email)->send(new RegisterToAnim($user, $event, $nbPlayers, $nbPlayersToAdd ));
 
-        return redirect()->route('event_show', ['event' => $eventId])->with('success', 'Votre inscription a bien été prise en compte');
+
+        return redirect()->route('event_show', ['event_id' => $eventId])->with('success', 'Votre inscription a bien été prise en compte');
     }
 
     public function delete(Request $request): RedirectResponse

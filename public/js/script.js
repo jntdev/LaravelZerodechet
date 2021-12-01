@@ -1,5 +1,5 @@
 $(function() {
-    $('#input_list_equipment').hide();
+    $('#section_list_equipment').hide();
     //actu wrapper
     $(".seemore").on("click",function() {
             $(this).parent().find(".contenuactu").removeClass('visible');
@@ -20,9 +20,9 @@ $(function() {
     $("#has_equipment").on("click",function() {
 
         if($("#has_equipment").is(':checked')) {
-            $('#input_list_equipment').show('slow');
+            $('#section_list_equipment').show('slow');
         }else{
-            $('#input_list_equipment').hide('slow');
+            $('#section_list_equipment').hide('slow');
         }
     })
 });
