@@ -1910,7 +1910,7 @@ input:checked ~ nav {
     }
 }
 .ressources_info {
-    width: 80%;
+    width: 90%;
     color: white;
     display: flex;
     flex-direction: column;
@@ -1919,6 +1919,7 @@ input:checked ~ nav {
 }
 
 .atelier_en_lien {
+
     ul {
         list-style-image: url("../../public/images/flecherouge.png");
     }
@@ -1931,6 +1932,10 @@ input:checked ~ nav {
         margin-top: 0;
         text-align: center;
     }
+}
+
+.width_90{
+    padding: 4%;
 }
 .enfants_lesfetes {
     width: 80%;
@@ -1964,7 +1969,7 @@ input:checked ~ nav {
 .enfants_manuelles {
     margin-top: 50px;
     color: white;
-    padding: 3%;
+    padding: 4% 3%;
     a {
         text-decoration: none;
         color: var(--maincolor);
@@ -2418,7 +2423,7 @@ position: relative;
     justify-content: space-around;
     background-color: white;
     border-radius: 0 25px 25px 25px;
-    box-shadow: 3px -1px 15px -2px rgba(0, 0, 0, 0.1);
+    box-shadow: 3px -1px 15px -2px rgba(0, 0, 0, 0.4);
     padding: 2%;
     .infosection{
         height: 180px;
@@ -2608,12 +2613,43 @@ position: relative;
         border-radius: 15px;
 }
 
+
 .userinfos{
     display: flex;
-    justify-content: space-around;
-    width: 70%;
+    justify-content: flex-start;
+    width: 80%;
     font-family: var(--primfontfamily);
     font-size: 20px;
+    div{
+        text-align: left;
+        width: 35%;
+    }
+}
+
+.userinfos_eventlist{
+    display: flex;
+    justify-content: center;
+    width: 100%;
+    font-family: var(--primfontfamily);
+    font-size: 20px;
+    .div1{
+        text-align: left;
+        width: 15%;
+    }
+    .div2{
+        text-align: left;
+        width: 22%;
+    }
+    .div3{
+        text-align: left;
+        width: 40%;
+    }
+    .div4{
+        text-align: left;
+        width: 20%;
+    }
+
+
 }
 
 @media (max-width: 1700px) {

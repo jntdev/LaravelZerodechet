@@ -8,7 +8,7 @@
                 <a href="{{route('registered')}}"><button class="userbutton">Vos inscriptions</button></a>
                 @if (Checker::isAdmin() || Checker::isAnim())
                     <a href="{{route('event_create')}}"><button class="animbutton">Créez une animation</button></a>
-                    <a href="{{route('manage')}}"><button class="animbutton">Gerez vos animations</button></a>
+                    <a href="{{route('manage')}}"><button class="animbutton">Gérez vos animations</button></a>
                 @endif
                 @if (Checker::isAdmin())
                     <a href="{{route('all_user')}}"><button class="adminbutton">Tous les participants</button></a>
@@ -23,10 +23,11 @@
             </div>
             <div class="info_event_vue">
                 <div class="left_event_vue">
-                    <p>Date : {{$event->date->format('d/m/Y')}}</br>
-                        Rendez-vous à {{$event->time}}</br>
+                    <p>Date : <b>{{$event->date->format('d/m/Y')}}</b></br>
+                        Rendez-vous à <b>{{$event->time}}</b></br>
+                        Heure de fin prévu à <b>{{$event->endTime}}</b></br>
 
-                        {{$event->city}}</br>
+                        <b>{{$event->city}}</b></br>
                     <ul>
                         <li>@if($event->has_toilets == '0')
                                 WC non disponibles</br>
@@ -57,16 +58,26 @@
             </div>
             </br>
 
-            <p class="ifcomplete">Si l'animation est complète, envoyé un mail à <a
-                    href="mailto:"{{$event->user->email }}">{{$event->user->email }}</a>. Je vous tiendrai informé
+            <p class="ifcomplete">Si l'animation est complète, envoyez un mail à <a
+                    href="mailto:"{{$event->user->email }}">{{$event->user->email }}</a>. Je vous tiendrai informé(e)
                 si une place se libère.</p>
             <section class="inscription_event_vue">
 
                 <span id="{{$stats}}">Nombre de participants inscrits {{$nbPlayers}} /  {{$event->nb_max_user}}</span>
 
-                <a href="{{route('event_registration_view', ['id' => $event->id])}}">
-                    <button class="clickable">Les inscriptions</button>
-                </a>
+                @if(Checker::canDeleteEvent($event->user->id))
+                    <a href="{{route('registration_list', ['id' => $event->id])}}">
+                        <button class="clickable">Liste des inscriptions</button>
+                    </a>
+                    @elseif($registration['user_id'] != null)
+                    <a href="{{route('event_registration_view', ['id' => $event->id])}}">
+                        <button class="clickable">Modifier mon inscriptions</button>
+                    </a>
+                    @else
+                    <a href="{{route('event_registration_view', ['id' => $event->id])}}">
+                        <button class="clickable" <?= $stats === 'full' ? 'disabled' : '' ?>>S'inscrire</button>
+                    </a>
+                    @endif
 
             </section>
 

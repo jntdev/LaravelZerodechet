@@ -8,7 +8,7 @@
                 <a href="{{route('registered')}}"><button class="userbutton">Vos inscriptions</button></a>
                 @if (Checker::isAdmin() || Checker::isAnim())
                     <a href="{{route('event_create')}}"><button class="animbutton">Créez une animation</button></a>
-                    <a href="{{route('manage')}}"><button class="animbutton">Gerez vos animations</button></a>
+                    <a href="{{route('manage')}}"><button class="animbutton">Gérez vos animations</button></a>
                 @endif
                 @if (Checker::isAdmin())
                     <a href="{{route('all_user')}}"><button class="adminbutton">Tous les participants</button></a>

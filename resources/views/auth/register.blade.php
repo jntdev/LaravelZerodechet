@@ -67,7 +67,7 @@
                                 <div class="col-md-6">
                                     <input id="password" type="password"
                                            class="form-control @error('password') is-invalid @enderror" name="password"
-                                           required autocomplete="new-password">
+                                           required autocomplete="new-password" placeholder="8 caractères minimum ">
 
                                     @error('password')
                                     <span class="invalid-feedback" role="alert">
@@ -104,6 +104,7 @@
                                 <div class="col-md-6">
                                     <select id="team_name2" name="team_name" class="custom-select custom-select-md mb-3">
                                         <option selected>Sélectionnez votre équipe</option>
+                                        <option value="Sans équipe">Sans équipe</option>
                                         <option value="Les Tricotards">Les Tricotards</option>
                                         <option value="To be tri">To be tri</option>
                                         <option value=" Le Corps-Bousier"> Le Corps-Bousier</option>

@@ -8,7 +8,7 @@
                 <a href="{{route('registered')}}"><button class="userbutton">Vos inscriptions</button></a>
                 @if (Checker::isAdmin() || Checker::isAnim())
                     <a href="{{route('event_create')}}"><button class="animbutton">Créez une animation</button></a>
-                    <a href="{{route('manage')}}"><button class="animbutton">Gérez vos animations</button></a>
+                    <a href="{{route('manage')}}"><button class="animbutton">Gerez vos animations</button></a>
                 @endif
             </div>
             <div class="calendar"></div>
@@ -17,22 +17,17 @@
             <h2>Liste de tout les participants</h2>
 
             <div class="row justify-content-center ">
-                <div class="col-md-9">
+                <div class="col-md-8">
                     @foreach($users as $user)
-                    <div class="card border-info admincard">
-                        <div class="userinfos">
-                           <div>{{$user->first_name}}</div>
-                           <div>{{$user->last_name}}</div>
-                            <div>{{$user->email}}</div>
-                        </div>
-                        <div class="adminpanel">
-                            <a href="{{route('profile_FromAdmin', ['user' => $user->id])}}">
-                                <button class="btn btn-primary">Editer</button>
-                            </a>
-                        </div>
+                        <div class="card border-info admincard">
+                            <div class="userinfos_eventlist">
+                                <div class="div1">{{$user->first_name}}</div>
+                                <div class="div2">{{$user->last_name}}</div>
+                                <div class="div3">{{$user->email}}</div>
+                                <div class="div4">{{$user->phone_nb}}</div>
+                            </div>
 
-
-                    </div>
+                        </div>
                     @endforeach
                 </div>
             </div>

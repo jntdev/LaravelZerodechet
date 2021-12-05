@@ -42,7 +42,25 @@ class EventController extends Controller
         $user = Auth::user();
         $events = Event::where('user_id', $user->id)->orderBy('date')->get();
 
-        return view('events.manage', compact('user', 'events'), ['title' => 'Gerez vos animations']);
+
+        return view('events.manage', compact('user', 'events'), ['title' => 'Gérez vos animations']);
+    }
+
+    /**
+     * @param int $eventId
+     * @return View
+     */
+    public function view_registrations(int $eventId): View
+    {
+        $event = Event::find($eventId);
+        $myRegistrationRows= Registration::where('event_id',$event->id)->get();
+        $userIds = [];
+        foreach ($myRegistrationRows as $myRegistrationRow) {
+            $userIds[]=$myRegistrationRow->user_id;
+        }
+        $users=User::wherein('id',$userIds)->get();
+
+        return view('events.registration_list',compact('users'), ['title' => 'Liste des participants']);
     }
 
     /**
@@ -174,7 +192,12 @@ class EventController extends Controller
         /** @var string $stats */
         $stats = $this->getStats($event, $nbPlayers);
         $userId = Auth::user()->id;
-        $registration = Registration::where([['user_id', "=","userId"],['event_id', "=","$event"]])->first();
+
+        $registration = Registration::where([['user_id', "=","$userId"],['event_id', "=","$event->id"]])->first();
+
+
+
+
 
         return view('events.view', compact('event', 'nbPlayers', 'stats','registration'), ['title' => $event->title]);
     }

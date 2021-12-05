@@ -11,10 +11,10 @@
                 </a>
                 @if (Checker::isAdmin() || Checker::isAnim())
                     <a href="{{route('event_create')}}">
-                        <button class="animbutton">créez une animation</button>
+                        <button class="animbutton">Créez une animation</button>
                     </a>
                     <a href="{{route('manage')}}">
-                        <button class="animbutton">Gerez vos animations</button>
+                        <button class="animbutton">Gérez vos animations</button>
                     </a>
                 @endif
                 @if (Checker::isAdmin())
@@ -121,6 +121,7 @@
                                     <div class="col-md-6">
                                         <select id="team_name2" name="team_name" class="custom-select custom-select-md">
                                             <option selected>{{$user->team_name}}</option>
+                                            <option value="Sans équipe">Sans équipe</option>
                                             <option value="Les Tricotards">Les Tricotards</option>
                                             <option value="To be tri">To be tri</option>
                                             <option value=" Le Corps-Bousier"> Le Corps-Bousier</option>

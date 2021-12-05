@@ -80,8 +80,9 @@ Route::group([
     Route::post('/event_store/', [EventController::class, 'store'])->name('event_store');
     Route::get('/event_mailAll/', [EventController::class, 'mailAll'])->name('event_mailAll');
     Route::post('/mailToAllSent/', [EventController::class, 'mailToAllSent'])->name('mailToAllSent');
-
+    Route::get('/registration_list/{id}', [EventController::class, 'view_registrations'])->name('registration_list');
     /** Route Registration*/
+
     Route::get('/event_registration/{id}', [RegistrationController::class, 'index'])->name('event_registration_view');
     Route::post('/event_registration_submit/', [RegistrationController::class, 'submit'])->name('event_registration_submit');
     Route::post('/event_registration_delete/', [RegistrationController::class, 'delete'])->name('event_registration_delete');

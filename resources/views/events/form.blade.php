@@ -4,10 +4,13 @@
         <aside class="index_vue_panel">
             <div class="button_controller">
                 <a href="{{route('profile')}}"><button class="userbutton">Mon profil</button></a>
+                <a href="{{route('event_list')}}">
+                    <button class="userbutton">Tableau de bord</button>
+                </a>
                 <a href="{{route('registered')}}"><button class="userbutton">Vos inscriptions</button></a>
                 @if (Checker::isAdmin() || Checker::isAnim())
-                    <a href="{{route('event_create')}}"><button class="animbutton">Créez une animation</button></a>
-                    <a href="{{route('manage')}}"><button class="animbutton">Gerez vos animations</button></a>
+
+                    <a href="{{route('manage')}}"><button class="animbutton">Gérez vos animations</button></a>
                 @endif
                 @if (Checker::isAdmin())
                     <a href="{{route('all_user')}}"><button class="adminbutton">Tous les participants</button></a>
@@ -78,6 +81,17 @@
                                         <strong>{{ $message }}</strong>
                                     </span>
                                     @enderror
+                                </div>
+                            </div>
+{{--                                                     INPUT ENDTIME--}}
+                            <div class="form-group row">
+                                <label for="endTime"
+                                       class="col-md-4 col-form-label text-md-right">Heure de fin</label>
+
+                                <div class="col-md-6">
+                                    <input id="endTime" type="text"
+                                           class="form-control " name="endTime"
+                                           value="{{$event->endTime??''}}" placeholder="Format HH:MN">
                                 </div>
                             </div>
                             {{--                        INPUT CITY--}}

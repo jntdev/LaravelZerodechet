@@ -37,7 +37,7 @@
                 </a>
 
             </p>
-            </div>
+
             <p>Par ailleurs, les boîtes mail proposées par les géants du web sont loin d’être gratuites : vos données valent de
                 l’or et sont notamment récupérées pour vous envoyer de la publicité. Certaines entreprises comme Ecomail ou Lilo proposent une
                 messagerie privée, hébergée en France, sans publicité et n'ayant pas un but lucratif. Les fonds récoltés sont

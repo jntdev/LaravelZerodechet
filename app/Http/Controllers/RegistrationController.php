@@ -106,14 +106,6 @@ class RegistrationController extends Controller
             Mail::to($event->user->email)->send(new RegisterToAnim($user, $event, $totalNbPlayers, $nbPlayersToAdd ));
         }
 
-        //pour le User, on a besoin de passer toutes les infos de l'event
-
-        //pour l'anim, on a besoin de passer les infos utiles du user
-        //option : ajouter le compte restant des registrations: x/y
-
-
-
-
         return redirect()->route('event_show', ['event_id' => $eventId])->with('success', 'Votre inscription a bien été prise en compte');
     }
 
@@ -134,7 +126,7 @@ class RegistrationController extends Controller
 
             //option : ajouter le compte restant des registrations: x/y
 
-            Mail::to('anim@mail.test')->send(new RegistrationDelete($user, $event,$slots));
+            Mail::to($event->user->email)->send(new RegistrationDelete($user, $event,$slots));
             return redirect()->route('event_list')->with('success', 'La réserveration a été supprimée');
         }
         return redirect()->route('events.registration')->with('error', 'Une erreur est survenue');

@@ -11784,7 +11784,7 @@ input:checked ~ nav > ul > li a {
 }
 
 .ressources_info {
-  width: 80%;
+  width: 90%;
   color: white;
   display: flex;
   flex-direction: column;
@@ -11804,6 +11804,10 @@ input:checked ~ nav > ul > li a {
   padding: 0;
   margin-top: 0;
   text-align: center;
+}
+
+.width_90 {
+  padding: 4%;
 }
 
 .enfants_lesfetes {
@@ -11839,7 +11843,7 @@ input:checked ~ nav > ul > li a {
 .enfants_manuelles {
   margin-top: 50px;
   color: white;
-  padding: 3%;
+  padding: 4% 3%;
 }
 .enfants_manuelles a {
   text-decoration: none;
@@ -12291,7 +12295,7 @@ textarea::placeholder {
   justify-content: space-around;
   background-color: white;
   border-radius: 0 25px 25px 25px;
-  box-shadow: 3px -1px 15px -2px rgba(0, 0, 0, 0.1);
+  box-shadow: 3px -1px 15px -2px rgba(0, 0, 0, 0.4);
   padding: 2%;
 }
 .box_event .infosection {
@@ -12475,10 +12479,38 @@ textarea::placeholder {
 
 .userinfos {
   display: flex;
-  justify-content: space-around;
-  width: 70%;
+  justify-content: flex-start;
+  width: 80%;
   font-family: var(--primfontfamily);
   font-size: 20px;
+}
+.userinfos div {
+  text-align: left;
+  width: 35%;
+}
+
+.userinfos_eventlist {
+  display: flex;
+  justify-content: center;
+  width: 100%;
+  font-family: var(--primfontfamily);
+  font-size: 20px;
+}
+.userinfos_eventlist .div1 {
+  text-align: left;
+  width: 15%;
+}
+.userinfos_eventlist .div2 {
+  text-align: left;
+  width: 22%;
+}
+.userinfos_eventlist .div3 {
+  text-align: left;
+  width: 40%;
+}
+.userinfos_eventlist .div4 {
+  text-align: left;
+  width: 20%;
 }
 
 @media (max-width: 1700px) {
