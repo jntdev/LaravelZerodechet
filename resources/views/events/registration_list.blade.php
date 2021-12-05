@@ -20,7 +20,12 @@
             <h2>Liste de tout les participants</h2>
 
             <div class="row justify-content-center ">
+
+
+
+
                 <div class="col-md-8">
+                    <a class="mailToAll_link" href="{{route('event_mailAll', ['id' => $event->id])}}">Ecrire à tous les participants</a>
                     @foreach($users as $user)
                         <div class="card border-info admincard">
                             <div class="userinfos_eventlist">

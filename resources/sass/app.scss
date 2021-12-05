@@ -2633,13 +2633,17 @@ position: relative;
         width: 50%;
     }
 }
-
+.mailToAll_link{
+    font-size: var(--primefontsize);
+    margin-bottom: 30px;
+}
 .userinfos_eventlist{
     display: flex;
     justify-content: center;
     width: 100%;
     font-family: var(--primfontfamily);
     font-size: 20px;
+
     .div1{
         text-align: left;
         width: 15%;

@@ -83,7 +83,7 @@
 
             @if (Checker::isAdmin() || Checker::eventBelongsToCurrentUser($event->user_id))
                 <a href="{{route('event_edit', ['id' => $event->id])}}">Modifier l'événement</a>
-                <a href="{{route('event_mailAll', ['id' => $event->id])}}">Ecrire à tous les participants</a>
+
             @endif
         </section>
 

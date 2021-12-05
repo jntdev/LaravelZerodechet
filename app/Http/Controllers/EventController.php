@@ -60,7 +60,7 @@ class EventController extends Controller
         }
         $users=User::wherein('id',$userIds)->get();
 
-        return view('events.registration_list',compact('users'), ['title' => 'Liste des participants']);
+        return view('events.registration_list',compact('users','event'), ['title' => 'Liste des participants']);
     }
 
     /**
