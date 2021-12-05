@@ -34,7 +34,7 @@
                                         <table role="presentation" border="0" cellpadding="0" cellspacing="0" class="btn btn-primary" style="border-collapse: separate; mso-table-lspace: 0pt; mso-table-rspace: 0pt; box-sizing: border-box; width: 100%;" width="100%">
 
                                             <p style="font-family: roboto, sans-serif; font-size: 20px; font-weight: normal; margin: 0; margin-bottom: 15px;">Il a inscrit {{$data_nb_user_to_add}} @if($data_nb_user_to_add > 1) personnes. @else personne. @endif</p>
-                                            <p style="font-family: roboto, sans-serif; font-size: 20px; font-weight: normal; margin: 0; margin-bottom: 15px;">{{$data_totalNbPlayers}} / {{$data_event->nb_max_user}} @if($data_totalNbPlayers > 1) personnes sont inscrite. @else personne est inscrite. @endif  </p>
+                                            <p style="font-family: roboto, sans-serif; font-size: 20px; font-weight: normal; margin: 0; margin-bottom: 15px;">{{$data_totalNbPlayers}} / {{$data_event->nb_max_user}} @if($data_totalNbPlayers > 1) personnes sont inscrites à l'animation. @else personne est inscrite à l'animation. @endif  </p>
                                             <p style="font-family: roboto, sans-serif; font-size: 20px; font-weight: normal; margin: 0; margin-bottom: 15px;">Bonne journée !</p>
                                             </td>
                                             </tr>
