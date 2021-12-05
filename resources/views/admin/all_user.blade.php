@@ -21,9 +21,9 @@
                     @foreach($users as $user)
                     <div class="card border-info admincard">
                         <div class="userinfos">
-                           <div>{{$user->first_name}}</div>
-                           <div>{{$user->last_name}}</div>
-                            <div>{{$user->email}}</div>
+                           <div class="div1">{{$user->first_name}}</div>
+                           <div class="div2">{{$user->last_name}}</div>
+                            <div class="div3">{{$user->email}}</div>
                         </div>
                         <div class="adminpanel">
                             <a href="{{route('profile_FromAdmin', ['user' => $user->id])}}">

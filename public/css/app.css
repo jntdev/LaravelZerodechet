@@ -12484,9 +12484,17 @@ textarea::placeholder {
   font-family: var(--primfontfamily);
   font-size: 20px;
 }
-.userinfos div {
+.userinfos .div1 {
   text-align: left;
-  width: 35%;
+  width: 25%;
+}
+.userinfos .div2 {
+  text-align: left;
+  width: 25%;
+}
+.userinfos .div3 {
+  text-align: left;
+  width: 50%;
 }
 
 .userinfos_eventlist {
