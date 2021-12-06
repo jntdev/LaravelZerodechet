@@ -2256,6 +2256,7 @@ position: relative;
     }
 }
 .textarea_description_event{
+    overflow: hidden;
     resize: none;
     height: 350px;
     width: 650px;
@@ -2268,6 +2269,7 @@ position: relative;
 }
 
 .textarea_listequipment_event{
+    overflow: hidden;
     resize: none;
     height: 250px;
     width: 300px;
@@ -2637,6 +2639,11 @@ position: relative;
     font-size: var(--primefontsize);
     margin-bottom: 30px;
 }
+
+.readonly{
+    overflow: hidden;
+}
+
 .userinfos_eventlist{
     display: flex;
     justify-content: center;

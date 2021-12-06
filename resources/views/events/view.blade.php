@@ -5,6 +5,9 @@
         <aside class="index_vue_panel">
             <div class="button_controller">
                 <a href="{{route('profile')}}"><button class="userbutton">Mon profil</button></a>
+                <a href="{{route('event_list')}}">
+                    <button class="userbutton">Tableau de bord</button>
+                </a>
                 <a href="{{route('registered')}}"><button class="userbutton">Vos inscriptions</button></a>
                 @if (Checker::isAdmin() || Checker::isAnim())
                     <a href="{{route('event_create')}}"><button class="animbutton">Créez une animation</button></a>

@@ -12144,6 +12144,7 @@ textarea::placeholder {
 }
 
 .textarea_description_event {
+  overflow: hidden;
   resize: none;
   height: 350px;
   width: 650px;
@@ -12157,6 +12158,7 @@ textarea::placeholder {
 }
 
 .textarea_listequipment_event {
+  overflow: hidden;
   resize: none;
   height: 250px;
   width: 300px;
@@ -12500,6 +12502,10 @@ textarea::placeholder {
 .mailToAll_link {
   font-size: var(--primefontsize);
   margin-bottom: 30px;
+}
+
+.readonly {
+  overflow: hidden;
 }
 
 .userinfos_eventlist {
