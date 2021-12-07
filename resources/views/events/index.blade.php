@@ -29,7 +29,7 @@
                         <p>{{$event->date->format('d/m/Y')}} </br>
                             {{$event->time}}</p>
                         <p class="p_city">{{$event->city}}</p>
-                        <p>Crée par {{$event->user->first_name}}</p>
+                        <p>Créée par {{$event->user->first_name}}</p>
                     </div>
                 </div>
                 <div class="box_event_content">

@@ -28,7 +28,7 @@
                 <div class="left_event_vue">
                     <p>Date : <b>{{$event->date->format('d/m/Y')}}</b></br>
                         Rendez-vous à <b>{{$event->time}}</b></br>
-                        Heure de fin prévu à <b>{{$event->endTime}}</b></br>
+                        Heure de fin prévue à <b>{{$event->endTime}}</b></br>
 
                         <b>{{$event->city}}</b></br>
                     <ul>
@@ -74,7 +74,7 @@
                     </a>
                     @elseif($registration['user_id'] != null)
                     <a href="{{route('event_registration_view', ['id' => $event->id])}}">
-                        <button class="clickable">Modifier mon inscriptions</button>
+                        <button class="clickable">Modifier mon inscription</button>
                     </a>
                     @else
                     <a href="{{route('event_registration_view', ['id' => $event->id])}}">
