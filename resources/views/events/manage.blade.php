@@ -44,7 +44,7 @@
                     </div> -->
                     <div class="infosection">
                         <h3>{{$event->title}}</h3>
-                        <div><textarea readonly>{{ $event->description }}</textarea></div>
+                        <div><textarea class="readonly" readonly>{{ $event->description }}</textarea></div>
                         <p class="end_of_textarea">...</p>
                     </div>
                 </div>
