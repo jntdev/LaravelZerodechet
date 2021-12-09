@@ -137,7 +137,7 @@
                                 <div class="col-md-6">
                                     <textarea id="description"
                                            class="textarea_description form-control @error('description') is-invalid @enderror" name="description" rows="10"
-                                              required autocomplete="Description" placeholder="Description de l'animation">{{$event->description ?? ''}}</textarea>
+                                              required autocomplete="Description" placeholder="Description de l'animation, 300 caractères max">{{$event->description ?? ''}}</textarea>
 
                                     @error('description')
                                     <span class="invalid-feedback" role="alert">
@@ -175,7 +175,7 @@
                                 <div class="col-md-6">
                                     <textarea  id="list_equipment" type="textarea" rows="4"
                                            class="textarea_listmateriel form-control" name="list_equipment"
-                                               placeholder="Indiquez la liste du matériel que devront apporter les participants ">{{$event->list_equipment ?? ''}}</textarea>
+                                               placeholder="Indiquez la liste du matériel que devront apporter les participants, 130 caractères max ">{{$event->list_equipment ?? ''}}</textarea>
 
                                     @error('list_equipment')
                                     <span class="invalid-feedback" role="alert">

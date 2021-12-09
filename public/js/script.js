@@ -40,7 +40,7 @@ $(function() {
     $('.textarea_listmateriel').keypress(function(e) {
         var tval = $('.textarea_listmateriel').val(),
             tlength = tval.length,
-            set = 100,
+            set = 130,
             remain = parseInt(set - tlength);
         $('p').text(remain);
         if (remain <= 0 && e.which !== 0 && e.charCode !== 0) {

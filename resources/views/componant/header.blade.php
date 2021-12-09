@@ -80,9 +80,9 @@
                 @if (Route::has('login'))
                     <a class="" href="{{ route('login') }}">Connexion</a>
                 @endif
-                @if (Route::has('register'))
-                    <a class="" href="{{ route('register') }}">Inscription</a>
-                @endif
+{{--                @if (Route::has('register'))--}}
+{{--                    <a class="" href="{{ route('register') }}">Inscription</a>--}}
+{{--                @endif--}}
                 @else
                 <div class="flexrow logs">
                 <p>Bonjour {{ Auth::user()->first_name }} !  &nbsp;||&nbsp;  </p>
