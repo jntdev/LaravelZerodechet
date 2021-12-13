@@ -37,7 +37,7 @@
                                                value="{{$currentUserRegistration->nb_players ?? ''}}" required>
                                     </div>
                                 </div>
-                                <button class="btn btn-primary"
+                                <button class="btn btn-primary canLoad"
                                         type="submit">{{$currentUserRegistration ? 'Modifier mon inscription' :'M\'enregistrer'}}</button>
                             </form>
                             @if($currentUserRegistration !== null)

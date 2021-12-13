@@ -68,6 +68,7 @@
 
                 <span id="{{$stats}}">Nombre de participants inscrits {{$nbPlayers}} /  {{$event->nb_max_user}}</span>
 
+
                 @if(Checker::canDeleteEvent($event->user->id))
                     <a href="{{route('registration_list', ['id' => $event->id])}}">
                         <button class="clickable">Liste des inscriptions</button>
@@ -80,13 +81,20 @@
                     <a href="{{route('event_registration_view', ['id' => $event->id])}}">
                         <button class="clickable" <?= $stats === 'full' ? 'disabled' : '' ?>>S'inscrire</button>
                     </a>
-                    @endif
+                @endif
+
 
             </section>
 
             @if (Checker::isAdmin() || Checker::eventBelongsToCurrentUser($event->user_id))
                 <a href="{{route('event_edit', ['id' => $event->id])}}">Modifier l'événement</a>
 
+            @endif
+            @if((Checker::isAdmin()) && (Checker::canDeleteEvent($event->user->id)!= Auth::user()->id))
+
+                <a href="{{route('registration_list', ['id' => $event->id])}}">
+                    <button id="adminbutton" class="clickable">Liste des inscriptions</button>
+                </a>
             @endif
         </section>
 

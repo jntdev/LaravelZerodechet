@@ -29,6 +29,24 @@
                                 @csrf
                                 <input id="event_id" type="hidden" name="event_id" value="{{$event->id ?? ''}}">
                                 <input id="user_id" type="hidden" name="user_id" value="{{$event->user_id ?? Auth::user()->id}}">
+                                @if(Checker::isAdmin())
+                                {{--                                                                INPUT MAILTO--}}
+                                <div class="form-group col">
+                                    <div class="col-md-12">
+                                        <input id="mailTo" type="text"
+                                               class="form-control"
+                                               name="mailTo"
+                                               autofocus placeholder="Destinataire supplémentaire">
+
+                                        @error('Desintataire supplémentaire')
+                                        <span class="invalid-feedback" role="alert">
+                                        <strong>{{ $message }}</strong>
+                                    </span>
+                                        @enderror
+                                    </div>
+                                </div>
+                                @endif
+
                                 {{--                        INPUT TITLE--}}
                                 <div class="form-group col">
                                     <div class="col-md-12">
@@ -64,7 +82,7 @@
 
                                 <div class="form-group row mb-0">
                                     <div class="col-md-7 offset-md-4">
-                                            <button type="submit" class="btn btn-primary">
+                                            <button type="submit" class="btn btn-primary canLoad">
                                                 Envoyez à tous
                                             </button>
                                     </div>

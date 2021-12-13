@@ -12007,17 +12007,6 @@ input:checked ~ nav > ul > li a {
   background-color: var(--primebackground);
 }
 
-.adminbutton {
-  color: white;
-  width: 90%;
-  font-family: var(--primfontfamily);
-  font-size: 20px;
-  border-radius: 20px;
-  padding: 10px 15px;
-  border: none;
-  background-color: var(--secondbackground);
-}
-
 .excentersupprbutton {
   position: absolute;
   right: 0px;
@@ -12450,6 +12439,27 @@ textarea::placeholder {
   top: 50px;
 }
 
+.adminbutton {
+  color: white;
+  width: 90%;
+  font-family: var(--primfontfamily);
+  font-size: 20px;
+  border-radius: 20px;
+  padding: 10px 15px;
+  border: none;
+  background-color: var(--secondbackground);
+}
+
+#adminbutton {
+  color: white;
+  font-family: var(--primfontfamily);
+  font-size: 20px;
+  border-radius: 20px;
+  padding: 10px 15px;
+  border: none;
+  background-color: var(--secondbackground);
+}
+
 .left_event_vue {
   text-align: start;
   width: 30%;
@@ -12502,6 +12512,11 @@ textarea::placeholder {
 .mailToAll_link {
   font-size: var(--primefontsize);
   margin-bottom: 30px;
+}
+
+.form_event_relativ i {
+  position: unset;
+  margin-right: 18px;
 }
 
 .readonly {

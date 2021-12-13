@@ -256,6 +256,10 @@ class EventController extends Controller
         return redirect()->route('event_list')->with('error', 'Une erreur est survenue');
     }
 
+    /**
+     * @param Request $request
+     * @return View
+     */
     public function mailAll(Request $request): View
     {
         $event = Event::find($request->id);
@@ -263,14 +267,26 @@ class EventController extends Controller
         return view('events.mailAll', ['title' => 'Ecrivez à tout les participants'], compact('event'));
     }
 
-
+    /**
+     * @param Request $request
+     * @return RedirectResponse
+     */
     public function mailToAllSent(Request $request): RedirectResponse
     {
         $event = Event::find($request->event_id);
         $mailTitle = $request->title_mailtoAll;
         $mailContent = $request->content_of_mail;
         $registrations = Registration::where('event_id', $event->id)->get();
+
         foreach ($registrations as $registration) {
+            $additionalMails = $request->mailTo;
+            if ($additionalMails != ""){
+                $CCmails = explode(" ", $additionalMails);
+                foreach ($CCmails as $CCmail) {
+                    Mail::to($CCmail)->send(new MailToAll($event,  $mailTitle, $mailContent));
+                }
+            }
+
             Mail::to($registration->user->email)->send(new MailToAll($event,  $mailTitle, $mailContent));
         }
 
