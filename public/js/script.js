@@ -53,6 +53,6 @@ $(function() {
 
 });
 $('.canLoad').on('click', function() {
-    $('.canLoad').html("<i class=\"fa fa-circle-o-notch fa-spin\"></i>Envoie...");
+    $('.canLoad').html("<i class=\"fa fa-circle-o-notch fa-spin\"></i>Envoi...");
 
 });
