@@ -78,7 +78,7 @@
                                     <div class="col-md-6">
                                         <input id="phone_nb" type="text"
                                                class="form-control" name="phone_nb"
-                                               value="">
+                                               value="{{$user->phone_nb}}">
                                     </div>
                                 </div>
                                 {{--                            INPUT CAPITAIN--}}
