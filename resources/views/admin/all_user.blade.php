@@ -14,7 +14,7 @@
             <div class="calendar"></div>
         </aside>
         <div class="container backoffice_borderleft ">
-            <h2>Liste de tout les participants</h2>
+            <h2>Liste de tous les participants</h2>
 
             <div class="row justify-content-center ">
                 <div class="col-md-9">
