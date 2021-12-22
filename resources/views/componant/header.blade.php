@@ -78,7 +78,7 @@
             <div class="logins">
                 @guest
                 @if (Route::has('login'))
-                    <a class="" hidden href="{{ route('login') }}">Connexion</a>
+                    <a class="" href="{{ route('login') }}">Connexion</a>
                 @endif
 {{--                @if (Route::has('register'))--}}
 {{--                    <a class="" href="{{ route('register') }}">Inscription</a>--}}
