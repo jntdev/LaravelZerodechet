@@ -37,6 +37,8 @@
                                                 le {{$event_data->date->format('d/m/Y')}} à {{$event_data->time}}
                                                 à l'adresse :  {{$event_data->address}}, {{$event_data->city}}.</p>
                                             <p>L'heure de fin est prévue pour {{$event_data->endTime}}.</p>
+                                            <p>Liste du materiel à prévoir :</p>
+                                            <p>{!! $event_data->list_equipment !!}</p>
                                             <p style="font-family: roboto, sans-serif; font-size: 20px; font-weight: normal; margin: 0; margin-bottom: 15px;">Si vous avez une question à poser à {{$event_data->user->first_name}}, contactez le
                                                 à l'adresse {{$event_data->user->email}}.</p>
 

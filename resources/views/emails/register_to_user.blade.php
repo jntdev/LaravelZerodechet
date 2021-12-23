@@ -35,6 +35,8 @@
                                             le {{$event_data->date->format('d/m/Y')}} à {{$event_data->time}}
                                             à l'adresse :  {{$event_data->address}}, {{$event_data->city}}.</p>
                                         <p>L'heure de fin est prévue pour {{$event_data->endTime}}.</p>
+                                        <p>Liste du materiel à prévoir :</p>
+                                        <p>{!! $event_data->list_equipment !!}</p>
                                         <table role="presentation" border="0" cellpadding="0" cellspacing="0" class="btn btn-primary" style="border-collapse: separate; mso-table-lspace: 0pt; mso-table-rspace: 0pt; box-sizing: border-box; width: 100%;" width="100%">
 
                                             <p style="font-family: roboto, sans-serif; font-size: 20px; font-weight: normal; margin: 0; margin-bottom: 15px;">Si vous avez une question à poser à {{$event_data->user->first_name}}, contactez-le/la
