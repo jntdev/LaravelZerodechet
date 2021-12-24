@@ -30,7 +30,7 @@ class EventController extends Controller
     public function index(): View
     {
         /** @var Event[] $events */
-        $events = Event::all();
+        $events = Event::orderBy('date')->get();
 
         return view('events.index', compact('events'),['title'=>'Tableau de bord']);
     }
