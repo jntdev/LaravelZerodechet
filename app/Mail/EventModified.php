@@ -30,7 +30,7 @@ class EventModified extends Mailable
     public function build()
     {
         return $this
-            ->subject('L\'animation à laquelle vous êtes inscrit à été modifié')
+            ->subject('L\'animation à laquelle vous êtes inscrit à été modifiée')
             ->view('emails.event_modified');
     }
 }
