@@ -3,10 +3,100 @@
     @include('/componant/header')
 
 <div class="actucontent">
+    <div class="actusection primebackground ">
+        <div class="article">
+            <div class="date flexend">
+                <p>5 Janvier 2022</p>
+            </div>
+            <div class="pageactucontent ">
+                <div id="pict" class="pict">
+                    <img class="articleimg"src="{{ asset('images/couture.jpg') }}" alt="illustration article">
+
+                </div>
+                <div class="articlecontent">
+                    <h2>Première série d'ateliers terminée !</h2>
+                    <p id="p_responsiv" class="subtitleactucontent"> Après la période consacrée aux visites pour découvrir l'envers du décor de nos poubelles, les
+                        participants au défi ont pu assister, en novembre-décembre, à plusieurs ateliers pratiques.</p>
+                    <p id="p_responsiv" class="contenuactu">
+                        Au menu : couture de sacs à vracs et lingettes avec Véronique, fabrication de produits ménagers
+                        avec Raphaëlle, d'un objet en bois avec Marie-Noëlle et Eric ou de savons avec Anne-Laure. Bref,
+                        de quoi lancer efficacement sa dynamique de réduction des déchets !</br></br>
+                        Merci aux animatrices/teurs et aux participants !
+                    </p>
+
+                </div>
+            </div>
+            <div class="seemore flexend clickable">
+                <p>voir plus...</p>
+                <div class="arrow">
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="actusection fifthbackground ">
+        <div class="article">
+            <div class="date flexend">
+                <p>20 Décembre 2021</p>
+            </div>
+            <div class="pageactucontent ">
+                <div id="pict" class="pict">
+                    <img class="articleimg"src="{{ asset('images/sapin_aurelie.jpg') }}" alt="illustration article">
+
+                </div>
+                <div class="articlecontent">
+                    <h2>Mon beau sapin, roi du zéro déchet !</h2>
+                    <p id="p_responsiv" class="subtitleactucontent"> Du 6 décembre au 15 décembre, les participants au défi ont pu se lancer dans un concours de sapins
+                        de Noël en récup' zéro déchet.</p>
+                    <p id="p_responsiv" class="contenuactu">
+                        A grands renforts de palettes, de rouleaux de PQ, de papier journal et de travail d'enfants, les 13
+                        participants au concours ont fait fort ! Bravo aux familles d'Aurélie, Stéren et Rozenn qui ont
+                        remporté le plus de suffrages et un petit cadeau zéro déchet.</br></br>
+                        Merci à tous les participants pour vos belles réalisations !
+                    </p>
+
+                </div>
+            </div>
+            <div class="seemore flexend clickable">
+                <p>voir plus...</p>
+                <div class="arrow">
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="actusection fourthbackground ">
+        <div class="article">
+            <div class="date flexend">
+                <p>9 Décembre 2021</p>
+            </div>
+            <div class="pageactucontent ">
+                <div id="pict" class="pict">
+                    <img class="articleimg"src="{{ asset('images/deco_noel_zd.jpg') }}" alt="illustration article">
+
+                </div>
+                <div class="articlecontent">
+                    <h2>Des décos de Noël zéro déchet</h2>
+                    <p id="p_responsiv" class="subtitleactucontent"> Une dizaine de personnes s\'est réunie autour d'un café mercredi 8 décembre pour fabriquer des
+                    décos de Noël zéro déchet.</p>
+                    <p id="p_responsiv" class="contenuactu">
+                        Un moment convivial pour tester des tutos et (ré)utiliser branchages, plumes, chutes de tissus,
+                        pommes de pin et autres bouchons de liège... Les (grands) enfants ont ainsi pu laisser libre cours à
+                        leur imagination et à leur talent d'artiste... Chacun est reparti avec ses réalisations pour égayer les
+                        fêtes en mode zéro déchet.
+                    </p>
+
+                </div>
+            </div>
+            <div class="seemore flexend clickable">
+                <p>voir plus...</p>
+                <div class="arrow">
+                </div>
+            </div>
+        </div>
+    </div>
     <div class="actusection thirdbackground ">
         <div class="article">
             <div class="date flexend">
-                <p>24 novembre 2021</p>
+                <p>24 Novembre 2021</p>
             </div>
             <div class="pageactucontent ">
                 <div id="pict" class="pict">
@@ -38,7 +128,7 @@
 <div class="actusection secondbackground ">
         <div class="article">
            <div class="date flexend">
-                <p>29 octobre 2021</p>
+                <p>29 Octobre 2021</p>
            </div>
            <div class="pageactucontent ">
                <div id="pict" class="pict">
@@ -73,7 +163,7 @@
     <div class="actusection primebackground ">
         <div class="article">
             <div class="date flexend">
-                <p>16 octobre 2021</p>
+                <p>16 Octobre 2021</p>
             </div>
             <div class="pageactucontent ">
                 <div id="pict" class="pict">
