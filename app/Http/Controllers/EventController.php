@@ -247,7 +247,7 @@ class EventController extends Controller
     {
         /** @var Event|null $event */
         $event = Event::find($eventId);
-        if (CheckerFacade::canDeleteEvent($event->user_id)) {
+        if (CheckerFacade::canDeleteEvent($event->user_id) || CheckerFacade::isAdmin()) {
             Event::destroy($eventId);
 
             return redirect()->route('event_list')->with('success', 'L\'animation a été supprimée');
