@@ -32,7 +32,7 @@
                                         {{ __('Nombre de personnes que vous inscrivez') }}
                                     </label>
                                     <div class="col-md-6">
-                                        <input class="form-control" id="nb_participant" type="number"
+                                        <input class="form-control" id="nb_participant" type="number" min="0"
                                                name="nb_participant"
                                                value="{{$currentUserRegistration->nb_players ?? ''}}" required>
                                     </div>
