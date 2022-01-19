@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Mail\EventCreation;
 use App\Mail\EventModified;
 use App\Mail\MailToAll;
 use App\Models\Registration;
@@ -10,6 +11,7 @@ use Illuminate\Support\Facades\Mail;
 use App\Models\Event;
 use App\Models\User;
 use App\Mail\event_modified;
+use App\Mail\event_creation;
 
 use App\User\Facades\CheckerFacade;
 use Illuminate\Contracts\Foundation\Application;
@@ -113,8 +115,17 @@ class EventController extends Controller
             }
             /** @var Event $event */
             $event = Event::create($data);
+            if(CheckerFacade::isAdmin()) {
+                return redirect()->route('event_show',['event_id'=> $event->id]);
+            }else{
 
-            return redirect()->route('event_show',['event_id'=> $event->id]);
+                Mail::to('fanny@osezzerodechet.bzh')
+                    ->cc('contact@osezzerodechet.bzh')
+                    ->send(new EventCreation($event));
+
+
+                return redirect()->route('event_show',['event_id'=> $event->id]);
+            }
         }
     }
 
