@@ -118,12 +118,9 @@ class EventController extends Controller
             if(CheckerFacade::isAdmin()) {
                 return redirect()->route('event_show',['event_id'=> $event->id]);
             }else{
-
                 Mail::to('fanny@osezzerodechet.bzh')
                     ->cc('contact@osezzerodechet.bzh')
                     ->send(new EventCreation($event));
-
-
                 return redirect()->route('event_show',['event_id'=> $event->id]);
             }
         }
@@ -275,7 +272,7 @@ class EventController extends Controller
     {
         $event = Event::find($request->id);
 
-        return view('events.mailAll', ['title' => 'Ecrivez à tout les participants'], compact('event'));
+        return view('events.mailAll', ['title' => 'Ecrivez à tous les participants'], compact('event'));
     }
 
     /**
