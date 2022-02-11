@@ -3,6 +3,40 @@
     @include('/componant/header')
 
 <div class="actucontent">
+    <div class="actusection secondbackground ">
+        <div class="article">
+            <div class="date flexend">
+                <p>10 Fevrier 2022</p>
+            </div>
+            <div class="pageactucontent ">
+                <div id="pict" class="pict">
+                    <img class="articleimg"src="{{ asset('images/MMCA1.png') }}" alt="illustration article">
+
+                </div>
+                <div class="articlecontent">
+                    <h2>Ma maison change d'air ! ouvert aux non-participants au défi</h2>
+                    <p id="p_responsiv" class="subtitleactucontent">L'atelier "Ma maison change d'air", organisé conjointement par Osez zéro déchet ! et la Mutualité
+                        française proposera un temps d'échange sur les polluants de la maison (plastiques, cosmétiques,
+                        produits d'entretien).</p>
+                    <p id="p_responsiv" class="contenuactu">
+                        Apprenez à repérer les polluants de la maison, leurs impacts sur votre santé et à chercher des
+                        alternatives plus saines et simples à mettre en œuvre. Cet échange sera suivi de la réalisation de
+                        quelques produits « maison » à rapporter chez soi !</br></br>
+                        RDV le samedi 26 février de 10h à 12h30 à Paimpol.</br></br>
+                        Cet atelier est ouvert aux non-participants au défi zéro déchet MAIS sur réservation à
+                        <a href="mailto:contact@osezzerodechet.bzh">contact@osezzerodechet.bzh</a>. Le nombre de places est limité !
+
+                    </p>
+
+                </div>
+            </div>
+            <div class="seemore flexend clickable">
+                <p>voir plus...</p>
+                <div class="arrow">
+                </div>
+            </div>
+        </div>
+    </div>
     <div class="actusection primebackground ">
         <div class="article">
             <div class="date flexend">
