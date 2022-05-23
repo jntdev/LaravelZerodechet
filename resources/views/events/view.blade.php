@@ -66,8 +66,14 @@
                 si une place se libère.</p>
             <section class="inscription_event_vue">
 
-                <span id="{{$stats}}">Nombre de participants inscrits {{$nbPlayers}} /  {{$event->nb_max_user}}</span>
-
+{{--                <span id="{{$stats}}">Nombre de participants inscrits {{$nbPlayers}} /  {{$event->nb_max_user}}</span>--}}
+                <span id="{{$stats}}">
+                    @if($stats === 'full')
+                    C'est complet !
+                    @elseif($stats === 'orange_span')Animation presque complète
+                    @else Places disponibles
+                    @endif
+                </span>
 
                 @if(Checker::canDeleteEvent($event->user->id))
                     <a href="{{route('registration_list', ['id' => $event->id])}}">

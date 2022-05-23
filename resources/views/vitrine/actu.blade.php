@@ -3,6 +3,104 @@
     @include('/componant/header')
 
 <div class="actucontent">
+    <div class="actusection primebackground ">
+        <div class="article">
+            <div class="date flexend">
+                <p>10 mai 2022</p>
+            </div>
+            <div class="pageactucontent ">
+                <div id="pict" class="pict">
+                    <img class="articleimg"src="{{ asset('images/participants.JPG') }}" alt="illustration article">
+
+                </div>
+                <div class="articlecontent">
+                    <h2>Retour sur 6 mois de défi</h2>
+                    <p id="p_responsiv" class="subtitleactucontent">Du 17 octobre au 30 avril, 7 équipes de la région de Paimpol se sont lancé dans le défi zéro déchet :
+                        voici un petit retour en images sur les visites, les ateliers et les rencontres qui ont rythmé ce défi !</p>
+                    <p id="p_responsiv" class="contenuactu">
+
+                        Le récap
+                        <a target="_blank" href="{{ asset('images/6_mois_defi.pdf') }}"> ICI</a>
+
+
+
+                    </p>
+
+                </div>
+            </div>
+            <div class="seemore flexend clickable">
+                <p>voir plus...</p>
+                <div class="arrow">
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="actusection fourthbackground ">
+        <div class="article">
+            <div class="date flexend">
+                <p>5 mai 2022</p>
+            </div>
+            <div class="pageactucontent ">
+                <div id="pict" class="pict">
+                    <img class="articleimg"src="{{ asset('images/superheros') }}" alt="illustration article">
+
+                </div>
+                <div class="articlecontent">
+                    <h2>7 équipes de héros du zéro !</h2>
+                    <p id="p_responsiv" class="subtitleactucontent">170 participants représentant 60 foyers, regroupés en sept équipes : des équipes de choc qui ont
+                        permis d'atteindre un bilan de -45,89% de déchets ! Bravo à tou(te)s !</p>
+                    <p id="p_responsiv" class="contenuactu">
+                        Présentation des équipes <a target="_blank" href="{{ asset('images/les_equipes.pdf') }}">ICI</a>
+                    </p>
+
+                </div>
+            </div>
+            <div class="seemore flexend clickable">
+                <p>voir plus...</p>
+                <div class="arrow">
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="actusection thirdbackground ">
+        <div class="article">
+            <div class="date flexend">
+                <p>30 Avril 2022</p>
+            </div>
+            <div class="pageactucontent ">
+                <div id="pict" class="pict">
+                    <img class="articleimg"src="{{ asset('images/cloture_defi.JPG') }}" alt="illustration article">
+
+                </div>
+                <div class="articlecontent">
+                    <h2>4,7 tonnes de déchets évités !</h2>
+                    <p id="p_responsiv" class="subtitleactucontent">C'est le super bilan des 6 mois du défi zéro déchet ! Bravo aux 7 équipes engagées, qui ont réduit
+                        leurs déchets de 45,89 % entre le 17 octobre et le 30 avril.</p>
+                    <p id="p_responsiv" class="contenuactu">
+                        Le défi s'est clôturé par un après-midi rythmé par le spectacle de la Compagnie Bulles de Rêve
+                        intitulé « Môssieur Poubelle », un espace de gratuité, des rencontres et un apéritif dinatoire (zéro
+                        déchet bien sûr !).</br></br>
+                        Et maintenant ? Les participants ont proposé plein de bonnes idées pour que l'association continue à
+                        promouvoir la démarche zéro déchet...</br></br>
+                        Liens presse :</br></br><a target="_blank" href="https://lannion-perros.maville.com/actu/actudet_-paimpol.-un-defi-zero-dechet-reussi-_fil-5206757_actu.Htm">Ouest France</a>
+                        </br></br>
+                        <a target="_blank" href="https://actu.fr/bretagne/paimpol_22162/defi-zero-dechet-a-paimpol-des-poubelles-allegees-de-46_50698686.html">La Presse d'Armor</a>
+                        </br></br>
+                        <a target="_blank" href="https://www.letelegramme.fr/cotes-darmor/paimpol/paimpol-pendant-six-mois-ils-ont-vise-le-zero-dechet-02-05-2022-13009659.php">Le Télégramme</a>
+
+
+
+                    </p>
+
+                </div>
+            </div>
+            <div class="seemore flexend clickable">
+                <p>voir plus...</p>
+                <div class="arrow">
+                </div>
+            </div>
+        </div>
+    </div>
     <div class="actusection secondbackground ">
         <div class="article">
             <div class="date flexend">
